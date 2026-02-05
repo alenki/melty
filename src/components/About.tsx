@@ -15,7 +15,7 @@ export default function About() {
                 <path d="M12.5 0C12.5 0 0 40 0 47.5C0 55.56 5.596 60 12.5 60C19.404 60 25 55.56 25 47.5C25 40 12.5 0 12.5 0Z"/>
               </svg>
               <img
-                src="/data/logo.png"
+                src="/data/logo_dark.png"
                 alt="Melty Cafe"
                 className="about__image"
               />

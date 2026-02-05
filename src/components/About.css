@@ -24,13 +24,17 @@
 
 .about__image-frame {
   position: relative;
-  max-width: 360px;
+  width: 360px;
+  aspect-ratio: 1 / 1;
   padding: 1.5rem;
   background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-deep) 100%);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-medium),
     inset 0 2px 4px rgba(255, 255, 255, 0.5),
     inset 0 -2px 4px rgba(74, 44, 26, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about__drip {
@@ -119,6 +123,6 @@
   }
 
   .about__image-frame {
-    max-width: 280px;
+    width: 280px;
   }
 }

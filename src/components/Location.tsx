@@ -90,8 +90,8 @@ export default function Location() {
                 <div>
                   <h3>Часы работы</h3>
                   <ul className="location__hours">
-                    <li><span>Ежедневно</span><span>10:00 — 23:00</span></li>
-                    <li><span>Кухня</span><span>10:00 — 22:15</span></li>
+                    <li><span>Ежедневно</span><span>08:00 — 23:00</span></li>
+                    <li><span>Кухня</span><span>08:00 — 22:15</span></li>
                   </ul>
                 </div>
               </div>

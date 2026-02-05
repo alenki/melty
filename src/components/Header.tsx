@@ -50,7 +50,7 @@ export default function Header() {
           onClick={handleLogoClick}
           aria-label="На главную"
         >
-          <img src="/data/logo.png" alt="Melty" />
+          <img src="/data/logo_dark.png" alt="Melty" />
         </a>
 
         <nav

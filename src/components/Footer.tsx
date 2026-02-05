@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="footer__brand">
               <a href="#hero" className="footer__logo-link" aria-label="На главную">
                 <img
-                  src="/data/logo_footer.png"
+                  src="/data/logo.png"
                   alt="Melty"
                   className="footer__logo-img"
                 />
