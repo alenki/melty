@@ -1,0 +1,133 @@
+.menu-item {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  opacity: 0;
+  animation: menuItemFadeIn 0.5s ease forwards;
+  animation-delay: var(--animation-delay, 0ms);
+  cursor: pointer;
+}
+
+@keyframes menuItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.menu-item__image-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--cream-warm);
+}
+
+.menu-item__image-placeholder,
+.menu-item__image-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-deep) 100%);
+}
+
+.menu-item__image-placeholder svg,
+.menu-item__image-error svg {
+  width: 48px;
+  height: 48px;
+  color: var(--latte);
+}
+
+.menu-item__image-placeholder {
+  animation: imagePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes imagePulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.menu-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  transition: transform var(--transition-slow), opacity var(--transition-normal);
+  opacity: 0;
+}
+
+.menu-item__image--loaded {
+  opacity: 1;
+}
+
+.menu-item:hover .menu-item__image--loaded {
+  transform: scale(1.05);
+}
+
+.menu-item__content {
+  padding: 1.25rem;
+}
+
+.menu-item__name {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--chocolate);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.menu-item__description {
+  font-size: 0.875rem;
+  color: var(--chocolate-light);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-item__price {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+@media (max-width: 480px) {
+  .menu-item__content {
+    padding: 1rem;
+  }
+
+  .menu-item__name {
+    font-size: 1rem;
+  }
+
+  .menu-item__description {
+    font-size: 0.8125rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .menu-item__price {
+    font-size: 1.125rem;
+  }
+}

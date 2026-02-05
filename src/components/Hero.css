@@ -1,0 +1,460 @@
+/* ==========================================================================
+   HERO SECTION - ChocoDips
+   A warm, inviting hero that evokes artisanal chocolate craftsmanship
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 0 100px;
+}
+
+/* ==========================================================================
+   LAYERED BACKGROUND
+   Creates depth and warmth through multiple gradient layers
+   ========================================================================== */
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(168, 132, 98, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232, 90, 36, 0.04) 0%, transparent 50%),
+    linear-gradient(175deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream-deep) 100%);
+}
+
+.hero__bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    radial-gradient(circle at 25% 25%, var(--latte) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, var(--latte) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.hero__bg-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(245, 237, 227, 0.8) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   DECORATIVE SWIRLS
+   Elegant flowing lines that suggest chocolate movement
+   ========================================================================== */
+
+.hero__swirl {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+  opacity: 0;
+  animation: swirlFadeIn 1.5s ease 0.5s forwards;
+}
+
+.hero__swirl--left {
+  left: 5%;
+}
+
+.hero__swirl--right {
+  right: 5%;
+}
+
+@keyframes swirlFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__swirl path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawSwirl 3s ease 0.8s forwards;
+}
+
+@keyframes drawSwirl {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--container-padding);
+  max-width: 700px;
+}
+
+/* ==========================================================================
+   FLOATING ACCENT DOTS
+   Subtle decorative elements that add visual interest
+   ========================================================================== */
+
+.hero__accents {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__dot {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatDot 6s ease-in-out infinite;
+}
+
+.hero__dot--1 {
+  width: 24px;
+  height: 24px;
+  background: var(--orange);
+  opacity: 0.25;
+  top: -40px;
+  left: -80px;
+  animation-delay: 0s;
+}
+
+.hero__dot--2 {
+  width: 18px;
+  height: 18px;
+  background: var(--chocolate);
+  opacity: 0.15;
+  top: 20%;
+  right: -60px;
+  animation-delay: 2s;
+}
+
+.hero__dot--3 {
+  width: 32px;
+  height: 32px;
+  background: var(--caramel);
+  opacity: 0.12;
+  bottom: 10%;
+  left: -100px;
+  animation-delay: 4s;
+}
+
+@keyframes floatDot {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -15px);
+  }
+}
+
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+
+.hero__logo-container {
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.hero__logo {
+  max-width: min(420px, 85vw);
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(74, 44, 26, 0.1));
+}
+
+/* ==========================================================================
+   TAGLINE
+   ========================================================================== */
+
+.hero__tagline-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.hero__line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+  flex-shrink: 0;
+}
+
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3.5vw, 1.625rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--chocolate-light);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* ==========================================================================
+   LOCATION
+   ========================================================================== */
+
+.hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(74, 44, 26, 0.05);
+  border-radius: 100px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+.hero__location-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--orange);
+}
+
+.hero__location span {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--chocolate);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   CTA BUTTON
+   ========================================================================== */
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--chocolate);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232, 90, 36, 0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero__cta:hover {
+  background: var(--chocolate-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(74, 44, 26, 0.25);
+}
+
+.hero__cta:hover::before {
+  opacity: 1;
+}
+
+.hero__cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__cta-arrow {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.hero__cta:hover .hero__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   REVEAL ANIMATION
+   ========================================================================== */
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   BOTTOM FADE
+   Smooth transition to next section
+   ========================================================================== */
+
+.hero__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero__swirl--left {
+    left: 2%;
+  }
+
+  .hero__swirl--right {
+    right: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 80px;
+  }
+
+  .hero__swirl {
+    display: none;
+  }
+
+  .hero__logo-container {
+    margin-bottom: 2rem;
+  }
+
+  .hero__logo {
+    max-width: min(320px, 80vw);
+  }
+
+  .hero__tagline-wrapper {
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero__line {
+    width: 30px;
+  }
+
+  .hero__location {
+    margin-bottom: 2rem;
+  }
+
+  .hero__dot--1 {
+    left: -30px;
+    top: -20px;
+  }
+
+  .hero__dot--2 {
+    right: -30px;
+  }
+
+  .hero__dot--3 {
+    display: none;
+  }
+
+  .hero__fade {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__tagline-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__line {
+    display: none;
+  }
+
+  .hero__cta {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY - Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__swirl,
+  .hero__logo-container,
+  .hero__tagline-wrapper,
+  .hero__location,
+  .hero__cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__swirl path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .hero__dot {
+    animation: none;
+  }
+
+  .hero__cta:hover {
+    transform: none;
+  }
+
+  .hero__cta:hover .hero__cta-arrow {
+    transform: none;
+  }
+}
