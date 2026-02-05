@@ -5,8 +5,8 @@ import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Location.css';
 
-// Nalchik coordinates (city center area)
-const CAFE_COORDINATES: LatLngExpression = [43.483088, 43.607469];
+// Melty cafe coordinates
+const CAFE_COORDINATES: LatLngExpression = [43.472607, 43.579251];
 
 // Fix for default Leaflet marker icon issue in bundlers
 // Create a simple SVG marker
@@ -61,8 +61,8 @@ export default function Location() {
               <Marker position={CAFE_COORDINATES} icon={markerIcon}>
                 <Popup>
                   <div className="location__popup">
-                    <strong>ChocoDips</strong>
-                    <span>Шоколадные десерты с душой</span>
+                    <strong>Melty</strong>
+                    <span>Мир вкуса и уюта</span>
                   </div>
                 </Popup>
               </Marker>
@@ -78,7 +78,7 @@ export default function Location() {
                 </svg>
                 <div>
                   <h3>Адрес</h3>
-                  <p>г. Нальчик, ул. Пушкина, 85а</p>
+                  <p>г. Нальчик, ул. Героя России Т.М. Тамазова, 15</p>
                 </div>
               </div>
 
@@ -106,11 +106,11 @@ export default function Location() {
                   <h3>Мы в соцсетях</h3>
                   <p>
                     <a
-                      href="https://instagram.com/chocodips.ru"
+                      href="https://instagram.com/melty.ru"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      @chocodips.ru
+                      @melty.ru
                     </a>
                   </p>
                 </div>

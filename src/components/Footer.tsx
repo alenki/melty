@@ -23,11 +23,11 @@ export default function Footer() {
               <a href="#hero" className="footer__logo-link" aria-label="На главную">
                 <img
                   src="/data/logo_footer.png"
-                  alt="ChocoDips"
+                  alt="Melty"
                   className="footer__logo-img"
                 />
               </a>
-              <p className="footer__tagline">Шоколадные десерты с душой</p>
+              <p className="footer__tagline">Мир вкуса и уюта</p>
             </div>
 
             {/* Center - Address */}
@@ -35,7 +35,7 @@ export default function Footer() {
               <div className="footer__address">
                 <p className="footer__address-label">Адрес</p>
                 <p className="footer__address-text">
-                  ул. Пушкина, 85а
+                  ул. Героя России Т.М. Тамазова, 15
                 </p>
                 <span className="footer__address-city">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="footer__connect">
               <p className="footer__social-label">Мы в соцсетях</p>
               <a
-                href="https://instagram.com/chocodips.ru"
+                href="https://instagram.com/melty.ru"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__instagram"
@@ -66,7 +66,7 @@ export default function Footer() {
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
-                <span>@chocodips.ru</span>
+                <span>@melty.ru</span>
               </a>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
           {/* Footer bottom line */}
           <div className="footer__credits">
             <p className="footer__copyright">
-              &copy; {currentYear} ChocoDips
+              &copy; {currentYear} Melty
             </p>
             <a
               href="https://okaraf.ru"

@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="hero__logo-container">
           <img
             src="/data/logo.png"
-            alt="ChocoDips"
+            alt="Melty"
             className="hero__logo"
           />
         </div>
@@ -62,7 +62,7 @@ export default function Hero() {
         {/* Tagline with decorative line */}
         <div className="hero__tagline-wrapper">
           <span className="hero__line" aria-hidden="true" />
-          <p className="hero__tagline">Шоколадные десерты с душой</p>
+          <p className="hero__tagline">Мир вкуса и уюта</p>
           <span className="hero__line" aria-hidden="true" />
         </div>
 

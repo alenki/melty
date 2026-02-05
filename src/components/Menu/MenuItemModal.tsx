@@ -9,50 +9,15 @@ interface MenuItemModalProps {
   onClose: () => void;
 }
 
-// Image counts for each dessert (based on available files)
-const imageCountMap: Record<string, number> = {
-  'choco-bum': 3,
-  'brownie-crep': 3,
-  'fondant': 1,
-  'fondue': 1,
-  'pancakes-berries': 3,
-  'pancakes-chocolate': 3,
-  'crep-roll': 3,
-  'burrata': 2,
-  'crep-banana-chocolate': 2,
-  'sushi-crep': 2,
-  'cinnabon': 3,
-  'waffles': 3,
-  'profiteroli-sable': 2,
-  'profiteroli-big-sable': 2,
-  'cheesecake': 2,
-  'pistachio-knafe': 1,
-  'date-dessert': 2,
-};
+// All items have single images in the new structure
 
 export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
 
-  const imageCount = imageCountMap[item.id] || 1;
-
-  // Generate image paths
-  const getImagePaths = (): string[] => {
-    const basePath = item.image.replace('/image_1.png', '');
-    const paths: string[] = [];
-    for (let i = 1; i <= imageCount; i++) {
-      const parts = `${basePath}/image_${i}.png`.split('/');
-      const encoded = parts.map((part, idx) => {
-        if (idx < 3) return part;
-        return encodeURIComponent(part);
-      });
-      paths.push(encoded.join('/'));
-    }
-    return paths;
-  };
-
-  const images = getImagePaths();
+  // Single image per item in new structure
+  const images = [item.image];
 
   const formatPrice = (price: number): string => {
     return `${price.toLocaleString('ru-RU')}₽`;

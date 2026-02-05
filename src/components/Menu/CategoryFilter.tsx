@@ -8,7 +8,19 @@ interface CategoryFilterProps {
 }
 
 export default function CategoryFilter({ activeCategory, onCategoryChange }: CategoryFilterProps) {
-  const categories: Array<MenuCategory | 'all'> = ['all', 'chocolate', 'crepes', 'pancakes', 'pastries', 'specialty'];
+  const categories: Array<MenuCategory | 'all'> = [
+    'all',
+    'melty-desserts',
+    'chocolate-desserts',
+    'waffles-croissants',
+    'breakfasts',
+    'salads',
+    'main-dishes',
+    'coffee',
+    'author-coffee',
+    'lemonades',
+    'other'
+  ];
 
   const getLabel = (category: MenuCategory | 'all'): string => {
     if (category === 'all') return 'Все';
