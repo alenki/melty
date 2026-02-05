@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ChocoDips is a Russian-language website for a dessert cafe in Nalchik, Russia. Built with React 19 + TypeScript + Vite. The site showcases menu items and cafe information (no ordering/reservations functionality).
+Melty is a Russian-language website for a chocolate/dessert cafe. Built with React 19 + TypeScript + Vite. The site showcases menu items and cafe information with the tagline "Мир вкуса и уюта" (World of taste and comfort). No ordering/reservations functionality.
 
 ## Commands
 
@@ -20,10 +20,11 @@ npm run preview  # Preview production build locally
 - **src/** - React application source
   - `main.tsx` - Entry point
   - `App.tsx` - Root component
-- **data/** - Content assets
-  - `logo.png`, `chocodips.jpg` - Cafe logos
-  - `menu/` - 18 menu item images (one per dessert)
-- **public/** - Static assets served directly by path
+- **public/data/** - Content assets
+  - `logo.png` - Main Melty logo (white script on dark brown circle)
+  - `logo_dark.png` - Dark variant logo
+  - `melty.png` - Cafe hero image
+  - `menu/` - ~99 menu item images
 
 ## Technical Configuration
 
@@ -37,13 +38,23 @@ npm run preview  # Preview production build locally
 From README.md - the site must avoid generic "AI slop" aesthetic:
 
 - Use distinctive fonts (NOT Inter, Roboto, Arial)
-- Cohesive color palette derived from cafe branding/logo
+- Cohesive color palette derived from Melty branding (see README.md for full palette)
+- Dark and moody atmosphere with warm, intimate lighting
 - Atmospheric backgrounds with CSS gradients/patterns
 - High-impact animations with staggered reveals
 - Draw inspiration from IDE themes and cultural aesthetics
 
-## Content
+## Brand Color Palette
 
-Menu items are Russian desserts (18 total): БРАУНИ-КРЕП, БУРРАТА, ВАФЛИ, КРЕП С БАНАНОМ И ШОКОЛАДОМ, КРЕП-РОЛЛ, ПАНКЕЙКИ С ШОКОЛАДОМ, ПАНКЕЙКИ С ЯГОДАМИ, ПРОФИТРОЛИ, СИННАБОН, СУШИ КРЕП, ФИНИКОВЫЙ ДЕСЕРТ, ФИСТАШКОВЫЙ КНАФЕ, ФОНДАН, ФОНДЮ, ЧИЗКЕЙК САН-САБАСТЬЯН, ЧОКО БУМ.
+- **Dark Chocolate Brown** (#5C3D2E) — Primary brand color, logo background
+- **Warm Coffee/Caramel Brown** (#8B6544) — Dominant throughout
+- **Warm Amber/Golden** (#C9994A) — Cozy golden glow from lighting
+- **Cream/Beige** (#F0E6D6) — Packaging, plates, text overlays
+- **White** (#FFFFFF) — Logo script, text accents
+- **Deep Burgundy/Maroon** (#7B2D3B) — Subtle accent color
 
-Map integration planned with Leaflet + OpenStreetMap (no API key needed).
+Overall vibe: Dark and moody with warm, intimate lighting — "cozy chocolate café in winter" aesthetic.
+
+## Map Integration
+
+Planned with Leaflet + OpenStreetMap (no API key needed).
