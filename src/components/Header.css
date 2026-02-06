@@ -28,9 +28,16 @@
   display: flex;
   align-items: center;
   height: 40px;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-normal);
   position: relative;
   z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header--scrolled .header__logo {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .header__logo:hover {
