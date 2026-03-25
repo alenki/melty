@@ -19,8 +19,7 @@
 
   /* Spacing */
   --section-padding: clamp(3rem, 8vw, 6rem);
-  --container-width: 1200px;
-  --container-padding: clamp(1rem, 4vw, 2rem);
+  --container-padding: clamp(1.5rem, 6vw, 5rem);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -124,8 +123,6 @@ button {
 /* Utility Classes */
 .container {
   width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
 }

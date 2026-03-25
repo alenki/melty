@@ -58,6 +58,7 @@
   }
 }
 
+
 @media (max-width: 480px) {
   .menu-section__grid {
     grid-template-columns: 1fr;

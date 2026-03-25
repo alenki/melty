@@ -12,7 +12,7 @@
 @media (min-width: 768px) {
   .about__content {
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: clamp(3rem, 6vw, 6rem);
   }
 }
 
@@ -24,7 +24,7 @@
 
 .about__image-frame {
   position: relative;
-  width: 360px;
+  width: min(400px, 100%);
   aspect-ratio: 1 / 1;
   padding: 1.5rem;
   background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream-deep) 100%);
@@ -63,7 +63,7 @@
 
 /* Text */
 .about__text {
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .about__header {

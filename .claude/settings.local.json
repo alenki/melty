@@ -9,7 +9,12 @@
       "mcp__playwright__browser_click",
       "mcp__playwright__browser_evaluate",
       "mcp__playwright__browser_run_code",
-      "mcp__playwright__browser_close"
+      "mcp__playwright__browser_close",
+      "WebFetch(domain:balancecoffee.netlify.app)",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(npm run:*)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_press_key"
     ]
   }
 }
