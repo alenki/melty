@@ -1,9 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,27 +30,40 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const scrollToSection = useCallback((id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      setIsMobileMenuOpen(false);
-      // Small delay to allow menu close animation
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+    setIsMobileMenuOpen(false);
+    if (isHomePage) {
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      navigate(`/#${id}`);
     }
-  }, []);
+  }, [isHomePage, navigate]);
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    scrollToSection('hero');
+    if (isHomePage) {
+      const hero = document.getElementById('hero');
+      if (hero) hero.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
   };
 
+  // On non-home pages, always show the solid header background
+  const showBg = isScrolled || !isHomePage;
+  // On non-home pages, logo is always visible
+  const logoAlwaysVisible = !isHomePage;
+
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${showBg ? 'header--scrolled' : ''}`}>
       <div className="header__container container">
         <a
-          href="#hero"
-          className="header__logo"
+          href="/"
+          className={`header__logo ${logoAlwaysVisible ? 'header__logo--always' : ''}`}
           onClick={handleLogoClick}
           aria-label="На главную"
         >
@@ -57,13 +74,14 @@ export default function Header() {
           className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`}
           aria-hidden={!isMobileMenuOpen}
         >
-          <button
-            className="header__nav-link"
-            onClick={() => scrollToSection('menu')}
+          <Link
+            to="/menu"
+            className={`header__nav-link ${location.pathname === '/menu' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
             Меню
-          </button>
+          </Link>
           <button
             className="header__nav-link"
             onClick={() => scrollToSection('about')}

@@ -14,7 +14,12 @@
       "mcp__playwright__browser_take_screenshot",
       "Bash(npm run:*)",
       "mcp__playwright__browser_resize",
-      "mcp__playwright__browser_press_key"
+      "mcp__playwright__browser_press_key",
+      "Bash(npx tsc:*)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(curl -s http://localhost:5173/menu)",
+      "Bash(bash \"C:\\\\Users\\\\omarh\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.5\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\")"
     ]
   }
 }

@@ -40,6 +40,12 @@
   pointer-events: auto;
 }
 
+/* On non-home pages, logo is always visible */
+.header__logo--always {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .header__logo:hover {
   transform: scale(1.05);
   color: inherit;
@@ -68,6 +74,7 @@
   position: relative;
   padding: 0.5rem 0;
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .header__nav-link::after {
@@ -86,6 +93,15 @@
 }
 
 .header__nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active nav link (current route) */
+.header__nav-link--active {
+  color: var(--orange);
+}
+
+.header__nav-link--active::after {
   width: 100%;
 }
 

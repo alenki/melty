@@ -1,0 +1,136 @@
+<h2>Menu Hero Layout — How should categories appear?</h2>
+<p class="subtitle">Full-screen hero with cream background, organic curves & floating dots (like home page). The question: how do you navigate to categories?</p>
+
+<div class="cards">
+  <!-- Option A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: linear-gradient(175deg, #F8F3ED, #EDE5DA); padding: 20px; min-height: 320px; position: relative; overflow: hidden; font-family: Georgia, serif;">
+        <!-- Decorative curves (simplified) -->
+        <svg style="position:absolute;left:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 50 80 20 150C-10 220 10 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <svg style="position:absolute;right:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 10 80 40 150C70 220 50 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <!-- Dots -->
+        <div style="position:absolute;top:25px;left:35%;width:10px;height:10px;border-radius:50%;background:#E85A24;opacity:0.18"></div>
+        <div style="position:absolute;bottom:40px;right:30%;width:14px;height:14px;border-radius:50%;background:#8B6347;opacity:0.15"></div>
+
+        <div style="text-align:center; padding-top:30px;">
+          <span style="font-size:9px;text-transform:uppercase;letter-spacing:3px;color:#8B6544;font-family:sans-serif;">96 позиций</span>
+          <h2 style="font-size:36px;color:#5C3D2E;margin:8px 0 4px;font-weight:700;">Меню</h2>
+          <div style="width:30px;height:1px;background:#8B6544;margin:6px auto;opacity:0.4"></div>
+          <p style="font-size:11px;color:#8B6544;font-style:italic;margin-bottom:20px;">Авторские десерты и блюда ручной работы</p>
+
+          <!-- Category pills in rows -->
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:320px;margin:0 auto;">
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;cursor:pointer;">Melty Десерты</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Шоколадные</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Крепы</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Вафли</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Завтраки</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Салаты</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Кофе</span>
+            <span style="padding:5px 10px;border:1px solid rgba(92,61,46,0.2);border-radius:20px;font-size:8px;color:#5C3D2E;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Напитки</span>
+          </div>
+
+          <div style="margin-top:16px;font-size:9px;color:#8B6544;opacity:0.6;">↓ или листайте вниз</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Category Pills Cloud</h3>
+      <p>Title + subtitle centered, with clickable category pills/chips arranged below. Clean, elegant, all categories visible at once. Click to jump, or scroll down.</p>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: linear-gradient(175deg, #F8F3ED, #EDE5DA); padding: 20px; min-height: 320px; position: relative; overflow: hidden; font-family: Georgia, serif;">
+        <!-- Decorative curves -->
+        <svg style="position:absolute;left:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 50 80 20 150C-10 220 10 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <svg style="position:absolute;right:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 10 80 40 150C70 220 50 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <div style="position:absolute;top:20px;right:28%;width:10px;height:10px;border-radius:50%;background:#E85A24;opacity:0.18"></div>
+        <div style="position:absolute;bottom:50px;left:25%;width:12px;height:12px;border-radius:50%;background:#8B6347;opacity:0.15"></div>
+
+        <div style="text-align:center; padding-top:20px;">
+          <span style="font-size:9px;text-transform:uppercase;letter-spacing:3px;color:#8B6544;font-family:sans-serif;">96 позиций</span>
+          <h2 style="font-size:36px;color:#5C3D2E;margin:8px 0 4px;font-weight:700;">Меню</h2>
+          <div style="width:30px;height:1px;background:#8B6544;margin:6px auto;opacity:0.4"></div>
+          <p style="font-size:11px;color:#8B6544;font-style:italic;margin-bottom:14px;">Авторские десерты и блюда ручной работы</p>
+
+          <!-- Two-column list -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;max-width:280px;margin:0 auto;text-align:left;">
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Десерты</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Салаты</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Шоколадные</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Супы</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Крепы</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Основные</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Вафли</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Кофе</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(92,61,46,0.08);font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Завтраки</a>
+            <a style="font-size:9px;color:#5C3D2E;text-decoration:none;padding:4px 0;font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;">Напитки</a>
+          </div>
+
+          <div style="margin-top:14px;font-size:9px;color:#8B6544;opacity:0.6;">↓ или листайте вниз</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Elegant Two-Column List</h3>
+      <p>Categories presented as a refined, menu-style two-column list below the title. More classic/upscale restaurant feel. Subtle dividers between items.</p>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: linear-gradient(175deg, #F8F3ED, #EDE5DA); padding: 20px; min-height: 320px; position: relative; overflow: hidden; font-family: Georgia, serif;">
+        <!-- Decorative curves -->
+        <svg style="position:absolute;left:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 50 80 20 150C-10 220 10 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <svg style="position:absolute;right:5%;top:0;height:100%;width:60px;opacity:0.12" viewBox="0 0 60 400"><path d="M30 0C30 0 10 80 40 150C70 220 50 300 30 400" stroke="#4A2C1A" stroke-width="2" fill="none"/></svg>
+        <div style="position:absolute;top:30px;left:40%;width:10px;height:10px;border-radius:50%;background:#E85A24;opacity:0.18"></div>
+
+        <div style="text-align:center; padding-top:12px;">
+          <span style="font-size:9px;text-transform:uppercase;letter-spacing:3px;color:#8B6544;font-family:sans-serif;">96 позиций</span>
+          <h2 style="font-size:32px;color:#5C3D2E;margin:6px 0 4px;font-weight:700;">Меню</h2>
+          <div style="width:30px;height:1px;background:#8B6544;margin:4px auto;opacity:0.4"></div>
+          <p style="font-size:10px;color:#8B6544;font-style:italic;margin-bottom:12px;">Авторские десерты и блюда ручной работы</p>
+
+          <!-- Category cards grid -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:320px;margin:0 auto;">
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;cursor:pointer;">
+              <div style="font-size:16px;margin-bottom:3px;">🍫</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Десерты</div>
+            </div>
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;">
+              <div style="font-size:16px;margin-bottom:3px;">🥐</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Вафли</div>
+            </div>
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;">
+              <div style="font-size:16px;margin-bottom:3px;">🥞</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Крепы</div>
+            </div>
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;">
+              <div style="font-size:16px;margin-bottom:3px;">🍳</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Завтраки</div>
+            </div>
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;">
+              <div style="font-size:16px;margin-bottom:3px;">☕</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Кофе</div>
+            </div>
+            <div style="background:rgba(92,61,46,0.04);border:1px solid rgba(92,61,46,0.1);border-radius:8px;padding:10px 6px;">
+              <div style="font-size:16px;margin-bottom:3px;">🥗</div>
+              <div style="font-size:7px;color:#5C3D2E;text-transform:uppercase;letter-spacing:0.5px;font-family:sans-serif;">Салаты</div>
+            </div>
+          </div>
+
+          <div style="margin-top:10px;font-size:9px;color:#8B6544;opacity:0.6;">↓ или листайте вниз</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Icon Category Cards</h3>
+      <p>Small category cards in a grid, each with an icon and label. More interactive feel — like a visual table of contents. Tap to jump to that section.</p>
+    </div>
+  </div>
+</div>

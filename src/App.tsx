@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
-import { Header, Hero, MenuSection, About, Location, Footer } from './components';
+import { Header, Footer } from './components';
+import HomePage from './pages/HomePage';
+import MenuPage from './pages/MenuPage';
 import './App.css';
 
 // Expose Lenis instance globally for modal scroll lock
@@ -8,6 +11,18 @@ declare global {
   interface Window {
     lenis?: Lenis;
   }
+}
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    // Don't scroll to top if navigating to a hash (e.g. /#about)
+    if (!hash) {
+      window.scrollTo(0, 0);
+      window.lenis?.scrollTo(0, { immediate: true });
+    }
+  }, [pathname, hash]);
+  return null;
 }
 
 function App() {
@@ -33,15 +48,17 @@ function App() {
       window.lenis = undefined;
     };
   }, []);
+
   return (
     <>
       <div className="noise-overlay" aria-hidden="true"></div>
+      <ScrollToTop />
       <Header />
       <main>
-        <Hero />
-        <MenuSection />
-        <About />
-        <Location />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/menu" element={<MenuPage />} />
+        </Routes>
       </main>
       <Footer />
     </>
