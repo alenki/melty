@@ -1,5 +1,5 @@
 .location {
-  background-color: var(--cream);
+  background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
 }
 
 .location__header {
@@ -32,6 +32,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
