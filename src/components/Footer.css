@@ -6,13 +6,19 @@
 .footer {
   position: relative;
   margin-top: auto;
-  background: var(--cream-deep, var(--cream, #F8F3ED));
+  background: var(--cream, #F8F3ED);
   --footer-brown: #3D251A;
   --footer-brown-light: #4A2C1A;
   --footer-accent: #E85A24;
   --footer-cream: #F8F3ED;
   --footer-latte: #C4A98B;
   --footer-gold: #D4A574;
+}
+
+/* Feedback page ends with cream-deep gradient — match it */
+main:has(.feedback-page) ~ .footer,
+main:has(.feedback-page) ~ .footer .footer__wave {
+  background: var(--cream-deep, #EDE5DA);
 }
 
 /* ==========================================================================
@@ -22,7 +28,7 @@
 
 .footer__wave {
   position: relative;
-  background: var(--cream-deep, var(--cream, #F8F3ED));
+  background: var(--cream, #F8F3ED);
   line-height: 0;
   overflow: hidden;
 }
