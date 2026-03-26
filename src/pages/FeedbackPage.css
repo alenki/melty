@@ -320,15 +320,13 @@
 /* ── Success Overlay ── */
 
 .feedback-page__success {
-  position: fixed;
-  inset: 0;
-  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 16px;
-  background: rgba(248, 243, 237, 0.97);
+  min-height: 60vh;
+  padding: clamp(6rem, 15vw, 10rem) 0 clamp(3rem, 8vw, 5rem);
   animation: fpFadeIn 0.4s ease forwards;
 }
 

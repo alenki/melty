@@ -22,16 +22,11 @@ export default function FeedbackPage() {
 
   const displayedRating = hoveredStar || rating;
 
-  // Lock scroll when success overlay is shown
+  // Scroll to top when success is shown
   useEffect(() => {
     if (showSuccess) {
-      window.lenis?.stop();
-    } else {
-      window.lenis?.start();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    return () => {
-      window.lenis?.start();
-    };
   }, [showSuccess]);
 
   // Auto-dismiss error toast
@@ -141,22 +136,6 @@ export default function FeedbackPage() {
     }
   }, [rating, message, contact, spawnConfetti]);
 
-  if (showSuccess) {
-    return (
-      <div className="feedback-page__success" role="alert">
-        <svg className="feedback-page__success-check" viewBox="0 0 80 80" aria-hidden="true">
-          <circle cx="40" cy="40" r="36" />
-          <path d="M24 42 L34 52 L56 30" />
-        </svg>
-        <div className="feedback-page__success-title">Спасибо за ваш отзыв!</div>
-        <div className="feedback-page__success-subtitle">Мы ценим каждое мнение 🤎</div>
-        <Link to="/" className="feedback-page__success-link">
-          Вернуться на главную
-        </Link>
-      </div>
-    );
-  }
-
   return (
     <div className="feedback-page">
       <section className="feedback-page__section">
@@ -165,6 +144,20 @@ export default function FeedbackPage() {
         <div className="feedback-page__dot feedback-page__dot--2" aria-hidden="true"></div>
         <div className="feedback-page__dot feedback-page__dot--3" aria-hidden="true"></div>
 
+        {showSuccess ? (
+          <div className="feedback-page__success" role="alert">
+            <svg className="feedback-page__success-check" viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="40" r="36" />
+              <path d="M24 42 L34 52 L56 30" />
+            </svg>
+            <div className="feedback-page__success-title">Спасибо за ваш отзыв!</div>
+            <div className="feedback-page__success-subtitle">Мы ценим каждое мнение 🤎</div>
+            <Link to="/" className="feedback-page__success-link">
+              Вернуться на главную
+            </Link>
+          </div>
+        ) : (
+        <>
         <div className="feedback-page__header">
           <h1 className="feedback-page__title">Оставьте отзыв</h1>
           <p className="feedback-page__subtitle">Ваше мнение делает нас лучше</p>
@@ -262,6 +255,8 @@ export default function FeedbackPage() {
             )}
           </button>
         </form>
+        </>
+        )}
       </section>
 
 
