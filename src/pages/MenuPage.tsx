@@ -45,6 +45,7 @@ export default function MenuPage() {
   const [navShadow, setNavShadow] = useState(false);
 
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const navRef = useRef<HTMLElement>(null);
   const navTrackRef = useRef<HTMLDivElement>(null);
   const isManualScroll = useRef(false);
 
@@ -117,15 +118,49 @@ export default function MenuPage() {
     }
   }, [activeCategory]);
 
-  // Back-to-top visibility + nav shadow
+  // Detect nav overflow and toggle fade hint classes
+  useEffect(() => {
+    const track = navTrackRef.current;
+    const nav = navRef.current;
+    if (!track || !nav) return;
+
+    const updateOverflow = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = track;
+      const threshold = 4;
+      nav.classList.toggle('menu-page__nav--overflow-left', scrollLeft > threshold);
+      nav.classList.toggle('menu-page__nav--overflow-right', scrollLeft + clientWidth < scrollWidth - threshold);
+    };
+
+    updateOverflow();
+    track.addEventListener('scroll', updateOverflow, { passive: true });
+    window.addEventListener('resize', updateOverflow);
+    return () => {
+      track.removeEventListener('scroll', updateOverflow);
+      window.removeEventListener('resize', updateOverflow);
+    };
+  }, []);
+
+  // Back-to-top visibility + nav shadow (only when truly sticky)
   useEffect(() => {
     const handleScroll = () => {
       setShowBackTop(window.scrollY > 800);
-      setNavShadow(window.scrollY > 400);
+
+      const nav = navRef.current;
+      if (nav) {
+        const stickyTop = parseFloat(getComputedStyle(nav).top);
+        const navTop = nav.getBoundingClientRect().top;
+        setNavShadow(navTop <= stickyTop + 1);
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Toggle body class so header can swap styles when menu nav is stuck
+  useEffect(() => {
+    document.body.classList.toggle('menu-nav-stuck', navShadow);
+    return () => document.body.classList.remove('menu-nav-stuck');
+  }, [navShadow]);
 
   const scrollToCategory = useCallback((cat: MenuCategory) => {
     const el = categoryRefs.current.get(cat);
@@ -241,6 +276,7 @@ export default function MenuPage() {
 
       {/* ===== STICKY CATEGORY NAV ===== */}
       <nav
+        ref={navRef}
         className={`menu-page__nav ${navShadow ? 'menu-page__nav--shadowed' : ''}`}
       >
         <div className="menu-page__nav-track" ref={navTrackRef}>
