@@ -338,7 +338,7 @@
 .menu-page__nav-track {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
   padding: 0 var(--container-padding);
   overflow-x: auto;
   scrollbar-width: none;
