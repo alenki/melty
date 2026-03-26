@@ -1,0 +1,111 @@
+<h2>Menu Nav on Small Screens</h2>
+<p class="subtitle">The category bar overflows at ~952px and it's not obvious it scrolls. Which approach do you prefer?</p>
+
+<div class="cards">
+
+  <!-- Approach A: Arrow Buttons -->
+  <div class="card" data-choice="arrows" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; overflow: hidden;">
+      <div style="background: #F8F3ED; padding: 16px 0; position: relative; font-family: system-ui;">
+        <!-- Left arrow -->
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 36px; background: linear-gradient(to right, #F8F3ED 60%, transparent); display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(92, 61, 46, 0.08); display: flex; align-items: center; justify-content: center; color: #8B6544; font-size: 14px;">‹</div>
+        </div>
+        <!-- Nav items -->
+        <div style="display: flex; gap: 0; align-items: center; padding: 0 40px; overflow: hidden;">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 8px 12px; opacity: 0.5;">КРЕПЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #5C3D2E; white-space: nowrap; padding: 8px 12px; border-bottom: 2px solid #C9994A;">ВАФЛИ И КРУАССАНЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 8px 12px;">ЗАВТРАКИ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 8px 12px;">САЛАТЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 8px 12px; opacity: 0.4;">СУ...</span>
+        </div>
+        <!-- Right arrow -->
+        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 36px; background: linear-gradient(to left, #F8F3ED 60%, transparent); display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(92, 61, 46, 0.08); display: flex; align-items: center; justify-content: center; color: #8B6544; font-size: 14px;">›</div>
+        </div>
+        <!-- Bottom border -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #D4C4B5;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Arrow Buttons + Enhanced Fade</h3>
+      <p>Add clickable arrow buttons on the edges when content overflows. Wider, more visible fade gradients. Clear visual signal that there's more content.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Immediately obvious there's more content</li><li>Clickable — works for non-touch users too</li><li>Minimal layout change</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Arrows take horizontal space</li><li>Extra JS for click-to-scroll</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach B: Two-Row Wrap -->
+  <div class="card" data-choice="wrap" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; overflow: hidden;">
+      <div style="background: #F8F3ED; padding: 12px 16px; font-family: system-ui;">
+        <!-- Row 1 -->
+        <div style="display: flex; gap: 0; align-items: center; justify-content: center; flex-wrap: wrap; row-gap: 2px;">
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">КРЕПЫ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #5C3D2E; white-space: nowrap; padding: 6px 10px; border-bottom: 2px solid #C9994A;">ВАФЛИ И КРУАССАНЫ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">ЗАВТРАКИ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">САЛАТЫ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">СУПЫ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">ОСНОВНЫЕ БЛЮДА</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">ГАРНИРЫ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">КЛАССИЧЕСКИЙ КОФЕ</span>
+          <span style="width: 1px; height: 10px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 6px 10px;">АВТОРСКИЙ КОФЕ</span>
+        </div>
+        <!-- Bottom border -->
+        <div style="margin-top: 4px; height: 1px; background: #D4C4B5;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Multi-Row Wrap</h3>
+      <p>Allow categories to wrap onto multiple rows on smaller screens. All categories visible at once — no scrolling needed.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>All categories visible at once</li><li>No scrolling interaction needed</li><li>Pure CSS solution</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Takes more vertical space (sticky nav grows taller)</li><li>Can look cluttered with many categories</li><li>Active underline less clear in wrapped layout</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach C: Pill/Chip Carousel -->
+  <div class="card" data-choice="pills" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; overflow: hidden;">
+      <div style="background: #F8F3ED; padding: 12px 16px; font-family: system-ui;">
+        <div style="display: flex; gap: 8px; align-items: center; overflow: hidden;">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #8B6544; white-space: nowrap; padding: 6px 14px; border: 1.5px solid #D4C4B5; border-radius: 20px; flex-shrink: 0;">КРЕПЫ</span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #F8F3ED; white-space: nowrap; padding: 6px 14px; background: #5C3D2E; border: 1.5px solid #5C3D2E; border-radius: 20px; flex-shrink: 0;">ВАФЛИ И КРУАССАНЫ</span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #8B6544; white-space: nowrap; padding: 6px 14px; border: 1.5px solid #D4C4B5; border-radius: 20px; flex-shrink: 0;">ЗАВТРАКИ</span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #8B6544; white-space: nowrap; padding: 6px 14px; border: 1.5px solid #D4C4B5; border-radius: 20px; flex-shrink: 0; opacity: 0.4;">САЛА...</span>
+        </div>
+        <!-- Scroll indicator dots -->
+        <div style="display: flex; justify-content: center; gap: 4px; margin-top: 8px;">
+          <span style="width: 16px; height: 3px; border-radius: 2px; background: #8B6544;"></span>
+          <span style="width: 6px; height: 3px; border-radius: 2px; background: #D4C4B5;"></span>
+          <span style="width: 6px; height: 3px; border-radius: 2px; background: #D4C4B5;"></span>
+        </div>
+        <div style="margin-top: 8px; height: 1px; background: #D4C4B5;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Pill Chips + Scroll Indicator</h3>
+      <p>Restyle categories as pill-shaped chips (common mobile pattern). Add a small scroll progress bar or dot indicator below to signal scrollability.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Familiar mobile pattern (users expect to swipe pills)</li><li>Scroll indicator makes overflow obvious</li><li>Active state very clear (filled pill)</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Bigger visual change from current design</li><li>Pills take slightly more horizontal space</li><li>Progress indicator adds a row of visual noise</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>

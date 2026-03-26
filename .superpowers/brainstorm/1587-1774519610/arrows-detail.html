@@ -1,0 +1,93 @@
+<h2>Arrow Buttons — Refined Design</h2>
+<p class="subtitle">Here's how the arrow navigation will work at different states</p>
+
+<div class="section">
+  <h3>Initial State (page load, scrolled to start)</h3>
+  <p>Right arrow visible, left arrow hidden. The right fade + arrow signal "more categories to the right".</p>
+  <div class="mockup">
+    <div class="mockup-header">952px viewport — initial load</div>
+    <div class="mockup-body" style="padding: 0;">
+      <div style="background: #F8F3ED; padding: 0; position: relative; font-family: system-ui; overflow: hidden;">
+        <!-- Nav items -->
+        <div style="display: flex; gap: 0; align-items: center; padding: 0 16px; overflow: hidden;">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #5C3D2E; white-space: nowrap; padding: 12px 12px; border-bottom: 2px solid #C9994A;">КРЕПЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">ВАФЛИ И КРУАССАНЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">ЗАВТРАКИ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">САЛАТЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">СУПЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px; opacity: 0.3;">ОСНОВНЫ...</span>
+        </div>
+        <!-- Right arrow zone -->
+        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 48px; background: linear-gradient(to left, #F8F3ED 40%, transparent); display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(92, 61, 46, 0.07); border: 1px solid rgba(212, 196, 181, 0.5); display: flex; align-items: center; justify-content: center; color: #8B6544; font-size: 16px; cursor: pointer; transition: all 0.2s;">›</div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #D4C4B5;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Scrolled Midway</h3>
+  <p>Both arrows visible — user can scroll in either direction.</p>
+  <div class="mockup">
+    <div class="mockup-header">952px viewport — scrolled partway</div>
+    <div class="mockup-body" style="padding: 0;">
+      <div style="background: #F8F3ED; padding: 0; position: relative; font-family: system-ui; overflow: hidden;">
+        <!-- Left arrow zone -->
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 48px; background: linear-gradient(to right, #F8F3ED 40%, transparent); display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(92, 61, 46, 0.07); border: 1px solid rgba(212, 196, 181, 0.5); display: flex; align-items: center; justify-content: center; color: #8B6544; font-size: 16px; cursor: pointer;">‹</div>
+        </div>
+        <!-- Nav items (showing middle portion) -->
+        <div style="display: flex; gap: 0; align-items: center; padding: 0 52px; overflow: hidden;">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px; opacity: 0.3;">...ТРАКИ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">САЛАТЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #5C3D2E; white-space: nowrap; padding: 12px 12px; border-bottom: 2px solid #C9994A;">СУПЫ</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px;">ОСНОВНЫЕ БЛЮДА</span>
+          <span style="width: 1px; height: 12px; background: #D4C4B5; flex-shrink: 0;"></span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: #8B6544; white-space: nowrap; padding: 12px 12px; opacity: 0.3;">ГАРН...</span>
+        </div>
+        <!-- Right arrow zone -->
+        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 48px; background: linear-gradient(to left, #F8F3ED 40%, transparent); display: flex; align-items: center; justify-content: center; z-index: 2;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(92, 61, 46, 0.07); border: 1px solid rgba(212, 196, 181, 0.5); display: flex; align-items: center; justify-content: center; color: #8B6544; font-size: 16px; cursor: pointer;">›</div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #D4C4B5;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Design Details</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div style="background: rgba(92,61,46,0.04); border-radius: 8px; padding: 16px;">
+      <h4 style="margin: 0 0 8px; font-size: 13px; color: #5C3D2E;">Arrow Buttons</h4>
+      <ul style="margin: 0; padding-left: 16px; font-size: 12px; color: #8B6544; line-height: 1.8;">
+        <li>28×28px circular, subtle background</li>
+        <li>Positioned inside wider 48px fade zone</li>
+        <li>Appear/disappear based on scroll position</li>
+        <li>Click scrolls ~200px with smooth animation</li>
+        <li>Hover: slightly darker background</li>
+        <li>Hidden on mobile (&lt;480px) — touch swipe is natural there</li>
+      </ul>
+    </div>
+    <div style="background: rgba(92,61,46,0.04); border-radius: 8px; padding: 16px;">
+      <h4 style="margin: 0 0 8px; font-size: 13px; color: #5C3D2E;">Fade Gradients</h4>
+      <ul style="margin: 0; padding-left: 16px; font-size: 12px; color: #8B6544; line-height: 1.8;">
+        <li>Widened from 32px → 48px</li>
+        <li>Gradient: solid 40% → transparent</li>
+        <li>Covers partially-visible text (more obvious cutoff)</li>
+        <li>Existing overflow detection logic reused</li>
+        <li>Smooth opacity transition preserved</li>
+      </ul>
+    </div>
+  </div>
+</div>

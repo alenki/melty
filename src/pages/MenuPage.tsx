@@ -104,6 +104,7 @@ export default function MenuPage() {
     return () => observer.disconnect();
   }, []);
 
+
   // Scroll active nav button into view
   useEffect(() => {
     const track = navTrackRef.current;

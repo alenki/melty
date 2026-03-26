@@ -359,7 +359,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 32px;
+  width: 48px;
   z-index: 2;
   pointer-events: none;
   opacity: 0;
@@ -368,12 +368,12 @@
 
 .menu-page__nav::before {
   left: 0;
-  background: linear-gradient(to right, var(--cream), transparent);
+  background: linear-gradient(to right, var(--cream) 40%, transparent);
 }
 
 .menu-page__nav::after {
   right: 0;
-  background: linear-gradient(to left, var(--cream), transparent);
+  background: linear-gradient(to left, var(--cream) 40%, transparent);
 }
 
 .menu-page__nav--overflow-left::before {
@@ -383,6 +383,7 @@
 .menu-page__nav--overflow-right::after {
   opacity: 1;
 }
+
 
 .menu-page__nav-sep {
   width: 1px;
@@ -790,7 +791,7 @@
   }
 
   .menu-page__nav-btn {
-    padding: 0.75rem 0.75rem;
+    padding: 1.23rem 0.75rem;
     font-size: 0.625rem;
   }
 
