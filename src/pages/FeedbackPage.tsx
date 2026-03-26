@@ -214,6 +214,21 @@ export default function FeedbackPage() {
             Пожалуйста, выберите оценку
           </div>
 
+          {/* Contact Info */}
+          <div className="feedback-page__field">
+            <label className="feedback-page__label" htmlFor="feedback-contact">
+              Контакт <span className="feedback-page__optional">(необязательно)</span>
+            </label>
+            <input
+              id="feedback-contact"
+              type="text"
+              className="feedback-page__input"
+              placeholder="Телефон, Telegram или email"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            />
+          </div>
+
           {/* Textarea */}
           <div className="feedback-page__field">
             <label className="feedback-page__label" htmlFor="feedback-message">
@@ -232,21 +247,6 @@ export default function FeedbackPage() {
             <div className={`feedback-page__hint ${messageHint ? 'feedback-page__hint--visible' : ''}`}>
               Пожалуйста, напишите отзыв
             </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="feedback-page__field">
-            <label className="feedback-page__label" htmlFor="feedback-contact">
-              Контакт <span className="feedback-page__optional">(необязательно)</span>
-            </label>
-            <input
-              id="feedback-contact"
-              type="text"
-              className="feedback-page__input"
-              placeholder="Телефон, Telegram или email"
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-            />
           </div>
 
           {/* Submit */}
