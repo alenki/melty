@@ -55,7 +55,6 @@
 }
 
 .header__logo:hover {
-  transform: scale(1.05);
   color: inherit;
 }
 
@@ -64,6 +63,7 @@
   width: auto;
   border-radius: var(--radius-sm);
   display: block;
+  margin-top: 4px;
 }
 
 .header__nav {

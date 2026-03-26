@@ -80,7 +80,6 @@ main:has(.feedback-page) ~ .footer .footer__wave {
 }
 
 .footer__logo-link:hover {
-  transform: translateY(-2px);
 }
 
 .footer__logo-img {
