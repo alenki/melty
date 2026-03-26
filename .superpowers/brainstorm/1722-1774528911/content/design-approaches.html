@@ -1,0 +1,102 @@
+<h2>Feedback Page — Design Direction</h2>
+<p class="subtitle">Which approach best captures the Melty spirit? Click to select.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #3D251A 0%, #5C3D2E 50%, #8B6544 100%); padding: 30px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; position: relative; overflow: hidden;">
+      <!-- Melting chocolate drip top -->
+      <svg width="100%" height="40" viewBox="0 0 400 40" style="position:absolute;top:0;left:0;" preserveAspectRatio="none">
+        <path d="M0,0 L400,0 L400,10 Q380,10 370,20 Q360,35 340,15 Q330,8 310,10 Q290,12 280,25 Q270,40 250,18 Q240,10 220,10 Q200,10 190,22 Q180,35 160,15 Q150,8 130,10 Q110,12 100,28 Q90,40 70,15 Q60,8 40,10 Q20,12 10,20 Q5,25 0,10 Z" fill="#F8F3ED" opacity="0.15"/>
+      </svg>
+      <!-- Star rating mockup -->
+      <div style="display:flex;gap:8px;margin-top:20px;">
+        <span style="font-size:32px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))">★</span>
+        <span style="font-size:32px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))">★</span>
+        <span style="font-size:32px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))">★</span>
+        <span style="font-size:32px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))">★</span>
+        <span style="font-size:32px;opacity:0.4">★</span>
+      </div>
+      <!-- Textarea mockup -->
+      <div style="width:80%;height:60px;border-radius:12px;background:rgba(248,243,237,0.1);border:1px solid rgba(248,243,237,0.2);backdrop-filter:blur(10px);"></div>
+      <!-- Contact field mockup -->
+      <div style="width:60%;height:30px;border-radius:8px;background:rgba(248,243,237,0.08);border:1px solid rgba(248,243,237,0.15);"></div>
+      <!-- Submit button mockup -->
+      <div style="padding:10px 40px;border-radius:20px;background:linear-gradient(135deg,#C9994A,#E85A24);color:white;font-family:serif;font-size:14px;letter-spacing:2px;">ОТПРАВИТЬ</div>
+    </div>
+    <div class="card-body">
+      <h3>A. "Chocolate Warmth" — Vertical Flow</h3>
+      <p>A single centered column on a deep chocolate gradient background with melting chocolate drip decoration at the top. Star rating with golden hover glow, frosted-glass textarea, optional contact field, and a warm amber submit button. The form feels like writing on parchment paper inside the cafe. Minimal, elegant, deeply warm.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>Most cohesive with existing site aesthetic</li><li>Focused — nothing competes for attention</li><li>Satisfying vertical rhythm</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Could feel simple if not carefully crafted</li><li>Less visual drama than alternatives</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(160deg, #F8F3ED 0%, #EDE5DA 40%, #D4C4B5 100%); padding: 30px; min-height: 280px; display: flex; align-items: center; justify-content: center; gap: 20px; position: relative; overflow: hidden;">
+      <!-- Left panel: decorative -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#5C3D2E,#8B6544);display:flex;align-items:center;justify-content:center;font-size:28px;color:#F8F3ED;font-family:serif;font-style:italic;">M</div>
+        <div style="font-family:serif;color:#5C3D2E;font-size:13px;text-align:center;letter-spacing:1px;">Ваш отзыв<br>важен для нас</div>
+        <div style="display:flex;gap:4px;margin-top:8px;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#C9994A;"></div>
+          <div style="width:6px;height:6px;border-radius:50%;background:#8B6544;"></div>
+          <div style="width:6px;height:6px;border-radius:50%;background:#C9994A;"></div>
+        </div>
+      </div>
+      <!-- Right panel: form -->
+      <div style="flex:1.5;background:white;border-radius:16px;padding:20px;box-shadow:0 8px 32px rgba(74,44,26,0.12);">
+        <div style="display:flex;gap:4px;margin-bottom:12px;">
+          <span style="font-size:20px;color:#C9994A;">★★★★</span><span style="font-size:20px;color:#D4C4B5;">★</span>
+        </div>
+        <div style="width:100%;height:40px;border-radius:8px;background:#F8F3ED;margin-bottom:8px;"></div>
+        <div style="width:60%;height:24px;border-radius:6px;background:#F8F3ED;margin-bottom:12px;"></div>
+        <div style="padding:6px 20px;border-radius:16px;background:#5C3D2E;width:fit-content;height:24px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. "Cafe Table" — Split Layout</h3>
+      <p>A two-panel design inspired by sitting at a cafe table. Left side has decorative branding (logo, an inviting message in Russian, decorative dots). Right side is a pristine white card with the form — stars, textarea, contact, submit. The cream/latte background with the white card creates depth. Like opening a menu to write your thoughts.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>More visual interest and composition</li><li>Clear separation of brand storytelling and form</li><li>The white card "pops" against warm background</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Split layout may feel less immersive</li><li>More complex responsive behavior on mobile</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: radial-gradient(ellipse at 30% 20%, #5C3D2E 0%, #3D251A 40%, #2A1A10 100%); padding: 30px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; position: relative; overflow: hidden;">
+      <!-- Animated particles mockup -->
+      <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:#C9994A;top:20%;left:15%;opacity:0.6;box-shadow:0 0 6px #C9994A;"></div>
+      <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:#E85A24;top:35%;right:20%;opacity:0.4;box-shadow:0 0 4px #E85A24;"></div>
+      <div style="position:absolute;width:5px;height:5px;border-radius:50%;background:#C9994A;bottom:25%;left:25%;opacity:0.5;box-shadow:0 0 8px #C9994A;"></div>
+      <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:#F0E6D6;top:60%;right:30%;opacity:0.3;box-shadow:0 0 4px #F0E6D6;"></div>
+      <!-- Cinematic title -->
+      <div style="font-family:serif;font-size:22px;color:#F0E6D6;letter-spacing:6px;text-transform:uppercase;opacity:0.9;">ОТЗЫВ</div>
+      <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#C9994A,transparent);"></div>
+      <!-- Big interactive stars -->
+      <div style="display:flex;gap:12px;">
+        <span style="font-size:38px;color:#C9994A;text-shadow:0 0 20px rgba(201,153,74,0.5);">★</span>
+        <span style="font-size:38px;color:#C9994A;text-shadow:0 0 20px rgba(201,153,74,0.5);">★</span>
+        <span style="font-size:38px;color:#C9994A;text-shadow:0 0 20px rgba(201,153,74,0.5);">★</span>
+        <span style="font-size:38px;color:#8B6544;opacity:0.5;">★</span>
+        <span style="font-size:38px;color:#8B6544;opacity:0.3;">★</span>
+      </div>
+      <!-- Textarea with glow -->
+      <div style="width:75%;height:50px;border-radius:12px;background:rgba(248,243,237,0.05);border:1px solid rgba(201,153,74,0.3);box-shadow:0 0 15px rgba(201,153,74,0.1);"></div>
+      <!-- Submit with glow -->
+      <div style="padding:10px 50px;border-radius:24px;background:transparent;border:1px solid #C9994A;color:#C9994A;font-family:serif;font-size:12px;letter-spacing:3px;box-shadow:0 0 20px rgba(201,153,74,0.15);">ОТПРАВИТЬ</div>
+    </div>
+    <div class="card-body">
+      <h3>C. "Candlelit Evening" — Dark Cinematic</h3>
+      <p>Ultra-dark, moody atmosphere like the cafe at night. Deep chocolate-to-black gradient with floating golden particle lights (like candlelight reflections). Large cinematic star rating with amber glow effects. Form elements have subtle golden borders that glow on focus. The submit button pulses softly. Every interaction feels like touching warm light in darkness. Maximum atmosphere.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>Most visually dramatic and memorable</li><li>Matches the "dark and moody" brand aesthetic perfectly</li><li>Award-winning potential — truly distinctive</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Dark theme requires careful contrast for accessibility</li><li>May feel heavy if animations aren't well-tuned</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>

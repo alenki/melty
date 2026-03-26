@@ -216,6 +216,23 @@
   flex-shrink: 0;
 }
 
+.footer__feedback-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--footer-latte);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.footer__feedback-link:hover {
+  opacity: 1;
+  color: var(--footer-cream);
+}
+
 /* ==========================================================================
    CREDITS LINE
    ========================================================================== */

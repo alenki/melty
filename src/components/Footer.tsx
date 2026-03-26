@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
@@ -68,6 +69,9 @@ export default function Footer() {
                 </svg>
                 <span>@melty.ru</span>
               </a>
+              <Link to="/feedback" className="footer__feedback-link">
+                Оставить отзыв
+              </Link>
             </div>
           </div>
 

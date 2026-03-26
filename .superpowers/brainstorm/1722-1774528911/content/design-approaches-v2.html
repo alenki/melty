@@ -1,0 +1,109 @@
+<h2>Feedback Page — Design Direction (Revised)</h2>
+<p class="subtitle">Light, warm cream backgrounds with dark chocolate accents — matching the actual site aesthetic. Click to select.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(180deg, #F8F3ED 0%, #F5EDE3 50%, #EDE5DA 100%); padding: 30px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; position: relative; overflow: hidden;">
+      <!-- Decorative chocolate drip from top -->
+      <svg width="100%" height="50" viewBox="0 0 400 50" style="position:absolute;top:0;left:0;" preserveAspectRatio="none">
+        <path d="M0,0 L400,0 L400,8 Q380,8 370,18 Q360,32 340,12 Q330,6 310,8 Q290,10 280,22 Q270,38 250,14 Q240,8 220,8 Q200,8 190,20 Q180,32 160,12 Q150,6 130,8 Q110,10 100,25 Q90,38 70,12 Q60,6 40,8 Q20,10 10,18 Q5,22 0,8 Z" fill="#5C3D2E" opacity="0.9"/>
+      </svg>
+      <!-- Heading -->
+      <div style="font-family:serif;font-size:18px;color:#4A2C1A;letter-spacing:4px;text-transform:uppercase;margin-top:24px;">ОСТАВИТЬ ОТЗЫВ</div>
+      <div style="width:50px;height:1px;background:linear-gradient(90deg,transparent,#C9994A,transparent);"></div>
+      <!-- Star rating -->
+      <div style="display:flex;gap:10px;">
+        <span style="font-size:34px;color:#C9994A;filter:drop-shadow(0 1px 2px rgba(74,44,26,0.2));">★</span>
+        <span style="font-size:34px;color:#C9994A;filter:drop-shadow(0 1px 2px rgba(74,44,26,0.2));">★</span>
+        <span style="font-size:34px;color:#C9994A;filter:drop-shadow(0 1px 2px rgba(74,44,26,0.2));">★</span>
+        <span style="font-size:34px;color:#C9994A;filter:drop-shadow(0 1px 2px rgba(74,44,26,0.2));">★</span>
+        <span style="font-size:34px;color:#D4C4B5;">★</span>
+      </div>
+      <!-- Textarea -->
+      <div style="width:78%;height:55px;border-radius:12px;background:rgba(255,255,255,0.7);border:1.5px solid #D4C4B5;box-shadow:0 2px 8px rgba(74,44,26,0.06);"></div>
+      <!-- Contact field -->
+      <div style="width:55%;height:28px;border-radius:8px;background:rgba(255,255,255,0.6);border:1px solid #D4C4B5;"></div>
+      <!-- Submit button -->
+      <div style="padding:10px 40px;border-radius:20px;background:#4A2C1A;color:#F8F3ED;font-family:serif;font-size:13px;letter-spacing:2px;box-shadow:0 4px 12px rgba(74,44,26,0.2);">ОТПРАВИТЬ</div>
+      <!-- Decorative dots -->
+      <div style="position:absolute;bottom:15%;right:12%;width:6px;height:6px;border-radius:50%;background:#C9994A;opacity:0.4;"></div>
+      <div style="position:absolute;bottom:30%;left:8%;width:4px;height:4px;border-radius:50%;background:#E85A24;opacity:0.3;"></div>
+    </div>
+    <div class="card-body">
+      <h3>A. "Chocolate Drops" — Centered Elegance</h3>
+      <p>Cream background with melting chocolate drip decoration at the top (matching the existing About section's drip SVGs). Centered vertical form with golden star rating, white frosted inputs on cream, and a dark chocolate submit button. Floating accent dots like on the Hero. Clean, warm, cohesive with the homepage.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>Most seamless with existing site style</li><li>Reuses established decorative patterns (drips, dots)</li><li>Simple responsive behavior</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Could feel too similar to other sections</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #F8F3ED; padding: 30px; min-height: 300px; display: flex; align-items: center; justify-content: center; gap: 20px; position: relative; overflow: hidden;">
+      <!-- Left: quote/branding area -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="font-family:serif;font-size:44px;color:#C9994A;line-height:1;opacity:0.6;">"</div>
+        <div style="font-family:serif;color:#4A2C1A;font-size:12px;text-align:center;line-height:1.6;font-style:italic;max-width:120px;">Ваше мнение делает нас лучше</div>
+        <div style="display:flex;gap:6px;margin-top:4px;">
+          <div style="width:24px;height:1px;background:#D4C4B5;"></div>
+          <div style="width:5px;height:5px;border-radius:50%;background:#C9994A;margin-top:-2px;"></div>
+          <div style="width:24px;height:1px;background:#D4C4B5;"></div>
+        </div>
+      </div>
+      <!-- Right: form card -->
+      <div style="flex:1.6;background:white;border-radius:16px;padding:22px;box-shadow:0 8px 32px rgba(74,44,26,0.08);border:1px solid rgba(212,196,181,0.3);">
+        <div style="display:flex;gap:5px;margin-bottom:14px;">
+          <span style="font-size:22px;color:#C9994A;">★★★★</span><span style="font-size:22px;color:#EDE5DA;">★</span>
+        </div>
+        <div style="width:100%;height:45px;border-radius:10px;background:#F8F3ED;margin-bottom:10px;border:1px solid #EDE5DA;"></div>
+        <div style="width:60%;height:26px;border-radius:8px;background:#F8F3ED;margin-bottom:14px;border:1px solid #EDE5DA;"></div>
+        <div style="padding:8px 24px;border-radius:16px;background:#4A2C1A;width:fit-content;color:#F8F3ED;font-size:11px;letter-spacing:1px;font-family:serif;">ОТПРАВИТЬ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. "Comment Card" — Split Layout</h3>
+      <p>Cream background with a two-panel composition. Left: a large decorative quote mark, an inviting message in Russian ("Your opinion makes us better"), and an elegant divider with a golden dot. Right: a crisp white card with the form — elevated with a subtle shadow. Like picking up a real comment card at the cafe. On mobile, the quote stacks above the form.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>Visual interest through asymmetry</li><li>White card "lifts" the form above the page</li><li>Storytelling element adds warmth</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Split layout needs careful mobile handling</li><li>More visual complexity</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(170deg, #F8F3ED 0%, #F5EDE3 30%, #EDE5DA 70%, #D4C4B5 100%); padding: 30px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; position: relative; overflow: hidden;">
+      <!-- Decorative arch/frame -->
+      <div style="position:absolute;top:15px;left:50%;transform:translateX(-50%);width:75%;height:85%;border:1.5px solid rgba(139,99,71,0.15);border-radius:50% 50% 0 0;"></div>
+      <!-- Top decorative element -->
+      <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#5C3D2E,#8B6544);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(74,44,26,0.15);z-index:1;">
+        <span style="color:#F8F3ED;font-family:serif;font-style:italic;font-size:22px;">M</span>
+      </div>
+      <div style="font-family:serif;font-size:11px;color:#8B6544;letter-spacing:3px;text-transform:uppercase;z-index:1;">ВАШИ ВПЕЧАТЛЕНИЯ</div>
+      <!-- Stars in a decorative row -->
+      <div style="display:flex;gap:14px;padding:8px 20px;background:rgba(255,255,255,0.5);border-radius:24px;z-index:1;">
+        <span style="font-size:28px;color:#C9994A;">★</span>
+        <span style="font-size:28px;color:#C9994A;">★</span>
+        <span style="font-size:28px;color:#C9994A;">★</span>
+        <span style="font-size:28px;color:#D4C4B5;">★</span>
+        <span style="font-size:28px;color:#D4C4B5;">★</span>
+      </div>
+      <!-- Textarea with warm border -->
+      <div style="width:70%;height:50px;border-radius:12px;background:rgba(255,255,255,0.65);border:1.5px solid rgba(201,153,74,0.3);z-index:1;"></div>
+      <!-- Contact -->
+      <div style="width:50%;height:26px;border-radius:8px;background:rgba(255,255,255,0.5);border:1px solid rgba(201,153,74,0.2);z-index:1;"></div>
+      <!-- Submit with golden accent -->
+      <div style="padding:10px 36px;border-radius:20px;background:linear-gradient(135deg,#5C3D2E,#6B4832);color:#F0E6D6;font-family:serif;font-size:12px;letter-spacing:2px;box-shadow:0 4px 16px rgba(74,44,26,0.18);z-index:1;">ОТПРАВИТЬ ✦</div>
+    </div>
+    <div class="card-body">
+      <h3>C. "Golden Arch" — Ornamental Frame (Recommended)</h3>
+      <p>Warm cream-to-latte gradient with an elegant arch frame (like a cafe window or mirror) framing the form. Melty logo circle at the top, golden-accented star rating in a frosted pill, white-glass inputs with amber borders that warm on focus, and a chocolate-to-coffee gradient submit button. The arch creates a sense of ceremony — like writing in a guest book at an elegant establishment. Decorative but not busy.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Strengths</h4><ul><li>Distinctive architectural motif (the arch) — memorable</li><li>Perfect light-to-warm gradient progression</li><li>Ceremony without complexity — feels special</li><li>Award-winning potential through the arch framing device</li></ul></div>
+        <div class="cons"><h4>Trade-offs</h4><ul><li>Arch needs precise sizing across breakpoints</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>

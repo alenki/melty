@@ -96,6 +96,14 @@ export default function Header() {
           >
             Контакты
           </button>
+          <Link
+            to="/feedback"
+            className={`header__nav-link ${location.pathname === '/feedback' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            tabIndex={isMobileMenuOpen ? 0 : -1}
+          >
+            Отзыв
+          </Link>
         </nav>
 
         <button
