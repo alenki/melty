@@ -2,6 +2,7 @@
 
 main {
   position: relative;
+  background: var(--cream-deep, #EDE5DA);
 }
 
 /* Ensure sections have proper scroll margin for fixed header */

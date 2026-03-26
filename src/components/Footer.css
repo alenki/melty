@@ -6,6 +6,7 @@
 .footer {
   position: relative;
   margin-top: auto;
+  background: var(--cream-deep, var(--cream, #F8F3ED));
   --footer-brown: #3D251A;
   --footer-brown-light: #4A2C1A;
   --footer-accent: #E85A24;
@@ -21,7 +22,7 @@
 
 .footer__wave {
   position: relative;
-  background: linear-gradient(to bottom, var(--cream, #F8F3ED) 0%, var(--cream, #F8F3ED) 100%);
+  background: var(--cream-deep, var(--cream, #F8F3ED));
   line-height: 0;
   overflow: hidden;
 }

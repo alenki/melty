@@ -157,30 +157,23 @@ export default function FeedbackPage() {
 
   return (
     <div className="feedback-page">
-      {/* Hero Section */}
-      <section className="feedback-page__hero">
-        <div className="feedback-page__hero-content">
-          <div className="feedback-page__logo-circle" aria-hidden="true">
-            <span className="feedback-page__logo-letter">M</span>
-          </div>
-          <h1 className="feedback-page__hero-title">Оставьте отзыв</h1>
-          <p className="feedback-page__hero-subtitle">Ваше мнение делает нас лучше</p>
+      <section className="feedback-page__section">
+        {/* Floating accent dots */}
+        <div className="feedback-page__dot feedback-page__dot--1" aria-hidden="true"></div>
+        <div className="feedback-page__dot feedback-page__dot--2" aria-hidden="true"></div>
+        <div className="feedback-page__dot feedback-page__dot--3" aria-hidden="true"></div>
+
+        <div className="feedback-page__header">
+          <h1 className="feedback-page__title">Оставьте отзыв</h1>
+          <p className="feedback-page__subtitle">Ваше мнение делает нас лучше</p>
           <div className="feedback-page__divider" aria-hidden="true">
             <span className="feedback-page__divider-line"></span>
             <span className="feedback-page__divider-dot"></span>
             <span className="feedback-page__divider-line"></span>
           </div>
         </div>
-      </section>
 
-      {/* Form Section */}
-      <section className="feedback-page__form-section">
-        {/* Floating accent dots */}
-        <div className="feedback-page__dot feedback-page__dot--1" aria-hidden="true"></div>
-        <div className="feedback-page__dot feedback-page__dot--2" aria-hidden="true"></div>
-        <div className="feedback-page__dot feedback-page__dot--3" aria-hidden="true"></div>
-
-        <form className="feedback-page__arch" onSubmit={handleSubmit} noValidate>
+        <form className="feedback-page__form" onSubmit={handleSubmit} noValidate>
           {/* Star Rating */}
           <div
             className="feedback-page__stars"
@@ -268,6 +261,7 @@ export default function FeedbackPage() {
           </button>
         </form>
       </section>
+
 
       {/* Error Toast */}
       <div
