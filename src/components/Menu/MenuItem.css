@@ -114,20 +114,41 @@
 }
 
 @media (max-width: 480px) {
+  .menu-item {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .menu-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .menu-item__image-wrapper {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md, 8px);
+  }
+
   .menu-item__content {
-    padding: 1rem;
+    padding: 0.5rem 0.15rem;
   }
 
   .menu-item__name {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+    font-weight: 700;
   }
 
   .menu-item__description {
-    font-size: 0.8125rem;
-    -webkit-line-clamp: 3;
+    font-size: 0.7rem;
+    -webkit-line-clamp: 2;
+    margin-bottom: 0.25rem;
+    line-height: 1.35;
+    font-style: italic;
   }
 
   .menu-item__price {
-    font-size: 1.125rem;
+    font-size: 0.85rem;
   }
 }
