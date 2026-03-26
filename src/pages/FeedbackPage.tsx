@@ -118,9 +118,11 @@ export default function FeedbackPage() {
     const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
     const text = [
       `⭐ Оценка: ${stars} (${rating}/5)`,
-      `💬 Отзыв: ${message.trim()}`,
       contact.trim() ? `📧 Контакт: ${contact.trim()}` : '📧 Контакт: Не указан',
       `📅 ${new Date().toLocaleString('ru-RU')}`,
+      ``,
+      `💬 Отзыв:`,
+      message.trim(),
     ].join('\n');
 
     try {
