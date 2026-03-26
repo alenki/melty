@@ -1,11 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 export default function Hero() {
-  const scrollToMenu = () => {
-    const element = document.getElementById('menu');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const navigate = useNavigate();
+
+  const goToMenu = () => {
+    navigate('/menu');
   };
 
   return (
@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
 
         {/* CTA Button */}
-        <button className="hero__cta" onClick={scrollToMenu}>
+        <button className="hero__cta" onClick={goToMenu}>
           <span className="hero__cta-text">Смотреть меню</span>
           <svg className="hero__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/>

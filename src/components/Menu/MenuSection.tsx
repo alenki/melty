@@ -1,19 +1,15 @@
-import { useState, useMemo } from 'react';
-import type { MenuCategory } from '../../data/menu';
-import { menuItems } from '../../data/menu';
-import CategoryFilter from './CategoryFilter';
+import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { menuItems, bestSellerIds } from '../../data/menu';
 import MenuItem from './MenuItem';
 import './MenuSection.css';
 
 export default function MenuSection() {
-  const [activeCategory, setActiveCategory] = useState<MenuCategory | 'all'>('all');
-
-  const filteredItems = useMemo(() => {
-    if (activeCategory === 'all') {
-      return menuItems;
-    }
-    return menuItems.filter((item) => item.category === activeCategory);
-  }, [activeCategory]);
+  const bestSellers = useMemo(() => {
+    return bestSellerIds
+      .map((id) => menuItems.find((item) => item.id === id))
+      .filter(Boolean) as typeof menuItems;
+  }, []);
 
   return (
     <section className="menu-section section" id="menu">
@@ -27,18 +23,19 @@ export default function MenuSection() {
             <span className="menu-section__line"></span>
           </div>
           <h2 className="menu-section__title">Наше меню</h2>
-          <p className="menu-section__subtitle">Авторские десерты ручной работы</p>
+          <p className="menu-section__subtitle">Самые популярные позиции</p>
         </header>
 
-        <CategoryFilter
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
-
-        <div className="menu-section__grid" key={activeCategory}>
-          {filteredItems.map((item, index) => (
+        <div className="menu-section__grid">
+          {bestSellers.map((item, index) => (
             <MenuItem key={item.id} item={item} index={index} />
           ))}
+        </div>
+
+        <div className="menu-section__cta">
+          <Link to="/menu" className="menu-section__btn">
+            СМОТРЕТЬ МЕНЮ
+          </Link>
         </div>
       </div>
     </section>

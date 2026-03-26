@@ -38,6 +38,15 @@ export const categoryLabels: Record<MenuCategory, string> = {
   'other': 'Закуски'
 };
 
+export const bestSellerIds: string[] = [
+  'melty-melt',
+  'melty-knafe-cheesecake',
+  'melty-fondue',
+  'dubai-strawberry',
+  'melty-cookies',
+  'chocolate-fondant',
+];
+
 export const menuItems: MenuItem[] = [
   // ============ MELTY DESSERTS ============
   {
