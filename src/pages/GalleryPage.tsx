@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { BackToTop } from '../components';
 import './GalleryPage.css';
 
 /* ------------------------------------------------------------------ */
@@ -393,6 +394,8 @@ export default function GalleryPage() {
           </div>,
           document.body
         )}
+
+      <BackToTop />
     </div>
   );
 }

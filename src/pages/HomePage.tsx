@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Hero, MenuSection, About, Location } from '../components';
+import { Hero, MenuSection, About, Location, BackToTop } from '../components';
 
 export default function HomePage() {
   const location = useLocation();
@@ -24,6 +24,7 @@ export default function HomePage() {
       <MenuSection />
       <About />
       <Location />
+      <BackToTop />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { menuItems, categoryLabels } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
 import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
+import { BackToTop } from '../components';
 import './MenuPage.css';
 
 const categoryOrder: MenuCategory[] = [
@@ -41,7 +42,6 @@ export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>(categoryOrder[0]);
   const [revealedSections, setRevealedSections] = useState<Set<string>>(new Set());
   const [featuredModalItem, setFeaturedModalItem] = useState<MenuItemType | null>(null);
-  const [showBackTop, setShowBackTop] = useState(false);
   const [navShadow, setNavShadow] = useState(false);
 
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
@@ -141,11 +141,9 @@ export default function MenuPage() {
     };
   }, []);
 
-  // Back-to-top visibility + nav shadow (only when truly sticky)
+  // Nav shadow (only when truly sticky)
   useEffect(() => {
     const handleScroll = () => {
-      setShowBackTop(window.scrollY > 800);
-
       const nav = navRef.current;
       if (nav) {
         const stickyTop = parseFloat(getComputedStyle(nav).top);
@@ -172,11 +170,6 @@ export default function MenuPage() {
     setTimeout(() => {
       isManualScroll.current = false;
     }, 1000);
-  }, []);
-
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    window.lenis?.scrollTo(0);
   }, []);
 
   const formatPrice = (price: number) => `${price.toLocaleString('ru-RU')}₽`;
@@ -398,23 +391,7 @@ export default function MenuPage() {
         })}
       </div>
 
-      {/* Back to top */}
-      <button
-        className={`menu-page__back-top ${showBackTop ? 'menu-page__back-top--visible' : ''}`}
-        onClick={scrollToTop}
-        aria-label="Наверх"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="18 15 12 9 6 15" />
-        </svg>
-      </button>
+      <BackToTop />
 
       {/* Modal for featured items */}
       {featuredModalItem && (

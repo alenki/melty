@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TELEGRAM_API_URL, TELEGRAM_CHAT_ID } from '../config/telegram';
+import { BackToTop } from '../components';
 import './FeedbackPage.css';
 
 const STAR_LABELS = ['Ужасно', 'Плохо', 'Нормально', 'Хорошо', 'Отлично!'];
@@ -267,6 +268,8 @@ export default function FeedbackPage() {
       >
         {errorMessage}
       </div>
+
+      <BackToTop />
     </div>
   );
 }
