@@ -44,7 +44,6 @@ const photos: GalleryItem[] = [
   { src: '/data/photos/inside/IMG_4561.JPG', alt: 'Атмосфера кафе', ratio: 'wide' },
   { src: '/data/photos/inside/IMG_4566.JPG', alt: 'Тёплое освещение', ratio: 'tall' },
   { src: '/data/photos/inside/IMG_4584.JPG', alt: 'Зона отдыха', ratio: 'square' },
-  { src: '/data/photos/inside/IMG_4588.JPG', alt: 'Барная стойка', ratio: 'wide' },
   { src: '/data/photos/inside/IMG_4591.JPG', alt: 'Вид на зал', ratio: 'tall' },
   { src: '/data/photos/inside/IMG_2180.JPG', alt: 'Уголок кафе', ratio: 'square' },
   // Items
