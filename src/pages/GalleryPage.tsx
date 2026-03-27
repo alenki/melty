@@ -22,40 +22,38 @@ type MasonryItem =
   | { type: 'quote'; data: QuoteItem };
 
 const photos: GalleryItem[] = [
-  // Food
+  // Mixed categories & ratios for varied masonry flow
   { src: '/data/photos/food/IMG_0142.JPG', alt: 'Десерт Melty', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0587.JPG', alt: 'Шоколадный десерт', ratio: 'square' },
-  { src: '/data/photos/food/IMG_0590.JPG', alt: 'Авторский десерт', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_0594.JPG', alt: 'Сладкая подача', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0600.JPG', alt: 'Десерт с шоколадом', ratio: 'square' },
-  { src: '/data/photos/food/IMG_0604.JPG', alt: 'Фирменное блюдо', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_4563.JPG', alt: 'Шоколадное ассорти', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4570.JPG', alt: 'Десерт на тарелке', ratio: 'square' },
-  { src: '/data/photos/food/IMG_4575.JPG', alt: 'Креп с начинкой', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_4579.JPG', alt: 'Авторская подача', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4585.JPG', alt: 'Горячий шоколад', ratio: 'square' },
-  { src: '/data/photos/food/IMG_0598.JPG', alt: 'Завтрак в Melty', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_0139.JPG', alt: 'Десерт крупным планом', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4577.JPG', alt: 'Шоколадный торт', ratio: 'square' },
-  // Inside
   { src: '/data/photos/inside/IMG_2164.JPG', alt: 'Интерьер кафе', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0587.JPG', alt: 'Шоколадный десерт', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0590.JPG', alt: 'Авторский десерт', ratio: 'tall' },
   { src: '/data/photos/inside/IMG_2170.JPG', alt: 'Уютная зона', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2176.JPG', alt: 'Детали интерьера', ratio: 'square' },
-  { src: '/data/photos/inside/IMG_4561.JPG', alt: 'Атмосфера кафе', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_4566.JPG', alt: 'Тёплое освещение', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_4584.JPG', alt: 'Зона отдыха', ratio: 'square' },
-  { src: '/data/photos/inside/IMG_4591.JPG', alt: 'Вид на зал', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2180.JPG', alt: 'Уголок кафе', ratio: 'square' },
-  // Items
+  { src: '/data/photos/food/IMG_0594.JPG', alt: 'Сладкая подача', ratio: 'square' },
   { src: '/data/photos/items/IMG_8435.JPG', alt: 'Наши изделия', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0600.JPG', alt: 'Десерт с шоколадом', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0604.JPG', alt: 'Фирменное блюдо', ratio: 'square' },
+  { src: '/data/photos/inside/IMG_4561.JPG', alt: 'Атмосфера кафе', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_4563.JPG', alt: 'Шоколадное ассорти', ratio: 'tall' },
   { src: '/data/photos/items/IMG_8438.JPG', alt: 'Ручная работа', ratio: 'square' },
+  { src: '/data/photos/food/IMG_4570.JPG', alt: 'Десерт на тарелке', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4566.JPG', alt: 'Тёплое освещение', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4575.JPG', alt: 'Креп с начинкой', ratio: 'square' },
   { src: '/data/photos/items/IMG_8441.JPG', alt: 'Шоколадные конфеты', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_4579.JPG', alt: 'Авторская подача', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2176.JPG', alt: 'Детали интерьера', ratio: 'square' },
+  { src: '/data/photos/food/IMG_4585.JPG', alt: 'Горячий шоколад', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4584.JPG', alt: 'Зона отдыха', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0598.JPG', alt: 'Завтрак в Melty', ratio: 'square' },
   { src: '/data/photos/items/IMG_8444.JPG', alt: 'Подарочный набор', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8447.JPG', alt: 'Авторские изделия', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8450.JPG', alt: 'Коллекция сладостей', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0139.JPG', alt: 'Десерт крупным планом', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4591.JPG', alt: 'Вид на зал', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4577.JPG', alt: 'Шоколадный торт', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8447.JPG', alt: 'Авторские изделия', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_2180.JPG', alt: 'Уголок кафе', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8450.JPG', alt: 'Коллекция сладостей', ratio: 'square' },
   { src: '/data/photos/items/IMG_4580.JPG', alt: 'Шоколадная плитка', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8443.JPG', alt: 'Трюфели', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8436.JPG', alt: 'Десертная витрина', ratio: 'wide' },
+  { src: '/data/photos/items/IMG_8443.JPG', alt: 'Трюфели', ratio: 'wide' },
+  { src: '/data/photos/items/IMG_8436.JPG', alt: 'Десертная витрина', ratio: 'square' },
 ];
 
 const quotes: QuoteItem[] = [
@@ -95,6 +93,7 @@ export default function GalleryPage() {
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<Map<number, HTMLElement>>(new Map());
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const hoveredCards = useRef<Set<number>>(new Set());
 
   // Scroll-reveal observer
   useEffect(() => {
@@ -114,6 +113,85 @@ export default function GalleryPage() {
 
     cardRefs.current.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
+  }, []);
+
+  // Parallax scroll effect for photo images
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const updateParallax = () => {
+      const vh = window.innerHeight;
+      cardRefs.current.forEach((el, cardIdx) => {
+        const img = el.querySelector('.gallery-page__photo-img') as HTMLElement | null;
+        if (!img) return;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom < -200 || rect.top > vh + 200) return;
+
+        // 0 = entering from bottom, 1 = leaving at top
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const clamped = Math.max(0, Math.min(1, progress));
+        const strength = vh < 768 ? 10 : 50;
+        const offset = (clamped - 0.5) * strength;
+        const scale = hoveredCards.current.has(cardIdx) ? 1.3 : 1.25;
+
+        img.style.transform = `scale(${scale}) translateY(${offset}px)`;
+      });
+    };
+
+    // Hover listeners for combining hover zoom with parallax
+    const enterHandlers = new Map<HTMLElement, () => void>();
+    const leaveHandlers = new Map<HTMLElement, () => void>();
+    cardRefs.current.forEach((el, cardIdx) => {
+      if (!el.querySelector('.gallery-page__photo-img')) return;
+      const onEnter = () => hoveredCards.current.add(cardIdx);
+      const onLeave = () => hoveredCards.current.delete(cardIdx);
+      el.addEventListener('mouseenter', onEnter);
+      el.addEventListener('mouseleave', onLeave);
+      enterHandlers.set(el, onEnter);
+      leaveHandlers.set(el, onLeave);
+    });
+
+    // Only run rAF while scrolling — stop after idle to save CPU
+    let rafId: number | null = null;
+    let stopTimer: ReturnType<typeof setTimeout>;
+
+    const scheduleLoop = () => {
+      if (rafId !== null) return;
+      const loop = () => {
+        updateParallax();
+        rafId = requestAnimationFrame(loop);
+      };
+      rafId = requestAnimationFrame(loop);
+    };
+
+    const stopLoop = () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    };
+
+    const onScroll = () => {
+      scheduleLoop();
+      clearTimeout(stopTimer);
+      stopTimer = setTimeout(stopLoop, 200);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Also listen to Lenis if available
+    window.lenis?.on('scroll', onScroll);
+    updateParallax(); // initial position
+
+    return () => {
+      stopLoop();
+      clearTimeout(stopTimer);
+      window.removeEventListener('scroll', onScroll);
+      window.lenis?.off('scroll', onScroll);
+      enterHandlers.forEach((handler, el) => el.removeEventListener('mouseenter', handler));
+      leaveHandlers.forEach((handler, el) => el.removeEventListener('mouseleave', handler));
+    };
   }, []);
 
   // Lightbox keyboard nav
