@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery Design - Melty</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F3ED;
+    --cream-warm: #F5EDE3;
+    --cream-deep: #EDE5DA;
+    --chocolate: #4A2C1A;
+    --chocolate-light: #6B4832;
+    --caramel: #8B6347;
+    --orange: #E85A24;
+    --latte: #D4C4B5;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Nunito', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--cream); color: var(--chocolate); font-family: var(--font-sans); }
+
+  .design-header {
+    text-align: center;
+    padding: 30px 20px 15px;
+    border-bottom: 1px solid rgba(74,44,26,0.1);
+    margin-bottom: 30px;
+  }
+  .design-header h1 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--chocolate);
+  }
+  .design-header p {
+    font-size: 13px;
+    color: var(--caramel);
+    margin-top: 5px;
+  }
+
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+    margin-bottom: 12px;
+    padding-left: 20px;
+  }
+
+  /* ===== HERO MOCKUP ===== */
+  .hero-mock {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(74,44,26,0.08);
+  }
+  .hero-mock__bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(168,132,98,0.08) 0%, transparent 50%),
+      linear-gradient(175deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream-deep) 100%);
+  }
+  .hero-mock__pattern {
+    position: absolute; inset: 0; opacity: 0.4;
+    background-image:
+      radial-gradient(circle at 25% 25%, var(--latte) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, var(--latte) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+  }
+  .hero-mock__content {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 40px 20px;
+  }
+  .hero-mock__count {
+    font-family: var(--font-sans);
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.3em;
+    color: var(--caramel); margin-bottom: 12px;
+  }
+  .hero-mock__title {
+    font-family: var(--font-serif);
+    font-size: 56px; font-weight: 700;
+    color: var(--chocolate); letter-spacing: 0.02em; line-height: 1;
+  }
+  .hero-mock__rule {
+    display: flex; align-items: center; gap: 12px;
+    margin: 16px 0;
+  }
+  .hero-mock__rule-line {
+    width: 50px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--caramel));
+    opacity: 0.4;
+  }
+  .hero-mock__rule-line:last-child {
+    background: linear-gradient(to left, transparent, var(--caramel));
+  }
+  .hero-mock__rule-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--caramel); opacity: 0.35;
+  }
+  .hero-mock__subtitle {
+    font-family: var(--font-serif);
+    font-style: italic; font-size: 16px;
+    color: var(--caramel);
+  }
+  .hero-mock__scroll {
+    margin-top: 30px;
+    font-size: 11px; color: var(--caramel); opacity: 0.6;
+    letter-spacing: 0.1em;
+  }
+  .hero-mock__fade {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+  }
+
+  /* Floating dots */
+  .dot { position: absolute; border-radius: 50%; }
+  .dot-1 { width: 20px; height: 20px; background: var(--orange); opacity: 0.2; top: 60px; left: 40px; }
+  .dot-2 { width: 14px; height: 14px; background: var(--chocolate); opacity: 0.12; top: 120px; right: 50px; }
+  .dot-3 { width: 26px; height: 26px; background: var(--caramel); opacity: 0.1; bottom: 100px; left: 60px; }
+
+  /* ===== MASONRY MOCKUP ===== */
+  .masonry-section {
+    padding: 0 20px 40px;
+  }
+
+  .masonry-dark-bg {
+    background: #1E120B;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(74,44,26,0.08);
+  }
+
+  .masonry-mock {
+    column-count: 3;
+    column-gap: 16px;
+  }
+
+  .masonry-card {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .masonry-card:hover {
+    transform: scale(1.02);
+  }
+
+  .photo-card {
+    position: relative;
+  }
+  .photo-card__img {
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+  }
+  .photo-card__label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .quote-card {
+    background: var(--cream);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .quote-card__mark {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    color: var(--caramel);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.5;
+  }
+  .quote-card__text {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--chocolate);
+    line-height: 1.6;
+  }
+
+  /* Color blocks simulating photos */
+  .img-food { background: linear-gradient(135deg, #8B6544, #5C3D2E); }
+  .img-inside { background: linear-gradient(135deg, #C9994A, #8B6544); }
+  .img-items { background: linear-gradient(135deg, #7B2D3B, #5C3D2E); }
+  .img-food-2 { background: linear-gradient(135deg, #6B4832, #8B6544); }
+  .img-inside-2 { background: linear-gradient(135deg, #A88B6A, #C9994A); }
+
+  /* ===== LIGHTBOX MOCKUP ===== */
+  .lightbox-section {
+    padding: 0 20px 40px;
+  }
+  .lightbox-mock {
+    position: relative;
+    background: rgba(0,0,0,0.92);
+    border-radius: 16px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(74,44,26,0.08);
+  }
+  .lightbox-mock__image {
+    width: 55%;
+    height: 80%;
+    background: linear-gradient(135deg, #8B6544, #5C3D2E);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+  }
+  .lightbox-mock__close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+  }
+  .lightbox-mock__nav {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+  }
+  .lightbox-mock__nav--left { left: 16px; }
+  .lightbox-mock__nav--right { right: 16px; }
+  .lightbox-mock__counter {
+    position: absolute;
+    bottom: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-family: var(--font-sans);
+  }
+
+  /* ===== NOTES ===== */
+  .notes {
+    padding: 0 20px 40px;
+  }
+  .note-card {
+    background: rgba(74,44,26,0.04);
+    border: 1px solid rgba(74,44,26,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .note-card h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .note-card p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--chocolate-light);
+  }
+  .note-card code {
+    background: rgba(74,44,26,0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="design-header">
+  <h1>Галерея — Full Design</h1>
+  <p>Masonry photo grid with quotes and lightbox modal</p>
+</div>
+
+<!-- HERO -->
+<div class="section-label">1 &mdash; Hero Section (consistent with Menu / Home heroes)</div>
+<div class="hero-mock">
+  <div class="hero-mock__bg"></div>
+  <div class="hero-mock__pattern"></div>
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+  <div class="dot dot-3"></div>
+  <div class="hero-mock__content">
+    <span class="hero-mock__count">80 фотографий</span>
+    <h1 class="hero-mock__title">Галерея</h1>
+    <div class="hero-mock__rule">
+      <span class="hero-mock__rule-line"></span>
+      <span class="hero-mock__rule-dot"></span>
+      <span class="hero-mock__rule-line"></span>
+    </div>
+    <p class="hero-mock__subtitle">Загляните в атмосферу нашего кафе</p>
+    <div class="hero-mock__scroll">↓ листайте вниз</div>
+  </div>
+  <div class="hero-mock__fade"></div>
+</div>
+
+<!-- MASONRY GRID -->
+<div class="section-label">2 &mdash; Masonry Grid (dark background, 3 columns, mixed photos + quotes)</div>
+<div class="masonry-section">
+  <div class="masonry-dark-bg">
+    <div class="masonry-mock">
+      <!-- Col 1 flow -->
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-food" style="height:180px;"></div>
+        <div class="photo-card__label">еда</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-inside" style="height:130px;"></div>
+        <div class="photo-card__label">интерьер</div>
+      </div>
+
+      <!-- Quote 1 -->
+      <div class="masonry-card quote-card">
+        <div class="quote-card__mark">"</div>
+        <div class="quote-card__text">Шоколад — это не просто вкус. Это тёплое объятие, застывшее в каждом кусочке.</div>
+      </div>
+
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-items" style="height:150px;"></div>
+        <div class="photo-card__label">изделия</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-food-2" style="height:200px;"></div>
+        <div class="photo-card__label">еда</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-inside-2" style="height:160px;"></div>
+        <div class="photo-card__label">интерьер</div>
+      </div>
+
+      <!-- Quote 2 -->
+      <div class="masonry-card quote-card">
+        <div class="quote-card__mark">"</div>
+        <div class="quote-card__text">Уют — это когда за окном дождь, а у тебя в руках горячая чашка и шоколадный десерт.</div>
+      </div>
+
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-food" style="height:140px;"></div>
+        <div class="photo-card__label">еда</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-items" style="height:170px;"></div>
+        <div class="photo-card__label">изделия</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-inside" style="height:120px;"></div>
+        <div class="photo-card__label">интерьер</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-food-2" style="height:190px;"></div>
+        <div class="photo-card__label">еда</div>
+      </div>
+
+      <!-- Quote 3 -->
+      <div class="masonry-card quote-card">
+        <div class="quote-card__mark">"</div>
+        <div class="quote-card__text">Лучшие моменты начинаются с аромата свежего кофе и кусочка счастья на тарелке.</div>
+      </div>
+
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-inside-2" style="height:150px;"></div>
+        <div class="photo-card__label">интерьер</div>
+      </div>
+      <div class="masonry-card photo-card">
+        <div class="photo-card__img img-items" style="height:180px;"></div>
+        <div class="photo-card__label">изделия</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="section-label">3 &mdash; Lightbox Modal (click any photo to open)</div>
+<div class="lightbox-section">
+  <div class="lightbox-mock">
+    <div class="lightbox-mock__close">&times;</div>
+    <div class="lightbox-mock__nav lightbox-mock__nav--left">&lsaquo;</div>
+    <div class="lightbox-mock__image">full-size photo</div>
+    <div class="lightbox-mock__nav lightbox-mock__nav--right">&rsaquo;</div>
+    <div class="lightbox-mock__counter">3 / 80</div>
+  </div>
+</div>
+
+<!-- DESIGN NOTES -->
+<div class="section-label">Design Notes</div>
+<div class="notes">
+  <div class="note-card">
+    <h3>Photo Mix</h3>
+    <p>~18 photos from food (38 available), ~8 from inside (25 available), ~6 from items (17 available). Mixed organically, not grouped by category. 3 quote cards interspersed at even intervals.</p>
+  </div>
+  <div class="note-card">
+    <h3>Animations</h3>
+    <p>Hero: staggered <code>heroReveal</code> entrance (same as Menu/Home). Masonry cards: fade-in on scroll via IntersectionObserver with staggered delays. Photos have subtle <code>scale(1.03)</code> hover. Lightbox: fade-in overlay + scale-up image.</p>
+  </div>
+  <div class="note-card">
+    <h3>Responsive</h3>
+    <p>Desktop: 3 columns. Tablet (768px): 2 columns. Mobile (480px): 1 column. Hero adapts same as Menu page hero.</p>
+  </div>
+  <div class="note-card">
+    <h3>Transition to dark</h3>
+    <p>Hero uses cream background (matching other pages). Bottom fade transitions from cream into the dark (#1E120B) masonry section — creating a dramatic shift into the gallery's moody atmosphere.</p>
+  </div>
+</div>
+
+</body>
+</html>

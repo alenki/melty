@@ -82,6 +82,14 @@ export default function Header() {
           >
             Меню
           </Link>
+          <Link
+            to="/gallery"
+            className={`header__nav-link ${location.pathname === '/gallery' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            tabIndex={isMobileMenuOpen ? 0 : -1}
+          >
+            Галерея
+          </Link>
           <button
             className="header__nav-link"
             onClick={() => scrollToSection('about')}

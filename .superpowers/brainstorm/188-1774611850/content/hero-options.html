@@ -1,0 +1,64 @@
+<h2>Gallery Hero Section</h2>
+<p class="subtitle">What should the top of the Галерея page look like before the masonry grid begins?</p>
+
+<div class="cards">
+  <!-- Option A: Minimal text hero like Balance Coffee -->
+  <div class="card" data-choice="minimal" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #1A0F0A; padding: 0; min-height: 240px; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+      <!-- Subtle grain texture -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%, rgba(201,153,74,0.08) 0%, transparent 70%);"></div>
+      <div style="position:relative;text-align:center;padding:40px 20px;">
+        <span style="color:#C9994A;font-size:11px;letter-spacing:4px;display:block;margin-bottom:16px;">MELTY</span>
+        <span style="color:#F0E6D6;font-size:28px;font-family:Georgia,serif;font-weight:300;display:block;margin-bottom:12px;">Галерея</span>
+        <span style="color:rgba(240,230,214,0.5);font-size:11px;font-style:italic;">Мир вкуса и уюта</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Minimal Text Hero</h3>
+      <p>Clean and elegant — just the page title with the cafe tagline on a dark background. Subtle warm radial glow. Lets the photos below do the talking. Similar to the Balance Coffee approach.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Full-width photo hero with overlay text -->
+  <div class="card" data-choice="photo-hero" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #1A0F0A; padding: 0; min-height: 240px; position:relative; overflow:hidden;">
+      <!-- Simulated full-width photo with overlay -->
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg, #5C3D2E 0%, #8B6544 40%, #C9994A 100%);opacity:0.7;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(26,15,10,0.9) 0%, rgba(26,15,10,0.3) 50%, rgba(26,15,10,0.6) 100%);"></div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:240px;text-align:center;padding:20px;">
+        <span style="color:#C9994A;font-size:10px;letter-spacing:4px;display:block;margin-bottom:12px;">✦ MELTY ✦</span>
+        <span style="color:#F0E6D6;font-size:32px;font-family:Georgia,serif;font-weight:300;display:block;margin-bottom:8px;">Галерея</span>
+        <div style="width:40px;height:1px;background:#C9994A;margin:8px auto;"></div>
+        <span style="color:rgba(240,230,214,0.6);font-size:11px;font-style:italic;">Загляните в атмосферу нашего кафе</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Photo Hero with Overlay</h3>
+      <p>A full-width cafe interior photo as background with dark gradient overlay and centered title text. Creates an immersive entry point. The photo fades into the dark background of the masonry grid below.</p>
+    </div>
+  </div>
+
+  <!-- Option C: No hero, jump straight into grid -->
+  <div class="card" data-choice="no-hero" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #1A0F0A; padding: 20px; min-height: 240px;">
+      <!-- Just the grid starting immediately -->
+      <div style="padding-top:60px;">
+        <div style="column-count:3;column-gap:8px;">
+          <div style="break-inside:avoid;margin-bottom:8px;background:#8B6544;border-radius:6px;height:90px;"></div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#5C3D2E;border-radius:6px;height:70px;"></div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#C9994A;border-radius:6px;height:100px;"></div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#F0E6D6;border-radius:6px;height:60px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#5C3D2E;font-size:9px;font-style:italic;">quote</span>
+          </div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#6B4832;border-radius:6px;height:80px;"></div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#7B2D3B;border-radius:6px;height:110px;"></div>
+          <div style="break-inside:avoid;margin-bottom:8px;background:#8B6544;border-radius:6px;height:75px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. No Hero — Straight to Grid</h3>
+      <p>Skip the hero entirely. The page starts with just the header/nav and dives right into the masonry grid. Photos speak for themselves. The most minimal and Instagram-like approach.</p>
+    </div>
+  </div>
+</div>

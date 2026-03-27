@@ -1,0 +1,129 @@
+<h2>Gallery Page Layout</h2>
+<p class="subtitle">Which layout approach fits Melty's dark, warm, cozy aesthetic?</p>
+
+<div class="cards">
+  <!-- Option A: Masonry like reference -->
+  <div class="card" data-choice="masonry" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #2A1810; padding: 20px; min-height: 320px;">
+      <div style="column-count: 3; column-gap: 8px;">
+        <!-- Col flow -->
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #8B6544; border-radius: 6px; height: 120px; display:flex;align-items:center;justify-content:center;overflow:hidden;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🍫 food</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #5C3D2E; border-radius: 6px; height: 80px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">☕ items</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #C9994A; border-radius: 6px; height: 100px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🏠 inside</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #F0E6D6; border-radius: 6px; height: 90px; display:flex;align-items:center;justify-content:center;padding:10px;">
+          <span style="color:#5C3D2E;font-size:10px;font-style:italic;text-align:center;">"Мир вкуса<br>и уюта"</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #6B4832; border-radius: 6px; height: 110px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🍫 food</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #8B6544; border-radius: 6px; height: 130px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🏠 inside</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #7B2D3B; border-radius: 6px; height: 70px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">☕ items</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #5C3D2E; border-radius: 6px; height: 100px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🍫 food</span>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 8px; background: #C9994A; border-radius: 6px; height: 90px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🏠 inside</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Masonry Grid + Quotes</h3>
+      <p>3-column masonry layout (like the Balance Coffee reference). Photos of varying heights flow naturally. Quote cards with warm cream backgrounds are interspersed. Subtle parallax scroll on images. Dark background.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Asymmetric editorial -->
+  <div class="card" data-choice="editorial" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #2A1810; padding: 20px; min-height: 320px;">
+      <!-- Row 1: Large + small stack -->
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <div style="flex:2;background:#8B6544;border-radius:6px;height:160px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🍫 large food photo</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div style="flex:1;background:#5C3D2E;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">☕ items</span>
+          </div>
+          <div style="flex:1;background:#C9994A;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🏠 inside</span>
+          </div>
+        </div>
+      </div>
+      <!-- Quote row -->
+      <div style="background:#F0E6D6;border-radius:6px;padding:12px;margin-bottom:8px;text-align:center;">
+        <span style="color:#5C3D2E;font-size:10px;font-style:italic;">"Шоколад — это ответ. Неважно, какой был вопрос."</span>
+      </div>
+      <!-- Row 2: 3 equal -->
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <div style="flex:1;background:#6B4832;border-radius:6px;height:80px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🏠</span>
+        </div>
+        <div style="flex:1;background:#7B2D3B;border-radius:6px;height:80px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">🍫</span>
+        </div>
+        <div style="flex:1;background:#8B6544;border-radius:6px;height:80px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:11px;opacity:0.7;">☕</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Editorial / Magazine Layout</h3>
+      <p>Structured asymmetric grid with alternating row patterns: large hero image + small stack, full-width quote, 3-column row, etc. More curated editorial feel. Each "section" tells a mini story. Dark background.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Hybrid scrolling sections -->
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #2A1810; padding: 20px; min-height: 320px;">
+      <!-- Hero title area -->
+      <div style="text-align:center;padding:15px 0 10px;border-bottom:1px solid rgba(201,153,74,0.3);margin-bottom:12px;">
+        <span style="color:#C9994A;font-size:14px;font-family:serif;letter-spacing:2px;">ГАЛЕРЕЯ</span>
+      </div>
+      <!-- Category: Еда -->
+      <div style="margin-bottom:10px;">
+        <span style="color:#C9994A;font-size:10px;letter-spacing:1px;">— ЕДА</span>
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow:hidden;">
+        <div style="min-width:90px;height:70px;background:#8B6544;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:10px;opacity:0.7;">🍫</span>
+        </div>
+        <div style="min-width:90px;height:70px;background:#6B4832;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:10px;opacity:0.7;">🍫</span>
+        </div>
+        <div style="min-width:90px;height:70px;background:#5C3D2E;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:10px;opacity:0.7;">🍫</span>
+        </div>
+      </div>
+      <!-- Quote -->
+      <div style="background:#F0E6D6;border-radius:6px;padding:10px;margin-bottom:12px;text-align:center;">
+        <span style="color:#5C3D2E;font-size:9px;font-style:italic;">"Мир вкуса и уюта"</span>
+      </div>
+      <!-- Category: Интерьер -->
+      <div style="margin-bottom:10px;">
+        <span style="color:#C9994A;font-size:10px;letter-spacing:1px;">— ИНТЕРЬЕР</span>
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:8px;">
+        <div style="flex:2;height:70px;background:#C9994A;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:10px;opacity:0.7;">🏠</span>
+        </div>
+        <div style="flex:1;height:70px;background:#7B2D3B;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F0E6D6;font-size:10px;opacity:0.7;">🏠</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Categorized Sections</h3>
+      <p>Photos organized by category (Еда, Интерьер, Наши изделия) with section headers. Each section has its own mini-grid. Quotes between sections. More structured and navigable, but less organic flow.</p>
+    </div>
+  </div>
+</div>

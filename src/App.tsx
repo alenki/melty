@@ -5,6 +5,7 @@ import { Header, Footer } from './components';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
 import FeedbackPage from './pages/FeedbackPage';
+import GalleryPage from './pages/GalleryPage';
 import './App.css';
 
 // Expose Lenis instance globally for modal scroll lock
@@ -59,6 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
       </main>
