@@ -131,26 +131,10 @@ export default function AboutPage() {
           <div className="about-page__scroll-hint" aria-hidden="true">
             <span className="about-page__scroll-hint-line" />
           </div>
+
+          <div className="about-page__hero-fade" aria-hidden="true" />
         </div>
 
-        <div className="about-page__story-text">
-          <div className="about-page__story-panel">
-            <p>
-              Melty родился из простой, но искренней мечты — создать место, где каждый
-              почувствует себя как дома. Место, где аромат свежего кофе смешивается с
-              теплом шоколада, а время замедляется, оставляя только самые приятные моменты.
-            </p>
-            <p>
-              Мы верим, что настоящий уют рождается из внимания к деталям — от рецептуры
-              каждого десерта до мягкого света, который окутывает наше кафе вечером.
-              Каждый элемент Melty создан с любовью и заботой о наших гостях.
-            </p>
-            <p>
-              С первого дня наша цель остаётся неизменной: дарить вам мир вкуса и уюта,
-              где каждый визит становится маленьким праздником.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* ===== CHAPTER 2: Our Craft ===== */}
