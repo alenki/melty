@@ -544,12 +544,8 @@
 
 .menu-page__featured:hover {
   box-shadow:
-    0 12px 40px rgba(74, 44, 26, 0.16),
-    0 4px 12px rgba(74, 44, 26, 0.08);
-}
-
-.menu-page__featured:active {
-  transform: scale(0.995);
+    0 4px 24px rgba(74, 44, 26, 0.1),
+    0 1px 4px rgba(74, 44, 26, 0.06);
 }
 
 .menu-page__featured-image-wrap {
@@ -566,7 +562,7 @@
 }
 
 .menu-page__featured:hover .menu-page__featured-image {
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 /* Image overlay gradient for depth */
@@ -694,8 +690,8 @@
 
 /* Preserve hover effect after reveal */
 .menu-page__category--revealed .menu-page__items .menu-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lifted);
+  transform: none;
+  box-shadow: var(--shadow-soft);
 }
 
 

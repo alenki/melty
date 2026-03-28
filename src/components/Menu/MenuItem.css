@@ -22,8 +22,8 @@
 }
 
 .menu-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lifted);
+  transform: none;
+  box-shadow: var(--shadow-soft);
 }
 
 .menu-item__image-wrapper {
@@ -77,7 +77,7 @@
 }
 
 .menu-item:hover .menu-item__image--loaded {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .menu-item__content {

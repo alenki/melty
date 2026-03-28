@@ -21,9 +21,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <MenuSection />
       <About />
       <Location />
+      <MenuSection />
       <BackToTop />
     </>
   );
