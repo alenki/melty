@@ -333,7 +333,7 @@
 }
 
 .gallery-page__photo:hover::after {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0);
 }
 
 .gallery-page__photo-img {
@@ -342,7 +342,6 @@
   height: auto;
   object-fit: cover;
   transform: scale(1.25);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
@@ -383,10 +382,10 @@
 .gallery-page__quote-text {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(0.95rem, 1.8vw, 1.125rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
   line-height: 1.7;
   color: var(--chocolate);
-  max-width: 280px;
+  max-width: 400px;
 }
 
 

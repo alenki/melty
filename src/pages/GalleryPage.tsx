@@ -55,6 +55,8 @@ const photos: GalleryItem[] = [
   { src: '/data/photos/items/IMG_4580.JPG', alt: 'Шоколадная плитка', ratio: 'tall' },
   { src: '/data/photos/items/IMG_8443.JPG', alt: 'Трюфели', ratio: 'wide' },
   { src: '/data/photos/items/IMG_8436.JPG', alt: 'Десертная витрина', ratio: 'square' },
+  { src: '/data/photos/food/IMG_0140.JPG', alt: 'Изысканный десерт', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4588.JPG', alt: 'Вечерняя атмосфера', ratio: 'wide' },
 ];
 
 const quotes: QuoteItem[] = [
@@ -94,7 +96,6 @@ export default function GalleryPage() {
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<Map<number, HTMLElement>>(new Map());
   const [touchStart, setTouchStart] = useState<number | null>(null);
-  const hoveredCards = useRef<Set<number>>(new Set());
 
   // Scroll-reveal observer
   useEffect(() => {
@@ -123,7 +124,7 @@ export default function GalleryPage() {
 
     const updateParallax = () => {
       const vh = window.innerHeight;
-      cardRefs.current.forEach((el, cardIdx) => {
+      cardRefs.current.forEach((el) => {
         const img = el.querySelector('.gallery-page__photo-img') as HTMLElement | null;
         if (!img) return;
 
@@ -135,24 +136,9 @@ export default function GalleryPage() {
         const clamped = Math.max(0, Math.min(1, progress));
         const strength = vh < 768 ? 10 : 50;
         const offset = (clamped - 0.5) * strength;
-        const scale = hoveredCards.current.has(cardIdx) ? 1.3 : 1.25;
-
-        img.style.transform = `scale(${scale}) translateY(${offset}px)`;
+        img.style.transform = `scale(1.25) translateY(${offset}px)`;
       });
     };
-
-    // Hover listeners for combining hover zoom with parallax
-    const enterHandlers = new Map<HTMLElement, () => void>();
-    const leaveHandlers = new Map<HTMLElement, () => void>();
-    cardRefs.current.forEach((el, cardIdx) => {
-      if (!el.querySelector('.gallery-page__photo-img')) return;
-      const onEnter = () => hoveredCards.current.add(cardIdx);
-      const onLeave = () => hoveredCards.current.delete(cardIdx);
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-      enterHandlers.set(el, onEnter);
-      leaveHandlers.set(el, onLeave);
-    });
 
     // Only run rAF while scrolling — stop after idle to save CPU
     let rafId: number | null = null;
@@ -190,8 +176,6 @@ export default function GalleryPage() {
       clearTimeout(stopTimer);
       window.removeEventListener('scroll', onScroll);
       window.lenis?.off('scroll', onScroll);
-      enterHandlers.forEach((handler, el) => el.removeEventListener('mouseenter', handler));
-      leaveHandlers.forEach((handler, el) => el.removeEventListener('mouseleave', handler));
     };
   }, []);
 
