@@ -1,0 +1,947 @@
+/* ==========================================================================
+   ABOUT PAGE — "Melting Layers"
+   4 immersive chapters on warm cream backgrounds with chocolate accents
+   ========================================================================== */
+
+.about-page {
+  --ap-chocolate: var(--chocolate, #4A2C1A);
+  --ap-chocolate-light: var(--chocolate-light, #6B4832);
+  --ap-caramel: var(--caramel, #8B6347);
+  --ap-gold: #C9994A;
+  --ap-cream: var(--cream, #F8F3ED);
+  --ap-cream-warm: var(--cream-warm, #F5EDE3);
+  --ap-cream-deep: var(--cream-deep, #EDE5DA);
+  --ap-orange: var(--orange, #E85A24);
+  --ap-latte: var(--latte, #D4C4B5);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   CHAPTER 1 — "Наша история" (Our Story)
+   ========================================================================== */
+
+.about-page__story {
+  position: relative;
+  min-height: 100vh;
+  background: var(--ap-cream);
+}
+
+/* --- Hero (full viewport, textured atmosphere) --- */
+
+.about-page__story-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--container-padding);
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 40%, rgba(201, 153, 74, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 35% at 75% 30%, rgba(232, 90, 36, 0.035) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 25% 75%, rgba(139, 99, 71, 0.06) 0%, transparent 55%),
+    linear-gradient(175deg, var(--ap-cream) 0%, #F0E6D6 35%, #E8DDD0 65%, var(--ap-cream-deep) 100%);
+}
+
+/* Dot pattern overlay */
+.about-page__story-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: radial-gradient(circle, var(--ap-chocolate) 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.about-page__story-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Scroll indicator --- */
+
+.about-page__scroll-hint {
+  position: absolute;
+  bottom: clamp(2rem, 4vw, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+}
+
+.about-page__scroll-hint-line {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--ap-caramel));
+  opacity: 0.4;
+  animation: apScrollPulse 2s ease-in-out infinite;
+}
+
+.about-page__title {
+  font-family: 'Montserrat', var(--font-sans);
+  font-size: clamp(5rem, 17vw, 14rem);
+  font-weight: 900;
+  color: var(--ap-chocolate);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.about-page__rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  opacity: 0;
+  animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.about-page__rule-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ap-caramel), transparent);
+  opacity: 0.5;
+}
+
+.about-page__rule-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ap-orange);
+  opacity: 0.7;
+}
+
+.about-page__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  font-style: italic;
+  color: var(--ap-chocolate-light);
+  opacity: 0;
+  margin: 0;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 12px rgba(248, 243, 237, 0.5);
+  animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+/* --- Floating dots --- */
+
+.about-page__dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-page__dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.about-page__dot--1 {
+  width: 24px;
+  height: 24px;
+  background: var(--ap-caramel);
+  top: 18%;
+  left: 12%;
+  animation: apFloatDot 8s ease-in-out infinite;
+}
+
+.about-page__dot--2 {
+  width: 18px;
+  height: 18px;
+  background: var(--ap-latte);
+  top: 28%;
+  right: 15%;
+  animation: apFloatDot 10s ease-in-out infinite 2s;
+}
+
+.about-page__dot--3 {
+  width: 32px;
+  height: 32px;
+  background: var(--ap-caramel);
+  bottom: 22%;
+  left: 20%;
+  animation: apFloatDot 12s ease-in-out infinite 4s;
+}
+
+.about-page__dot--4 {
+  width: 20px;
+  height: 20px;
+  background: var(--ap-caramel);
+  top: 15%;
+  right: 10%;
+  animation: apFloatDot 9s ease-in-out infinite 1s;
+}
+
+.about-page__dot--5 {
+  width: 28px;
+  height: 28px;
+  background: var(--ap-latte);
+  bottom: 30%;
+  left: 8%;
+  animation: apFloatDot 11s ease-in-out infinite 3s;
+}
+
+.about-page__dot--6 {
+  width: 16px;
+  height: 16px;
+  background: var(--ap-caramel);
+  bottom: 15%;
+  right: 18%;
+  animation: apFloatDot 7s ease-in-out infinite 5s;
+}
+
+/* Slow-settling dots for Chapter 4 */
+.about-page__dot--7 {
+  width: 22px;
+  height: 22px;
+  background: var(--ap-caramel);
+  top: 20%;
+  left: 15%;
+  animation: apFloatDotSlow 14s ease-in-out infinite;
+}
+
+.about-page__dot--8 {
+  width: 26px;
+  height: 26px;
+  background: var(--ap-latte);
+  top: 35%;
+  right: 12%;
+  animation: apFloatDotSlow 16s ease-in-out infinite 3s;
+}
+
+.about-page__dot--9 {
+  width: 18px;
+  height: 18px;
+  background: var(--ap-caramel);
+  bottom: 25%;
+  left: 22%;
+  animation: apFloatDotSlow 18s ease-in-out infinite 6s;
+}
+
+/* --- Origin story text panel (scrolls up over hero) --- */
+
+.about-page__story-text {
+  position: relative;
+  z-index: 3;
+  margin-top: -200px;
+  padding: 0 var(--container-padding) clamp(4rem, 8vw, 6rem);
+}
+
+.about-page__story-panel {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(248, 243, 237, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border: 1px solid rgba(74, 44, 26, 0.06);
+  box-shadow: var(--shadow-medium);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__chapter--revealed .about-page__story-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__story-panel p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: var(--ap-chocolate);
+  line-height: 1.85;
+  margin: 0 0 1.25rem;
+  opacity: 0.85;
+}
+
+.about-page__story-panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CHAPTER 2 — "Наше ремесло" (Our Craft)
+   ========================================================================== */
+
+.about-page__craft {
+  position: relative;
+  background: linear-gradient(180deg, var(--ap-cream) 0%, var(--ap-cream-warm) 100%);
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  overflow: hidden;
+}
+
+/* --- Staggered photo cards --- */
+
+.about-page__craft-photos {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__chapter--revealed .about-page__craft-photos {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__craft-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lifted);
+  will-change: transform;
+}
+
+.about-page__craft-card--left {
+  transform: translateY(-30px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__craft-card--right {
+  transform: translateY(30px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__craft-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 3 / 4;
+}
+
+.about-page__craft-card--right img {
+  aspect-ratio: 4 / 3;
+}
+
+/* --- SVG swirl separator --- */
+
+.about-page__swirl-separator {
+  display: block;
+  width: clamp(200px, 40vw, 350px);
+  height: auto;
+  margin: clamp(2.5rem, 5vw, 4rem) auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-page__swirl-separator path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 2.5s ease;
+}
+
+.about-page__chapter--revealed .about-page__swirl-separator path {
+  stroke-dashoffset: 0;
+}
+
+/* --- Pull quote --- */
+
+.about-page__pullquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.375rem, 3vw, 2.25rem);
+  color: var(--ap-chocolate);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  padding: 0 var(--container-padding);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.about-page__chapter--revealed .about-page__pullquote {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+/* --- Craft text content --- */
+
+.about-page__craft-text {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+.about-page__chapter--revealed .about-page__craft-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__craft-text p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: var(--ap-chocolate);
+  line-height: 1.85;
+  margin: 0 0 1.25rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.about-page__craft-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CHAPTER 3 — "Наш мир" (Our World)
+   ========================================================================== */
+
+.about-page__world {
+  position: relative;
+  background: linear-gradient(180deg, var(--ap-cream-warm) 0%, var(--ap-cream-deep) 100%);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+  overflow: hidden;
+}
+
+/* --- Full-width photo strip --- */
+
+.about-page__world-strip {
+  position: relative;
+  display: flex;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  overflow: hidden;
+  will-change: transform;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__chapter--revealed .about-page__world-strip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__world-strip img {
+  flex: 1;
+  min-width: 0;
+  height: clamp(220px, 35vw, 420px);
+  object-fit: cover;
+  display: block;
+}
+
+.about-page__world-strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--ap-cream-warm);
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* --- World text area with watermark --- */
+
+.about-page__world-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) var(--container-padding) 0;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.about-page__chapter--revealed .about-page__world-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__watermark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--ap-chocolate);
+  opacity: 0.06;
+  user-select: none;
+  line-height: 1;
+  padding-top: 0.5rem;
+}
+
+.about-page__world-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-page__world-text p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: var(--ap-chocolate);
+  line-height: 1.85;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   CHAPTER 4 — "Ваш Melty" (Your Melty)
+   ========================================================================== */
+
+.about-page__yours {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(4rem, 8vw, 6rem) var(--container-padding);
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--ap-cream-deep) 0%, var(--ap-cream) 100%);
+}
+
+/* Subtle warm radial glow */
+.about-page__yours::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 45%,
+    rgba(212, 196, 181, 0.3) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-page__yours-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* --- Logo --- */
+
+.about-page__yours-logo {
+  height: clamp(64px, 10vw, 100px);
+  width: auto;
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-page__chapter--revealed .about-page__yours-logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Philosophy text --- */
+
+.about-page__yours-philosophy {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3vw, 2.25rem);
+  color: var(--ap-chocolate);
+  max-width: 580px;
+  line-height: 1.55;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.about-page__chapter--revealed .about-page__yours-philosophy {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+/* --- Scattered polaroid photos --- */
+
+.about-page__polaroids {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-page__polaroid {
+  position: absolute;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-lifted);
+  opacity: 0;
+  transition: opacity 1.2s ease 0.5s;
+}
+
+.about-page__chapter--revealed .about-page__polaroid {
+  opacity: 1;
+}
+
+.about-page__polaroid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-page__polaroid--1 {
+  width: clamp(100px, 14vw, 180px);
+  height: clamp(130px, 18vw, 230px);
+  top: 8%;
+  left: 4%;
+  transform: rotate(-4deg);
+  opacity: 0;
+}
+
+.about-page__chapter--revealed .about-page__polaroid--1 {
+  opacity: 0.75;
+}
+
+.about-page__polaroid--2 {
+  width: clamp(110px, 13vw, 170px);
+  height: clamp(110px, 13vw, 170px);
+  top: 12%;
+  right: 5%;
+  transform: rotate(3deg);
+  opacity: 0;
+}
+
+.about-page__chapter--revealed .about-page__polaroid--2 {
+  opacity: 0.7;
+}
+
+.about-page__polaroid--3 {
+  width: clamp(90px, 12vw, 160px);
+  height: clamp(120px, 16vw, 210px);
+  bottom: 15%;
+  right: 8%;
+  transform: rotate(-2.5deg);
+  opacity: 0;
+}
+
+.about-page__chapter--revealed .about-page__polaroid--3 {
+  opacity: 0.8;
+}
+
+/* --- CTA zone --- */
+
+.about-page__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+
+.about-page__chapter--revealed .about-page__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page__cta-address {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  color: var(--ap-chocolate-light);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.about-page__cta-hours {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+  color: var(--ap-caramel);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.about-page__cta-welcome {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--ap-orange);
+  margin: 1rem 0 0.5rem;
+}
+
+.about-page__cta-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ap-chocolate);
+  background: transparent;
+  border: 1px solid rgba(74, 44, 26, 0.2);
+  border-radius: 100px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-page__cta-link:hover {
+  border-color: var(--ap-orange);
+  color: var(--ap-orange);
+  background-color: rgba(232, 90, 36, 0.04);
+}
+
+/* --- Wave transition to footer --- */
+
+.about-page__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  z-index: 2;
+}
+
+.about-page__wave svg {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+@keyframes apReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apKenBurns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes apScrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scaleY(1.3) translateY(4px);
+  }
+}
+
+@keyframes apFloatDot {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(12px, -18px);
+  }
+  66% {
+    transform: translate(-8px, -10px);
+  }
+}
+
+@keyframes apFloatDotSlow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -7px);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .about-page__craft-card--left {
+    transform: translateY(-15px);
+  }
+
+  .about-page__craft-card--right {
+    transform: translateY(15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page__title {
+    font-size: clamp(3rem, 15vw, 6rem);
+  }
+
+  /* Chapter 2: stack photos vertically */
+  .about-page__craft-photos {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .about-page__craft-card--left,
+  .about-page__craft-card--right {
+    transform: translateY(0);
+  }
+
+  .about-page__craft-card img,
+  .about-page__craft-card--right img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Chapter 3: stack photo strip */
+  .about-page__world-strip {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-page__world-strip img {
+    height: clamp(200px, 50vw, 280px);
+    flex: none;
+  }
+
+  .about-page__world-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page__watermark {
+    position: absolute;
+    top: 0;
+    left: var(--container-padding);
+    font-size: clamp(4rem, 15vw, 6rem);
+  }
+
+  /* Chapter 4: reduce polaroid sizes */
+  .about-page__polaroid--1 {
+    width: 80px;
+    height: 100px;
+    top: 3%;
+    left: 2%;
+  }
+
+  .about-page__polaroid--2 {
+    width: 75px;
+    height: 75px;
+    top: 5%;
+    right: 2%;
+  }
+
+  .about-page__polaroid--3 {
+    width: 70px;
+    height: 90px;
+    bottom: 12%;
+    right: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page__story-panel {
+    padding: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  /* Hide polaroids on very small screens */
+  .about-page__polaroids {
+    display: none;
+  }
+
+  .about-page__world-strip img {
+    height: 200px;
+  }
+
+  .about-page__wave svg {
+    height: 50px;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page__title,
+  .about-page__rule,
+  .about-page__tagline,
+  .about-page__scroll-hint {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-page__scroll-hint-line {
+    animation: none;
+  }
+
+  .about-page__dot {
+    animation: none;
+  }
+
+  .about-page__story-panel,
+  .about-page__craft-photos,
+  .about-page__pullquote,
+  .about-page__craft-text,
+  .about-page__world-strip,
+  .about-page__world-content,
+  .about-page__yours-logo,
+  .about-page__yours-philosophy,
+  .about-page__cta,
+  .about-page__polaroid {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .about-page__swirl-separator path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+
+  .about-page__craft-card--left,
+  .about-page__craft-card--right {
+    transform: none;
+  }
+
+  .about-page__chapter--revealed .about-page__polaroid--1 { opacity: 0.75; }
+  .about-page__chapter--revealed .about-page__polaroid--2 { opacity: 0.7; }
+  .about-page__chapter--revealed .about-page__polaroid--3 { opacity: 0.8; }
+}

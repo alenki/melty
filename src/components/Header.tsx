@@ -99,6 +99,14 @@ export default function Header() {
             Галерея
           </Link>
 <Link
+            to="/about"
+            className={`header__nav-link ${location.pathname === '/about' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            tabIndex={isMobileMenuOpen ? 0 : -1}
+          >
+            О нас
+          </Link>
+          <Link
             to="/feedback"
             className={`header__nav-link ${location.pathname === '/feedback' ? 'header__nav-link--active' : ''}`}
             onClick={() => setIsMobileMenuOpen(false)}

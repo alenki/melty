@@ -1,0 +1,64 @@
+<h2>Textured Atmosphere: Which intensity?</h2>
+<p class="subtitle">All use warm gradients + patterns. The difference is how much visual weight the background carries.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="subtle" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, #F8F3ED 0%, #F5EDE3 50%, #EDE5DA 100%);">
+        <!-- Single soft radial glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 45%, rgba(201,153,74,0.06) 0%, transparent 70%)"></div>
+        <!-- Very faint dot grid -->
+        <div style="position:absolute;inset:0;opacity:0.03;background-image:radial-gradient(circle, #4A2C1A 0.8px, transparent 0.8px);background-size:28px 28px;"></div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:#4A2C1A;letter-spacing:0.06em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;position:relative;">НАША<br>ИСТОРИЯ</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Subtle</h3>
+      <p>Barely-there gradient shift + faint dot grid. Clean and minimal. You feel the warmth more than you see it.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="warm" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, #F8F3ED 0%, #F0E6D6 40%, #EDE5DA 100%);">
+        <!-- Warm golden glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 42%, rgba(201,153,74,0.1) 0%, transparent 65%)"></div>
+        <!-- Secondary caramel glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 30% 70%, rgba(139,99,71,0.05) 0%, transparent 60%)"></div>
+        <!-- Dot pattern -->
+        <div style="position:absolute;inset:0;opacity:0.035;background-image:radial-gradient(circle, #4A2C1A 0.8px, transparent 0.8px);background-size:24px 24px;"></div>
+        <!-- Subtle noise texture feel -->
+        <div style="position:absolute;inset:0;opacity:0.02;background:repeating-conic-gradient(#4A2C1A 0% 25%, transparent 0% 50%) 0 0/4px 4px;"></div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:#4A2C1A;letter-spacing:0.06em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;position:relative;">НАША<br>ИСТОРИЯ</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Warm Glow</h3>
+      <p>Layered golden + caramel radial glows, dot grid, hint of noise texture. Feels like warm ambient light filling the space. Cozy but not busy.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="rich" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(175deg, #F8F3ED 0%, #F0E6D6 35%, #E8DDD0 65%, #EDE5DA 100%);">
+        <!-- Primary warm glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 50% at 50% 40%, rgba(201,153,74,0.12) 0%, transparent 60%)"></div>
+        <!-- Off-center accent glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 40% 35% at 75% 30%, rgba(232,90,36,0.04) 0%, transparent 60%)"></div>
+        <!-- Lower caramel warmth -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 25% 75%, rgba(139,99,71,0.07) 0%, transparent 55%)"></div>
+        <!-- Dot pattern -->
+        <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle, #4A2C1A 0.8px, transparent 0.8px);background-size:22px 22px;"></div>
+        <!-- Noise texture -->
+        <div style="position:absolute;inset:0;opacity:0.025;background:repeating-conic-gradient(#4A2C1A 0% 25%, transparent 0% 50%) 0 0/3px 3px;"></div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:#4A2C1A;letter-spacing:0.06em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;position:relative;">НАША<br>ИСТОРИЯ</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Rich & Layered</h3>
+      <p>Multiple overlapping gradient layers (golden, orange accent, caramel), denser dot grid, noise texture. The background has real depth and warmth. Matches the Menu/Gallery page richness.</p>
+    </div>
+  </div>
+
+</div>

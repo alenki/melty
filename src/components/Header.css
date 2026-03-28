@@ -209,6 +209,10 @@
   .header__nav--open .header__nav-link:nth-child(4) {
     transition-delay: 0.25s;
   }
+
+  .header__nav--open .header__nav-link:nth-child(5) {
+    transition-delay: 0.3s;
+  }
 }
 
 /* Desktop - make nav links accessible */

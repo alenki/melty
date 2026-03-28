@@ -21,6 +21,8 @@ main:has(.feedback-page) ~ .footer .footer__wave {
   background: var(--cream-deep, #EDE5DA);
 }
 
+/* About page ends with cream — matches default footer, no override needed */
+
 /* ==========================================================================
    WAVE TRANSITION
    Organic, flowing curve that melts into the footer

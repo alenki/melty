@@ -1,0 +1,64 @@
+<h2>How should we enrich the About page hero?</h2>
+<p class="subtitle">The big "НАША ИСТОРИЯ" heading on cream is bold but empty. Pick a direction.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: #F8F3ED; padding: 40px 24px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <!-- Decorative elements -->
+        <svg style="position:absolute;top:20%;left:10%;opacity:0.15" width="80" height="40" viewBox="0 0 80 40"><path d="M0 20C20 5 40 35 60 20C80 5 80 20 80 20" stroke="#8B6347" fill="none" stroke-width="1.5"/></svg>
+        <svg style="position:absolute;bottom:25%;right:8%;opacity:0.12" width="100" height="50" viewBox="0 0 100 50"><path d="M0 25C25 10 50 40 75 25C100 10 100 25 100 25" stroke="#8B6347" fill="none" stroke-width="1.5"/></svg>
+        <div style="position:absolute;top:15%;right:20%;width:12px;height:12px;border-radius:50%;background:#C9994A;opacity:0.15"></div>
+        <div style="position:absolute;bottom:30%;left:15%;width:18px;height:18px;border-radius:50%;background:#D4C4B5;opacity:0.2"></div>
+        <div style="position:absolute;top:40%;left:8%;width:1px;height:60px;background:linear-gradient(to bottom,transparent,#8B6347,transparent);opacity:0.15"></div>
+        <div style="position:absolute;top:30%;right:12%;width:1px;height:80px;background:linear-gradient(to bottom,transparent,#8B6347,transparent);opacity:0.12"></div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:#4A2C1A;letter-spacing:0.08em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;">НАША<br>ИСТОРИЯ</p>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:16px;">
+          <div style="width:40px;height:1px;background:linear-gradient(90deg,transparent,#8B6347,transparent);opacity:0.4"></div>
+          <div style="width:5px;height:5px;border-radius:50%;background:#E85A24;opacity:0.5"></div>
+          <div style="width:40px;height:1px;background:linear-gradient(90deg,transparent,#8B6347,transparent);opacity:0.4"></div>
+        </div>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#6B4832;margin:10px 0 0;opacity:0.7">Мир вкуса и уюта</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Decorated Minimal</h3>
+      <p>Keep the clean cream canvas. Add floating decorative elements -- swirl lines, dots, a tagline, ornamental separators. Subtle and elegant, matches the Menu/Gallery page patterns.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: #F8F3ED; padding: 30px 24px; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <!-- Photo collage mockup -->
+        <div style="position:absolute;top:12%;left:8%;width:80px;height:100px;background:#D4C4B5;border-radius:6px;transform:rotate(-3deg);box-shadow:0 4px 15px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;font-size:10px;color:#8B6347;">photo</div>
+        <div style="position:absolute;top:18%;right:10%;width:90px;height:70px;background:#C9994A;border-radius:6px;transform:rotate(2deg);opacity:0.4;box-shadow:0 4px 15px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;">photo</div>
+        <div style="position:absolute;bottom:15%;right:12%;width:75px;height:95px;background:#8B6347;border-radius:6px;transform:rotate(-2deg);opacity:0.35;box-shadow:0 4px 15px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;">photo</div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:#4A2C1A;letter-spacing:0.08em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;position:relative;z-index:2;">НАША<br>ИСТОРИЯ</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Photo Collage Hero</h3>
+      <p>Scatter cafe photos behind/around the heading at various angles and opacities. The heading dominates, photos add warmth and context. Editorial magazine feel.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, #F8F3ED 0%, #F5EDE3 40%, #EDE5DA 100%);">
+        <!-- Warm radial glow -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 45%, rgba(201,153,74,0.08) 0%, transparent 70%)"></div>
+        <!-- Subtle pattern dots -->
+        <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle, #4A2C1A 1px, transparent 1px);background-size:24px 24px;"></div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:#4A2C1A;letter-spacing:0.08em;text-transform:uppercase;line-height:0.95;text-align:center;margin:0;position:relative;z-index:1;">НАША<br>ИСТОРИЯ</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#6B4832;margin:12px 0 0;opacity:0.6;position:relative;z-index:1;">est. 2023</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Textured Atmosphere</h3>
+      <p>Keep text-only but add warm gradients, subtle dot patterns, radial glows. The background itself becomes rich and atmospheric without any photos. Cozy warmth.</p>
+    </div>
+  </div>
+
+</div>

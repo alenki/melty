@@ -39,7 +39,7 @@ From README.md - the site must avoid generic "AI slop" aesthetic:
 
 - Use distinctive fonts (NOT Inter, Roboto, Arial)
 - Cohesive color palette derived from Melty branding (see README.md for full palette)
-- Dark and moody atmosphere with warm, intimate lighting
+- Light, warm luxury aesthetic with cream/beige backgrounds and dark chocolate accents
 - Atmospheric backgrounds with CSS gradients/patterns
 - High-impact animations with staggered reveals
 - Draw inspiration from IDE themes and cultural aesthetics
@@ -53,7 +53,7 @@ From README.md - the site must avoid generic "AI slop" aesthetic:
 - **White** (#FFFFFF) — Logo script, text accents
 - **Deep Burgundy/Maroon** (#7B2D3B) — Subtle accent color
 
-Overall vibe: Dark and moody with warm, intimate lighting — "cozy chocolate café in winter" aesthetic.
+Overall vibe: Light, warm luxury — cream/beige backgrounds with dark chocolate text and accents. Airy, elegant, inviting — "upscale artisanal cafe" aesthetic.
 
 ## Map Integration
 
