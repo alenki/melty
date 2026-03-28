@@ -75,6 +75,14 @@ export default function Header() {
           aria-hidden={!isMobileMenuOpen}
         >
           <Link
+            to="/"
+            className={`header__nav-link ${location.pathname === '/' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            tabIndex={isMobileMenuOpen ? 0 : -1}
+          >
+            Главная
+          </Link>
+          <Link
             to="/menu"
             className={`header__nav-link ${location.pathname === '/menu' ? 'header__nav-link--active' : ''}`}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -90,27 +98,13 @@ export default function Header() {
           >
             Галерея
           </Link>
-          <button
-            className="header__nav-link"
-            onClick={() => scrollToSection('about')}
-            tabIndex={isMobileMenuOpen ? 0 : -1}
-          >
-            О нас
-          </button>
-          <button
-            className="header__nav-link"
-            onClick={() => scrollToSection('location')}
-            tabIndex={isMobileMenuOpen ? 0 : -1}
-          >
-            Контакты
-          </button>
-          <Link
+<Link
             to="/feedback"
             className={`header__nav-link ${location.pathname === '/feedback' ? 'header__nav-link--active' : ''}`}
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            Отзыв
+            Обратная связь
           </Link>
         </nav>
 
