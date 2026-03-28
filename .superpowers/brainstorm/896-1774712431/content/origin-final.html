@@ -1,0 +1,161 @@
+<style>
+  .final-mockup {
+    background: linear-gradient(180deg, #F8F3ED 0%, #F5EDE3 100%);
+    border-radius: 16px;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Ghosted year watermark */
+  .final-mockup .watermark-year {
+    font-family: 'Segoe UI', 'Montserrat', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    color: #4A2C1A;
+    opacity: 0.04;
+    line-height: 1;
+    margin-bottom: -2rem;
+    letter-spacing: 0.06em;
+    user-select: none;
+  }
+
+  /* Title */
+  .final-mockup .origin-heading {
+    font-family: Georgia, 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #4A2C1A;
+    margin: 0 0 0.5rem;
+    line-height: 1.25;
+    position: relative;
+  }
+
+  /* Flourish */
+  .final-mockup .flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0 2rem;
+  }
+  .final-mockup .flourish-line {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8B6347, transparent);
+    opacity: 0.4;
+  }
+  .final-mockup .flourish-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #E85A24;
+    opacity: 0.6;
+  }
+
+  /* Body text */
+  .final-mockup .origin-body p {
+    font-family: 'Segoe UI', 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: #4A2C1A;
+    line-height: 1.85;
+    opacity: 0.78;
+    margin: 0 0 1.25rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-mockup .origin-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Founder quote */
+  .final-mockup .founder-quote {
+    font-family: Georgia, 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #4A2C1A;
+    opacity: 0.55;
+    max-width: 480px;
+    margin: 2rem auto 0;
+    line-height: 1.6;
+    position: relative;
+    padding-top: 1.5rem;
+  }
+  .final-mockup .founder-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: #8B6347;
+    opacity: 0.3;
+  }
+
+  /* Scroll context labels */
+  .context-label {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8B6347;
+    opacity: 0.5;
+    padding: 1rem 0;
+  }
+  .context-arrow {
+    display: block;
+    text-align: center;
+    color: #8B6347;
+    opacity: 0.3;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  .context-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4C4B5, transparent);
+    margin: 0.5rem 0;
+  }
+</style>
+
+<h2>Final Design — Origin Section</h2>
+<p class="subtitle">Centered narrative with ghosted year watermark. Text-only, flowing into the craft section below.</p>
+
+<div class="context-label">&#9650; Hero: "Наша история" (above)</div>
+<div class="context-arrow">&#8595;</div>
+
+<div class="final-mockup">
+  <div class="watermark-year">2023</div>
+
+  <h3 class="origin-heading">Как всё началось</h3>
+
+  <div class="flourish">
+    <span class="flourish-line"></span>
+    <span class="flourish-dot"></span>
+    <span class="flourish-line"></span>
+  </div>
+
+  <div class="origin-body">
+    <p>
+      Melty родился из простой, но искренней мечты — создать в Нальчике место, где шоколад перестаёт быть просто десертом и становится настоящим искусством. Место, наполненное теплом, заботой и вниманием к каждой детали.
+    </p>
+    <p>
+      Мы начали с нескольких рецептов и маленькой кухни, где каждый день был экспериментом. Сотни проб, бессонные ночи и бесконечная любовь к делу — так рождался вкус, который вы знаете сегодня. Каждый рецепт — это история поиска идеального баланса между традицией и авторским подходом.
+    </p>
+    <p>
+      Сегодня Melty — это больше, чем кафе. Это пространство, где встречаются друзья, создаются воспоминания и каждый момент пропитан уютом. Мы не просто готовим десерты — мы создаём мир, в который хочется возвращаться.
+    </p>
+  </div>
+
+  <div class="founder-quote">
+    «Мы хотели, чтобы каждый гость чувствовал себя частью чего-то тёплого и настоящего»
+  </div>
+</div>
+
+<div class="context-arrow">&#8595;</div>
+<div class="context-label">&#9660; Craft photos + text (below)</div>
