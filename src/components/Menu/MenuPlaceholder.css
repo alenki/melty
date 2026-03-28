@@ -1,0 +1,107 @@
+.menu-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  overflow: hidden;
+
+  /* Rich layered background */
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(212, 196, 181, 0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 90% 80% at 50% 50%, var(--cream) 0%, var(--cream-warm) 45%, var(--cream-deep) 100%);
+}
+
+/* Subtle dot pattern overlay */
+.menu-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--latte) 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  opacity: 0.12;
+}
+
+/* Center icon group */
+.menu-placeholder__center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  z-index: 1;
+}
+
+/* Chocolate drop icon */
+.menu-placeholder__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--caramel);
+  opacity: 0.28;
+  filter: drop-shadow(0 2px 8px rgba(139, 99, 71, 0.1));
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.menu-placeholder:hover .menu-placeholder__icon {
+  transform: scale(1.12);
+  opacity: 0.38;
+}
+
+/* Divider line */
+.menu-placeholder__rule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-placeholder__rule-line {
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--latte), transparent);
+  opacity: 0.5;
+}
+
+.menu-placeholder__rule-dot {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: var(--latte);
+  opacity: 0.45;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .menu-placeholder__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-placeholder__corners {
+    inset: 10%;
+  }
+
+  .menu-placeholder__corner {
+    width: 12px;
+    height: 12px;
+  }
+
+  .menu-placeholder__rule-line {
+    width: 14px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu-placeholder__icon {
+    animation: none;
+    opacity: 0.28;
+  }
+
+  .menu-placeholder__shimmer {
+    animation: none;
+    display: none;
+  }
+}

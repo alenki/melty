@@ -3,6 +3,7 @@ import { menuItems, categoryLabels } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
 import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
+import MenuPlaceholder from '../components/Menu/MenuPlaceholder';
 import { BackToTop } from '../components';
 import './MenuPage.css';
 
@@ -174,12 +175,6 @@ export default function MenuPage() {
 
   const formatPrice = (price: number) => `${price.toLocaleString('ru-RU')}₽`;
 
-  const getImageSrc = (path: string): string => {
-    const parts = path.split('/');
-    const encoded = parts.map((part, i) => (i < 3 ? part : encodeURIComponent(part)));
-    return encoded.join('/');
-  };
-
   const totalItems = menuItems.length;
 
   return (
@@ -344,12 +339,7 @@ export default function MenuPage() {
                   }}
                 >
                   <div className="menu-page__featured-image-wrap">
-                    <img
-                      src={getImageSrc(featuredItem.image)}
-                      alt={featuredItem.name}
-                      className="menu-page__featured-image"
-                      loading={catIndex < 2 ? 'eager' : 'lazy'}
-                    />
+                    <MenuPlaceholder />
                   </div>
                   <div className="menu-page__featured-content">
                     <h3 className="menu-page__featured-name">

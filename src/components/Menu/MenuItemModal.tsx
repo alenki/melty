@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
+import MenuPlaceholder from './MenuPlaceholder';
 import './MenuItemModal.css';
 
 interface MenuItemModalProps {
@@ -9,56 +10,28 @@ interface MenuItemModalProps {
   onClose: () => void;
 }
 
-// All items have single images in the new structure
-
 export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-
-  // Single image per item in new structure
-  const images = [item.image];
-
   const formatPrice = (price: number): string => {
     return `${price.toLocaleString('ru-RU')}₽`;
   };
-
-  const goToSlide = useCallback((index: number) => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentSlide(index);
-    setTimeout(() => setIsAnimating(false), 400);
-  }, [isAnimating]);
-
-  const nextSlide = useCallback(() => {
-    goToSlide((currentSlide + 1) % images.length);
-  }, [currentSlide, images.length, goToSlide]);
-
-  const prevSlide = useCallback(() => {
-    goToSlide((currentSlide - 1 + images.length) % images.length);
-  }, [currentSlide, images.length, goToSlide]);
 
   // Scroll lock effect - stop Lenis smooth scroll
   useEffect(() => {
     if (!isOpen) return;
 
-    // Stop Lenis smooth scrolling
     window.lenis?.stop();
 
     return () => {
-      // Resume Lenis smooth scrolling
       window.lenis?.start();
     };
   }, [isOpen]);
 
-  // Keyboard navigation - separate effect
+  // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
     };
 
     document.addEventListener('keydown', handleKeyDown);
@@ -66,27 +39,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose, nextSlide, prevSlide]);
-
-  // Reset slide when modal opens
-  useEffect(() => {
-    if (isOpen) setCurrentSlide(0);
-  }, [isOpen, item.id]);
-
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const diff = touchStart - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) nextSlide();
-      else prevSlide();
-    }
-    setTouchStart(null);
-  };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -103,64 +56,9 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
           </svg>
         </button>
 
-        {/* Image slider */}
-        <div
-          className="modal-slider"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            className="modal-slider__track"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {images.map((src, index) => (
-              <div key={index} className="modal-slider__slide">
-                <img
-                  src={src}
-                  alt={`${item.name} - фото ${index + 1}`}
-                  className="modal-slider__image"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation arrows (only show if multiple images) */}
-          {images.length > 1 && (
-            <>
-              <button
-                className="modal-slider__arrow modal-slider__arrow--prev"
-                onClick={prevSlide}
-                aria-label="Предыдущее фото"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button
-                className="modal-slider__arrow modal-slider__arrow--next"
-                onClick={nextSlide}
-                aria-label="Следующее фото"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </>
-          )}
-
-          {/* Slide indicators */}
-          {images.length > 1 && (
-            <div className="modal-slider__dots">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  className={`modal-slider__dot ${index === currentSlide ? 'modal-slider__dot--active' : ''}`}
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Перейти к фото ${index + 1}`}
-                />
-              ))}
-            </div>
-          )}
+        {/* Image placeholder */}
+        <div className="modal-slider">
+          <MenuPlaceholder />
         </div>
 
         {/* Content section */}
