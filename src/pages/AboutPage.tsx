@@ -54,14 +54,22 @@ export default function AboutPage() {
         el.style.transform = `translateY(${offset}px)`;
       });
 
-      // Photo strip horizontal parallax
-      if (photoStripRef.current && !isMobile) {
+      // Photo strip parallax
+      if (photoStripRef.current) {
         const rect = photoStripRef.current.getBoundingClientRect();
         if (rect.bottom > -200 && rect.top < vh + 200) {
           const progress = (vh - rect.top) / (vh + rect.height);
           const clamped = Math.max(0, Math.min(1, progress));
-          const offset = (clamped - 0.5) * -80;
-          photoStripRef.current.style.transform = `translateX(${offset}px)`;
+          if (isMobile) {
+            const visibleImg = photoStripRef.current.querySelector('img:nth-child(2)') as HTMLElement;
+            if (visibleImg) {
+              const offset = (clamped - 0.5) * 40;
+              visibleImg.style.transform = `scale(1.15) translateY(${offset}px)`;
+            }
+          } else {
+            const offset = (clamped - 0.5) * -80;
+            photoStripRef.current.style.transform = `translateX(${offset}px)`;
+          }
         }
       }
     };
