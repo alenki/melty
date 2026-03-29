@@ -511,22 +511,14 @@
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
-  .gallery-page__swirl--left {
-    left: 2%;
-  }
-
-  .gallery-page__swirl--right {
-    right: 2%;
+  .gallery-page__swirl {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .gallery-page__hero {
     padding: 100px 0 80px;
-  }
-
-  .gallery-page__swirl {
-    display: none;
   }
 
   .gallery-page__dot--3 {

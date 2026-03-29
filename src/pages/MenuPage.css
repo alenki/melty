@@ -725,14 +725,16 @@ body.modal-open .menu-page__featured {
 
 /* ===== RESPONSIVE ===== */
 
+@media (max-width: 1024px) {
+  .menu-page__swirl {
+    display: none;
+  }
+}
+
 /* Tablet */
 @media (max-width: 768px) {
   .menu-page__hero {
     padding: 80px 0 60px;
-  }
-
-  .menu-page__swirl {
-    display: none;
   }
 
   .menu-page__hero-pills {

@@ -353,22 +353,14 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .hero__swirl--left {
-    left: 2%;
-  }
-
-  .hero__swirl--right {
-    right: 2%;
+  .hero__swirl {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
     padding: 100px 0 80px;
-  }
-
-  .hero__swirl {
-    display: none;
   }
 
   .hero__logo-container {
