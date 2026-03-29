@@ -120,16 +120,22 @@ export default function AboutPage() {
           </div>
 
           <div className="about-page__story-hero-content">
-            <h1 className="about-page__title">Наша история</h1>
+            <h1 className="about-page__title">
+              <span className="about-page__title-top">Наша</span>
+              <span className="about-page__title-bottom">история</span>
+            </h1>
             <div className="about-page__rule">
               <span className="about-page__rule-line" />
               <span className="about-page__rule-dot" />
               <span className="about-page__rule-line" />
             </div>
-          </div>
-
-          <div className="about-page__scroll-hint" aria-hidden="true">
-            <span className="about-page__scroll-hint-line" />
+            <div className="about-page__scroll-hint" aria-hidden="true">
+              <span>листайте вниз</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 8L10 14L16 8" stroke="currentColor" strokeWidth="1.5"
+                  strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
           </div>
 
           <div className="about-page__hero-fade" aria-hidden="true" />

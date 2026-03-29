@@ -81,22 +81,33 @@
 /* --- Scroll indicator --- */
 
 .about-page__scroll-hint {
-  position: absolute;
-  bottom: clamp(2rem, 4vw, 3rem);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2.5rem;
   opacity: 0;
   animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
 }
 
-.about-page__scroll-hint-line {
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, var(--ap-caramel));
-  opacity: 0.4;
-  animation: apScrollPulse 2s ease-in-out infinite;
+.about-page__scroll-hint span {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ap-caramel);
+  opacity: 0.6;
+}
+
+.about-page__scroll-hint svg {
+  color: var(--ap-caramel);
+  opacity: 0.5;
+  animation: apBounce 2s ease-in-out infinite;
+}
+
+@keyframes apBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 /* --- Bottom Fade --- */
@@ -112,8 +123,10 @@
 }
 
 .about-page__title {
-  font-family: 'Montserrat', var(--font-sans);
-  font-size: clamp(5rem, 17vw, 14rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-serif);
   font-weight: 900;
   color: var(--ap-chocolate);
   letter-spacing: 0.04em;
@@ -124,6 +137,14 @@
   opacity: 0;
   transform: translateY(28px);
   animation: apReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.about-page__title-top {
+  font-size: clamp(4.22rem, 14.33vw, 11.8rem);
+}
+
+.about-page__title-bottom {
+  font-size: clamp(2.86rem, 9.71vw, 8rem);
 }
 
 .about-page__rule {
@@ -792,8 +813,12 @@
 }
 
 @media (max-width: 768px) {
-  .about-page__title {
-    font-size: clamp(3rem, 15vw, 6rem);
+  .about-page__title-top {
+    font-size: clamp(3.2rem, 16vw, 5.9rem);
+  }
+
+  .about-page__title-bottom {
+    font-size: clamp(2.17rem, 10.83vw, 4rem);
   }
 
   /* Chapter 2: stack photos vertically */
@@ -887,7 +912,7 @@
     transform: none;
   }
 
-  .about-page__scroll-hint-line {
+  .about-page__scroll-hint svg {
     animation: none;
   }
 
