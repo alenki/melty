@@ -60,7 +60,7 @@ export default function AboutPage() {
         if (rect.bottom > -200 && rect.top < vh + 200) {
           const progress = (vh - rect.top) / (vh + rect.height);
           const clamped = Math.max(0, Math.min(1, progress));
-          const offset = (clamped - 0.5) * -40;
+          const offset = (clamped - 0.5) * -80;
           photoStripRef.current.style.transform = `translateX(${offset}px)`;
         }
       }
@@ -275,17 +275,6 @@ export default function AboutPage() {
         data-chapter="yours"
         ref={(el) => { if (el) chapterRefs.current.set('yours', el); }}
       >
-        <div className="about-page__polaroids" aria-hidden="true">
-          <div className="about-page__polaroid about-page__polaroid--1">
-            <img src="/data/photos/items/IMG_8435.JPG" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div className="about-page__polaroid about-page__polaroid--2">
-            <img src="/data/photos/items/IMG_8438.JPG" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div className="about-page__polaroid about-page__polaroid--3">
-            <img src="/data/photos/items/IMG_8441.JPG" alt="" loading="lazy" decoding="async" />
-          </div>
-        </div>
 
         <div className="about-page__dots" aria-hidden="true">
           <span className="about-page__dot about-page__dot--7" />
@@ -295,7 +284,7 @@ export default function AboutPage() {
 
         <div className="about-page__yours-inner">
           <img
-            src="/data/logo.png"
+            src="/data/logo_dark.png"
             alt="Melty"
             className="about-page__yours-logo"
           />
