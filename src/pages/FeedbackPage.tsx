@@ -251,9 +251,7 @@ export default function FeedbackPage() {
             className="feedback-page__submit"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Отправка...' : (
-              <>Отправить<span className="feedback-page__star-accent">✦</span></>
-            )}
+            {isSubmitting ? 'Отправка...' : 'Отправить'}
           </button>
         </form>
         </>
