@@ -559,6 +559,15 @@
     top: 12px;
     right: 12px;
   }
+
+  .gallery-page__quote-text {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+  }
+
+  .gallery-page__quote {
+    padding: 1.5rem 1rem;
+    min-height: 140px;
+  }
 }
 
 @media (max-width: 480px) {
