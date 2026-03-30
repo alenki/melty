@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melty — About Section Design Approaches</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F3ED;
+    --cream-warm: #F5EDE3;
+    --cream-deep: #EDE5DA;
+    --chocolate: #4A2C1A;
+    --chocolate-light: #6B4832;
+    --caramel: #8B6347;
+    --orange: #E85A24;
+    --latte: #D4C4B5;
+    --gold: #C9994A;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Nunito', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    text-align: center;
+    color: #999;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+  }
+
+  /* ===== APPROACH CARDS ===== */
+  .approaches {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .approach {
+    border: 2px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .approach:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(201, 153, 74, 0.15);
+  }
+  .approach.selected {
+    border-color: var(--gold);
+    box-shadow: 0 0 40px rgba(201, 153, 74, 0.25);
+  }
+
+  .approach__label {
+    background: #222;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .approach__letter {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .approach__meta h2 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  .approach__meta p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+  }
+
+  /* ===== MOCKUP AREA ===== */
+  .mockup-area {
+    background: var(--cream);
+    padding: 0;
+    position: relative;
+  }
+
+  /* ===== APPROACH A: Split Image + Text with Parallax Cards ===== */
+  .mockA {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+  .mockA__image-side {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream-deep);
+  }
+  .mockA__photo-stack {
+    position: relative;
+    width: 300px;
+    height: 360px;
+  }
+  .mockA__photo {
+    position: absolute;
+    width: 220px;
+    height: 280px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(74, 44, 26, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--chocolate-light);
+    overflow: hidden;
+  }
+  .mockA__photo--1 {
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--latte) 100%);
+    top: 0;
+    left: 0;
+    transform: rotate(-6deg);
+    z-index: 1;
+  }
+  .mockA__photo--2 {
+    background: linear-gradient(135deg, var(--latte) 0%, var(--caramel) 50%, var(--chocolate-light) 100%);
+    top: 40px;
+    left: 60px;
+    transform: rotate(3deg);
+    z-index: 2;
+  }
+  .mockA__photo--inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+  .mockA__photo--2 .mockA__photo--inner {
+    color: var(--cream);
+  }
+  .mockA__dot {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  .mockA__dot--1 { width: 16px; height: 16px; background: var(--orange); top: 20px; right: 30px; }
+  .mockA__dot--2 { width: 24px; height: 24px; background: var(--caramel); bottom: 30px; left: 10px; }
+
+  .mockA__text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3.5rem;
+  }
+  .mockA__flourish {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .mockA__line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--latte), transparent);
+  }
+  .mockA__drop {
+    width: 14px;
+    height: 14px;
+    color: var(--chocolate);
+    opacity: 0.5;
+  }
+  .mockA__title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  .mockA__body {
+    font-family: var(--font-sans);
+    color: var(--chocolate-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .mockA__body strong {
+    color: var(--chocolate);
+    font-weight: 600;
+  }
+  .mockA__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--chocolate);
+    font-size: 0.95rem;
+    text-decoration: none;
+    opacity: 0.75;
+    font-family: var(--font-sans);
+  }
+
+  /* ===== APPROACH B: Full-width Atmospheric with Feature Cards ===== */
+  .mockB {
+    position: relative;
+    padding: 5rem 3rem;
+    overflow: hidden;
+  }
+  .mockB__bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    background-image:
+      radial-gradient(circle at 25% 25%, var(--latte) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, var(--latte) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+  }
+  .mockB__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 153, 74, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .mockB__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .mockB__flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .mockB__line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--latte), transparent);
+  }
+  .mockB__drop {
+    width: 18px;
+    height: 18px;
+    color: var(--chocolate);
+    opacity: 0.5;
+  }
+  .mockB__title {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    margin-bottom: 1rem;
+  }
+  .mockB__subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--caramel);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.01em;
+  }
+  .mockB__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .mockB__card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 16px rgba(74, 44, 26, 0.06);
+    border: 1px solid rgba(212, 196, 181, 0.4);
+  }
+  .mockB__card-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  .mockB__card-icon--1 { background: rgba(232, 90, 36, 0.1); color: var(--orange); }
+  .mockB__card-icon--2 { background: rgba(139, 99, 71, 0.1); color: var(--caramel); }
+  .mockB__card-icon--3 { background: rgba(201, 153, 74, 0.1); color: var(--gold); }
+  .mockB__card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--chocolate);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .mockB__card p {
+    font-size: 0.85rem;
+    color: var(--chocolate-light);
+    line-height: 1.6;
+  }
+  .mockB__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--chocolate);
+    font-size: 0.95rem;
+    text-decoration: none;
+    opacity: 0.75;
+    font-family: var(--font-sans);
+  }
+
+  /* ===== APPROACH C: Elegant Quote-Centered with Decorative Border ===== */
+  .mockC {
+    padding: 5rem 3rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .mockC__swirl-left, .mockC__swirl-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.12;
+    color: var(--chocolate);
+  }
+  .mockC__swirl-left { left: 5%; }
+  .mockC__swirl-right { right: 5%; }
+
+  .mockC__frame {
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    padding: 3.5rem 3rem;
+    text-align: center;
+    border: 1px solid var(--latte);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+  }
+  .mockC__corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    color: var(--caramel);
+    opacity: 0.6;
+  }
+  .mockC__corner--tl { top: -1px; left: -1px; }
+  .mockC__corner--tr { top: -1px; right: -1px; transform: scaleX(-1); }
+  .mockC__corner--bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
+  .mockC__corner--br { bottom: -1px; right: -1px; transform: scale(-1); }
+
+  .mockC__flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .mockC__line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--latte), transparent);
+  }
+  .mockC__drop {
+    width: 18px;
+    height: 18px;
+    color: var(--chocolate);
+    opacity: 0.5;
+  }
+  .mockC__title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    margin-bottom: 1.75rem;
+  }
+  .mockC__quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--caramel);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 0 1rem;
+  }
+  .mockC__quote::before {
+    content: '\201C';
+    font-size: 4rem;
+    position: absolute;
+    top: -1.5rem;
+    left: -0.75rem;
+    color: var(--latte);
+    font-family: var(--font-serif);
+    line-height: 1;
+  }
+  .mockC__divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+    margin: 0 auto 2rem;
+  }
+  .mockC__body {
+    font-family: var(--font-sans);
+    color: var(--chocolate-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mockC__body strong {
+    color: var(--chocolate);
+    font-weight: 600;
+  }
+  .mockC__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--chocolate);
+    font-size: 0.95rem;
+    text-decoration: none;
+    opacity: 0.75;
+    font-family: var(--font-sans);
+  }
+
+  /* Floating dots for Approach C */
+  .mockC__dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .mockC__dot {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .mockC__dot--1 {
+    width: 12px; height: 12px;
+    background: var(--orange);
+    opacity: 0.2;
+    top: 15%;
+    left: 15%;
+  }
+  .mockC__dot--2 {
+    width: 18px; height: 18px;
+    background: var(--caramel);
+    opacity: 0.12;
+    bottom: 20%;
+    right: 12%;
+  }
+  .mockC__dot--3 {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    opacity: 0.25;
+    top: 30%;
+    right: 8%;
+  }
+
+  /* ===== PROS/CONS ===== */
+  .approach__details {
+    background: #1a1a1a;
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border-top: 1px solid #2a2a2a;
+  }
+  .pros h4, .cons h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .pros h4 { color: #6dbf6d; }
+  .cons h4 { color: #cf6b6b; }
+  .pros li, .cons li {
+    font-size: 0.82rem;
+    color: #999;
+    margin-bottom: 0.3rem;
+    list-style: none;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .pros li::before { content: '+'; position: absolute; left: 0; color: #6dbf6d; }
+  .cons li::before { content: '–'; position: absolute; left: 0; color: #cf6b6b; }
+
+  .recommended {
+    display: inline-block;
+    background: rgba(201, 153, 74, 0.15);
+    color: var(--gold);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-left: 0.75rem;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<h1>О нас — Section Redesign</h1>
+<p class="intro">3 design directions for the About section. Click to select your preferred approach.</p>
+
+<div class="approaches">
+
+  <!-- ===== APPROACH A ===== -->
+  <div class="approach" onclick="this.classList.toggle('selected')">
+    <div class="approach__label">
+      <div class="approach__letter">A</div>
+      <div class="approach__meta">
+        <h2>Split Layout — Image + Text <span class="recommended">Recommended</span></h2>
+        <p>Stacked photo cards on the left, text on the right. Adds visual weight and depth.</p>
+      </div>
+    </div>
+    <div class="mockup-area">
+      <div class="mockA">
+        <div class="mockA__image-side">
+          <div class="mockA__photo-stack">
+            <div class="mockA__photo mockA__photo--1">
+              <div class="mockA__photo--inner">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+                <span style="font-size: 0.75rem; color: var(--caramel);">cafe photo</span>
+              </div>
+            </div>
+            <div class="mockA__photo mockA__photo--2">
+              <div class="mockA__photo--inner">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                <span style="font-size: 0.75rem;">dessert photo</span>
+              </div>
+            </div>
+            <div class="mockA__dot mockA__dot--1"></div>
+            <div class="mockA__dot mockA__dot--2"></div>
+          </div>
+        </div>
+        <div class="mockA__text-side">
+          <div class="mockA__flourish">
+            <span class="mockA__line"></span>
+            <svg class="mockA__drop" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+            <span class="mockA__line" style="background: linear-gradient(90deg, transparent, var(--latte))"></span>
+          </div>
+          <h2 class="mockA__title">О нас</h2>
+          <div class="mockA__body">
+            <p><strong>Melty</strong> — это уютное пространство, где шоколад становится искусством. Мир вкуса и уюта, где каждый десерт создаётся с любовью и вниманием к деталям.</p>
+            <br>
+            <p>Мы верим, что хороший десерт — это больше, чем просто сладость. Это момент радости, который вы делите с близкими.</p>
+          </div>
+          <a href="#" class="mockA__cta">Наша история →</a>
+        </div>
+      </div>
+    </div>
+    <div class="approach__details">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Strong visual impact — breaks the text-only pattern</li>
+          <li>Parallax photo cards add depth and motion</li>
+          <li>Asymmetric layout creates visual interest</li>
+          <li>Natural place for real cafe/dessert photos</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Considerations</h4>
+        <ul>
+          <li>Needs 1-2 good photos of cafe/desserts</li>
+          <li>More complex responsive behavior</li>
+          <li>Stacks vertically on mobile — image on top</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== APPROACH B ===== -->
+  <div class="approach" onclick="this.classList.toggle('selected')">
+    <div class="approach__label">
+      <div class="approach__letter">B</div>
+      <div class="approach__meta">
+        <h2>Atmospheric — Feature Cards Grid</h2>
+        <p>Centered title with 3 value-proposition cards, dot pattern background, warm glow.</p>
+      </div>
+    </div>
+    <div class="mockup-area">
+      <div class="mockB">
+        <div class="mockB__bg-pattern"></div>
+        <div class="mockB__glow"></div>
+        <div class="mockB__inner">
+          <div class="mockB__flourish">
+            <span class="mockB__line"></span>
+            <svg class="mockB__drop" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+            <span class="mockB__line"></span>
+          </div>
+          <h2 class="mockB__title">О нас</h2>
+          <p class="mockB__subtitle">Мир вкуса и уюта, где каждый десерт создаётся с любовью</p>
+          <div class="mockB__cards">
+            <div class="mockB__card">
+              <div class="mockB__card-icon mockB__card-icon--1">♨</div>
+              <h3>Ручная работа</h3>
+              <p>Каждый десерт создаётся вручную с вниманием к деталям</p>
+            </div>
+            <div class="mockB__card">
+              <div class="mockB__card-icon mockB__card-icon--2">✦</div>
+              <h3>Лучшие ингредиенты</h3>
+              <p>Используем только натуральные и свежие продукты</p>
+            </div>
+            <div class="mockB__card">
+              <div class="mockB__card-icon mockB__card-icon--3">❤</div>
+              <h3>С любовью</h3>
+              <p>Момент радости, который вы делите с близкими</p>
+            </div>
+          </div>
+          <a href="#" class="mockB__cta">Наша история →</a>
+        </div>
+      </div>
+    </div>
+    <div class="approach__details">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>No photos needed — purely CSS-driven</li>
+          <li>Feature cards communicate brand values quickly</li>
+          <li>Atmospheric background matches Hero section</li>
+          <li>Cards animate well with staggered scroll-reveal</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Considerations</h4>
+        <ul>
+          <li>Cards grid can feel generic / "startup landing page"</li>
+          <li>Centered layout is similar to current — just with cards</li>
+          <li>Less dramatic visual change from current design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== APPROACH C ===== -->
+  <div class="approach" onclick="this.classList.toggle('selected')">
+    <div class="approach__label">
+      <div class="approach__letter">C</div>
+      <div class="approach__meta">
+        <h2>Elegant Frame — Quote-Centered</h2>
+        <p>Decorative bordered frame with a pull-quote, floating dots, and chocolate swirls flanking the edges.</p>
+      </div>
+    </div>
+    <div class="mockup-area">
+      <div class="mockC">
+        <!-- Swirl decorations -->
+        <svg class="mockC__swirl-left" width="80" height="400" viewBox="0 0 80 400" fill="none">
+          <path d="M60 0C60 0 80 60 50 120C20 180 10 200 30 280C50 360 60 400 60 400" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg class="mockC__swirl-right" width="80" height="400" viewBox="0 0 80 400" fill="none">
+          <path d="M20 0C20 0 0 60 30 120C60 180 70 200 50 280C30 360 20 400 20 400" stroke="currentColor" stroke-width="2"/>
+        </svg>
+
+        <!-- Floating dots -->
+        <div class="mockC__dots">
+          <span class="mockC__dot mockC__dot--1"></span>
+          <span class="mockC__dot mockC__dot--2"></span>
+          <span class="mockC__dot mockC__dot--3"></span>
+        </div>
+
+        <div class="mockC__frame">
+          <!-- Corner ornaments -->
+          <svg class="mockC__corner mockC__corner--tl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12V1h11"/></svg>
+          <svg class="mockC__corner mockC__corner--tr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12V1h11"/></svg>
+          <svg class="mockC__corner mockC__corner--bl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12V1h11"/></svg>
+          <svg class="mockC__corner mockC__corner--br" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12V1h11"/></svg>
+
+          <div class="mockC__flourish">
+            <span class="mockC__line"></span>
+            <svg class="mockC__drop" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+            <span class="mockC__line"></span>
+          </div>
+          <h2 class="mockC__title">О нас</h2>
+          <div class="mockC__quote">
+            Шоколад становится искусством, когда каждый десерт создаётся с любовью
+          </div>
+          <div class="mockC__divider"></div>
+          <div class="mockC__body">
+            <p><strong>Melty</strong> — это уютное пространство. Мир вкуса и уюта, где каждый десерт создаётся с вниманием к деталям. Наши крепы, панкейки и авторские десерты готовятся из лучших ингредиентов специально для вас.</p>
+          </div>
+          <a href="#" class="mockC__cta">Наша история →</a>
+        </div>
+      </div>
+    </div>
+    <div class="approach__details">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Very elegant — fits upscale artisanal cafe aesthetic</li>
+          <li>Decorative frame + swirls tie in with Hero section</li>
+          <li>Pull-quote creates emotional impact</li>
+          <li>Floating dots + swirls add motion without photos</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Considerations</h4>
+        <ul>
+          <li>Still centered text — less spatial variety</li>
+          <li>No photos means relying on decoration for visual weight</li>
+          <li>Frame could feel constrained on mobile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

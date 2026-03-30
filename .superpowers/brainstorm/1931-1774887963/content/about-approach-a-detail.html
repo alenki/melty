@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melty — Approach A Detailed Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F3ED;
+    --cream-warm: #F5EDE3;
+    --cream-deep: #EDE5DA;
+    --chocolate: #4A2C1A;
+    --chocolate-light: #6B4832;
+    --caramel: #8B6347;
+    --orange: #E85A24;
+    --orange-soft: #F07B4C;
+    --latte: #D4C4B5;
+    --gold: #C9994A;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Nunito', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .intro {
+    text-align: center;
+    color: #999;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* ===== SECTION LABELS ===== */
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  /* ===== FULL MOCKUP ===== */
+  .full-mockup {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+  }
+
+  /* The actual section mockup */
+  .about-section {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Left: Image side */
+  .about__image-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  /* Subtle background texture on image side */
+  .about__image-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    background-image:
+      radial-gradient(circle at 30% 40%, var(--latte) 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, var(--latte) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+  }
+
+  .about__photo-stack {
+    position: relative;
+    width: 360px;
+    height: 400px;
+  }
+
+  .about__photo {
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(74, 44, 26, 0.18);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .about__photo--1 {
+    width: 260px;
+    height: 320px;
+    top: 0;
+    left: 0;
+    transform: rotate(-5deg);
+    z-index: 1;
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--latte) 100%);
+  }
+
+  .about__photo--2 {
+    width: 240px;
+    height: 300px;
+    top: 60px;
+    left: 100px;
+    transform: rotate(3deg);
+    z-index: 2;
+    background: linear-gradient(135deg, var(--caramel) 0%, var(--chocolate-light) 100%);
+  }
+
+  .about__photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  .about__photo--1 .about__photo-placeholder { color: var(--caramel); }
+  .about__photo--2 .about__photo-placeholder { color: var(--cream); }
+
+  /* Floating accent dots */
+  .about__accent {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .about__accent--1 {
+    width: 18px; height: 18px;
+    background: var(--orange);
+    opacity: 0.25;
+    top: 30px;
+    right: 40px;
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+  .about__accent--2 {
+    width: 28px; height: 28px;
+    background: var(--caramel);
+    opacity: 0.12;
+    bottom: 40px;
+    left: 20px;
+    animation: floatSlow 10s ease-in-out infinite 2s;
+  }
+  .about__accent--3 {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    opacity: 0.3;
+    top: 50%;
+    right: 15px;
+    animation: floatSlow 6s ease-in-out infinite 4s;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(8px, -12px); }
+  }
+
+  /* Right: Text side */
+  .about__text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4rem 4rem 2.5rem;
+  }
+
+  .about__flourish {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .about__line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--latte), transparent);
+  }
+  .about__line:last-child {
+    background: linear-gradient(90deg, transparent, var(--latte));
+  }
+  .about__drop {
+    width: 16px;
+    height: 16px;
+    color: var(--chocolate);
+    opacity: 0.5;
+  }
+
+  .about__title {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .about__body {
+    color: var(--chocolate-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+  .about__body p + p {
+    margin-top: 1rem;
+  }
+  .about__body strong {
+    color: var(--chocolate);
+    font-weight: 600;
+  }
+
+  .about__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--chocolate);
+    font-size: 0.95rem;
+    text-decoration: none;
+    opacity: 0.75;
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
+    transition: opacity 0.25s;
+  }
+  .about__cta:hover { opacity: 1; }
+  .about__cta svg { transition: transform 0.25s; }
+  .about__cta:hover svg { transform: translateX(3px); }
+
+  /* ===== ANNOTATIONS ===== */
+  .annotations {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .annotation {
+    background: #222;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #333;
+  }
+  .annotation h3 {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .annotation h3 .tag {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    background: rgba(201, 153, 74, 0.2);
+    color: var(--gold);
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+  .annotation p {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.6;
+  }
+
+  /* ===== MOBILE PREVIEW ===== */
+  .mobile-section {
+    max-width: 400px;
+    margin: 0 auto 3rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+  }
+
+  .about-section--mobile {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about__image-side--mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .about__photo-stack--mobile {
+    position: relative;
+    width: 280px;
+    height: 240px;
+  }
+
+  .about__photo--mobile-1 {
+    position: absolute;
+    width: 180px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(74, 44, 26, 0.15);
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--latte) 100%);
+    top: 0;
+    left: 10px;
+    transform: rotate(-4deg);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--caramel);
+  }
+
+  .about__photo--mobile-2 {
+    position: absolute;
+    width: 170px;
+    height: 190px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(74, 44, 26, 0.15);
+    background: linear-gradient(135deg, var(--caramel) 0%, var(--chocolate-light) 100%);
+    top: 20px;
+    right: 10px;
+    transform: rotate(2deg);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--cream);
+  }
+
+  .about__text-side--mobile {
+    padding: 1.5rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .about__flourish--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about__title--mobile {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--chocolate);
+    margin-bottom: 1.25rem;
+  }
+
+  .about__body--mobile {
+    color: var(--chocolate-light);
+    line-height: 1.75;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .about__body--mobile p + p { margin-top: 0.75rem; }
+  .about__body--mobile strong { color: var(--chocolate); font-weight: 600; }
+
+  .about__cta--mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--chocolate);
+    font-size: 0.9rem;
+    text-decoration: none;
+    opacity: 0.75;
+    font-family: var(--font-sans);
+  }
+
+  /* ===== SECTION DIVIDER ===== */
+  .divider {
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+    border: none;
+    border-top: 1px solid #333;
+  }
+</style>
+</head>
+<body>
+
+<h1>Approach A — Split Layout Detailed Design</h1>
+<p class="intro">Desktop and mobile mockups with animation & interaction notes</p>
+
+<!-- ===== DESKTOP ===== -->
+<p class="section-label" style="max-width:1200px;margin:0 auto 1rem;">Desktop Layout (≥768px)</p>
+<div class="full-mockup">
+  <div class="about-section">
+    <!-- Image Side -->
+    <div class="about__image-side">
+      <div class="about__image-bg"></div>
+      <div class="about__photo-stack">
+        <div class="about__photo about__photo--1">
+          <div class="about__photo-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            your photo 1
+          </div>
+        </div>
+        <div class="about__photo about__photo--2">
+          <div class="about__photo-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            your photo 2
+          </div>
+        </div>
+        <span class="about__accent about__accent--1"></span>
+        <span class="about__accent about__accent--2"></span>
+        <span class="about__accent about__accent--3"></span>
+      </div>
+    </div>
+
+    <!-- Text Side -->
+    <div class="about__text-side">
+      <div class="about__flourish">
+        <span class="about__line"></span>
+        <svg class="about__drop" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+        <span class="about__line"></span>
+      </div>
+      <h2 class="about__title">О нас</h2>
+      <div class="about__body">
+        <p><strong>Melty</strong> — это уютное пространство, где шоколад становится искусством. Мир вкуса и уюта, где каждый десерт создаётся с любовью и вниманием к деталям.</p>
+        <p>Мы верим, что хороший десерт — это больше, чем просто сладость. Это момент радости, который вы делите с близкими. Наши крепы, панкейки и авторские десерты готовятся из лучших ингредиентов специально для вас.</p>
+      </div>
+      <a href="#" class="about__cta">
+        Наша история
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Annotations -->
+<div class="annotations">
+  <div class="annotation">
+    <h3>Photo Cards <span class="tag">scroll-reveal</span></h3>
+    <p>Two overlapping photos with slight rotation (-5deg, +3deg). On scroll into view, they slide in with staggered timing — first card 0.3s, second 0.5s. Subtle parallax on scroll (0.3 speed factor).</p>
+  </div>
+  <div class="annotation">
+    <h3>Floating Dots <span class="tag">infinite</span></h3>
+    <p>3 accent dots (orange, caramel, gold) with gentle floating animation matching the Hero's dot style. 6-10s duration, staggered delays. Respects prefers-reduced-motion.</p>
+  </div>
+  <div class="annotation">
+    <h3>Text Reveal <span class="tag">scroll-reveal</span></h3>
+    <p>Flourish, title, body, and CTA animate in with translateY(20px) → 0 + opacity. Staggered delays: 0.2s, 0.35s, 0.5s, 0.65s. Uses IntersectionObserver at 15% threshold.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== MOBILE ===== -->
+<p class="section-label" style="max-width:400px;margin:0 auto 1rem;">Mobile Layout (< 768px)</p>
+<div class="mobile-section">
+  <div class="about-section--mobile">
+    <div class="about__image-side--mobile">
+      <div class="about__photo-stack--mobile">
+        <div class="about__photo--mobile-1">
+          <span>photo 1</span>
+        </div>
+        <div class="about__photo--mobile-2">
+          <span>photo 2</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__text-side--mobile">
+      <div class="about__flourish--mobile">
+        <span class="about__line"></span>
+        <svg class="about__drop" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;color:var(--chocolate);opacity:0.5"><path d="M12 2C12 2 4 14 4 18C4 22.418 7.582 24 12 24C16.418 24 20 22.418 20 18C20 14 12 2 12 2Z"/></svg>
+        <span class="about__line" style="background:linear-gradient(90deg,transparent,var(--latte))"></span>
+      </div>
+      <h2 class="about__title--mobile">О нас</h2>
+      <div class="about__body--mobile">
+        <p><strong>Melty</strong> — это уютное пространство, где шоколад становится искусством.</p>
+        <p>Мы верим, что хороший десерт — это больше, чем просто сладость. Это момент радости.</p>
+      </div>
+      <a href="#" class="about__cta--mobile">
+        Наша история
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="annotations" style="max-width:400px;">
+  <div class="annotation" style="grid-column: 1 / -1;">
+    <h3>Mobile Behavior</h3>
+    <p>Stacks vertically — photos on top (smaller, tighter stack), centered text below. Photo cards scale down and reduce gap. Dot pattern background hidden. Parallax disabled. Text returns to center-aligned.</p>
+  </div>
+</div>
+
+</body>
+</html>
