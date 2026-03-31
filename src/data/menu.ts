@@ -327,7 +327,7 @@ export const menuItems: MenuItem[] = [
   // ============ BREAKFASTS ============
   {
     id: 'melty-syrniki',
-    name: 'Melty сырники с йогуртом и конфитюром из смородины 230г',
+    name: 'Melty сырники с йогуртом и конфитюром из смородины',
     description: 'Нежные сырники с греческим йогуртом и конфитюром из смородины',
     price: 455,
     category: 'breakfasts',
@@ -335,7 +335,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'english-breakfast',
-    name: 'Английский завтрак 260г',
+    name: 'Английский завтрак',
     description: 'Глазунья из двух яиц, фермерские колбаски, копчёная индейка, фасоль в томатном соусе, обжаренный тостерный хлеб, свежие томаты, соус «Песто», шампиньоны',
     price: 795,
     category: 'breakfasts',
@@ -343,7 +343,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'dzhigit-breakfast',
-    name: 'Завтрак джигита 600г',
+    name: 'Завтрак джигита',
     description: 'Домашние яйца, приготовленные в домашней сметане, подаётся с двумя видами сыра, натуральным калмыцким чаем и хрустящей чиабаттой',
     price: 525,
     category: 'breakfasts',
@@ -351,7 +351,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'spanish-omelette',
-    name: 'Испанский омлет 260г',
+    name: 'Испанский омлет',
     description: 'Классический испанский омлет с начинкой',
     price: 390,
     category: 'breakfasts',
@@ -359,7 +359,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'coconut-granola',
-    name: 'Кокосовая гранола с мацони и медом 280г',
+    name: 'Кокосовая гранола с мацони и медом',
     description: 'Гранола собственного приготовления с добавлением орехов, мацони, мёда и сезонных ягод',
     price: 495,
     category: 'breakfasts',
@@ -367,7 +367,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'crepe-raspberry',
-    name: 'Креп с малиновым соусом и сметаной 260г',
+    name: 'Креп с малиновым соусом и сметаной',
     description: 'Нежный креп с малиновым соусом и сметаной',
     price: 370,
     category: 'breakfasts',
@@ -375,7 +375,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'mega-oladush-shrimp',
-    name: 'Мега оладушек с яйцом скрембл и креветками 260г',
+    name: 'Мега оладушек с яйцом скрембл и креветками',
     description: 'Нежный оладушек с яйцом скрембл и тигровыми креветками',
     price: 695,
     category: 'breakfasts',
@@ -383,7 +383,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'oatmeal-berries',
-    name: 'Овсяная каша с ягодами 260г',
+    name: 'Овсяная каша с ягодами',
     description: 'Овсяная каша с сезонными ягодами и орехом пекан',
     price: 410,
     category: 'breakfasts',
@@ -391,7 +391,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'pp-dranik-salmon',
-    name: 'ПП драник из кабачков с яйцом пашот и семгой собственного посола 220г',
+    name: 'ПП драник из кабачков с яйцом пашот и семгой собственного посола',
     description: 'Драники из кабачков, тар-тар из сёмги собственного посола, два яйца пашот и соус галандез',
     price: 810,
     category: 'breakfasts',
@@ -399,7 +399,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'rice-porridge',
-    name: 'Рисовая каша с грецкими орехами 330г',
+    name: 'Рисовая каша с грецкими орехами',
     description: 'Кремовая рисовая каша с грецкими орехами и мёдом',
     price: 395,
     category: 'breakfasts',
@@ -407,7 +407,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'melty-breakfast',
-    name: 'Фирменный завтрак Мелти 450г',
+    name: 'Фирменный завтрак Мелти',
     description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
     price: 800,
     category: 'breakfasts',
@@ -415,7 +415,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'shakshuka',
-    name: 'Шакшука с яйцом пашот и зеленью 310г',
+    name: 'Шакшука с яйцом пашот и зеленью',
     description: 'Турецкая яичница с яйцом пашот в фирменном томатном соусе. Подаётся с хрустящей чиабаттой',
     price: 460,
     category: 'breakfasts',
@@ -423,7 +423,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'egg-roll',
-    name: 'Эгг-ролл 260г',
+    name: 'Эгг-ролл',
     description: 'Хрустящий яичный ролл с начинкой',
     price: 460,
     category: 'breakfasts',
@@ -467,7 +467,7 @@ export const menuItems: MenuItem[] = [
   // ============ SALADS ============
   {
     id: 'green-pp-turkey',
-    name: 'Зеленый ПП с индейкой брискет 640г',
+    name: 'Зеленый ПП с индейкой брискет',
     description: 'Индейка брискет собственного копчения, свежая руккола, спелый авокадо, соус ПП на основе трюфельного масла, киноа и слайса огурца',
     price: 800,
     category: 'salads',
@@ -475,7 +475,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'crispy-eggplant',
-    name: 'Хрустящие баклажаны с сырным кремом 268г',
+    name: 'Хрустящие баклажаны с сырным кремом',
     description: 'Микс салата, хрустящие баклажаны в паназиатском соусе, свежие томаты, сырный мусс, кунжут, кинза',
     price: 495,
     category: 'salads',
@@ -483,7 +483,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'caesar-shrimp',
-    name: 'Цезарь с креветками 300г',
+    name: 'Цезарь с креветками',
     description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренные тигровые креветки, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
     price: 750,
     category: 'salads',
@@ -491,7 +491,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'caesar-chicken',
-    name: 'Цезарь с цыпленком 300г',
+    name: 'Цезарь с цыпленком',
     description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренное филе цыплёнка, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
     price: 595,
     category: 'salads',
@@ -499,7 +499,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'greek-salad',
-    name: 'Греческий с муссом из брынзы 282г',
+    name: 'Греческий с муссом из брынзы',
     description: 'Огурцы, розовые томаты, маслины, болгарский перец, красный лук, мусс из фермерской брынзы, заправляется оливковым маслом',
     price: 530,
     category: 'salads',
@@ -507,7 +507,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'bowl-chicken',
-    name: 'Боул с курицей 340г',
+    name: 'Боул с курицей',
     description: 'Филе цыплёнка, киноа, яйцо пашот, кукуруза, авокадо, розовые томаты, соус кунжутный',
     price: 655,
     category: 'salads',

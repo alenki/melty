@@ -325,6 +325,7 @@
   background: var(--cream);
   border-bottom: 1px solid transparent;
   transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
 }
 
 .menu-page__nav--shadowed {
@@ -338,7 +339,6 @@
 .menu-page__nav-track {
   display: flex;
   align-items: center;
-  justify-content: safe center;
   padding: 0 var(--container-padding);
   overflow-x: auto;
   scrollbar-width: none;
@@ -346,6 +346,9 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .menu-page__nav-track::-webkit-scrollbar {

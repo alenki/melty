@@ -209,6 +209,63 @@ export default function MenuPage() {
     };
   }, []);
 
+  // Drag-to-scroll for mouse users on desktop
+  useEffect(() => {
+    const track = navTrackRef.current;
+    if (!track) return;
+
+    let isDown = false;
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    const onMouseDown = (e: MouseEvent) => {
+      isDown = true;
+      isDragging = false;
+      startX = e.pageX;
+      scrollStart = track.scrollLeft;
+      track.style.scrollBehavior = 'auto';
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (!isDragging && Math.abs(dx) > 5) {
+        isDragging = true;
+        track.style.cursor = 'grabbing';
+      }
+      if (isDragging) {
+        e.preventDefault();
+        track.scrollLeft = scrollStart - dx;
+      }
+    };
+
+    const onMouseUp = () => {
+      if (!isDown) return;
+      isDown = false;
+      track.style.cursor = '';
+      track.style.scrollBehavior = '';
+      // Prevent click on buttons after dragging
+      if (isDragging) {
+        const preventClick = (e: Event) => {
+          e.stopPropagation();
+          e.preventDefault();
+        };
+        track.addEventListener('click', preventClick, { capture: true, once: true });
+      }
+      isDragging = false;
+    };
+
+    track.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+    return () => {
+      track.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+  }, []);
+
   // Nav shadow (only when truly sticky)
   useEffect(() => {
     const handleScroll = () => {
