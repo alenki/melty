@@ -32,6 +32,20 @@ const categoryOrder: MenuCategory[] = [
   'other',
 ];
 
+// Hero pill categories (subset shown in the hero section)
+const heroPills: { label: string; target: MenuCategory }[] = [
+  { label: 'Соленые вафли', target: 'savory-waffles' },
+  { label: 'Закуски', target: 'other' },
+  { label: 'Рыба, Птица, Мясо', target: 'main-dishes' },
+  { label: 'Напитки', target: 'cold-coffee' },
+  { label: 'Десерты', target: 'melty-desserts' },
+  { label: 'Классический кофе', target: 'coffee' },
+  { label: 'Салаты', target: 'salads' },
+  { label: 'Завтрак', target: 'breakfasts' },
+  { label: 'Супы', target: 'soups' },
+  { label: 'Гарниры', target: 'sides' },
+];
+
 const categoryDescriptions: Record<MenuCategory, string> = {
   'melty-desserts': 'Фирменные десерты с шоу-подачей из бельгийского шоколада',
   'chocolate-desserts': 'Авторские десерты из настоящего бельгийского шоколада',
@@ -291,7 +305,15 @@ export default function MenuPage() {
     if (!el) return;
     isManualScroll.current = true;
     setActiveCategory(cat);
-    el.scrollIntoView({ behavior: 'smooth' });
+    // Stop any in-progress Lenis scroll before starting a new one
+    const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void; scrollTo: (target: Element, opts?: { offset?: number }) => void } }).lenis;
+    if (lenis) {
+      lenis.stop();
+      lenis.start();
+      lenis.scrollTo(el, { offset: 0 });
+    } else {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
     setTimeout(() => {
       isManualScroll.current = false;
     }, 1000);
@@ -361,14 +383,14 @@ export default function MenuPage() {
 
           {/* Category pills cloud */}
           <div className="menu-page__hero-pills">
-            {activeCategories.map((cat, i) => (
+            {heroPills.map((pill, i) => (
               <button
-                key={cat}
+                key={pill.label}
                 className="menu-page__hero-pill"
-                onClick={() => scrollToCategory(cat)}
+                onClick={() => scrollToCategory(pill.target)}
                 style={{ animationDelay: `${0.6 + i * 0.05}s` }}
               >
-                {categoryLabels[cat]}
+                {pill.label}
               </button>
             ))}
           </div>

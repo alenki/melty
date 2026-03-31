@@ -39,7 +39,8 @@
       "Bash(cd:*)",
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src' -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.json \\\\\\))",
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/public' -type f -name *.png -o -name *.jpg -o -name *.jpeg)",
-      "Bash(grep -c \"category: ''coffee''\" src/data/menu.ts)"
+      "Bash(grep -c \"category: ''coffee''\" src/data/menu.ts)",
+      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js \\\\\\))"
     ]
   }
 }
