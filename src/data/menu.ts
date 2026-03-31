@@ -73,7 +73,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный чизкейк с начинкой из фисташкового урбеча и хрустящего теста «Катаифи». Подаётся с шотом молочного бельгийского шоколада и дробленной фисташкой',
     price: 640,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 41.png'
+    image: '/data/menu/desserts/image copy 41.png'
   },
   {
     id: 'melty-melt',
@@ -81,7 +81,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 88.png'
+    image: '/data/menu/desserts/image copy 88.png'
   },
   {
     id: 'melty-melt-pistachio',
@@ -89,7 +89,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 87.png'
+    image: '/data/menu/desserts/image copy 87.png'
   },
   {
     id: 'melty-cookies',
@@ -97,7 +97,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменное карамельное печенье с жидкой сердцевиной. Подаётся с шариком ванильного мороженого',
     price: 630,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 78.png'
+    image: '/data/menu/desserts/image copy 78.png'
   },
   {
     id: 'melty-pancake',
@@ -105,7 +105,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменные панкейки, подаются с карамельной пастой и дробленным печеньем',
     price: 700,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 77.png'
+    image: '/data/menu/desserts/image copy 77.png'
   },
   {
     id: 'melty-pancake-pistachio',
@@ -113,7 +113,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
     price: 640,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 84.png'
+    image: '/data/menu/desserts/image copy 84.png'
   },
   {
     id: 'melty-fondue',
@@ -121,7 +121,7 @@ export const menuItems: MenuItem[] = [
     description: 'Расплавленный горячий шоколад. Подаётся с миксом брауни, венских вафель, паффрисами и сезонными ягодами',
     price: 1300,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 83.png'
+    image: '/data/menu/desserts/image copy 83.png'
   },
   {
     id: 'melty-burger',
@@ -129,7 +129,7 @@ export const menuItems: MenuItem[] = [
     description: 'Запечатанный бургер, начиненный шариком ванильного мороженого и хрустящим тестом «Катаифи». Подаётся на подушке из фисташкового урбеча, посыпанный дробленной фисташкой',
     price: 575,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 39.png'
+    image: '/data/menu/desserts/image copy 39.png'
   },
   {
     id: 'brownie-roll',
@@ -137,7 +137,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный брауни, завёрнутый в тонкие блинчики. Поливаются тремя видами бельгийского шоколада',
     price: 495,
     category: 'melty-desserts',
-    image: '/data/menu/3/image copy 52.png'
+    image: '/data/menu/desserts/image copy 52.png'
   },
 
   // ============ CHOCOLATE DESSERTS ============
@@ -147,7 +147,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежая клубника, хрустящее тесто «Катаифи», фисташковая паста, молочный бельгийский шоколад, выложенные послойно в стакане. Посыпается дробленной фисташкой',
     price: 850,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 40.png'
+    image: '/data/menu/desserts/image copy 40.png'
   },
   {
     id: 'krispy-rise-chocolate',
@@ -155,7 +155,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящий воздушный рис, обильно политый молочным бельгийским шоколадом',
     price: 350,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 89.png'
+    image: '/data/menu/desserts/image copy 89.png'
   },
   {
     id: 'puffies',
@@ -163,7 +163,7 @@ export const menuItems: MenuItem[] = [
     description: 'Мини-панкейки. Подаются с шотом молочного бельгийского шоколада',
     price: 390,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 91.png'
+    image: '/data/menu/desserts/image copy 91.png'
   },
   {
     id: 'brownie',
@@ -171,7 +171,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный брауни, обильно политый молочным бельгийским шоколадом. Подаётся с шариком ванильного мороженого',
     price: 460,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 82.png'
+    image: '/data/menu/desserts/image copy 82.png'
   },
   {
     id: 'san-sebastian',
@@ -179,7 +179,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный творожный чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
     price: 450,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 81.png'
+    image: '/data/menu/desserts/image copy 81.png'
   },
   {
     id: 'churros',
@@ -187,7 +187,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкие обжаренные вафельные палочки, политые тремя видами бельгийского шоколада',
     price: 395,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 80.png'
+    image: '/data/menu/desserts/image copy 80.png'
   },
   {
     id: 'chocolate-fondant',
@@ -195,7 +195,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный кекс с жидкой сердцевиной, политый молочным бельгийским шоколадом, подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 410,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 79.png'
+    image: '/data/menu/desserts/image copy 79.png'
   },
   {
     id: 'eclair',
@@ -203,7 +203,7 @@ export const menuItems: MenuItem[] = [
     description: 'Пирожные из заварного теста под карамелизированной корочкой, наполненные фирменным кремом «Патисьер». Подаются с сезонными ягодами',
     price: 440,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 85.png'
+    image: '/data/menu/desserts/image copy 85.png'
   },
   {
     id: 'pancakes-trouble-chocolate',
@@ -211,7 +211,7 @@ export const menuItems: MenuItem[] = [
     description: 'Пышные панкейки, обильно политые тремя видами бельгийского шоколада',
     price: 495,
     category: 'chocolate-desserts',
-    image: '/data/menu/3/image copy 77.png'
+    image: '/data/menu/desserts/image copy 77.png'
   },
 
   // ============ CREPES ============
@@ -221,7 +221,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик, политый тремя видами бельгийского шоколада, подаётся с сезонными ягодами',
     price: 390,
     category: 'crepes',
-    image: '/data/menu/3/image copy 54.png'
+    image: '/data/menu/desserts/image copy 54.png'
   },
   {
     id: 'crep-dubai',
@@ -229,7 +229,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик с начинкой из теста «Катаифи», политый фисташковым урбечом и молочным шоколадом',
     price: 585,
     category: 'crepes',
-    image: '/data/menu/3/image copy 43.png'
+    image: '/data/menu/desserts/image copy 43.png'
   },
   {
     id: 'fetuccini-crep',
@@ -237,7 +237,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик, разрезанный на тонкие полоски, напоминающие итальянскую пасту. Поливается молочным бельгийским шоколадом и подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 425,
     category: 'crepes',
-    image: '/data/menu/3/image copy 53.png'
+    image: '/data/menu/desserts/image copy 53.png'
   },
 
   // ============ WAFFLES & CROISSANTS ============
@@ -247,7 +247,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая тремя видами бельгийского шоколада',
     price: 425,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 51.png'
+    image: '/data/menu/desserts/image copy 51.png'
   },
   {
     id: 'waffles-steak-gold',
@@ -255,7 +255,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
     price: 465,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 50.png'
+    image: '/data/menu/desserts/image copy 50.png'
   },
   {
     id: 'waffle-gold',
@@ -263,7 +263,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
     price: 495,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 49.png'
+    image: '/data/menu/desserts/image copy 49.png'
   },
   {
     id: 'waffle-steak',
@@ -271,7 +271,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочным бельгийским шоколадом',
     price: 430,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 48.png'
+    image: '/data/menu/desserts/image copy 48.png'
   },
   {
     id: 'pistachio-waffle',
@@ -279,7 +279,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкие вафли, политые фисташковым урбечом',
     price: 475,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 47.png'
+    image: '/data/menu/desserts/image copy 47.png'
   },
   {
     id: 'new-york-roll',
@@ -287,7 +287,7 @@ export const menuItems: MenuItem[] = [
     description: 'Круассан-ролл с кремом «Патисьер», молочным бельгийским шоколадом и шариком мороженого',
     price: 475,
     category: 'waffles-croissants',
-    image: '/data/menu/3/image copy 42.png'
+    image: '/data/menu/desserts/image copy 42.png'
   },
 
   // ============ SAVORY WAFFLES ============

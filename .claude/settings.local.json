@@ -40,7 +40,13 @@
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src' -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.json \\\\\\))",
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/public' -type f -name *.png -o -name *.jpg -o -name *.jpeg)",
       "Bash(grep -c \"category: ''coffee''\" src/data/menu.ts)",
-      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js \\\\\\))"
+      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js \\\\\\))",
+      "Bash(grep -r \"placeholder\\\\|default.*image\\\\|fallback\" src/ --include=*.ts --include=*.tsx)",
+      "Bash(MENU=\"C:/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/public/data/menu\")",
+      "Bash(mkdir -p \"$MENU/desserts\")",
+      "Bash(for n:*)",
+      "Bash(do mv:*)",
+      "Bash(done)"
     ]
   }
 }
