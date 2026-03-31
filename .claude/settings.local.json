@@ -46,7 +46,8 @@
       "Bash(mkdir -p \"$MENU/desserts\")",
       "Bash(for n:*)",
       "Bash(do mv:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx|json\\)$\")"
     ]
   }
 }

@@ -10,6 +10,7 @@ import './MenuPage.css';
 const categoryOrder: MenuCategory[] = [
   'melty-desserts',
   'chocolate-desserts',
+  'chocolate-cups',
   'crepes',
   'waffles-croissants',
   'savory-waffles',
