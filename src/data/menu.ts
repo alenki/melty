@@ -664,6 +664,144 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/3/image copy.png'
   },
 
+  // ============ CLASSIC COFFEE ============
+  {
+    id: 'flat-white',
+    name: 'FLAT WHITE 220мл',
+    description: 'Классический флэт уайт с плотной бархатистой микропенкой',
+    price: 250,
+    category: 'coffee',
+    image: '/data/menu/drinks/image copy 64.png'
+  },
+  {
+    id: 'americano',
+    name: 'Американо 170мл',
+    description: 'Классический американо из отборных зёрен',
+    price: 200,
+    category: 'coffee',
+    image: '/data/menu/drinks/image copy 66.png'
+  },
+  {
+    id: 'hot-chocolate',
+    name: 'Горячий шоколад 250мл',
+    description: 'Горячий шоколад из натурального бельгийского шоколада',
+    price: 330,
+    category: 'coffee',
+    image: '/data/menu/drinks/IMG_2510.JPG'
+  },
+  {
+    id: 'hot-chocolate-mega',
+    name: 'Горячий шоколад Мега 350мл',
+    description: 'Большая порция горячего шоколада из бельгийского шоколада',
+    price: 430,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'kakao',
+    name: 'Какао 250мл',
+    description: 'Горячий какао из бельгийского шоколада',
+    price: 330,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'kakao-mega',
+    name: 'Какао Мега 350мл',
+    description: 'Большая порция горячего какао из бельгийского шоколада',
+    price: 430,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'cappuccino-350',
+    name: 'Капучино 350мл',
+    description: 'Классический капучино с нежной молочной пенкой',
+    price: 250,
+    category: 'coffee',
+    image: '/data/menu/drinks/image copy 92.png'
+  },
+  {
+    id: 'cappuccino-250',
+    name: 'Капучино 250мл',
+    description: 'Классический капучино с нежной молочной пенкой',
+    price: 250,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'cappuccino-lactose-free-350',
+    name: 'Капучино на безлактозном молоке 350мл',
+    description: 'Капучино на безлактозном молоке с нежной пенкой',
+    price: 310,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'cappuccino-lactose-free-250',
+    name: 'Капучино на безлактозном молоке 250мл',
+    description: 'Капучино на безлактозном молоке с нежной пенкой',
+    price: 280,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'latte-350',
+    name: 'Латте 350мл',
+    description: 'Нежный латте с бархатистой молочной пенкой',
+    price: 270,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'latte-alt-milk',
+    name: 'Латте на альтернативном молоке 350мл',
+    description: 'Латте на альтернативном растительном молоке',
+    price: 270,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'latte-lactose-free',
+    name: 'Латте на безлактозном молоке 350мл',
+    description: 'Латте на безлактозном молоке с нежной пенкой',
+    price: 270,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'raf-250',
+    name: 'Раф 250мл',
+    description: 'Нежный сливочный раф-кофе',
+    price: 320,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'raf-350',
+    name: 'Раф 350мл',
+    description: 'Нежный сливочный раф-кофе, большая порция',
+    price: 350,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'filter-coffee',
+    name: 'Фильтр-кофе 250мл',
+    description: 'Кофе, заваренный методом фильтрации',
+    price: 250,
+    category: 'coffee',
+    image: ''
+  },
+  {
+    id: 'espresso',
+    name: 'Эспрессо 40мл',
+    description: 'Классический эспрессо из отборных зёрен',
+    price: 200,
+    category: 'coffee',
+    image: ''
+  },
+
   // ============ COLD COFFEE ============
   {
     id: 'ice-latte',
@@ -739,14 +877,6 @@ export const menuItems: MenuItem[] = [
   },
 
   // ============ AUTHOR COFFEE ============
-  {
-    id: 'kakao',
-    name: 'Какао',
-    description: 'Горячий какао из бельгийского шоколада',
-    price: 250,
-    category: 'coffee',
-    image: '/data/menu/drinks/Melty какао.JPG'
-  },
   {
     id: 'raf-raspberry',
     name: 'Малиновый раф',
