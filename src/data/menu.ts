@@ -5,6 +5,7 @@ export type MenuCategory =
   | 'melty-desserts'
   | 'chocolate-desserts'
   | 'waffles-croissants'
+  | 'savory-waffles'
   | 'crepes'
   | 'breakfasts'
   | 'salads'
@@ -27,6 +28,7 @@ export const categoryLabels: Record<MenuCategory, string> = {
   'chocolate-desserts': 'Шоколадные десерты',
   'crepes': 'Крепы',
   'waffles-croissants': 'Вафли и Круассаны',
+  'savory-waffles': 'Соленые вафли',
   'breakfasts': 'Завтраки',
   'salads': 'Салаты',
   'soups': 'Супы',
@@ -270,6 +272,40 @@ export const menuItems: MenuItem[] = [
     price: 475,
     category: 'waffles-croissants',
     image: '/data/menu/image copy 42.png'
+  },
+
+  // ============ SAVORY WAFFLES ============
+  {
+    id: 'savory-waffle-avocado-crab',
+    name: 'Вафля с авокадо и крабом',
+    description: 'Соленая вафля с авокадо и крабом',
+    price: 680,
+    category: 'savory-waffles',
+    image: '/data/menu/1/Соленая вафля с авокадо, крабом, и сливочным муссом.jpg'
+  },
+  {
+    id: 'savory-waffle-beef-coleslaw',
+    name: 'Вафля с рван. говядиной и салатом Коу-слоу',
+    description: 'Соленая вафля с рваной говядиной и салатом Коу-слоу',
+    price: 620,
+    category: 'savory-waffles',
+    image: '/data/menu/2/Вафля с рван. говядиной и салатом Коу-слоу.jpg'
+  },
+  {
+    id: 'savory-waffle-salmon-poached-egg',
+    name: 'Вафля с семгой и яйцом пашот',
+    description: 'Соленая вафля с семгой и яйцом пашот',
+    price: 750,
+    category: 'savory-waffles',
+    image: '/data/menu/1/Соленая вафля с лососем и со сливочным муссом.jpg'
+  },
+  {
+    id: 'savory-waffle-mousse-scramble',
+    name: 'Вафля со сливоч. муссом и скремблом',
+    description: 'Соленая вафля со сливочным муссом и скремблом',
+    price: 450,
+    category: 'savory-waffles',
+    image: '/data/menu/1/Соленая вафля со скремблом.jpg'
   },
 
   // ============ BREAKFASTS ============

@@ -15,6 +15,8 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     return `${price.toLocaleString('ru-RU')}₽`;
   };
 
+  const hasImage = !!item.image;
+
   // Scroll lock effect - stop Lenis smooth scroll
   useEffect(() => {
     if (!isOpen) return;
@@ -56,9 +58,17 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
           </svg>
         </button>
 
-        {/* Image placeholder */}
+        {/* Image */}
         <div className="modal-slider">
-          <MenuPlaceholder />
+          {hasImage ? (
+            <img
+              src={item.image}
+              alt={item.name}
+              className="modal-slider__image"
+            />
+          ) : (
+            <MenuPlaceholder />
+          )}
         </div>
 
         {/* Content section */}

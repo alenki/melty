@@ -11,10 +11,14 @@ interface MenuItemProps {
 
 export default function MenuItem({ item, index }: MenuItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const formatPrice = (price: number): string => {
     return `${price.toLocaleString('ru-RU')}₽`;
   };
+
+  const hasImage = item.image && !imageError;
 
   return (
     <>
@@ -32,7 +36,21 @@ export default function MenuItem({ item, index }: MenuItemProps) {
       }}
     >
       <div className="menu-item__image-wrapper">
-        <MenuPlaceholder />
+        {hasImage ? (
+          <>
+            {!imageLoaded && <MenuPlaceholder />}
+            <img
+              src={item.image}
+              alt={item.name}
+              className={`menu-item__image ${imageLoaded ? 'menu-item__image--loaded' : ''}`}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageError(true)}
+              loading="lazy"
+            />
+          </>
+        ) : (
+          <MenuPlaceholder />
+        )}
       </div>
 
       <div className="menu-item__content">

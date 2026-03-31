@@ -12,6 +12,7 @@ const categoryOrder: MenuCategory[] = [
   'chocolate-desserts',
   'crepes',
   'waffles-croissants',
+  'savory-waffles',
   'breakfasts',
   'salads',
   'soups',
@@ -28,6 +29,7 @@ const categoryDescriptions: Record<MenuCategory, string> = {
   'chocolate-desserts': 'Авторские десерты из настоящего бельгийского шоколада',
   'crepes': 'Нежные французские крепы с различными начинками',
   'waffles-croissants': 'Свежая выпечка: венские вафли и хрустящие круассаны',
+  'savory-waffles': 'Соленые вафли с разнообразными начинками',
   'breakfasts': 'Завтраки на каждый день',
   'salads': 'Свежие салаты из сезонных ингредиентов',
   'soups': 'Горячие домашние супы',
@@ -339,7 +341,16 @@ export default function MenuPage() {
                   }}
                 >
                   <div className="menu-page__featured-image-wrap">
-                    <MenuPlaceholder />
+                    {featuredItem.image ? (
+                      <img
+                        src={featuredItem.image}
+                        alt={featuredItem.name}
+                        className="menu-page__featured-image"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <MenuPlaceholder />
+                    )}
                   </div>
                   <div className="menu-page__featured-content">
                     <h3 className="menu-page__featured-name">
