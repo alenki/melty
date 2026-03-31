@@ -8,17 +8,17 @@ import { BackToTop } from '../components';
 import './MenuPage.css';
 
 const categoryOrder: MenuCategory[] = [
-  'melty-desserts',
-  'chocolate-desserts',
-  'chocolate-cups',
-  'crepes',
-  'waffles-croissants',
-  'savory-waffles',
   'breakfasts',
+  'other',
   'salads',
   'soups',
   'main-dishes',
   'sides',
+  'crepes',
+  'waffles-croissants',
+  'chocolate-desserts',
+  'chocolate-cups',
+  'melty-desserts',
   'coffee',
   'cold-coffee',
   'author-coffee',
@@ -30,34 +30,34 @@ const categoryOrder: MenuCategory[] = [
   'house-teas',
   'leaf-teas',
   'soft-drinks',
-  'other',
 ];
 
 // Hero pill categories (subset shown in the hero section)
 const heroPills: { label: string; target: MenuCategory }[] = [
-  { label: 'Соленые вафли', target: 'savory-waffles' },
+  { label: 'Завтрак', target: 'breakfasts' },
   { label: 'Закуски', target: 'other' },
+  { label: 'Салаты', target: 'salads' },
+  { label: 'Супы', target: 'soups' },
   { label: 'Рыба, Птица, Мясо', target: 'main-dishes' },
-  { label: 'Напитки', target: 'cold-coffee' },
+  { label: 'Гарниры', target: 'sides' },
+  { label: 'Соленые вафли', target: 'savory-waffles' },
   { label: 'Десерты', target: 'melty-desserts' },
   { label: 'Классический кофе', target: 'coffee' },
-  { label: 'Салаты', target: 'salads' },
-  { label: 'Завтрак', target: 'breakfasts' },
-  { label: 'Супы', target: 'soups' },
-  { label: 'Гарниры', target: 'sides' },
+  { label: 'Напитки', target: 'cold-coffee' },
 ];
 
 const categoryDescriptions: Record<MenuCategory, string> = {
-  'melty-desserts': 'Фирменные десерты с шоу-подачей из бельгийского шоколада',
-  'chocolate-desserts': 'Авторские десерты из настоящего бельгийского шоколада',
-  'crepes': 'Нежные французские крепы с различными начинками',
-  'waffles-croissants': 'Свежая выпечка: венские вафли и хрустящие круассаны',
-  'savory-waffles': 'Соленые вафли с разнообразными начинками',
   'breakfasts': 'Завтраки на каждый день',
+  'other': 'Лёгкие закуски и перекусы',
   'salads': 'Свежие салаты из сезонных ингредиентов',
   'soups': 'Горячие домашние супы',
   'main-dishes': 'Блюда из рыбы, птицы и мяса',
   'sides': 'Гарниры к основным блюдам',
+  'crepes': 'Нежные французские крепы с различными начинками',
+  'waffles-croissants': 'Свежая выпечка: венские вафли и хрустящие круассаны',
+  'chocolate-desserts': 'Авторские десерты из настоящего бельгийского шоколада',
+  'chocolate-cups': 'Шоколадные стаканы с бельгийским шоколадом',
+  'melty-desserts': 'Фирменные десерты с шоу-подачей из бельгийского шоколада',
   'coffee': 'Классические кофейные напитки на зерне спешелти',
   'cold-coffee': 'Холодные кофейные напитки со льдом',
   'author-coffee': 'Авторские кофейные напитки от нашего бариста',
@@ -69,7 +69,7 @@ const categoryDescriptions: Record<MenuCategory, string> = {
   'house-teas': 'Ароматные фруктовые и ягодные чаи',
   'leaf-teas': 'Классические листовые чаи',
   'soft-drinks': 'Прохладительные напитки',
-  'other': 'Лёгкие закуски и перекусы',
+  'savory-waffles': 'Соленые вафли с разнообразными начинками',
 };
 
 function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => void }) {

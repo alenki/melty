@@ -33,17 +33,17 @@ export interface MenuItem {
 }
 
 export const categoryLabels: Record<MenuCategory, string> = {
-  'melty-desserts': 'Melty Десерты',
-  'chocolate-desserts': 'Шоколадные десерты',
-  'chocolate-cups': 'Шоколадные стаканы',
-  'crepes': 'Крепы',
-  'waffles-croissants': 'Вафли и Круассаны',
-  'savory-waffles': 'Соленые вафли',
   'breakfasts': 'Завтраки',
+  'other': 'Закуски',
   'salads': 'Салаты',
   'soups': 'Супы',
   'main-dishes': 'Рыба, Птица, Мясо',
   'sides': 'Гарниры',
+  'crepes': 'Крепы',
+  'waffles-croissants': 'Вафли и Круассаны',
+  'chocolate-desserts': 'Шоколадные десерты',
+  'chocolate-cups': 'Шоколадные стаканы',
+  'melty-desserts': 'Melty Десерты',
   'coffee': 'Классический кофе',
   'cold-coffee': 'Холодный кофе',
   'author-coffee': 'Авторский кофе',
@@ -55,7 +55,7 @@ export const categoryLabels: Record<MenuCategory, string> = {
   'house-teas': 'Домашние чаи',
   'leaf-teas': 'Листовые чаи',
   'soft-drinks': 'Прохладные напитки',
-  'other': 'Закуски'
+  'savory-waffles': 'Соленые вафли',
 };
 
 export const bestSellerIds: string[] = [

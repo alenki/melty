@@ -10,15 +10,17 @@ interface CategoryFilterProps {
 export default function CategoryFilter({ activeCategory, onCategoryChange }: CategoryFilterProps) {
   const categories: Array<MenuCategory | 'all'> = [
     'all',
-    'melty-desserts',
-    'chocolate-desserts',
-    'crepes',
-    'waffles-croissants',
     'breakfasts',
+    'other',
     'salads',
     'soups',
     'main-dishes',
     'sides',
+    'crepes',
+    'waffles-croissants',
+    'chocolate-desserts',
+    'chocolate-cups',
+    'melty-desserts',
     'coffee',
     'cold-coffee',
     'author-coffee',
@@ -30,7 +32,6 @@ export default function CategoryFilter({ activeCategory, onCategoryChange }: Cat
     'house-teas',
     'leaf-teas',
     'soft-drinks',
-    'other'
   ];
 
   const getLabel = (category: MenuCategory | 'all'): string => {
