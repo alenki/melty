@@ -519,23 +519,23 @@ export const menuItems: MenuItem[] = [
     id: 'tom-yam-seafood',
     name: 'Том-ям с морепродуктами',
     description: 'Суп том-ям с добавлением креветок, кальмаров и сёмги. Подаётся с рисом басматти',
-    price: 690,
+    price: 860,
     category: 'soups',
     image: '/data/menu/3/image copy 14.png'
   },
   {
     id: 'lentil-soup-turkey',
-    name: 'Чечевичный суп с индейкой брискет',
+    name: 'Чечевичный суп с брискетом из индейки',
     description: 'Суп из красной чечевицы на сливочной основе с добавлением индейки брискет. Подаётся с сухарями',
-    price: 385,
+    price: 530,
     category: 'soups',
     image: '/data/menu/3/image copy 67.png'
   },
   {
     id: 'chicken-ryaba-soup',
-    name: 'Курочка «Ряба» с яичной лапшой',
+    name: 'Курочка Ряба с яичной лапшой',
     description: 'Куриный суп с яичной лапшой',
-    price: 255,
+    price: 355,
     category: 'soups',
     image: '/data/menu/3/image copy 13.png'
   },
