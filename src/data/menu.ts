@@ -643,7 +643,7 @@ export const menuItems: MenuItem[] = [
     id: 'wild-rice-truffle',
     name: 'Дикий рис с маслом белого трюфеля и зеленью',
     description: 'Ароматный дикий рис с маслом белого трюфеля и свежей зеленью',
-    price: 280,
+    price: 380,
     category: 'sides',
     image: '/data/menu/3/image copy 5.png'
   },
@@ -651,7 +651,7 @@ export const menuItems: MenuItem[] = [
     id: 'french-fries',
     name: 'Картофель фри',
     description: 'Хрустящий золотистый картофель фри',
-    price: 180,
+    price: 250,
     category: 'sides',
     image: '/data/menu/3/image copy 4.png'
   },
@@ -659,7 +659,7 @@ export const menuItems: MenuItem[] = [
     id: 'dippers-parmesan',
     name: 'Дипперы со снегом пармезан',
     description: 'Картофельные дипперы, посыпанные снегом пармезана',
-    price: 250,
+    price: 350,
     category: 'sides',
     image: '/data/menu/3/image copy 3.png'
   },
@@ -667,7 +667,7 @@ export const menuItems: MenuItem[] = [
     id: 'mashed-potato',
     name: 'Картофельное пюре из детства',
     description: 'Нежное домашнее картофельное пюре по бабушкиному рецепту',
-    price: 180,
+    price: 250,
     category: 'sides',
     image: '/data/menu/3/image copy 2.png'
   },
@@ -675,7 +675,7 @@ export const menuItems: MenuItem[] = [
     id: 'cheese-sticks',
     name: 'Сырные палочки',
     description: 'Хрустящие сырные палочки с соусом',
-    price: 365,
+    price: 480,
     category: 'sides',
     image: '/data/menu/3/image copy.png'
   },
