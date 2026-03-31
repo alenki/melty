@@ -327,83 +327,107 @@ export const menuItems: MenuItem[] = [
   // ============ BREAKFASTS ============
   {
     id: 'melty-syrniki',
-    name: 'Melty сырники с йогуртом и конфитюром из смородины',
+    name: 'Melty сырники с йогуртом и конфитюром из смородины 230г',
     description: 'Нежные сырники с греческим йогуртом и конфитюром из смородины',
-    price: 350,
+    price: 455,
     category: 'breakfasts',
     image: '/data/menu/3/image copy 26.png'
   },
   {
-    id: 'rice-porridge',
-    name: 'Рисовая каша с грецкими орехами',
-    description: 'Кремовая рисовая каша с грецкими орехами и мёдом',
-    price: 320,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 25.png'
-  },
-  {
-    id: 'oatmeal-berries',
-    name: 'Овсяная каша с ягодами и орехом пекан',
-    description: 'Овсяная каша с сезонными ягодами и орехом пекан',
-    price: 295,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 24.png'
-  },
-  {
-    id: 'melty-breakfast',
-    name: 'Фирменный завтрак «Melty»',
-    description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
-    price: 660,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 23.png'
-  },
-  {
-    id: 'pp-dranik-salmon',
-    name: 'ПП драник из кабачков с яйцом пашот и сёмгой собственного посола',
-    description: 'Драники из кабачков, тар-тар из сёмги собственного посола, два яйца пашот и соус галандез',
-    price: 645,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 22.png'
-  },
-  {
-    id: 'mega-oladush-shrimp',
-    name: 'Мега оладуш с яйцом скрембл и креветками',
-    description: 'Нежный оладушек с яйцом скрембл и тигровыми креветками',
-    price: 545,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 21.png'
-  },
-  {
-    id: 'coconut-granola',
-    name: 'Кокосовая гранола с мацони и мёдом',
-    description: 'Гранола собственного приготовления с добавлением орехов, мацони, мёда и сезонных ягод',
-    price: 395,
-    category: 'breakfasts',
-    image: '/data/menu/3/image copy 75.png'
-  },
-  {
     id: 'english-breakfast',
-    name: 'Английский завтрак',
+    name: 'Английский завтрак 260г',
     description: 'Глазунья из двух яиц, фермерские колбаски, копчёная индейка, фасоль в томатном соусе, обжаренный тостерный хлеб, свежие томаты, соус «Песто», шампиньоны',
-    price: 650,
+    price: 795,
     category: 'breakfasts',
     image: '/data/menu/3/image copy 20.png'
   },
   {
     id: 'dzhigit-breakfast',
-    name: 'Завтрак джигита',
+    name: 'Завтрак джигита 600г',
     description: 'Домашние яйца, приготовленные в домашней сметане, подаётся с двумя видами сыра, натуральным калмыцким чаем и хрустящей чиабаттой',
-    price: 420,
+    price: 525,
     category: 'breakfasts',
     image: '/data/menu/3/image copy 19.png'
   },
   {
+    id: 'spanish-omelette',
+    name: 'Испанский омлет 260г',
+    description: 'Классический испанский омлет с начинкой',
+    price: 390,
+    category: 'breakfasts',
+    image: '/data/menu/1/Испанский омлет.jpg'
+  },
+  {
+    id: 'coconut-granola',
+    name: 'Кокосовая гранола с мацони и медом 280г',
+    description: 'Гранола собственного приготовления с добавлением орехов, мацони, мёда и сезонных ягод',
+    price: 495,
+    category: 'breakfasts',
+    image: '/data/menu/1/Гранола.jpg'
+  },
+  {
+    id: 'crepe-raspberry',
+    name: 'Креп с малиновым соусом и сметаной 260г',
+    description: 'Нежный креп с малиновым соусом и сметаной',
+    price: 370,
+    category: 'breakfasts',
+    image: ''
+  },
+  {
+    id: 'mega-oladush-shrimp',
+    name: 'Мега оладушек с яйцом скрембл и креветками 260г',
+    description: 'Нежный оладушек с яйцом скрембл и тигровыми креветками',
+    price: 695,
+    category: 'breakfasts',
+    image: '/data/menu/3/image copy 21.png'
+  },
+  {
+    id: 'oatmeal-berries',
+    name: 'Овсяная каша с ягодами 260г',
+    description: 'Овсяная каша с сезонными ягодами и орехом пекан',
+    price: 410,
+    category: 'breakfasts',
+    image: '/data/menu/1/Овсяная каша.jpg'
+  },
+  {
+    id: 'pp-dranik-salmon',
+    name: 'ПП драник из кабачков с яйцом пашот и семгой собственного посола 220г',
+    description: 'Драники из кабачков, тар-тар из сёмги собственного посола, два яйца пашот и соус галандез',
+    price: 810,
+    category: 'breakfasts',
+    image: '/data/menu/3/image copy 22.png'
+  },
+  {
+    id: 'rice-porridge',
+    name: 'Рисовая каша с грецкими орехами 330г',
+    description: 'Кремовая рисовая каша с грецкими орехами и мёдом',
+    price: 395,
+    category: 'breakfasts',
+    image: '/data/menu/1/Рисовая каша.jpg'
+  },
+  {
+    id: 'melty-breakfast',
+    name: 'Фирменный завтрак Мелти 450г',
+    description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
+    price: 800,
+    category: 'breakfasts',
+    image: ''
+  },
+  {
     id: 'shakshuka',
-    name: 'Шакшука с яйцом пашот и зеленью',
+    name: 'Шакшука с яйцом пашот и зеленью 310г',
     description: 'Турецкая яичница с яйцом пашот в фирменном томатном соусе. Подаётся с хрустящей чиабаттой',
-    price: 360,
+    price: 460,
     category: 'breakfasts',
     image: '/data/menu/3/image copy 76.png'
+  },
+  {
+    id: 'egg-roll',
+    name: 'Эгг-ролл 260г',
+    description: 'Хрустящий яичный ролл с начинкой',
+    price: 460,
+    category: 'breakfasts',
+    image: '/data/menu/1/Эгг-ролл.jpg'
   },
 
   // ============ APPETIZERS (ЗАКУСКИ) ============
