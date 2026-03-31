@@ -671,7 +671,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный латте со льдом',
     price: 320,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/image copy 64.png'
+    image: ''
   },
   {
     id: 'bumble-orange',
@@ -687,7 +687,7 @@ export const menuItems: MenuItem[] = [
     description: 'Кофейно-гранатовый коктейль со льдом',
     price: 350,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/IMG_2528.JPG'
+    image: ''
   },
   {
     id: 'bumble-fresh',
@@ -703,7 +703,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с гранатовым соком',
     price: 280,
     category: 'author-coffee',
-    image: '/data/menu/drinks/IMG_2527.JPG'
+    image: ''
   },
   {
     id: 'cold-brew-blueberry',
@@ -779,7 +779,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ягодный лимонад с клюквой и вишней',
     price: 320,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/image copy 37.png'
+    image: '/data/menu/drinks/IMG_2528.JPG'
   },
   {
     id: 'lemonade-mango-passion',
@@ -787,7 +787,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский лимонад с манго и маракуйей',
     price: 310,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/IMG_2518.JPG'
+    image: ''
   },
   {
     id: 'mojito-lime',
@@ -803,7 +803,7 @@ export const menuItems: MenuItem[] = [
     description: 'Освежающий мохито с экзотической маракуйей',
     price: 450,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/image copy 60.png'
+    image: '/data/menu/drinks/IMG_2518.JPG'
   },
 
   // ============ AUTHOR DRINKS ============
@@ -813,7 +813,7 @@ export const menuItems: MenuItem[] = [
     description: 'Безалкогольный напиток в стиле Апероль Шприц',
     price: 350,
     category: 'author-drinks',
-    image: '/data/menu/drinks/image copy 34.png'
+    image: ''
   },
   {
     id: 'paloma-grapefruit',
@@ -821,7 +821,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток с грейпфрутом и карамелью',
     price: 250,
     category: 'author-drinks',
-    image: '/data/menu/drinks/image copy 35.png'
+    image: ''
   },
   {
     id: 'sorrel',
@@ -829,7 +829,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток на основе щавеля',
     price: 310,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/IMG_2547.JPG'
+    image: ''
   },
 
   // ============ SMOOTHIES ============
@@ -875,7 +875,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкий молочный коктейль с ванилью и бананом',
     price: 280,
     category: 'milkshakes',
-    image: '/data/menu/drinks/image copy 56.png'
+    image: ''
   },
   {
     id: 'milkshake-oreo',
@@ -935,7 +935,7 @@ export const menuItems: MenuItem[] = [
     description: 'Зелёный чай с цветками жасмина',
     price: 290,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/IMG_2542.JPG'
+    image: ''
   },
   {
     id: 'tea-milk-oolong',
@@ -943,7 +943,7 @@ export const menuItems: MenuItem[] = [
     description: 'Китайский молочный улун с нежным сливочным вкусом',
     price: 310,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/image copy 28.png'
+    image: '/data/menu/drinks/IMG_2542.JPG'
   },
   {
     id: 'tea-sencha',
@@ -951,7 +951,7 @@ export const menuItems: MenuItem[] = [
     description: 'Японский зелёный чай сенча',
     price: 290,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/IMG_2544.JPG'
+    image: ''
   },
   {
     id: 'tea-assam',
@@ -959,7 +959,7 @@ export const menuItems: MenuItem[] = [
     description: 'Крепкий индийский чёрный чай',
     price: 390,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/IMG_2535.JPG'
+    image: ''
   },
   {
     id: 'tea-black-thyme',
@@ -967,7 +967,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический чёрный чай с чабрецом',
     price: 290,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/image copy 59.png'
+    image: '/data/menu/drinks/IMG_2535.JPG'
   },
   {
     id: 'tea-earl-grey',
