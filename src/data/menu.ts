@@ -664,70 +664,68 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/3/image copy.png'
   },
 
-  // ============ CLASSIC COFFEE ============
+  // ============ COLD COFFEE ============
   {
-    id: 'americano',
-    name: 'Американо',
-    description: 'Классический американо из отборных зёрен',
-    price: 190,
-    category: 'coffee',
-    image: '/data/menu/drinks/image copy 66.png'
-  },
-  {
-    id: 'cappuccino-250',
-    name: 'Капучино 250 мл',
-    description: 'Капучино с бархатистой молочной пенкой',
-    price: 210,
-    category: 'coffee',
-    image: '/data/menu/drinks/image copy 38.png'
-  },
-  {
-    id: 'cappuccino-350',
-    name: 'Капучино 350 мл',
-    description: 'Большой капучино с бархатистой молочной пенкой',
-    price: 230,
-    category: 'coffee',
-    image: '/data/menu/drinks/image copy 92.png'
-  },
-  {
-    id: 'flat-white',
-    name: 'Flat White',
-    description: 'Крепкий кофе с бархатистым молоком',
-    price: 220,
-    category: 'coffee',
+    id: 'ice-latte',
+    name: 'Ice latte',
+    description: 'Холодный латте со льдом',
+    price: 320,
+    category: 'cold-coffee',
     image: '/data/menu/drinks/image copy 64.png'
   },
   {
-    id: 'raf-classic-250',
-    name: 'Раф 250 мл',
-    description: 'Сливочный раф по классическому рецепту',
-    price: 250,
-    category: 'coffee',
-    image: '/data/menu/drinks/image copy 65.png'
-  },
-
-  // ============ COLD COFFEE ============
-  {
-    id: 'bumble',
-    name: 'Бамбл',
-    description: 'Кофейно-апельсиновый или гранатовый коктейль со льдом',
-    price: 270,
+    id: 'bumble-orange',
+    name: 'Бамбл апельсиновый',
+    description: 'Кофейно-апельсиновый коктейль со льдом',
+    price: 350,
     category: 'cold-coffee',
     image: '/data/menu/drinks/image copy 27.png'
   },
   {
+    id: 'bumble-pomegranate',
+    name: 'Бамбл гранатовый',
+    description: 'Кофейно-гранатовый коктейль со льдом',
+    price: 350,
+    category: 'cold-coffee',
+    image: '/data/menu/drinks/IMG_2528.JPG'
+  },
+  {
     id: 'bumble-fresh',
-    name: 'Бамбл на апельсиновом фреше',
+    name: 'Бамбл на фреше',
     description: 'Бамбл на свежевыжатом апельсиновом соке',
-    price: 360,
+    price: 440,
     category: 'cold-coffee',
     image: '/data/menu/drinks/image copy 30.png'
   },
   {
+    id: 'cold-brew-pomegranate',
+    name: 'Колд Брю Гранат',
+    description: 'Холодный кофе с гранатовым соком',
+    price: 280,
+    category: 'author-coffee',
+    image: '/data/menu/drinks/IMG_2527.JPG'
+  },
+  {
+    id: 'cold-brew-blueberry',
+    name: 'Колд Брю Черника',
+    description: 'Холодный кофе с черничным соком',
+    price: 280,
+    category: 'author-coffee',
+    image: ''
+  },
+  {
+    id: 'cold-brew-citrus',
+    name: 'Колд Брю Цитрус',
+    description: 'Холодный кофе с цитрусовым соком',
+    price: 350,
+    category: 'author-coffee',
+    image: ''
+  },
+  {
     id: 'espresso-tonic',
-    name: 'Эспрессо-тоник',
+    name: 'Эспрессо Тоник',
     description: 'Освежающий эспрессо с тоником и льдом',
-    price: 260,
+    price: 280,
     category: 'cold-coffee',
     image: '/data/menu/drinks/image copy 45.png'
   },
@@ -735,17 +733,25 @@ export const menuItems: MenuItem[] = [
     id: 'frappe',
     name: 'Фраппе',
     description: 'Ледяной кофейный напиток с молоком',
-    price: 290,
+    price: 350,
     category: 'cold-coffee',
     image: '/data/menu/drinks/image copy 44.png'
   },
 
   // ============ AUTHOR COFFEE ============
   {
+    id: 'kakao',
+    name: 'Какао',
+    description: 'Горячий какао из бельгийского шоколада',
+    price: 250,
+    category: 'coffee',
+    image: '/data/menu/drinks/Melty какао.JPG'
+  },
+  {
     id: 'raf-raspberry',
-    name: 'Раф «Малина»',
+    name: 'Малиновый раф',
     description: 'Раф с нежным ягодным вкусом малины',
-    price: 260,
+    price: 390,
     category: 'author-coffee',
     image: '/data/menu/drinks/image copy 46.png'
   },
@@ -753,61 +759,77 @@ export const menuItems: MenuItem[] = [
     id: 'raf-mango',
     name: 'Раф «Манго»',
     description: 'Раф с тропическим вкусом манго',
-    price: 320,
+    price: 420,
     category: 'author-coffee',
-    image: '/data/menu/drinks/image copy 90.png'
+    image: '/data/menu/drinks/IMG_2521.JPG'
+  },
+  {
+    id: 'raf-urbech',
+    name: 'Раф «Урбеч»',
+    description: 'Раф с натуральным урбечем',
+    price: 390,
+    category: 'author-coffee',
+    image: '/data/menu/drinks/IMG_2506.JPG'
   },
 
   // ============ LEMONADES & MOJITO ============
   {
-    id: 'mojito-classic',
-    name: 'Мохито Классический',
+    id: 'lemonade-cranberry-cherry',
+    name: 'Клюква-вишня',
+    description: 'Ягодный лимонад с клюквой и вишней',
+    price: 320,
+    category: 'lemonades-mojito',
+    image: '/data/menu/drinks/image copy 37.png'
+  },
+  {
+    id: 'lemonade-mango-passion',
+    name: 'Лимонад Манго-Маракуйя',
+    description: 'Авторский лимонад с манго и маракуйей',
+    price: 310,
+    category: 'lemonades-mojito',
+    image: '/data/menu/drinks/IMG_2518.JPG'
+  },
+  {
+    id: 'mojito-lime',
+    name: 'Мохито Лайм',
     description: 'Классический безалкогольный мохито с мятой и лаймом',
-    price: 270,
+    price: 330,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/image copy 57.png'
   },
   {
     id: 'mojito-passion-fruit',
-    name: 'Мохито «Маракуйя»',
+    name: 'Мохито Маракуйя',
     description: 'Освежающий мохито с экзотической маракуйей',
-    price: 295,
+    price: 450,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/image copy 60.png'
-  },
-  {
-    id: 'lemonade-cranberry-cherry',
-    name: 'Клюква-Вишня',
-    description: 'Ягодный лимонад с клюквой и вишней',
-    price: 260,
-    category: 'lemonades-mojito',
-    image: '/data/menu/drinks/image copy 93.png'
-  },
-  {
-    id: 'lemonade-dona-rossa',
-    name: 'Dona Rossa',
-    description: 'Авторский лимонад с ягодами',
-    price: 260,
-    category: 'lemonades-mojito',
-    image: '/data/menu/drinks/image copy 37.png'
   },
 
   // ============ AUTHOR DRINKS ============
   {
     id: 'aperol-spritz',
-    name: 'Апероль «Спритц»',
+    name: 'Апероль "Спритц"',
     description: 'Безалкогольный напиток в стиле Апероль Шприц',
-    price: 250,
+    price: 350,
     category: 'author-drinks',
     image: '/data/menu/drinks/image copy 34.png'
   },
   {
     id: 'paloma-grapefruit',
-    name: 'Палома «Грейпфрут-карамель»',
+    name: 'Палома Грейпфрут-карамель',
     description: 'Авторский напиток с грейпфрутом и карамелью',
-    price: 220,
+    price: 250,
     category: 'author-drinks',
     image: '/data/menu/drinks/image copy 35.png'
+  },
+  {
+    id: 'sorrel',
+    name: 'Щавелевый',
+    description: 'Авторский напиток на основе щавеля',
+    price: 310,
+    category: 'lemonades-mojito',
+    image: '/data/menu/drinks/IMG_2547.JPG'
   },
 
   // ============ SMOOTHIES ============
@@ -815,137 +837,193 @@ export const menuItems: MenuItem[] = [
     id: 'smoothie-banana-oat',
     name: 'Орехово-банановый смузи с овсянкой',
     description: 'Питательный смузи с бананом, орехами и овсянкой',
-    price: 250,
+    price: 350,
     category: 'smoothies',
-    image: '/data/menu/drinks/image copy 97.png'
+    image: '/data/menu/drinks/IMG_2550.JPG'
   },
   {
-    id: 'smoothie-green-break',
-    name: 'Green Break',
+    id: 'smoothie-green-brick',
+    name: 'Смузи-завтрак "Грин Брик"',
     description: 'Зелёный детокс-смузи для бодрого дня',
-    price: 300,
+    price: 380,
     category: 'smoothies',
-    image: '/data/menu/drinks/image copy 98.png'
+    image: '/data/menu/drinks/IMG_2546.JPG'
   },
 
   // ============ FRESH JUICES ============
   {
     id: 'orange-fresh',
-    name: 'Апельсиновый фреш',
+    name: 'Фреш Апельсиновый',
     description: 'Свежевыжатый апельсиновый сок',
-    price: 250,
+    price: 330,
     category: 'fresh-juices',
     image: '/data/menu/drinks/image copy 33.png'
   },
   {
     id: 'grapefruit-fresh',
-    name: 'Грейпфрутовый фреш',
+    name: 'Фреш Грейпфрутовый',
     description: 'Свежевыжатый грейпфрутовый сок',
-    price: 370,
+    price: 430,
     category: 'fresh-juices',
-    image: '/data/menu/drinks/image copy 94.png'
+    image: '/data/menu/drinks/IMG_2585.JPG'
   },
 
   // ============ MILKSHAKES ============
   {
     id: 'milkshake-vanilla-banana',
-    name: 'Ванильно-Банановый милкшейк',
+    name: 'Ванильно-банановый милкшейк',
     description: 'Сладкий молочный коктейль с ванилью и бананом',
-    price: 250,
+    price: 280,
     category: 'milkshakes',
-    image: '/data/menu/drinks/image copy 32.png'
+    image: '/data/menu/drinks/image copy 56.png'
   },
   {
     id: 'milkshake-oreo',
     name: 'Милкшейк Oreo',
     description: 'Молочный коктейль с печеньем Oreo',
-    price: 350,
+    price: 280,
     category: 'milkshakes',
     image: '/data/menu/drinks/image copy 63.png'
   },
   {
     id: 'milkshake-cheesecake',
-    name: 'Милкшейк Чизкейк',
+    name: 'Чизкейк Милкшейк',
     description: 'Молочный коктейль со вкусом чизкейка',
-    price: 350,
+    price: 400,
     category: 'milkshakes',
-    image: '/data/menu/drinks/image copy 56.png'
+    image: '/data/menu/drinks/IMG_2559.JPG'
   },
 
   // ============ HOUSE TEAS ============
   {
-    id: 'tea-berry',
-    name: 'Ягодный чай',
-    description: 'Ароматный чай с лесными ягодами',
-    price: 320,
+    id: 'tea-ginger',
+    name: 'Имбирный чай',
+    description: 'Согревающий чай с цитрусами и имбирём',
+    price: 380,
     category: 'house-teas',
-    image: '/data/menu/drinks/image copy 61.png'
+    image: '/data/menu/drinks/image copy 29.png'
   },
   {
     id: 'tea-sea-buckthorn',
     name: 'Облепиховый чай',
     description: 'Витаминный чай с облепихой',
-    price: 300,
+    price: 330,
     category: 'house-teas',
     image: '/data/menu/drinks/image copy 62.png'
   },
   {
-    id: 'tea-citrus-ginger',
-    name: 'Цитрусово-имбирный чай',
-    description: 'Согревающий чай с цитрусами и имбирём',
-    price: 350,
-    category: 'house-teas',
-    image: '/data/menu/drinks/image copy 29.png'
-  },
-  {
     id: 'tea-mango-cherry',
-    name: 'Манго-Вишня чай',
+    name: 'Чай Манго-вишня',
     description: 'Фруктовый чай с манго и вишней',
-    price: 350,
+    price: 410,
     category: 'house-teas',
     image: '/data/menu/drinks/image copy 96.png'
+  },
+  {
+    id: 'tea-berry',
+    name: 'Ягодный чай',
+    description: 'Ароматный чай с лесными ягодами',
+    price: 350,
+    category: 'house-teas',
+    image: ''
   },
 
   // ============ LEAF TEAS ============
   {
-    id: 'tea-black',
-    name: 'Чёрный чай',
-    description: 'Классический чёрный чай',
-    price: 260,
-    category: 'leaf-teas',
-    image: '/data/menu/drinks/image copy 59.png'
-  },
-  {
     id: 'tea-green-jasmine',
-    name: 'Зелёный чай с жасмином',
+    name: 'Зеленый чай с жасмином',
     description: 'Зелёный чай с цветками жасмина',
-    price: 260,
+    price: 290,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/image copy 58.png'
+    image: '/data/menu/drinks/IMG_2542.JPG'
   },
   {
     id: 'tea-milk-oolong',
     name: 'Молочный улун',
     description: 'Китайский молочный улун с нежным сливочным вкусом',
-    price: 260,
+    price: 310,
     category: 'leaf-teas',
     image: '/data/menu/drinks/image copy 28.png'
+  },
+  {
+    id: 'tea-sencha',
+    name: 'Сенча',
+    description: 'Японский зелёный чай сенча',
+    price: 290,
+    category: 'leaf-teas',
+    image: '/data/menu/drinks/IMG_2544.JPG'
+  },
+  {
+    id: 'tea-assam',
+    name: 'Чай "Ассам"',
+    description: 'Крепкий индийский чёрный чай',
+    price: 390,
+    category: 'leaf-teas',
+    image: '/data/menu/drinks/IMG_2535.JPG'
+  },
+  {
+    id: 'tea-black-thyme',
+    name: 'Черный чай с чабрецом',
+    description: 'Классический чёрный чай с чабрецом',
+    price: 290,
+    category: 'leaf-teas',
+    image: '/data/menu/drinks/image copy 59.png'
+  },
+  {
+    id: 'tea-earl-grey',
+    name: 'Эрл Грей',
+    description: 'Чёрный чай с бергамотом',
+    price: 290,
+    category: 'leaf-teas',
+    image: ''
   },
 
   // ============ SOFT DRINKS ============
   {
     id: 'coca-cola',
-    name: 'Coca-Cola / Coca-Cola Zero',
-    description: 'Coca-Cola или Coca-Cola Zero на выбор',
-    price: 200,
+    name: 'Coca-Cola',
+    description: 'Классическая Coca-Cola',
+    price: 230,
     category: 'soft-drinks',
     image: '/data/menu/drinks/image copy 55.png'
   },
   {
-    id: 'juice-rich',
-    name: 'Сок Rich',
-    description: 'Сок Rich апельсин или яблоко на выбор',
+    id: 'coca-cola-zero',
+    name: 'Coca-Cola Zero',
+    description: 'Coca-Cola без сахара',
+    price: 230,
+    category: 'soft-drinks',
+    image: ''
+  },
+  {
+    id: 'water-still',
+    name: 'Вода Минеральная без газа',
+    description: 'Минеральная вода без газа',
     price: 150,
+    category: 'soft-drinks',
+    image: ''
+  },
+  {
+    id: 'water-sparkling',
+    name: 'Вода Минеральная с газом',
+    description: 'Минеральная вода с газом',
+    price: 150,
+    category: 'soft-drinks',
+    image: ''
+  },
+  {
+    id: 'juice-rich-orange',
+    name: 'Сок Rich Апельсин',
+    description: 'Сок Rich апельсиновый',
+    price: 190,
+    category: 'soft-drinks',
+    image: ''
+  },
+  {
+    id: 'juice-rich-apple',
+    name: 'Сок Rich Яблоко',
+    description: 'Сок Rich яблочный',
+    price: 190,
     category: 'soft-drinks',
     image: '/data/menu/drinks/image copy 31.png'
   }

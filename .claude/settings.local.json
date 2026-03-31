@@ -36,7 +36,10 @@
       "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty -type f \\\\\\(-name *.json -o -name *.js -o -name *.jsx -o -name *.ts -o -name *.tsx \\\\\\))",
       "Bash(find . -path ./node_modules -prune -o -type f \\\\\\(-name *.json -o -name *.js -o -name *.ts \\\\\\) -print)",
       "Bash(sort -t' ' -k3 -n)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src' -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.json \\\\\\))",
+      "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/public' -type f -name *.png -o -name *.jpg -o -name *.jpeg)",
+      "Bash(grep -c \"category: ''coffee''\" src/data/menu.ts)"
     ]
   }
 }
