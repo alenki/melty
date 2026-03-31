@@ -33,13 +33,62 @@ const categoryDescriptions: Record<MenuCategory, string> = {
   'breakfasts': 'Завтраки на каждый день',
   'salads': 'Свежие салаты из сезонных ингредиентов',
   'soups': 'Горячие домашние супы',
-  'main-dishes': 'Сытные основные блюда на любой вкус',
+  'main-dishes': 'Блюда из рыбы, птицы и мяса',
   'sides': 'Гарниры к основным блюдам',
   'coffee': 'Классические кофейные напитки на зерне спешелти',
   'author-coffee': 'Авторские кофейные напитки от нашего бариста',
   'lemonades': 'Прохладительные напитки и лимонады',
   'other': 'Лёгкие закуски и перекусы',
 };
+
+function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => void }) {
+  const [imgError, setImgError] = useState(false);
+  const hasImage = item.image && !imgError;
+
+  const formatPrice = (price: number): string => {
+    return `${price.toLocaleString('ru-RU')}₽`;
+  };
+
+  return (
+    <article
+      className="menu-page__featured"
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+    >
+      <div className="menu-page__featured-image-wrap">
+        {hasImage ? (
+          <img
+            src={item.image}
+            alt={item.name}
+            className="menu-page__featured-image"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <MenuPlaceholder />
+        )}
+      </div>
+      <div className="menu-page__featured-content">
+        <h3 className="menu-page__featured-name">{item.name}</h3>
+        <div className="menu-page__featured-divider">
+          <span className="menu-page__featured-divider-line" />
+          <span className="menu-page__featured-divider-dot" />
+        </div>
+        <p className="menu-page__featured-desc">{item.description}</p>
+        <div className="menu-page__featured-bottom">
+          <span className="menu-page__featured-price">{formatPrice(item.price)}</span>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>(categoryOrder[0]);
@@ -328,48 +377,10 @@ export default function MenuPage() {
 
               {/* Featured Item */}
               {featuredItem && (
-                <article
-                  className="menu-page__featured"
+                <FeaturedCard
+                  item={featuredItem}
                   onClick={() => setFeaturedModalItem(featuredItem)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setFeaturedModalItem(featuredItem);
-                    }
-                  }}
-                >
-                  <div className="menu-page__featured-image-wrap">
-                    {featuredItem.image ? (
-                      <img
-                        src={featuredItem.image}
-                        alt={featuredItem.name}
-                        className="menu-page__featured-image"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <MenuPlaceholder />
-                    )}
-                  </div>
-                  <div className="menu-page__featured-content">
-                    <h3 className="menu-page__featured-name">
-                      {featuredItem.name}
-                    </h3>
-                    <div className="menu-page__featured-divider">
-                      <span className="menu-page__featured-divider-line" />
-                      <span className="menu-page__featured-divider-dot" />
-                    </div>
-                    <p className="menu-page__featured-desc">
-                      {featuredItem.description}
-                    </p>
-                    <div className="menu-page__featured-bottom">
-                      <span className="menu-page__featured-price">
-                        {formatPrice(featuredItem.price)}
-                      </span>
-                    </div>
-                  </div>
-                </article>
+                />
               )}
 
               {/* Items Grid */}
