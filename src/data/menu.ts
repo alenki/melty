@@ -132,16 +132,14 @@ export const menuItems: MenuItem[] = [
     name: 'Puffies',
     description: 'Мини-панкейки. Подаются с шотом молочного бельгийского шоколада',
     price: 520,
-    category: 'chocolate-desserts',
-    image: '/data/menu/desserts/image copy 91.png'
+    category: 'chocolate-desserts'
   },
   {
     id: 'brownie',
     name: 'Брауни',
     description: 'Шоколадный брауни, обильно политый молочным бельгийским шоколадом. Подаётся с шариком ванильного мороженого',
     price: 560,
-    category: 'chocolate-desserts',
-    image: '/data/menu/desserts/image copy 82.png'
+    category: 'chocolate-desserts'
   },
   {
     id: 'san-sebastian',
@@ -172,24 +170,21 @@ export const menuItems: MenuItem[] = [
     name: 'Шоколадный Фондан',
     description: 'Шоколадный кекс с жидкой сердцевиной, политый молочным бельгийским шоколадом, подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 510,
-    category: 'chocolate-desserts',
-    image: '/data/menu/desserts/image copy 86.png'
+    category: 'chocolate-desserts'
   },
   {
     id: 'eclair',
     name: 'Эклеры',
     description: 'Пирожные из заварного теста под карамелизированной корочкой, наполненные фирменным кремом «Патисьер». Подаются с сезонными ягодами',
     price: 540,
-    category: 'chocolate-desserts',
-    image: '/data/menu/desserts/image copy 85.png'
+    category: 'chocolate-desserts'
   },
   {
     id: 'pancakes-trouble-chocolate',
     name: 'Панкейки Trouble Chocolate',
     description: 'Пышные панкейки, обильно политые тремя видами бельгийского шоколада',
     price: 620,
-    category: 'chocolate-desserts',
-    image: '/data/menu/desserts/image copy 77.png'
+    category: 'chocolate-desserts'
   },
 
   // ============ CHOCOLATE CUPS ============
@@ -214,8 +209,7 @@ export const menuItems: MenuItem[] = [
     name: 'Krispy Rise в шоколаде',
     description: 'Хрустящий воздушный рис, обильно политый молочным бельгийским шоколадом',
     price: 420,
-    category: 'chocolate-cups',
-    image: '/data/menu/desserts/image copy 89.png'
+    category: 'chocolate-cups'
   },
 
   // ============ CREPES ============
@@ -224,8 +218,7 @@ export const menuItems: MenuItem[] = [
     name: 'Креп Три шоколада',
     description: 'Французский блинчик, политый тремя видами бельгийского шоколада, подаётся с сезонными ягодами',
     price: 575,
-    category: 'crepes',
-    image: '/data/menu/desserts/image copy 54.png'
+    category: 'crepes'
   },
   {
     id: 'golden-crep',
@@ -322,8 +315,7 @@ export const menuItems: MenuItem[] = [
     name: 'New-York ролл',
     description: 'Круассан-ролл с кремом «Патисьер», молочным бельгийским шоколадом и шариком мороженого',
     price: 575,
-    category: 'waffles-croissants',
-    image: '/data/menu/desserts/image copy 42.png'
+    category: 'waffles-croissants'
   },
 
   // ============ SAVORY WAFFLES ============
