@@ -47,7 +47,12 @@
       "Bash(for n:*)",
       "Bash(do mv:*)",
       "Bash(done)",
-      "Bash(grep -E \"\\\\.\\(ts|tsx|json\\)$\")"
+      "Bash(grep -E \"\\\\.\\(ts|tsx|json\\)$\")",
+      "Bash(node rename-images.js)",
+      "Bash(mv rename-images.js rename-images.cjs)",
+      "Bash(node rename-images.cjs)",
+      "Bash(node reorganize-images.cjs)",
+      "Bash(ls:*)"
     ]
   }
 }
