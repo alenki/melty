@@ -35,7 +35,8 @@
       "Bash(xargs grep:*)",
       "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty -type f \\\\\\(-name *.json -o -name *.js -o -name *.jsx -o -name *.ts -o -name *.tsx \\\\\\))",
       "Bash(find . -path ./node_modules -prune -o -type f \\\\\\(-name *.json -o -name *.js -o -name *.ts \\\\\\) -print)",
-      "Bash(sort -t' ' -k3 -n)"
+      "Bash(sort -t' ' -k3 -n)",
+      "Bash(cd:*)"
     ]
   }
 }
