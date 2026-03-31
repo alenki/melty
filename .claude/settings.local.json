@@ -32,7 +32,10 @@
       "Bash(bash \"C:\\\\Users\\\\omarh\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.6\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\")",
       "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/public/data -name logo* -o -name *logo*)",
       "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.css -o -name *.module.css \\\\\\))",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty -type f \\\\\\(-name *.json -o -name *.js -o -name *.jsx -o -name *.ts -o -name *.tsx \\\\\\))",
+      "Bash(find . -path ./node_modules -prune -o -type f \\\\\\(-name *.json -o -name *.js -o -name *.ts \\\\\\) -print)",
+      "Bash(sort -t' ' -k3 -n)"
     ]
   }
 }

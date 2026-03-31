@@ -1,7 +1,15 @@
 export type MenuCategory =
   | 'coffee'
+  | 'cold-coffee'
   | 'author-coffee'
-  | 'lemonades'
+  | 'lemonades-mojito'
+  | 'author-drinks'
+  | 'smoothies'
+  | 'fresh-juices'
+  | 'milkshakes'
+  | 'house-teas'
+  | 'leaf-teas'
+  | 'soft-drinks'
   | 'melty-desserts'
   | 'chocolate-desserts'
   | 'waffles-croissants'
@@ -35,8 +43,16 @@ export const categoryLabels: Record<MenuCategory, string> = {
   'main-dishes': 'Рыба, Птица, Мясо',
   'sides': 'Гарниры',
   'coffee': 'Классический кофе',
+  'cold-coffee': 'Холодный кофе',
   'author-coffee': 'Авторский кофе',
-  'lemonades': 'Напитки',
+  'lemonades-mojito': 'Авторские лимонады / Мохито',
+  'author-drinks': 'Авторские напитки',
+  'smoothies': 'Смузи-Завтраки',
+  'fresh-juices': 'Фреши',
+  'milkshakes': 'Милкшейки',
+  'house-teas': 'Домашние чаи',
+  'leaf-teas': 'Листовые чаи',
+  'soft-drinks': 'Прохладные напитки',
   'other': 'Закуски'
 };
 
@@ -696,7 +712,7 @@ export const menuItems: MenuItem[] = [
     name: 'Бамбл',
     description: 'Кофейно-апельсиновый или гранатовый коктейль со льдом',
     price: 270,
-    category: 'author-coffee',
+    category: 'cold-coffee',
     image: '/data/menu/3/image copy 27.png'
   },
   {
@@ -704,7 +720,7 @@ export const menuItems: MenuItem[] = [
     name: 'Бамбл на апельсиновом фреше',
     description: 'Бамбл на свежевыжатом апельсиновом соке',
     price: 360,
-    category: 'author-coffee',
+    category: 'cold-coffee',
     image: '/data/menu/3/image copy 30.png'
   },
   {
@@ -712,7 +728,7 @@ export const menuItems: MenuItem[] = [
     name: 'Эспрессо-тоник',
     description: 'Освежающий эспрессо с тоником и льдом',
     price: 260,
-    category: 'author-coffee',
+    category: 'cold-coffee',
     image: '/data/menu/3/image copy 45.png'
   },
   {
@@ -720,7 +736,7 @@ export const menuItems: MenuItem[] = [
     name: 'Фраппе',
     description: 'Ледяной кофейный напиток с молоком',
     price: 290,
-    category: 'author-coffee',
+    category: 'cold-coffee',
     image: '/data/menu/3/image copy 44.png'
   },
 
@@ -748,7 +764,7 @@ export const menuItems: MenuItem[] = [
     name: 'Мохито Классический',
     description: 'Классический безалкогольный мохито с мятой и лаймом',
     price: 270,
-    category: 'lemonades',
+    category: 'lemonades-mojito',
     image: '/data/menu/3/image copy 57.png'
   },
   {
@@ -756,7 +772,7 @@ export const menuItems: MenuItem[] = [
     name: 'Мохито «Маракуйя»',
     description: 'Освежающий мохито с экзотической маракуйей',
     price: 295,
-    category: 'lemonades',
+    category: 'lemonades-mojito',
     image: '/data/menu/3/image copy 60.png'
   },
   {
@@ -764,7 +780,7 @@ export const menuItems: MenuItem[] = [
     name: 'Клюква-Вишня',
     description: 'Ягодный лимонад с клюквой и вишней',
     price: 260,
-    category: 'lemonades',
+    category: 'lemonades-mojito',
     image: '/data/menu/3/image copy 93.png'
   },
   {
@@ -772,7 +788,7 @@ export const menuItems: MenuItem[] = [
     name: 'Dona Rossa',
     description: 'Авторский лимонад с ягодами',
     price: 260,
-    category: 'lemonades',
+    category: 'lemonades-mojito',
     image: '/data/menu/3/image copy 37.png'
   },
 
@@ -782,7 +798,7 @@ export const menuItems: MenuItem[] = [
     name: 'Апероль «Спритц»',
     description: 'Безалкогольный напиток в стиле Апероль Шприц',
     price: 250,
-    category: 'lemonades',
+    category: 'author-drinks',
     image: '/data/menu/3/image copy 34.png'
   },
   {
@@ -790,7 +806,7 @@ export const menuItems: MenuItem[] = [
     name: 'Палома «Грейпфрут-карамель»',
     description: 'Авторский напиток с грейпфрутом и карамелью',
     price: 220,
-    category: 'lemonades',
+    category: 'author-drinks',
     image: '/data/menu/3/image copy 35.png'
   },
 
@@ -800,7 +816,7 @@ export const menuItems: MenuItem[] = [
     name: 'Орехово-банановый смузи с овсянкой',
     description: 'Питательный смузи с бананом, орехами и овсянкой',
     price: 250,
-    category: 'lemonades',
+    category: 'smoothies',
     image: '/data/menu/3/image copy 97.png'
   },
   {
@@ -808,7 +824,7 @@ export const menuItems: MenuItem[] = [
     name: 'Green Break',
     description: 'Зелёный детокс-смузи для бодрого дня',
     price: 300,
-    category: 'lemonades',
+    category: 'smoothies',
     image: '/data/menu/3/image copy 98.png'
   },
 
@@ -818,7 +834,7 @@ export const menuItems: MenuItem[] = [
     name: 'Апельсиновый фреш',
     description: 'Свежевыжатый апельсиновый сок',
     price: 250,
-    category: 'lemonades',
+    category: 'fresh-juices',
     image: '/data/menu/3/image copy 33.png'
   },
   {
@@ -826,7 +842,7 @@ export const menuItems: MenuItem[] = [
     name: 'Грейпфрутовый фреш',
     description: 'Свежевыжатый грейпфрутовый сок',
     price: 370,
-    category: 'lemonades',
+    category: 'fresh-juices',
     image: '/data/menu/3/image copy 94.png'
   },
 
@@ -836,7 +852,7 @@ export const menuItems: MenuItem[] = [
     name: 'Ванильно-Банановый милкшейк',
     description: 'Сладкий молочный коктейль с ванилью и бананом',
     price: 250,
-    category: 'lemonades',
+    category: 'milkshakes',
     image: '/data/menu/3/image copy 32.png'
   },
   {
@@ -844,7 +860,7 @@ export const menuItems: MenuItem[] = [
     name: 'Милкшейк Oreo',
     description: 'Молочный коктейль с печеньем Oreo',
     price: 350,
-    category: 'lemonades',
+    category: 'milkshakes',
     image: '/data/menu/3/image copy 63.png'
   },
   {
@@ -852,7 +868,7 @@ export const menuItems: MenuItem[] = [
     name: 'Милкшейк Чизкейк',
     description: 'Молочный коктейль со вкусом чизкейка',
     price: 350,
-    category: 'lemonades',
+    category: 'milkshakes',
     image: '/data/menu/3/image copy 56.png'
   },
 
@@ -862,7 +878,7 @@ export const menuItems: MenuItem[] = [
     name: 'Ягодный чай',
     description: 'Ароматный чай с лесными ягодами',
     price: 320,
-    category: 'lemonades',
+    category: 'house-teas',
     image: '/data/menu/3/image copy 61.png'
   },
   {
@@ -870,7 +886,7 @@ export const menuItems: MenuItem[] = [
     name: 'Облепиховый чай',
     description: 'Витаминный чай с облепихой',
     price: 300,
-    category: 'lemonades',
+    category: 'house-teas',
     image: '/data/menu/3/image copy 62.png'
   },
   {
@@ -878,7 +894,7 @@ export const menuItems: MenuItem[] = [
     name: 'Цитрусово-имбирный чай',
     description: 'Согревающий чай с цитрусами и имбирём',
     price: 350,
-    category: 'lemonades',
+    category: 'house-teas',
     image: '/data/menu/3/image copy 29.png'
   },
   {
@@ -886,7 +902,7 @@ export const menuItems: MenuItem[] = [
     name: 'Манго-Вишня чай',
     description: 'Фруктовый чай с манго и вишней',
     price: 350,
-    category: 'lemonades',
+    category: 'house-teas',
     image: '/data/menu/3/image copy 96.png'
   },
 
@@ -896,7 +912,7 @@ export const menuItems: MenuItem[] = [
     name: 'Чёрный чай',
     description: 'Классический чёрный чай',
     price: 260,
-    category: 'lemonades',
+    category: 'leaf-teas',
     image: '/data/menu/3/image copy 59.png'
   },
   {
@@ -904,7 +920,7 @@ export const menuItems: MenuItem[] = [
     name: 'Зелёный чай с жасмином',
     description: 'Зелёный чай с цветками жасмина',
     price: 260,
-    category: 'lemonades',
+    category: 'leaf-teas',
     image: '/data/menu/3/image copy 58.png'
   },
   {
@@ -912,7 +928,7 @@ export const menuItems: MenuItem[] = [
     name: 'Молочный улун',
     description: 'Китайский молочный улун с нежным сливочным вкусом',
     price: 260,
-    category: 'lemonades',
+    category: 'leaf-teas',
     image: '/data/menu/3/image copy 28.png'
   },
 
@@ -922,7 +938,7 @@ export const menuItems: MenuItem[] = [
     name: 'Coca-Cola / Coca-Cola Zero',
     description: 'Coca-Cola или Coca-Cola Zero на выбор',
     price: 200,
-    category: 'lemonades',
+    category: 'soft-drinks',
     image: '/data/menu/3/image copy 55.png'
   },
   {
@@ -930,7 +946,7 @@ export const menuItems: MenuItem[] = [
     name: 'Сок Rich',
     description: 'Сок Rich апельсин или яблоко на выбор',
     price: 150,
-    category: 'lemonades',
+    category: 'soft-drinks',
     image: '/data/menu/3/image copy 31.png'
   }
 ];

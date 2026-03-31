@@ -20,8 +20,16 @@ export default function CategoryFilter({ activeCategory, onCategoryChange }: Cat
     'main-dishes',
     'sides',
     'coffee',
+    'cold-coffee',
     'author-coffee',
-    'lemonades',
+    'lemonades-mojito',
+    'author-drinks',
+    'smoothies',
+    'fresh-juices',
+    'milkshakes',
+    'house-teas',
+    'leaf-teas',
+    'soft-drinks',
     'other'
   ];
 
