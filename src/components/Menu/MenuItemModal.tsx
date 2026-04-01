@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
 import { useMenuTranslation, useLanguage, useTranslation } from '../../i18n';
@@ -30,18 +30,16 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
   const containerRef = useRef<HTMLDivElement>(null);
   const [showFade, setShowFade] = useState(false);
 
-  // Scroll lock effect - stop Lenis smooth scroll + lock body scroll
+  // Scroll lock effect - lock body scroll while modal is open
   useEffect(() => {
     if (!isOpen) return;
 
-    window.lenis?.stop();
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
 
     return () => {
-      window.lenis?.start();
-      document.body.style.overflow = '';
       document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -67,12 +65,6 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     };
   }, [isOpen]);
 
-  // Prevent Lenis from intercepting wheel/touch events inside the modal
-  const stopPropagation = useCallback((e: React.WheelEvent | React.TouchEvent) => {
-    e.stopPropagation();
-  }, []);
-
-
   // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
@@ -94,25 +86,23 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     <div
       className="modal-overlay"
       onClick={onClose}
+      data-lenis-prevent
     >
       <div
         className={`modal-wrapper${showFade ? ' modal-wrapper--faded' : ''}`}
         onClick={(e) => e.stopPropagation()}
-        onWheel={stopPropagation}
-        onTouchStart={stopPropagation}
-        onTouchMove={stopPropagation}
       >
+        {/* Close button - outside scrollable container so mobile touch/scroll doesn't eat taps */}
+        <button className="modal-close" onClick={onClose} aria-label={t.galleryPage.close}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
         <div
           className="modal-container"
           ref={containerRef}
         >
-          {/* Close button */}
-          <button className="modal-close" onClick={onClose} aria-label={t.galleryPage.close}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
-
           {/* Image */}
           <div className="modal-slider">
             {hasImage ? (

@@ -24,6 +24,7 @@ body.modal-open > #root {
   animation: modalOverlayIn 0.25s ease-out;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: none;
 }
 
 @keyframes modalOverlayIn {
@@ -84,6 +85,7 @@ body.modal-open > #root {
   overflow-x: hidden;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -119,6 +121,8 @@ body.modal-open > #root {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.25s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   box-shadow:
     0 4px 12px rgba(74, 44, 26, 0.2),
     0 2px 4px rgba(74, 44, 26, 0.1);
