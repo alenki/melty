@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLanguage, useTranslation } from '../i18n';
 import './Header.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [lang, setLang] = useState<'ru' | 'en'>('ru');
+  const { language, setLanguage } = useLanguage();
+  const t = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -52,7 +54,7 @@ export default function Header() {
           href="/"
           className={`header__logo ${logoAlwaysVisible ? 'header__logo--always' : ''}`}
           onClick={handleLogoClick}
-          aria-label="На главную"
+          aria-label={t.nav.toHome}
         >
           <img src="/data/logo_dark.png" alt="Melty" />
         </a>
@@ -67,7 +69,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            Главная
+            {t.nav.home}
           </Link>
           <Link
             to="/menu"
@@ -75,7 +77,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            Меню
+            {t.nav.menu}
           </Link>
           <Link
             to="/gallery"
@@ -83,7 +85,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            Галерея
+            {t.nav.gallery}
           </Link>
 <Link
             to="/about"
@@ -91,7 +93,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            О нас
+            {t.nav.about}
           </Link>
           <Link
             to="/feedback"
@@ -99,21 +101,21 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
             tabIndex={isMobileMenuOpen ? 0 : -1}
           >
-            Обратная связь
+            {t.nav.feedback}
           </Link>
         </nav>
 
         <div className="header__lang">
           <button
-            className={`header__lang-btn ${lang === 'ru' ? 'header__lang-btn--active' : ''}`}
-            onClick={() => setLang('ru')}
+            className={`header__lang-btn ${language === 'ru' ? 'header__lang-btn--active' : ''}`}
+            onClick={() => setLanguage('ru')}
           >
             RU
           </button>
           <span className="header__lang-divider">|</span>
           <button
-            className={`header__lang-btn ${lang === 'en' ? 'header__lang-btn--active' : ''}`}
-            onClick={() => setLang('en')}
+            className={`header__lang-btn ${language === 'en' ? 'header__lang-btn--active' : ''}`}
+            onClick={() => setLanguage('en')}
           >
             EN
           </button>
@@ -122,7 +124,7 @@ export default function Header() {
         <button
           className={`header__burger ${isMobileMenuOpen ? 'header__burger--active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-label={isMobileMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={isMobileMenuOpen}
         >
           <span></span>

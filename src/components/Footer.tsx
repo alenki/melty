@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../i18n';
 import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslation();
 
   return (
     <footer className="footer">
@@ -21,29 +23,29 @@ export default function Footer() {
           <div className="footer__content">
             {/* Brand section */}
             <div className="footer__brand">
-              <a href="#hero" className="footer__logo-link" aria-label="На главную">
+              <a href="#hero" className="footer__logo-link" aria-label={t.footer.toHome}>
                 <img
                   src="/data/logo.png"
                   alt="Melty"
                   className="footer__logo-img"
                 />
               </a>
-              <p className="footer__tagline">Мир вкуса и уюта</p>
+              <p className="footer__tagline">{t.footer.tagline}</p>
             </div>
 
             {/* Center - Address */}
             <div className="footer__center">
               <div className="footer__address">
-                <p className="footer__address-label">Адрес</p>
+                <p className="footer__address-label">{t.footer.addressLabel}</p>
                 <p className="footer__address-text">
-                  ул. Героя России Т.М. Тамазова, 15
+                  {t.footer.address}
                 </p>
                 <span className="footer__address-city">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
-                  Нальчик
+                  {t.footer.city}
                 </span>
               </div>
               <div className="footer__divider" aria-hidden="true">
@@ -55,7 +57,7 @@ export default function Footer() {
 
             {/* Social & contact */}
             <div className="footer__connect">
-              <p className="footer__social-label">Мы в соцсетях</p>
+              <p className="footer__social-label">{t.footer.socialLabel}</p>
               <a
                 href="https://instagram.com/melty.ru"
                 target="_blank"
@@ -76,7 +78,7 @@ export default function Footer() {
                 <span>+7 (988) 939-90-00</span>
               </a>
               <Link to="/feedback" className="footer__feedback-link">
-                Оставить отзыв
+                {t.footer.feedbackLink}
               </Link>
             </div>
           </div>

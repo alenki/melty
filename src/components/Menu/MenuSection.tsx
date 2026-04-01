@@ -1,10 +1,13 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { menuItems, bestSellerIds } from '../../data/menu';
+import { useTranslation } from '../../i18n';
 import MenuItem from './MenuItem';
 import './MenuSection.css';
 
 export default function MenuSection() {
+  const t = useTranslation();
+
   const bestSellers = useMemo(() => {
     return bestSellerIds
       .map((id) => menuItems.find((item) => item.id === id))
@@ -22,8 +25,8 @@ export default function MenuSection() {
             </svg>
             <span className="menu-section__line"></span>
           </div>
-          <h2 className="menu-section__title">Наше меню</h2>
-          <p className="menu-section__subtitle">Самые популярные позиции</p>
+          <h2 className="menu-section__title">{t.menuSection.title}</h2>
+          <p className="menu-section__subtitle">{t.menuSection.subtitle}</p>
         </header>
 
         <div className="menu-section__grid">
@@ -34,7 +37,7 @@ export default function MenuSection() {
 
         <div className="menu-section__cta">
           <Link to="/menu" className="menu-section__btn">
-            СМОТРЕТЬ МЕНЮ
+            {t.menuSection.cta}
           </Link>
         </div>
       </div>

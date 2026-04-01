@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { MenuItem as MenuItemType } from '../../data/menu';
+import { useMenuTranslation, useLanguage } from '../../i18n';
 import MenuItemModal from './MenuItemModal';
 import MenuPlaceholder from './MenuPlaceholder';
 import './MenuItem.css';
@@ -13,13 +14,18 @@ export default function MenuItem({ item, index }: MenuItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const { language } = useLanguage();
+  const getTranslation = useMenuTranslation();
+
+  const { name, description } = getTranslation(item);
+  const locale = language === 'en' ? 'en-US' : 'ru-RU';
 
   const priceLabel = item.priceLarge
-    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
-    : `${item.price.toLocaleString('ru-RU')}₽`;
+    ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
+    : `${item.price.toLocaleString(locale)}₽`;
 
-  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
-  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 
   const hasImage = item.image && !imageError;
@@ -45,7 +51,7 @@ export default function MenuItem({ item, index }: MenuItemProps) {
             {!imageLoaded && <MenuPlaceholder />}
             <img
               src={item.image}
-              alt={item.name}
+              alt={displayName}
               className={`menu-item__image ${imageLoaded ? 'menu-item__image--loaded' : ''}`}
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
@@ -59,7 +65,7 @@ export default function MenuItem({ item, index }: MenuItemProps) {
 
       <div className="menu-item__content">
         <h3 className="menu-item__name">{displayName}</h3>
-        <p className="menu-item__description">{item.description}</p>
+        <p className="menu-item__description">{description}</p>
         <div className="menu-item__bottom">
           <span className="menu-item__price">{priceLabel}</span>
           {volume && <span className="menu-item__volume">{volume}</span>}

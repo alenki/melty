@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../i18n';
 import { BackToTop } from '../components';
 import './AboutPage.css';
 
@@ -9,6 +10,7 @@ export default function AboutPage() {
   const craftCardLeftRef = useRef<HTMLDivElement>(null);
   const craftCardRightRef = useRef<HTMLDivElement>(null);
   const photoStripRef = useRef<HTMLDivElement>(null);
+  const t = useTranslation();
 
   // Scroll-reveal observer for chapters
   useEffect(() => {
@@ -129,8 +131,8 @@ export default function AboutPage() {
 
           <div className="about-page__story-hero-content">
             <h1 className="about-page__title">
-              <span className="about-page__title-top">Наша</span>
-              <span className="about-page__title-bottom">история</span>
+              <span className="about-page__title-top">{t.aboutPage.titleTop}</span>
+              <span className="about-page__title-bottom">{t.aboutPage.titleBottom}</span>
             </h1>
             <div className="about-page__rule">
               <span className="about-page__rule-line" />
@@ -138,7 +140,7 @@ export default function AboutPage() {
               <span className="about-page__rule-line" />
             </div>
             <div className="about-page__scroll-hint" aria-hidden="true">
-              <span>листайте вниз</span>
+              <span>{t.aboutPage.scrollHint}</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M4 8L10 14L16 8" stroke="currentColor" strokeWidth="1.5"
                   strokeLinecap="round" strokeLinejoin="round" />
@@ -164,7 +166,7 @@ export default function AboutPage() {
           >
             <img
               src="/data/photos/food/IMG_0142.JPG"
-              alt="Десерт Melty"
+              alt={t.aboutPage.imgAlts.dessert}
               loading="lazy"
               decoding="async"
             />
@@ -175,7 +177,7 @@ export default function AboutPage() {
           >
             <img
               src="/data/photos/food/IMG_0587.JPG"
-              alt="Шоколадный десерт"
+              alt={t.aboutPage.imgAlts.chocolateDessert}
               loading="lazy"
               decoding="async"
             />
@@ -199,29 +201,13 @@ export default function AboutPage() {
         </svg>
 
         <blockquote className="about-page__pullquote">
-          Как всё началось
+          {t.aboutPage.pullquote}
         </blockquote>
 
         <div className="about-page__craft-text">
-          <p>
-            Melty родился из простой, но искренней мечты — создать в Нальчике
-            место, где шоколад перестаёт быть просто десертом и становится
-            настоящим искусством. Место, наполненное теплом, заботой и вниманием
-            к каждой детали.
-          </p>
-          <p>
-            Мы начали с нескольких рецептов и маленькой кухни, где каждый день
-            был экспериментом. Сотни проб, бессонные ночи и бесконечная любовь
-            к делу — так рождался вкус, который вы знаете сегодня. Каждый
-            рецепт — это история поиска идеального баланса между традицией
-            и авторским подходом.
-          </p>
-          <p>
-            Сегодня Melty — это больше, чем кафе. Это пространство, где
-            встречаются друзья, создаются воспоминания и каждый момент пропитан
-            уютом. Мы не просто готовим десерты — мы создаём мир, в который
-            хочется возвращаться.
-          </p>
+          <p>{t.aboutPage.craftText1}</p>
+          <p>{t.aboutPage.craftText2}</p>
+          <p>{t.aboutPage.craftText3}</p>
         </div>
       </section>
 
@@ -234,19 +220,19 @@ export default function AboutPage() {
         <div className="about-page__world-strip" ref={photoStripRef}>
           <img
             src="/data/photos/inside/IMG_4561.JPG"
-            alt="Атмосфера кафе"
+            alt={t.aboutPage.imgAlts.cafeAtmosphere}
             loading="lazy"
             decoding="async"
           />
           <img
             src="/data/photos/inside/IMG_4566.JPG"
-            alt="Тёплое освещение"
+            alt={t.aboutPage.imgAlts.warmLighting}
             loading="lazy"
             decoding="async"
           />
           <img
             src="/data/photos/inside/IMG_4588.JPG"
-            alt="Вечерняя атмосфера"
+            alt={t.aboutPage.imgAlts.eveningAtmosphere}
             loading="lazy"
             decoding="async"
           />
@@ -254,19 +240,10 @@ export default function AboutPage() {
         </div>
 
         <div className="about-page__world-content">
-          <span className="about-page__watermark" aria-hidden="true">Уют</span>
+          <span className="about-page__watermark" aria-hidden="true">{t.aboutPage.watermark}</span>
           <div className="about-page__world-text">
-            <p>
-              Переступая порог Melty, вы попадаете в мир тёплого света и уютных
-              текстур. Приглушённое освещение, мягкие тона дерева и шоколада,
-              аромат свежей выпечки — всё здесь создано, чтобы вы могли
-              остановиться и насладиться моментом.
-            </p>
-            <p>
-              Мы создали пространство, где каждый уголок приглашает остаться
-              подольше — будь то уютное кресло у окна или столик с видом на
-              открытую кухню, где рождаются наши десерты.
-            </p>
+            <p>{t.aboutPage.worldText1}</p>
+            <p>{t.aboutPage.worldText2}</p>
           </div>
         </div>
 
@@ -298,20 +275,19 @@ export default function AboutPage() {
           />
 
           <p className="about-page__yours-philosophy">
-            Мы верим, что лучшие моменты жизни начинаются с чашки горячего
-            шоколада и кусочка счастья на тарелке
+            {t.aboutPage.philosophy}
           </p>
 
           <div className="about-page__cta">
             <p className="about-page__cta-address">
-              ул. Героя России Т.М. Тамазова, 15, Нальчик
+              {t.aboutPage.address}
             </p>
             <p className="about-page__cta-hours">
-              Ежедневно 08:00 — 23:00
+              {t.aboutPage.hours}
             </p>
-            <p className="about-page__cta-welcome">Ждём вас</p>
+            <p className="about-page__cta-welcome">{t.aboutPage.welcome}</p>
             <Link to="/menu" className="about-page__cta-link">
-              Смотреть меню
+              {t.aboutPage.ctaLink}
             </Link>
           </div>
         </div>

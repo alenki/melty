@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback, Fragment } from 'react';
-import { menuItems, categoryLabels } from '../data/menu';
+import { menuItems } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
+import { useTranslation, useMenuTranslation, useLanguage } from '../i18n';
 import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
 import MenuPlaceholder from '../components/Menu/MenuPlaceholder';
@@ -32,56 +33,20 @@ const categoryOrder: MenuCategory[] = [
   'soft-drinks',
 ];
 
-// Hero pill categories (subset shown in the hero section)
-const heroPills: { label: string; target: MenuCategory }[] = [
-  { label: 'Завтрак', target: 'breakfasts' },
-  { label: 'Закуски', target: 'other' },
-  { label: 'Салаты', target: 'salads' },
-  { label: 'Супы', target: 'soups' },
-  { label: 'Рыба, Птица, Мясо', target: 'main-dishes' },
-  { label: 'Гарниры', target: 'sides' },
-  { label: 'Соленые вафли', target: 'savory-waffles' },
-  { label: 'Десерты', target: 'melty-desserts' },
-  { label: 'Классический кофе', target: 'coffee' },
-  { label: 'Напитки', target: 'cold-coffee' },
-];
-
-const categoryDescriptions: Record<MenuCategory, string> = {
-  'breakfasts': 'Завтраки на каждый день',
-  'other': 'Лёгкие закуски и перекусы',
-  'salads': 'Свежие салаты из сезонных ингредиентов',
-  'soups': 'Горячие домашние супы',
-  'main-dishes': 'Блюда из рыбы, птицы и мяса',
-  'sides': 'Гарниры к основным блюдам',
-  'crepes': 'Нежные французские крепы с различными начинками',
-  'waffles-croissants': 'Свежая выпечка: венские вафли и хрустящие круассаны',
-  'chocolate-desserts': 'Авторские десерты из настоящего бельгийского шоколада',
-  'chocolate-cups': 'Шоколадные стаканы с бельгийским шоколадом',
-  'melty-desserts': 'Фирменные десерты с шоу-подачей из бельгийского шоколада',
-  'coffee': 'Классические кофейные напитки на зерне спешелти',
-  'cold-coffee': 'Холодные кофейные напитки со льдом',
-  'author-coffee': 'Авторские кофейные напитки от нашего бариста',
-  'lemonades-mojito': 'Авторские лимонады и безалкогольные мохито',
-  'author-drinks': 'Безалкогольные авторские напитки',
-  'smoothies': 'Питательные смузи для бодрого утра',
-  'fresh-juices': 'Свежевыжатые соки',
-  'milkshakes': 'Молочные коктейли с разными вкусами',
-  'house-teas': 'Ароматные фруктовые и ягодные чаи',
-  'leaf-teas': 'Классические листовые чаи',
-  'soft-drinks': 'Прохладительные напитки',
-  'savory-waffles': 'Соленые вафли с разнообразными начинками',
-};
-
 function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => void }) {
   const [imgError, setImgError] = useState(false);
   const hasImage = item.image && !imgError;
+  const { language } = useLanguage();
+  const getTranslation = useMenuTranslation();
+  const { name, description } = getTranslation(item);
+  const locale = language === 'en' ? 'en-US' : 'ru-RU';
 
   const priceLabel = item.priceLarge
-    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
-    : `${item.price.toLocaleString('ru-RU')}₽`;
+    ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
+    : `${item.price.toLocaleString(locale)}₽`;
 
-  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
-  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 
   return (
@@ -101,7 +66,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
         {hasImage ? (
           <img
             src={item.image}
-            alt={item.name}
+            alt={displayName}
             className="menu-page__featured-image"
             loading="lazy"
             onError={() => setImgError(true)}
@@ -116,7 +81,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
           <span className="menu-page__featured-divider-line" />
           <span className="menu-page__featured-divider-dot" />
         </div>
-        <p className="menu-page__featured-desc">{item.description}</p>
+        <p className="menu-page__featured-desc">{description}</p>
         <div className="menu-page__featured-bottom">
           <span className="menu-page__featured-price">{priceLabel}</span>
           {volume && <span className="menu-page__featured-volume">{volume}</span>}
@@ -131,6 +96,7 @@ export default function MenuPage() {
   const [revealedSections, setRevealedSections] = useState<Set<string>>(new Set());
   const [featuredModalItem, setFeaturedModalItem] = useState<MenuItemType | null>(null);
   const [navShadow, setNavShadow] = useState(false);
+  const t = useTranslation();
 
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
   const navRef = useRef<HTMLElement>(null);
@@ -371,8 +337,8 @@ export default function MenuPage() {
             <span className="menu-page__dot menu-page__dot--3" />
           </div>
 
-          <span className="menu-page__hero-count">{totalItems} позиций</span>
-          <h1 className="menu-page__hero-title">Меню</h1>
+          <span className="menu-page__hero-count">{totalItems} {t.menuPage.itemsCount}</span>
+          <h1 className="menu-page__hero-title">{t.menuPage.title}</h1>
 
           {/* Decorative rule with center dot */}
           <div className="menu-page__hero-rule-group">
@@ -382,12 +348,12 @@ export default function MenuPage() {
           </div>
 
           <p className="menu-page__hero-subtitle">
-            Авторские десерты и блюда ручной работы
+            {t.menuPage.subtitle}
           </p>
 
           {/* Category pills cloud */}
           <div className="menu-page__hero-pills">
-            {heroPills.map((pill, i) => (
+            {t.menuPage.heroPills.map((pill, i) => (
               <button
                 key={pill.label}
                 className="menu-page__hero-pill"
@@ -401,7 +367,7 @@ export default function MenuPage() {
 
           {/* Scroll indicator */}
           <div className="menu-page__hero-scroll">
-            <span>листайте вниз</span>
+            <span>{t.menuPage.scrollHint}</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M4 8L10 14L16 8" stroke="currentColor" strokeWidth="1.5"
                 strokeLinecap="round" strokeLinejoin="round" />
@@ -427,7 +393,7 @@ export default function MenuPage() {
                 onClick={() => scrollToCategory(cat)}
                 data-active={activeCategory === cat || undefined}
               >
-                {categoryLabels[cat]}
+                {t.menuPage.categoryLabels[cat]}
               </button>
             </Fragment>
           ))}
@@ -467,10 +433,10 @@ export default function MenuPage() {
                   <span className="menu-page__category-line" />
                 </div>
                 <h2 className="menu-page__category-title">
-                  {categoryLabels[category]}
+                  {t.menuPage.categoryLabels[category]}
                 </h2>
                 <p className="menu-page__category-desc">
-                  {categoryDescriptions[category]}
+                  {t.menuPage.categoryDescriptions[category]}
                 </p>
               </header>
 

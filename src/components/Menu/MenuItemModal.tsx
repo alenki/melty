@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
+import { useMenuTranslation, useLanguage, useTranslation } from '../../i18n';
 import MenuPlaceholder from './MenuPlaceholder';
 import './MenuItemModal.css';
 
@@ -11,12 +12,18 @@ interface MenuItemModalProps {
 }
 
 export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalProps) {
-  const priceLabel = item.priceLarge
-    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
-    : `${item.price.toLocaleString('ru-RU')}₽`;
+  const { language } = useLanguage();
+  const getTranslation = useMenuTranslation();
+  const t = useTranslation();
+  const { name, description } = getTranslation(item);
+  const locale = language === 'en' ? 'en-US' : 'ru-RU';
 
-  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
-  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const priceLabel = item.priceLarge
+    ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
+    : `${item.price.toLocaleString(locale)}₽`;
+
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 
   const hasImage = !!item.image;
@@ -56,7 +63,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     >
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         {/* Close button */}
-        <button className="modal-close" onClick={onClose} aria-label="Закрыть">
+        <button className="modal-close" onClick={onClose} aria-label={t.galleryPage.close}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
@@ -67,7 +74,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
           {hasImage ? (
             <img
               src={item.image}
-              alt={item.name}
+              alt={displayName}
               className="modal-slider__image"
             />
           ) : (
@@ -89,7 +96,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
             <span className="modal-content__divider-icon">◆</span>
           </div>
 
-          <p className="modal-content__description">{item.description}</p>
+          <p className="modal-content__description">{description}</p>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TELEGRAM_API_URL, TELEGRAM_CHAT_ID } from '../config/telegram';
+import { useTranslation, useLanguage } from '../i18n';
 import { BackToTop } from '../components';
 import './FeedbackPage.css';
 
-const STAR_LABELS = ['Ужасно', 'Плохо', 'Нормально', 'Хорошо', 'Отлично!'];
 const CONFETTI_EMOJIS = ['✦', '🤎', '☕', '★', '✦', '☕'];
 
 export default function FeedbackPage() {
@@ -17,6 +17,8 @@ export default function FeedbackPage() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [ratingHint, setRatingHint] = useState(false);
   const [messageHint, setMessageHint] = useState(false);
+  const t = useTranslation();
+  const { language } = useLanguage();
 
   const starsRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement[]>([]);
@@ -112,12 +114,13 @@ export default function FeedbackPage() {
     setErrorMessage(null);
 
     const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    const locale = language === 'en' ? 'en-US' : 'ru-RU';
     const text = [
-      `⭐ Оценка: ${stars} (${rating}/5)`,
-      contact.trim() ? `📧 Контакт: ${contact.trim()}` : '📧 Контакт: Не указан',
-      `📅 ${new Date().toLocaleString('ru-RU')}`,
+      `⭐ ${t.feedbackPage.telegramRating}: ${stars} (${rating}/5)`,
+      contact.trim() ? `📧 ${t.feedbackPage.telegramContact}: ${contact.trim()}` : `📧 ${t.feedbackPage.telegramContact}: ${t.feedbackPage.telegramNoContact}`,
+      `📅 ${new Date().toLocaleString(locale)}`,
       ``,
-      `💬 Отзыв:`,
+      `💬 ${t.feedbackPage.telegramReview}:`,
       message.trim(),
     ].join('\n');
 
@@ -131,11 +134,11 @@ export default function FeedbackPage() {
       setShowSuccess(true);
       spawnConfetti();
     } catch {
-      setErrorMessage('Не удалось отправить отзыв. Попробуйте позже.');
+      setErrorMessage(t.feedbackPage.errorMessage);
     } finally {
       setIsSubmitting(false);
     }
-  }, [rating, message, contact, spawnConfetti]);
+  }, [rating, message, contact, spawnConfetti, t, language]);
 
   return (
     <div className="feedback-page">
@@ -151,17 +154,17 @@ export default function FeedbackPage() {
               <circle cx="40" cy="40" r="36" />
               <path d="M24 42 L34 52 L56 30" />
             </svg>
-            <div className="feedback-page__success-title">Спасибо за ваш отзыв!</div>
-            <div className="feedback-page__success-subtitle">Мы ценим каждое мнение 🤎</div>
+            <div className="feedback-page__success-title">{t.feedbackPage.successTitle}</div>
+            <div className="feedback-page__success-subtitle">{t.feedbackPage.successSubtitle}</div>
             <Link to="/" className="feedback-page__success-link">
-              Вернуться на главную
+              {t.feedbackPage.successLink}
             </Link>
           </div>
         ) : (
         <>
         <div className="feedback-page__header">
-          <h1 className="feedback-page__title">Оставьте отзыв</h1>
-          <p className="feedback-page__subtitle">Ваше мнение делает нас лучше</p>
+          <h1 className="feedback-page__title">{t.feedbackPage.title}</h1>
+          <p className="feedback-page__subtitle">{t.feedbackPage.subtitle}</p>
           <div className="feedback-page__divider" aria-hidden="true">
             <span className="feedback-page__divider-line"></span>
             <span className="feedback-page__divider-dot"></span>
@@ -174,7 +177,7 @@ export default function FeedbackPage() {
           <div
             className="feedback-page__stars"
             role="radiogroup"
-            aria-label="Оценка"
+            aria-label={t.feedbackPage.ratingLabel}
             ref={starsRef}
           >
             {[1, 2, 3, 4, 5].map((value, index) => {
@@ -186,7 +189,7 @@ export default function FeedbackPage() {
                   type="button"
                   role="radio"
                   aria-checked={rating === value}
-                  aria-label={`${value} — ${STAR_LABELS[value - 1]}`}
+                  aria-label={`${value} — ${t.feedbackPage.starLabels[value - 1]}`}
                   tabIndex={rating === value || (rating === 0 && value === 1) ? 0 : -1}
                   className={[
                     'feedback-page__star',
@@ -204,22 +207,22 @@ export default function FeedbackPage() {
             })}
           </div>
           <div className="feedback-page__star-label" aria-live="polite">
-            {displayedRating > 0 ? STAR_LABELS[displayedRating - 1] : ''}
+            {displayedRating > 0 ? t.feedbackPage.starLabels[displayedRating - 1] : ''}
           </div>
           <div className={`feedback-page__hint ${ratingHint ? 'feedback-page__hint--visible' : ''}`}>
-            Пожалуйста, выберите оценку
+            {t.feedbackPage.ratingHint}
           </div>
 
           {/* Contact Info */}
           <div className="feedback-page__field">
             <label className="feedback-page__label" htmlFor="feedback-contact">
-              Контакт <span className="feedback-page__optional">(необязательно)</span>
+              {t.feedbackPage.contactLabel} <span className="feedback-page__optional">{t.feedbackPage.contactOptional}</span>
             </label>
             <input
               id="feedback-contact"
               type="text"
               className="feedback-page__input"
-              placeholder="Телефон, Telegram или email"
+              placeholder={t.feedbackPage.contactPlaceholder}
               value={contact}
               onChange={(e) => setContact(e.target.value)}
             />
@@ -228,12 +231,12 @@ export default function FeedbackPage() {
           {/* Textarea */}
           <div className="feedback-page__field">
             <label className="feedback-page__label" htmlFor="feedback-message">
-              Ваш отзыв
+              {t.feedbackPage.messageLabel}
             </label>
             <textarea
               id="feedback-message"
               className="feedback-page__textarea"
-              placeholder="Расскажите о вашем впечатлении..."
+              placeholder={t.feedbackPage.messagePlaceholder}
               value={message}
               onChange={(e) => {
                 setMessage(e.target.value);
@@ -241,7 +244,7 @@ export default function FeedbackPage() {
               }}
             />
             <div className={`feedback-page__hint ${messageHint ? 'feedback-page__hint--visible' : ''}`}>
-              Пожалуйста, напишите отзыв
+              {t.feedbackPage.messageHint}
             </div>
           </div>
 
@@ -251,7 +254,7 @@ export default function FeedbackPage() {
             className="feedback-page__submit"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Отправка...' : 'Отправить'}
+            {isSubmitting ? t.feedbackPage.submitting : t.feedbackPage.submit}
           </button>
         </form>
         </>

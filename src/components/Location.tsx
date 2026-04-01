@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useTranslation } from '../i18n';
 import './Location.css';
 
 // Melty cafe coordinates
@@ -30,6 +31,7 @@ const createMarkerIcon = () => {
 export default function Location() {
   // Create icon once using useMemo to avoid recreating on every render
   const markerIcon = useMemo(() => createMarkerIcon(), []);
+  const t = useTranslation();
 
   return (
     <section className="location section" id="location">
@@ -42,7 +44,7 @@ export default function Location() {
             </svg>
             <span className="location__line"></span>
           </div>
-          <h2 className="location__title">Где нас найти</h2>
+          <h2 className="location__title">{t.location.title}</h2>
         </header>
 
         <div className="location__content">
@@ -62,7 +64,7 @@ export default function Location() {
                 <Popup>
                   <div className="location__popup">
                     <strong>Melty</strong>
-                    <span>Мир вкуса и уюта</span>
+                    <span>{t.location.popupTagline}</span>
                   </div>
                 </Popup>
               </Marker>
@@ -77,8 +79,8 @@ export default function Location() {
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
                 <div>
-                  <h3>Адрес</h3>
-                  <p>г. Нальчик, ул. Героя России Т.М. Тамазова, 15</p>
+                  <h3>{t.location.addressLabel}</h3>
+                  <p>{t.location.fullAddress}</p>
                 </div>
               </div>
 
@@ -88,10 +90,10 @@ export default function Location() {
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
                 <div>
-                  <h3>Часы работы</h3>
+                  <h3>{t.location.hoursLabel}</h3>
                   <ul className="location__hours">
-                    <li><span>Ежедневно</span><span>08:00 — 23:00</span></li>
-                    <li><span>Кухня</span><span>08:00 — 22:15</span></li>
+                    <li><span>{t.location.daily}</span><span>08:00 — 23:00</span></li>
+                    <li><span>{t.location.kitchen}</span><span>08:00 — 22:15</span></li>
                   </ul>
                 </div>
               </div>
@@ -103,7 +105,7 @@ export default function Location() {
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
                 <div>
-                  <h3>Мы в соцсетях</h3>
+                  <h3>{t.location.socialLabel}</h3>
                   <p>
                     <a
                       href="https://instagram.com/melty.ru"

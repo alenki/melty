@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
+import { LanguageProvider } from './i18n';
 import { Header, Footer, LoadingScreen } from './components';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
@@ -68,7 +69,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <LanguageProvider>
       <div className="noise-overlay" aria-hidden="true"></div>
       <LoadingScreen isLoading={loading} />
       <ScrollToTop />
@@ -83,7 +84,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }
 

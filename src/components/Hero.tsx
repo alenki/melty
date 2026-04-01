@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from '../i18n';
 import './Hero.css';
 
 export default function Hero() {
   const navigate = useNavigate();
+  const t = useTranslation();
 
   const goToMenu = () => {
     navigate('/menu');
@@ -62,7 +64,7 @@ export default function Hero() {
         {/* Tagline with decorative line */}
         <div className="hero__tagline-wrapper">
           <span className="hero__line" aria-hidden="true" />
-          <p className="hero__tagline">Мир вкуса и уюта</p>
+          <p className="hero__tagline">{t.hero.tagline}</p>
           <span className="hero__line" aria-hidden="true" />
         </div>
 
@@ -72,12 +74,12 @@ export default function Hero() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
-          <span>Нальчик</span>
+          <span>{t.hero.location}</span>
         </div>
 
         {/* CTA Button */}
         <button className="hero__cta" onClick={goToMenu}>
-          <span className="hero__cta-text">Смотреть меню</span>
+          <span className="hero__cta-text">{t.hero.cta}</span>
           <svg className="hero__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>

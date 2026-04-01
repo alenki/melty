@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslation } from '../i18n';
 import { BackToTop } from '../components';
 import './GalleryPage.css';
 
@@ -9,13 +10,13 @@ import './GalleryPage.css';
 
 interface GalleryItem {
   src: string;
-  alt: string;
+  altKey: string;
   /** Approximate aspect ratio bucket so CSS can hint heights */
   ratio: 'tall' | 'square' | 'wide';
 }
 
 interface QuoteItem {
-  text: string;
+  index: number;
 }
 
 type MasonryItem =
@@ -24,58 +25,52 @@ type MasonryItem =
 
 const photos: GalleryItem[] = [
   // Mixed categories & ratios for varied masonry flow
-  { src: '/data/photos/food/IMG_0142.JPG', alt: 'Десерт Melty', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2164.JPG', alt: 'Интерьер кафе', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_0587.JPG', alt: 'Шоколадный десерт', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_0590.JPG', alt: 'Авторский десерт', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2170.JPG', alt: 'Уютная зона', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0594.JPG', alt: 'Сладкая подача', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8435.JPG', alt: 'Наши изделия', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0600.JPG', alt: 'Десерт с шоколадом', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_0604.JPG', alt: 'Фирменное блюдо', ratio: 'square' },
-  { src: '/data/photos/inside/IMG_4561.JPG', alt: 'Атмосфера кафе', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_4563.JPG', alt: 'Шоколадное ассорти', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8438.JPG', alt: 'Ручная работа', ratio: 'square' },
-  { src: '/data/photos/food/IMG_4570.JPG', alt: 'Десерт на тарелке', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_4566.JPG', alt: 'Тёплое освещение', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4575.JPG', alt: 'Креп с начинкой', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8441.JPG', alt: 'Шоколадные конфеты', ratio: 'wide' },
-  { src: '/data/photos/food/IMG_4579.JPG', alt: 'Авторская подача', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2176.JPG', alt: 'Детали интерьера', ratio: 'square' },
-  { src: '/data/photos/food/IMG_4585.JPG', alt: 'Горячий шоколад', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_4584.JPG', alt: 'Зона отдыха', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0598.JPG', alt: 'Завтрак в Melty', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8444.JPG', alt: 'Подарочный набор', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0139.JPG', alt: 'Десерт крупным планом', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_4591.JPG', alt: 'Вид на зал', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4577.JPG', alt: 'Шоколадный торт', ratio: 'square' },
-  { src: '/data/photos/items/IMG_8447.JPG', alt: 'Авторские изделия', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_2180.JPG', alt: 'Уголок кафе', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8450.JPG', alt: 'Коллекция сладостей', ratio: 'square' },
-  { src: '/data/photos/items/IMG_4580.JPG', alt: 'Шоколадная плитка', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8443.JPG', alt: 'Трюфели', ratio: 'wide' },
-  { src: '/data/photos/items/IMG_8436.JPG', alt: 'Десертная витрина', ratio: 'square' },
-  { src: '/data/photos/food/IMG_0140.JPG', alt: 'Изысканный десерт', ratio: 'wide' },
-  { src: '/data/photos/inside/IMG_4588.JPG', alt: 'Вечерняя атмосфера', ratio: 'wide' },
-];
-
-const quotes: QuoteItem[] = [
-  { text: 'Шоколад — это не просто вкус. Это тёплое объятие, застывшее в каждом кусочке.' },
-  { text: 'Уют — это когда за окном дождь, а у тебя в руках горячая чашка и шоколадный десерт.' },
-  { text: 'Лучшие моменты начинаются с аромата свежего кофе и кусочка счастья на тарелке.' },
+  { src: '/data/photos/food/IMG_0142.JPG', altKey: 'IMG_0142', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2164.JPG', altKey: 'IMG_2164', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0587.JPG', altKey: 'IMG_0587', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0590.JPG', altKey: 'IMG_0590', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2170.JPG', altKey: 'IMG_2170', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0594.JPG', altKey: 'IMG_0594', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8435.JPG', altKey: 'IMG_8435', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0600.JPG', altKey: 'IMG_0600', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_0604.JPG', altKey: 'IMG_0604', ratio: 'square' },
+  { src: '/data/photos/inside/IMG_4561.JPG', altKey: 'IMG_4561', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_4563.JPG', altKey: 'IMG_4563', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8438.JPG', altKey: 'IMG_8438', ratio: 'square' },
+  { src: '/data/photos/food/IMG_4570.JPG', altKey: 'IMG_4570', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4566.JPG', altKey: 'IMG_4566', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4575.JPG', altKey: 'IMG_4575', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8441.JPG', altKey: 'IMG_8441', ratio: 'wide' },
+  { src: '/data/photos/food/IMG_4579.JPG', altKey: 'IMG_4579', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2176.JPG', altKey: 'IMG_2176', ratio: 'square' },
+  { src: '/data/photos/food/IMG_4585.JPG', altKey: 'IMG_4585', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4584.JPG', altKey: 'IMG_4584', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0598.JPG', altKey: 'IMG_0598', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8444.JPG', altKey: 'IMG_8444', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0139.JPG', altKey: 'IMG_0139', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4591.JPG', altKey: 'IMG_4591', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4577.JPG', altKey: 'IMG_4577', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8447.JPG', altKey: 'IMG_8447', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_2180.JPG', altKey: 'IMG_2180', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8450.JPG', altKey: 'IMG_8450', ratio: 'square' },
+  { src: '/data/photos/items/IMG_4580.JPG', altKey: 'IMG_4580', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8443.JPG', altKey: 'IMG_8443', ratio: 'wide' },
+  { src: '/data/photos/items/IMG_8436.JPG', altKey: 'IMG_8436', ratio: 'square' },
+  { src: '/data/photos/food/IMG_0140.JPG', altKey: 'IMG_0140', ratio: 'wide' },
+  { src: '/data/photos/inside/IMG_4588.JPG', altKey: 'IMG_4588', ratio: 'wide' },
 ];
 
 /** Build the flat masonry item list, inserting quotes at even intervals */
 function buildMasonryItems(): MasonryItem[] {
   const items: MasonryItem[] = [];
-  const interval = Math.floor(photos.length / (quotes.length + 1));
+  const interval = Math.floor(photos.length / (3 + 1));
 
   let photoIdx = 0;
   let quoteIdx = 0;
 
   for (let i = 0; photoIdx < photos.length; i++) {
-    if (quoteIdx < quotes.length && (i + 1) % (interval + 1) === 0) {
-      items.push({ type: 'quote', data: quotes[quoteIdx] });
+    if (quoteIdx < 3 && (i + 1) % (interval + 1) === 0) {
+      items.push({ type: 'quote', data: { index: quoteIdx } });
       quoteIdx++;
     } else {
       items.push({ type: 'photo', data: photos[photoIdx], index: photoIdx });
@@ -96,6 +91,7 @@ export default function GalleryPage() {
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<Map<number, HTMLElement>>(new Map());
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const t = useTranslation();
 
   // Scroll-reveal observer
   useEffect(() => {
@@ -264,8 +260,8 @@ export default function GalleryPage() {
             <span className="gallery-page__dot gallery-page__dot--3" />
           </div>
 
-          <span className="gallery-page__hero-count">{photos.length} фотографий</span>
-          <h1 className="gallery-page__hero-title">Галерея</h1>
+          <span className="gallery-page__hero-count">{photos.length} {t.galleryPage.photosCount}</span>
+          <h1 className="gallery-page__hero-title">{t.galleryPage.title}</h1>
 
           <div className="gallery-page__hero-rule-group">
             <span className="gallery-page__hero-rule-line" />
@@ -274,11 +270,11 @@ export default function GalleryPage() {
           </div>
 
           <p className="gallery-page__hero-subtitle">
-            Загляните в атмосферу нашего кафе
+            {t.galleryPage.subtitle}
           </p>
 
           <div className="gallery-page__hero-scroll">
-            <span>листайте вниз</span>
+            <span>{t.galleryPage.scrollHint}</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M4 8L10 14L16 8" stroke="currentColor" strokeWidth="1.5"
                 strokeLinecap="round" strokeLinejoin="round" />
@@ -308,7 +304,7 @@ export default function GalleryPage() {
                   style={{ transitionDelay: `${delay}s` }}
                 >
                   <span className="gallery-page__quote-mark" aria-hidden="true">"</span>
-                  <p className="gallery-page__quote-text">{item.data.text}</p>
+                  <p className="gallery-page__quote-text">{t.galleryPage.quotes[item.data.index]}</p>
                 </div>
               );
             }
@@ -326,7 +322,7 @@ export default function GalleryPage() {
               >
                 <img
                   src={item.data.src}
-                  alt={item.data.alt}
+                  alt={t.galleryPage.photoAlts[item.data.altKey] || item.data.altKey}
                   className="gallery-page__photo-img"
                   loading="lazy"
                   decoding="async"
@@ -349,24 +345,24 @@ export default function GalleryPage() {
             <div className="gallery-lightbox__inner" onClick={(e) => e.stopPropagation()}>
               <img
                 src={photos[lightboxIndex].src}
-                alt={photos[lightboxIndex].alt}
+                alt={t.galleryPage.photoAlts[photos[lightboxIndex].altKey] || photos[lightboxIndex].altKey}
                 className="gallery-lightbox__img"
               />
             </div>
 
-            <button className="gallery-lightbox__close" onClick={closeLightbox} aria-label="Закрыть">
+            <button className="gallery-lightbox__close" onClick={closeLightbox} aria-label={t.galleryPage.close}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
 
-            <button className="gallery-lightbox__arrow gallery-lightbox__arrow--prev" onClick={(e) => { e.stopPropagation(); goPrev(); }} aria-label="Предыдущее фото">
+            <button className="gallery-lightbox__arrow gallery-lightbox__arrow--prev" onClick={(e) => { e.stopPropagation(); goPrev(); }} aria-label={t.galleryPage.prevPhoto}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
 
-            <button className="gallery-lightbox__arrow gallery-lightbox__arrow--next" onClick={(e) => { e.stopPropagation(); goNext(); }} aria-label="Следующее фото">
+            <button className="gallery-lightbox__arrow gallery-lightbox__arrow--next" onClick={(e) => { e.stopPropagation(); goNext(); }} aria-label={t.galleryPage.nextPhoto}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M9 18l6-6-6-6" />
               </svg>
