@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from '../i18n';
-import { BackToTop } from '../components';
+import { BackToTop, SEO } from '../components';
 import './GalleryPage.css';
 
 /* ------------------------------------------------------------------ */
@@ -223,6 +223,11 @@ export default function GalleryPage() {
 
   return (
     <div className="gallery-page">
+      <SEO
+        title="Галерея"
+        description="Фотографии кафе Melty — атмосфера, интерьер и наши десерты."
+        path="/gallery"
+      />
       {/* ===== HERO ===== */}
       <section className="gallery-page__hero">
         <div className="gallery-page__hero-bg">

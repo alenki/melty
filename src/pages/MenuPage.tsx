@@ -5,7 +5,7 @@ import { useTranslation, useMenuTranslation, useLanguage } from '../i18n';
 import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
 import MenuPlaceholder from '../components/Menu/MenuPlaceholder';
-import { BackToTop } from '../components';
+import { BackToTop, SEO } from '../components';
 import './MenuPage.css';
 
 const categoryOrder: MenuCategory[] = [
@@ -295,6 +295,11 @@ export default function MenuPage() {
 
   return (
     <div className="menu-page">
+      <SEO
+        title="Меню"
+        description="Меню кафе Melty: завтраки, десерты, вафли, панкейки, напитки и авторские сладости."
+        path="/menu"
+      />
       {/* ===== HERO ===== */}
       <section className="menu-page__hero">
         {/* Layered background (same as home hero) */}

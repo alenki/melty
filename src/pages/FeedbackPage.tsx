@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TELEGRAM_API_URL, TELEGRAM_CHAT_ID } from '../config/telegram';
 import { useTranslation, useLanguage } from '../i18n';
-import { BackToTop } from '../components';
+import { BackToTop, SEO } from '../components';
 import './FeedbackPage.css';
 
 const CONFETTI_EMOJIS = ['✦', '🤎', '☕', '★', '✦', '☕'];
@@ -142,6 +142,11 @@ export default function FeedbackPage() {
 
   return (
     <div className="feedback-page">
+      <SEO
+        title="Отзывы"
+        description="Оставьте отзыв о кафе Melty — ваше мнение важно для нас."
+        path="/feedback"
+      />
       <section className="feedback-page__section">
         {/* Floating accent dots */}
         <div className="feedback-page__dot feedback-page__dot--1" aria-hidden="true"></div>

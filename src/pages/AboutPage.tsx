@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
-import { BackToTop } from '../components';
+import { BackToTop, SEO } from '../components';
 import './AboutPage.css';
 
 export default function AboutPage() {
@@ -115,6 +115,11 @@ export default function AboutPage() {
 
   return (
     <div className="about-page">
+      <SEO
+        title="О нас"
+        description="История шоколадного кафе Melty в Нальчике — наша философия, мастерство и атмосфера уюта."
+        path="/about"
+      />
 
       {/* ===== CHAPTER 1: Our Story ===== */}
       <section

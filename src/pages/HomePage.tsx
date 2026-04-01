@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Hero, MenuSection, About, Location, BackToTop } from '../components';
+import { Hero, MenuSection, About, Location, BackToTop, SEO } from '../components';
 
 export default function HomePage() {
   const location = useLocation();
@@ -20,6 +20,11 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO
+        title="Melty"
+        description="Melty — мир вкуса и уюта. Шоколадные десерты, крепы, панкейки и авторские сладости в Нальчике."
+        path="/"
+      />
       <Hero />
       <About />
       <Location />
