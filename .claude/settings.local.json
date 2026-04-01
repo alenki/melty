@@ -64,7 +64,11 @@
       "Bash(sort -k5 -n)",
       "Bash(node convert-to-webp.mjs)",
       "Bash(rm convert-to-webp.mjs)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty' -type f -name *gallery* -o -name *lightbox*)",
+      "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src' -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.json -o -name *.css \\\\\\))",
+      "Bash(node -e \":*)",
+      "Bash(node -e:*)"
     ]
   }
 }
