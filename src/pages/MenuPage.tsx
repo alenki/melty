@@ -300,12 +300,9 @@ export default function MenuPage() {
       });
     }
 
-    // Stop any in-progress Lenis scroll before starting a new one
-    const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void; scrollTo: (target: Element, opts?: { offset?: number }) => void } }).lenis;
+    const lenis = (window as unknown as { lenis?: { scrollTo: (target: Element, opts?: { offset?: number; duration?: number }) => void } }).lenis;
     if (lenis) {
-      lenis.stop();
-      lenis.start();
-      lenis.scrollTo(el, { offset: 0 });
+      lenis.scrollTo(el, { offset: 0, duration: 1.2 });
     } else {
       el.scrollIntoView({ behavior: 'smooth' });
     }
