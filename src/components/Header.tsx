@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
@@ -28,20 +28,6 @@ export default function Header() {
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
-
-  const scrollToSection = useCallback((id: string) => {
-    setIsMobileMenuOpen(false);
-    if (isHomePage) {
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    } else {
-      navigate(`/#${id}`);
-    }
-  }, [isHomePage, navigate]);
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();

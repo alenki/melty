@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
-import { Header, Footer } from './components';
+import { Header, Footer, LoadingScreen } from './components';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
 import FeedbackPage from './pages/FeedbackPage';
@@ -29,6 +29,21 @@ function ScrollToTop() {
 }
 
 function App() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+  const isFirstLoad = useRef(true);
+
+  useEffect(() => {
+    if (isFirstLoad.current) {
+      isFirstLoad.current = false;
+      const timer = setTimeout(() => setLoading(false), 800);
+      return () => clearTimeout(timer);
+    }
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 400);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -55,6 +70,7 @@ function App() {
   return (
     <>
       <div className="noise-overlay" aria-hidden="true"></div>
+      <LoadingScreen isLoading={loading} />
       <ScrollToTop />
       <Header />
       <main>
