@@ -6,3 +6,4 @@ export { default as Location } from './Location';
 export { default as Footer } from './Footer';
 export { default as BackToTop } from './BackToTop';
 export { default as LoadingScreen } from './LoadingScreen';
+export { default as SEO } from './SEO';
