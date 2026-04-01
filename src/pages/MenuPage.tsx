@@ -286,6 +286,20 @@ export default function MenuPage() {
     if (!el) return;
     isManualScroll.current = true;
     setActiveCategory(cat);
+
+    // Pre-reveal all sections up to and including the target so that
+    // heavy CSS reveal transitions don't fire mid-scroll (causes jank on mobile)
+    const targetIdx = activeCategories.indexOf(cat);
+    if (targetIdx !== -1) {
+      setRevealedSections((prev) => {
+        const next = new Set(prev);
+        for (let i = 0; i <= targetIdx; i++) {
+          next.add(activeCategories[i]);
+        }
+        return next;
+      });
+    }
+
     // Stop any in-progress Lenis scroll before starting a new one
     const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void; scrollTo: (target: Element, opts?: { offset?: number }) => void } }).lenis;
     if (lenis) {
@@ -298,7 +312,7 @@ export default function MenuPage() {
     setTimeout(() => {
       isManualScroll.current = false;
     }, 1000);
-  }, []);
+  }, [activeCategories]);
 
   const totalItems = menuItems.length;
 
