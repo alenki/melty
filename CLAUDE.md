@@ -39,6 +39,9 @@ React Router (BrowserRouter) with five routes defined in `App.tsx`:
 - **CSS per component** — Each component/page has a co-located `.css` file (no CSS modules, no CSS-in-JS). BEM-like naming: `menu-page__nav-btn--active`
 - **Feedback delivery** — `FeedbackPage` sends reviews directly to Telegram via bot token in `src/config/telegram.ts`
 - **Map** — Leaflet + react-leaflet + OpenStreetMap (no API key needed)
+- **i18n** — Russian/English via React Context in `src/i18n/`. `useTranslation()` returns UI strings, `useMenuTranslation()` returns a function that translates `MenuItem` objects. Translations live in `translations.ts` (UI) and `menuTranslations.ts` (English menu names/descriptions). Default language is `ru`
+- **Loading screen** — `LoadingScreen` component with 800ms first-load / 400ms subsequent transition, managed in `App.tsx`
+- **State management** — React Context for language only; all other state is component-local (no Redux/Zustand)
 
 ### CSS Design System (`src/index.css`)
 
@@ -55,7 +58,12 @@ All styling uses CSS custom properties defined in `:root`:
 - `public/data/logo.png` — White script on dark brown circle
 - `public/data/logo_dark.png` — Dark variant
 - `public/data/melty.png` — Hero image
-- `public/data/menu/` — ~99 menu item images
+- `public/data/menu/` — Menu item images organized by subcategory (breakfasts, desserts, drinks, savory-waffles, etc.)
+- `public/data/photos/` — Gallery photos in `food/`, `inside/`, `items/` subdirectories (33 photos total)
+
+## Deployment
+
+Deployed to Netlify (configured in `netlify.toml`). Build output goes to `dist/`.
 
 ## Design Requirements
 
