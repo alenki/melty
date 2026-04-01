@@ -300,8 +300,9 @@ export default function MenuPage() {
       });
     }
 
+    const isMobile = window.innerWidth < 768;
     const lenis = (window as unknown as { lenis?: { scrollTo: (target: Element, opts?: { offset?: number; duration?: number }) => void } }).lenis;
-    if (lenis) {
+    if (!isMobile && lenis) {
       lenis.scrollTo(el, { offset: 0, duration: 1.2 });
     } else {
       el.scrollIntoView({ behavior: 'smooth' });

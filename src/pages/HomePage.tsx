@@ -42,7 +42,8 @@ export default function HomePage() {
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          if (window.lenis) {
+          const isMobile = window.innerWidth < 768;
+          if (!isMobile && window.lenis) {
             window.lenis.scrollTo(element, { duration: 1.2 });
           } else {
             element.scrollIntoView({ behavior: 'smooth' });

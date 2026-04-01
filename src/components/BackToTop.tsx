@@ -11,7 +11,8 @@ export default function BackToTop() {
   }, []);
 
   const scrollToTop = useCallback(() => {
-    if (window.lenis) {
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile && window.lenis) {
       window.lenis.scrollTo(0, { duration: 1.2 });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
