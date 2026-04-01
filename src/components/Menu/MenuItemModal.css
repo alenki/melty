@@ -5,6 +5,12 @@ html.modal-open {
   position: relative !important;
 }
 
+/* Blur the entire page behind the modal (covers area behind browser chrome too) */
+body.modal-open > #root {
+  filter: blur(12px) brightness(0.7);
+  -webkit-filter: blur(12px) brightness(0.7);
+}
+
 /* Modal Overlay - Deep chocolate backdrop */
 .modal-overlay {
   position: fixed;
@@ -14,18 +20,10 @@ html.modal-open {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: rgba(74, 44, 26, 0.55);
+  background: rgba(74, 44, 26, 0.15);
   animation: modalOverlayIn 0.25s ease-out;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-}
-
-@supports (backdrop-filter: blur(12px)) {
-  .modal-overlay {
-    background: rgba(74, 44, 26, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
 }
 
 @keyframes modalOverlayIn {

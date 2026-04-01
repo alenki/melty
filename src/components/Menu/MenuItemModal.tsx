@@ -36,10 +36,12 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
 
     window.lenis?.stop();
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
 
     return () => {
       window.lenis?.start();
       document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     };
   }, [isOpen]);
 
