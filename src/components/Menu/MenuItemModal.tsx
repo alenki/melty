@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
 import { useMenuTranslation, useLanguage, useTranslation } from '../../i18n';
@@ -27,17 +27,49 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
   const volume = volumeMatch ? volumeMatch[1] : null;
 
   const hasImage = !!item.image;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [showFade, setShowFade] = useState(false);
 
-  // Scroll lock effect - stop Lenis smooth scroll
+  // Scroll lock effect - stop Lenis smooth scroll + lock body scroll
   useEffect(() => {
     if (!isOpen) return;
 
     window.lenis?.stop();
+    document.body.style.overflow = 'hidden';
 
     return () => {
       window.lenis?.start();
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  // Check if content is scrollable and update fade indicator
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const el = containerRef.current;
+    if (!el) return;
+
+    const checkScroll = () => {
+      setShowFade(el.scrollHeight - el.scrollTop - el.clientHeight > 2);
+    };
+
+    checkScroll();
+    el.addEventListener('scroll', checkScroll, { passive: true });
+    const ro = new ResizeObserver(checkScroll);
+    ro.observe(el);
+
+    return () => {
+      el.removeEventListener('scroll', checkScroll);
+      ro.disconnect();
+    };
+  }, [isOpen]);
+
+  // Prevent Lenis from intercepting wheel/touch events inside the modal
+  const stopPropagation = useCallback((e: React.WheelEvent | React.TouchEvent) => {
+    e.stopPropagation();
+  }, []);
+
 
   // Keyboard navigation
   useEffect(() => {
@@ -61,43 +93,54 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
       className="modal-overlay"
       onClick={onClose}
     >
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        {/* Close button */}
-        <button className="modal-close" onClick={onClose} aria-label={t.galleryPage.close}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
+      <div
+        className={`modal-wrapper${showFade ? ' modal-wrapper--faded' : ''}`}
+        onClick={(e) => e.stopPropagation()}
+        onWheel={stopPropagation}
+        onTouchStart={stopPropagation}
+        onTouchMove={stopPropagation}
+      >
+        <div
+          className="modal-container"
+          ref={containerRef}
+        >
+          {/* Close button */}
+          <button className="modal-close" onClick={onClose} aria-label={t.galleryPage.close}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
 
-        {/* Image */}
-        <div className="modal-slider">
-          {hasImage ? (
-            <img
-              src={item.image}
-              alt={displayName}
-              className="modal-slider__image"
-              decoding="async"
-            />
-          ) : (
-            <MenuPlaceholder />
-          )}
-        </div>
+          {/* Image */}
+          <div className="modal-slider">
+            {hasImage ? (
+              <img
+                src={item.image}
+                alt={displayName}
+                className="modal-slider__image"
+                decoding="async"
+              />
+            ) : (
+              <MenuPlaceholder />
+            )}
+          </div>
 
-        {/* Content section */}
-        <div className="modal-content">
-          <div className="modal-content__header">
-            <h2 className="modal-content__name">{displayName}</h2>
-            <div className="modal-content__price-row">
-              <span className="modal-content__price">{priceLabel}</span>
-              {volume && <span className="modal-content__volume">{volume}</span>}
+          {/* Content */}
+          <div className="modal-content">
+            <div className="modal-content__header">
+              <h2 className="modal-content__name">{displayName}</h2>
+              <div className="modal-content__price-row">
+                <span className="modal-content__price">{priceLabel}</span>
+                {volume && <span className="modal-content__volume">{volume}</span>}
+              </div>
             </div>
-          </div>
 
-          <div className="modal-content__divider">
-            <span className="modal-content__divider-icon">◆</span>
-          </div>
+            <div className="modal-content__divider">
+              <span className="modal-content__divider-icon">◆</span>
+            </div>
 
-          <p className="modal-content__description">{description}</p>
+            <p className="modal-content__description">{description}</p>
+          </div>
         </div>
       </div>
     </div>
