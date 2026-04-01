@@ -22,20 +22,23 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon',
 };
 
-// Simple static file server
+// Backup the original SPA shell before prerendering overwrites it
+const SPA_SHELL_BACKUP = path.join(DIST, '__spa_shell.html');
+
+// Simple static file server — always uses the clean SPA shell for fallback
 function createStaticServer() {
   return http.createServer((req, res) => {
     const urlPath = decodeURIComponent(req.url.split('?')[0]);
     let filePath = path.join(DIST, urlPath);
 
-    // Directory → index.html
+    // Directory → index.html (only for non-prerendered dirs like assets/)
     if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
       filePath = path.join(filePath, 'index.html');
     }
 
-    // SPA fallback
+    // SPA fallback — use the clean backup, not the (possibly prerendered) index.html
     if (!fs.existsSync(filePath)) {
-      filePath = path.join(DIST, 'index.html');
+      filePath = SPA_SHELL_BACKUP;
     }
 
     const ext = path.extname(filePath);
@@ -45,8 +48,45 @@ function createStaticServer() {
   });
 }
 
+// Remove duplicate tags that exist in the original HTML template.
+// react-helmet-async injects its own tags but doesn't remove the originals
+// from the static template, causing duplicates in the serialized DOM.
+function cleanHtml(html) {
+  // The template has <title>Melty</title> — helmet adds its own <title>.
+  // Keep only the FIRST <title> (helmet injects at the top of <head>).
+  let titleCount = 0;
+  html = html.replace(/<title>[^<]*<\/title>/g, (match) => {
+    titleCount++;
+    return titleCount === 1 ? match : '';
+  });
+
+  // Remove duplicate meta tags — keep the first occurrence of each name/property.
+  const seenMeta = new Set();
+  html = html.replace(/<meta\s+[^>]*>/g, (match) => {
+    const nameMatch = match.match(/(?:name|property)="([^"]+)"/);
+    if (nameMatch) {
+      const key = nameMatch[1];
+      if (seenMeta.has(key)) return '';
+      seenMeta.add(key);
+    }
+    return match;
+  });
+
+  // Remove duplicate canonical links — keep only the first.
+  let canonicalCount = 0;
+  html = html.replace(/<link\s+rel="canonical"[^>]*>/g, (match) => {
+    canonicalCount++;
+    return canonicalCount === 1 ? match : '';
+  });
+
+  return html;
+}
+
 async function prerender() {
   console.log('Starting prerender...');
+
+  // Backup the clean SPA shell before any route overwrites index.html
+  fs.copyFileSync(path.join(DIST, 'index.html'), SPA_SHELL_BACKUP);
 
   const server = createStaticServer();
   await new Promise((resolve) => server.listen(PORT, resolve));
@@ -64,8 +104,11 @@ async function prerender() {
     // Wait for loading screen to finish (800ms first load + transition)
     await new Promise((r) => setTimeout(r, 2000));
 
-    const html = await page.content();
+    let html = await page.content();
     await page.close();
+
+    // Clean up duplicate tags from template vs helmet
+    html = cleanHtml(html);
 
     // Determine output path
     const outputDir = route === '/'
@@ -83,6 +126,10 @@ async function prerender() {
 
   await browser.close();
   server.close();
+
+  // Clean up the backup
+  fs.unlinkSync(SPA_SHELL_BACKUP);
+
   console.log('Prerender complete!');
 }
 
