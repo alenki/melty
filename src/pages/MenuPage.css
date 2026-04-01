@@ -586,7 +586,6 @@ body.modal-open .menu-page__featured {
 .menu-page__featured-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: clamp(1.5rem, 3vw, 2.5rem);
   gap: 0;
 }
@@ -612,7 +611,9 @@ body.modal-open .menu-page__featured {
 .menu-page__featured-bottom {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .menu-page__featured-price {
@@ -621,6 +622,17 @@ body.modal-open .menu-page__featured {
   font-size: clamp(1.25rem, 2vw, 1.625rem);
   font-weight: 600;
   color: var(--orange);
+}
+
+.menu-page__featured-volume {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--caramel);
+  background: var(--cream-deep, rgba(0,0,0,0.04));
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
 }
 
 .menu-page__featured-divider {

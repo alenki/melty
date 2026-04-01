@@ -15,6 +15,10 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
     : `${item.price.toLocaleString('ru-RU')}₽`;
 
+  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
+  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const volume = volumeMatch ? volumeMatch[1] : null;
+
   const hasImage = !!item.image;
 
   // Scroll lock effect - stop Lenis smooth scroll
@@ -74,8 +78,11 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
         {/* Content section */}
         <div className="modal-content">
           <div className="modal-content__header">
-            <h2 className="modal-content__name">{item.name}</h2>
-            <span className="modal-content__price">{priceLabel}</span>
+            <h2 className="modal-content__name">{displayName}</h2>
+            <div className="modal-content__price-row">
+              <span className="modal-content__price">{priceLabel}</span>
+              {volume && <span className="modal-content__volume">{volume}</span>}
+            </div>
           </div>
 
           <div className="modal-content__divider">

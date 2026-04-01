@@ -8,6 +8,8 @@
   animation: menuItemFadeIn 0.5s ease forwards;
   animation-delay: var(--animation-delay, 0ms);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes menuItemFadeIn {
@@ -86,6 +88,9 @@ body.modal-open .menu-item {
 
 .menu-item__content {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .menu-item__name {
@@ -108,6 +113,13 @@ body.modal-open .menu-item {
   overflow: hidden;
 }
 
+.menu-item__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
 .menu-item__price {
   display: inline-block;
   font-family: var(--font-serif);
@@ -115,6 +127,17 @@ body.modal-open .menu-item {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--orange);
+}
+
+.menu-item__volume {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--caramel);
+  background: var(--cream-deep, rgba(0,0,0,0.04));
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 480px) {
@@ -154,5 +177,10 @@ body.modal-open .menu-item {
 
   .menu-item__price {
     font-size: 0.85rem;
+  }
+
+  .menu-item__volume {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
   }
 }

@@ -260,6 +260,13 @@ html.modal-open {
   margin: 0;
 }
 
+.modal-content__price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
 .modal-content__price {
   font-family: var(--font-serif);
   font-size: 1.5rem;
@@ -267,7 +274,18 @@ html.modal-open {
   font-style: italic;
   color: var(--orange);
   white-space: nowrap;
-  flex-shrink: 0;
+}
+
+.modal-content__volume {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--caramel);
+  background: var(--cream-deep, rgba(0,0,0,0.04));
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 /* Decorative Divider */

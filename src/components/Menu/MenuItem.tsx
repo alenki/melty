@@ -18,6 +18,10 @@ export default function MenuItem({ item, index }: MenuItemProps) {
     ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
     : `${item.price.toLocaleString('ru-RU')}₽`;
 
+  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
+  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const volume = volumeMatch ? volumeMatch[1] : null;
+
   const hasImage = item.image && !imageError;
 
   return (
@@ -54,9 +58,12 @@ export default function MenuItem({ item, index }: MenuItemProps) {
       </div>
 
       <div className="menu-item__content">
-        <h3 className="menu-item__name">{item.name}</h3>
+        <h3 className="menu-item__name">{displayName}</h3>
         <p className="menu-item__description">{item.description}</p>
-        <span className="menu-item__price">{priceLabel}</span>
+        <div className="menu-item__bottom">
+          <span className="menu-item__price">{priceLabel}</span>
+          {volume && <span className="menu-item__volume">{volume}</span>}
+        </div>
       </div>
     </article>
 

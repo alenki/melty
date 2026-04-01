@@ -80,6 +80,10 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
     ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
     : `${item.price.toLocaleString('ru-RU')}₽`;
 
+  const volumeMatch = item.name.match(/\s*(\d+(?:\/\d+)?мл)$/);
+  const displayName = volumeMatch ? item.name.replace(volumeMatch[0], '') : item.name;
+  const volume = volumeMatch ? volumeMatch[1] : null;
+
   return (
     <article
       className="menu-page__featured"
@@ -107,7 +111,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
         )}
       </div>
       <div className="menu-page__featured-content">
-        <h3 className="menu-page__featured-name">{item.name}</h3>
+        <h3 className="menu-page__featured-name">{displayName}</h3>
         <div className="menu-page__featured-divider">
           <span className="menu-page__featured-divider-line" />
           <span className="menu-page__featured-divider-dot" />
@@ -115,6 +119,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
         <p className="menu-page__featured-desc">{item.description}</p>
         <div className="menu-page__featured-bottom">
           <span className="menu-page__featured-price">{priceLabel}</span>
+          {volume && <span className="menu-page__featured-volume">{volume}</span>}
         </div>
       </div>
     </article>
