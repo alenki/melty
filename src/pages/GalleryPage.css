@@ -394,6 +394,16 @@
 
 
 /* ===== LIGHTBOX ===== */
+body.lightbox-open {
+  overflow: hidden;
+  background: #000;
+}
+
+body.lightbox-open > *:not(.gallery-lightbox) {
+  filter: blur(12px);
+  transition: filter 0.3s ease;
+}
+
 .gallery-lightbox {
   position: fixed;
   inset: 0;

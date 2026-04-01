@@ -203,9 +203,20 @@ export default function GalleryPage() {
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
 
+  const isLightboxOpen = lightboxIndex !== null;
+
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+    window.lenis?.stop();
+    document.body.classList.add('lightbox-open');
+    return () => {
+      document.body.classList.remove('lightbox-open');
+      window.lenis?.start();
+    };
+  }, [isLightboxOpen]);
+
   useEffect(() => {
     if (lightboxIndex === null) return;
-    window.lenis?.stop();
 
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeLightbox();
@@ -215,7 +226,6 @@ export default function GalleryPage() {
     document.addEventListener('keydown', handleKey);
     return () => {
       document.removeEventListener('keydown', handleKey);
-      window.lenis?.start();
     };
   }, [lightboxIndex, closeLightbox, goNext, goPrev]);
 
