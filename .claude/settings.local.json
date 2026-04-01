@@ -61,7 +61,10 @@
       "Bash(wc -l /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src/**/*.css)",
       "Bash(grep -h \"^@media\" /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src/**/*.css)",
       "Bash(xargs file:*)",
-      "Bash(sort -k5 -n)"
+      "Bash(sort -k5 -n)",
+      "Bash(node convert-to-webp.mjs)",
+      "Bash(rm convert-to-webp.mjs)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }

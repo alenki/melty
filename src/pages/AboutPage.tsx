@@ -165,7 +165,7 @@ export default function AboutPage() {
             ref={craftCardLeftRef}
           >
             <img
-              src="/data/photos/food/IMG_0142.JPG"
+              src="/data/photos/food/IMG_0142.webp"
               alt={t.aboutPage.imgAlts.dessert}
               loading="lazy"
               decoding="async"
@@ -176,7 +176,7 @@ export default function AboutPage() {
             ref={craftCardRightRef}
           >
             <img
-              src="/data/photos/food/IMG_0587.JPG"
+              src="/data/photos/food/IMG_0587.webp"
               alt={t.aboutPage.imgAlts.chocolateDessert}
               loading="lazy"
               decoding="async"
@@ -219,19 +219,19 @@ export default function AboutPage() {
       >
         <div className="about-page__world-strip" ref={photoStripRef}>
           <img
-            src="/data/photos/inside/IMG_4561.JPG"
+            src="/data/photos/inside/IMG_4561.webp"
             alt={t.aboutPage.imgAlts.cafeAtmosphere}
             loading="lazy"
             decoding="async"
           />
           <img
-            src="/data/photos/inside/IMG_4566.JPG"
+            src="/data/photos/inside/IMG_4566.webp"
             alt={t.aboutPage.imgAlts.warmLighting}
             loading="lazy"
             decoding="async"
           />
           <img
-            src="/data/photos/inside/IMG_4588.JPG"
+            src="/data/photos/inside/IMG_4588.webp"
             alt={t.aboutPage.imgAlts.eveningAtmosphere}
             loading="lazy"
             decoding="async"
@@ -269,7 +269,7 @@ export default function AboutPage() {
 
         <div className="about-page__yours-inner">
           <img
-            src="/data/logo_dark.png"
+            src="/data/logo_dark.webp"
             alt="Melty"
             className="about-page__yours-logo"
           />

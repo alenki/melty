@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="footer__brand">
               <a href="#hero" className="footer__logo-link" aria-label={t.footer.toHome}>
                 <img
-                  src="/data/logo.png"
+                  src="/data/logo.webp"
                   alt="Melty"
                   className="footer__logo-img"
                 />

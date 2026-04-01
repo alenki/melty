@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный чизкейк с начинкой из фисташкового урбеча и хрустящего теста «Катаифи». Подаётся с шотом молочного бельгийского шоколада и дробленной фисташкой',
     price: 590,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Melty Knafi Чизкейк.png'
+    image: '/data/menu/desserts/Melty Knafi Чизкейк.webp'
   },
   {
     id: 'melty-melt',
@@ -142,7 +142,7 @@ export const menuItems: MenuItem[] = [
     description: 'Мини-панкейки. Подаются с шотом молочного бельгийского шоколада',
     price: 390,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Puffies.png'
+    image: '/data/menu/desserts/Puffies.webp'
   },
   {
     id: 'brownie',
@@ -150,7 +150,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный брауни, обильно политый молочным бельгийским шоколадом. Подаётся с шариком ванильного мороженого',
     price: 490,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Брауни.png'
+    image: '/data/menu/desserts/Брауни.webp'
   },
   {
     id: 'san-sebastian',
@@ -158,7 +158,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный творожный чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
     price: 450,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Сан-Себастьян.png'
+    image: '/data/menu/desserts/Сан-Себастьян.webp'
   },
   {
     id: 'san-sebastian-pistachio',
@@ -166,7 +166,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный фисташковый чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
     price: 490,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Сан-Себастьян фисташковый.png'
+    image: '/data/menu/desserts/Сан-Себастьян фисташковый.webp'
   },
   {
     id: 'churros',
@@ -174,7 +174,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкие обжаренные вафельные палочки, политые тремя видами бельгийского шоколада',
     price: 390,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Чуррос.png'
+    image: '/data/menu/desserts/Чуррос.webp'
   },
   {
     id: 'chocolate-fondant',
@@ -182,7 +182,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный кекс с жидкой сердцевиной, политый молочным бельгийским шоколадом, подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 390,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Шоколадный Фондан.png'
+    image: '/data/menu/desserts/Шоколадный Фондан.webp'
   },
   {
     id: 'eclair',
@@ -190,7 +190,7 @@ export const menuItems: MenuItem[] = [
     description: 'Пирожные из заварного теста под карамелизированной корочкой, наполненные фирменным кремом «Патисьер». Подаются с сезонными ягодами',
     price: 460,
     category: 'chocolate-desserts',
-    image: '/data/menu/desserts/Эклеры.png'
+    image: '/data/menu/desserts/Эклеры.webp'
   },
   {
     id: 'pancakes-trouble-chocolate',
@@ -208,7 +208,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежая клубника, хрустящее тесто «Катаифи», фисташковая паста, молочный бельгийский шоколад, выложенные послойно в стакане. Посыпается дробленной фисташкой',
     price: 850,
     category: 'chocolate-cups',
-    image: '/data/menu/desserts/Дубайская клубника.png'
+    image: '/data/menu/desserts/Дубайская клубника.webp'
   },
   {
     id: 'strawberry-in-chocolate',
@@ -216,7 +216,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежая клубника в молочном бельгийском шоколаде, подаётся в стакане',
     price: 730,
     category: 'chocolate-cups',
-    image: '/data/menu/desserts/Клубника в шоколаде.png'
+    image: '/data/menu/desserts/Клубника в шоколаде.webp'
   },
   {
     id: 'krispy-rise-chocolate',
@@ -224,7 +224,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящий воздушный рис, обильно политый молочным бельгийским шоколадом',
     price: 350,
     category: 'chocolate-cups',
-    image: '/data/menu/desserts/Krispy Rise в шоколаде.png'
+    image: '/data/menu/desserts/Krispy Rise в шоколаде.webp'
   },
 
   // ============ CREPES ============
@@ -234,7 +234,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик, политый тремя видами бельгийского шоколада, подаётся с сезонными ягодами',
     price: 390,
     category: 'crepes',
-    image: '/data/menu/desserts/Креп Три шоколада.png'
+    image: '/data/menu/desserts/Креп Три шоколада.webp'
   },
   {
     id: 'golden-crep',
@@ -242,7 +242,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик, политый молочно-карамельным бельгийским шоколадом',
     price: 550,
     category: 'crepes',
-    image: '/data/menu/desserts/Golden Креп.JPG'
+    image: '/data/menu/desserts/Golden Креп.webp'
   },
   {
     id: 'crep-dubai',
@@ -250,7 +250,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик с начинкой из теста «Катаифи», политый фисташковым урбечом и молочным шоколадом',
     price: 590,
     category: 'crepes',
-    image: '/data/menu/desserts/Креп Дубай.png'
+    image: '/data/menu/desserts/Креп Дубай.webp'
   },
   {
     id: 'fetuccini-crep',
@@ -258,7 +258,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик, разрезанный на тонкие полоски, напоминающие итальянскую пасту. Поливается молочным бельгийским шоколадом и подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 490,
     category: 'crepes',
-    image: '/data/menu/desserts/Фетучини-креп.png'
+    image: '/data/menu/desserts/Фетучини-креп.webp'
   },
   {
     id: 'melty-crep-pistachio',
@@ -266,7 +266,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик с фисташковым урбечом и молочным бельгийским шоколадом, посыпанный дробленной фисташкой',
     price: 590,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Melty креп фисташковый.JPG'
+    image: '/data/menu/desserts/Melty креп фисташковый.webp'
   },
   {
     id: 'melty-crep-chocolate',
@@ -274,7 +274,7 @@ export const menuItems: MenuItem[] = [
     description: 'Французский блинчик с молочным бельгийским шоколадом, подаётся с клубникой и шариком шоколадного мороженого',
     price: 650,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Melty креп шоколадный.JPG'
+    image: '/data/menu/desserts/Melty креп шоколадный.webp'
   },
   {
     id: 'brownie-roll',
@@ -282,7 +282,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шоколадный брауни, завёрнутый в тонкие блинчики. Поливаются тремя видами бельгийского шоколада',
     price: 490,
     category: 'crepes',
-    image: '/data/menu/desserts/Брауни ролл.png'
+    image: '/data/menu/desserts/Брауни ролл.webp'
   },
 
   // ============ WAFFLES & CROISSANTS ============
@@ -292,7 +292,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая тремя видами бельгийского шоколада',
     price: 430,
     category: 'waffles-croissants',
-    image: '/data/menu/desserts/Вафля три шоколада.png'
+    image: '/data/menu/desserts/Вафля три шоколада.webp'
   },
   {
     id: 'waffles-steak-gold',
@@ -300,7 +300,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
     price: 470,
     category: 'waffles-croissants',
-    image: '/data/menu/desserts/Вафля стейк Gold.png'
+    image: '/data/menu/desserts/Вафля стейк Gold.webp'
   },
   {
     id: 'waffle-gold',
@@ -308,7 +308,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
     price: 490,
     category: 'waffles-croissants',
-    image: '/data/menu/desserts/Вафля Gold.png'
+    image: '/data/menu/desserts/Вафля Gold.webp'
   },
   {
     id: 'waffle-steak',
@@ -316,7 +316,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкая вафля, политая молочным бельгийским шоколадом',
     price: 430,
     category: 'waffles-croissants',
-    image: '/data/menu/desserts/Вафля Стейк.png'
+    image: '/data/menu/desserts/Вафля Стейк.webp'
   },
   {
     id: 'pistachio-waffle',
@@ -324,7 +324,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкие вафли, политые фисташковым урбечом',
     price: 540,
     category: 'waffles-croissants',
-    image: '/data/menu/desserts/Фисташковая вафля.png'
+    image: '/data/menu/desserts/Фисташковая вафля.webp'
   },
   {
     id: 'new-york-roll',
@@ -342,7 +342,7 @@ export const menuItems: MenuItem[] = [
     description: 'Соленая вафля с авокадо и крабом',
     price: 520,
     category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля с авокадо и крабом.jpg'
+    image: '/data/menu/savory-waffles/Вафля с авокадо и крабом.webp'
   },
   {
     id: 'savory-waffle-beef-coleslaw',
@@ -350,7 +350,7 @@ export const menuItems: MenuItem[] = [
     description: 'Соленая вафля с рваной говядиной и салатом Коу-слоу',
     price: 490,
     category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля с рван. говядиной и салатом Коу-слоу.jpg'
+    image: '/data/menu/savory-waffles/Вафля с рван. говядиной и салатом Коу-слоу.webp'
   },
   {
     id: 'savory-waffle-salmon-poached-egg',
@@ -358,7 +358,7 @@ export const menuItems: MenuItem[] = [
     description: 'Соленая вафля с семгой и яйцом пашот',
     price: 590,
     category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля с семгой и яйцом пашот.jpg'
+    image: '/data/menu/savory-waffles/Вафля с семгой и яйцом пашот.webp'
   },
   {
     id: 'savory-waffle-mousse-scramble',
@@ -366,7 +366,7 @@ export const menuItems: MenuItem[] = [
     description: 'Соленая вафля со сливочным муссом и скремблом',
     price: 320,
     category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля со сливоч. муссом и скремблом.jpg'
+    image: '/data/menu/savory-waffles/Вафля со сливоч. муссом и скремблом.webp'
   },
 
   // ============ BREAKFASTS ============
@@ -376,7 +376,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежные сырники с греческим йогуртом и конфитюром из смородины',
     price: 350,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Melty сырники с йогуртом и конфитюром из смородины.png'
+    image: '/data/menu/breakfasts/Melty сырники с йогуртом и конфитюром из смородины.webp'
   },
   {
     id: 'english-breakfast',
@@ -384,7 +384,7 @@ export const menuItems: MenuItem[] = [
     description: 'Глазунья из двух яиц, фермерские колбаски, копчёная индейка, фасоль в томатном соусе, обжаренный тостерный хлеб, свежие томаты, соус «Песто», шампиньоны',
     price: 650,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Английский завтрак.png'
+    image: '/data/menu/breakfasts/Английский завтрак.webp'
   },
   {
     id: 'dzhigit-breakfast',
@@ -392,7 +392,7 @@ export const menuItems: MenuItem[] = [
     description: 'Домашние яйца, приготовленные в домашней сметане, подаётся с двумя видами сыра, натуральным калмыцким чаем и хрустящей чиабаттой',
     price: 420,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Завтрак джигита.png'
+    image: '/data/menu/breakfasts/Завтрак джигита.webp'
   },
   {
     id: 'spanish-omelette',
@@ -400,7 +400,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический испанский омлет с начинкой',
     price: 290,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Испанский омлет.jpg'
+    image: '/data/menu/breakfasts/Испанский омлет.webp'
   },
   {
     id: 'coconut-granola',
@@ -408,7 +408,7 @@ export const menuItems: MenuItem[] = [
     description: 'Гранола собственного приготовления с добавлением орехов, мацони, мёда и сезонных ягод',
     price: 410,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Кокосовая гранола с мацони и медом.jpg'
+    image: '/data/menu/breakfasts/Кокосовая гранола с мацони и медом.webp'
   },
   {
     id: 'crepe-raspberry',
@@ -424,7 +424,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный оладушек с яйцом скрембл и тигровыми креветками',
     price: 550,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Мега оладушек с яйцом скрембл и креветками.png'
+    image: '/data/menu/breakfasts/Мега оладушек с яйцом скрембл и креветками.webp'
   },
   {
     id: 'oatmeal-berries',
@@ -432,7 +432,7 @@ export const menuItems: MenuItem[] = [
     description: 'Овсяная каша с сезонными ягодами и орехом пекан',
     price: 270,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Овсяная каша с ягодами.jpg'
+    image: '/data/menu/breakfasts/Овсяная каша с ягодами.webp'
   },
   {
     id: 'pp-dranik-salmon',
@@ -440,7 +440,7 @@ export const menuItems: MenuItem[] = [
     description: 'Драники из кабачков, тар-тар из сёмги собственного посола, два яйца пашот и соус галандез',
     price: 650,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/ПП драник из кабачков с яйцом пашот и семгой собственного посола.png'
+    image: '/data/menu/breakfasts/ПП драник из кабачков с яйцом пашот и семгой собственного посола.webp'
   },
   {
     id: 'rice-porridge',
@@ -448,7 +448,7 @@ export const menuItems: MenuItem[] = [
     description: 'Кремовая рисовая каша с грецкими орехами и мёдом',
     price: 290,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Рисовая каша с грецкими орехами.jpg'
+    image: '/data/menu/breakfasts/Рисовая каша с грецкими орехами.webp'
   },
   {
     id: 'melty-breakfast',
@@ -456,7 +456,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
     price: 660,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Фирменный завтрак Мелти.png'
+    image: '/data/menu/breakfasts/Фирменный завтрак Мелти.webp'
   },
   {
     id: 'shakshuka',
@@ -464,7 +464,7 @@ export const menuItems: MenuItem[] = [
     description: 'Турецкая яичница с яйцом пашот в фирменном томатном соусе. Подаётся с хрустящей чиабаттой',
     price: 380,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Шакшука с яйцом пашот и зеленью.png'
+    image: '/data/menu/breakfasts/Шакшука с яйцом пашот и зеленью.webp'
   },
   {
     id: 'egg-roll',
@@ -472,7 +472,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящий яичный ролл с начинкой',
     price: 320,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Эгг-ролл.jpg'
+    image: '/data/menu/breakfasts/Эгг-ролл.webp'
   },
 
   // ============ APPETIZERS (ЗАКУСКИ) ============
@@ -482,7 +482,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежное пюре из нута с кунжутной пастой тахини, оливковым маслом и специями',
     price: 290,
     category: 'other',
-    image: '/data/menu/other/Крем-хумус с хрустящим нутом.png'
+    image: '/data/menu/other/Крем-хумус с хрустящим нутом.webp'
   },
   {
     id: 'cheese-sticks-jam',
@@ -490,7 +490,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящие сырные палочки с ягодным конфитюром из смородины',
     price: 370,
     category: 'other',
-    image: '/data/menu/other/Сырные палочки с конфитюром из смородины.png'
+    image: '/data/menu/other/Сырные палочки с конфитюром из смородины.webp'
   },
   {
     id: 'sandwich-turkey',
@@ -498,7 +498,7 @@ export const menuItems: MenuItem[] = [
     description: 'Обжаренный тостерный хлеб, горчичный соус, копчёная индейка, лист салата, розовые помидоры, сыр «Чеддер», соус «Песто»',
     price: 410,
     category: 'other',
-    image: '/data/menu/other/Сэндвич с индейкой.png'
+    image: '/data/menu/other/Сэндвич с индейкой.webp'
   },
   {
     id: 'sandwich-caesar-chicken',
@@ -506,7 +506,7 @@ export const menuItems: MenuItem[] = [
     description: 'Обжаренный тостерный хлеб, соус «Цезарь», лист салата, филе цыплёнка, розовые томаты, сыр «Чеддер»',
     price: 390,
     category: 'other',
-    image: '/data/menu/other/Сэндвич Цезарь с цыпленком.png'
+    image: '/data/menu/other/Сэндвич Цезарь с цыпленком.webp'
   },
 
   // ============ SALADS ============
@@ -516,7 +516,7 @@ export const menuItems: MenuItem[] = [
     description: 'Индейка брискет собственного копчения, свежая руккола, спелый авокадо, соус ПП на основе трюфельного масла, киноа и слайса огурца',
     price: 590,
     category: 'salads',
-    image: '/data/menu/salads/Зеленый ПП с индейкой брискет.png'
+    image: '/data/menu/salads/Зеленый ПП с индейкой брискет.webp'
   },
   {
     id: 'crispy-eggplant',
@@ -524,7 +524,7 @@ export const menuItems: MenuItem[] = [
     description: 'Микс салата, хрустящие баклажаны в паназиатском соусе, свежие томаты, сырный мусс, кунжут, кинза',
     price: 390,
     category: 'salads',
-    image: '/data/menu/salads/Хрустящие баклажаны с сырным кремом.png'
+    image: '/data/menu/salads/Хрустящие баклажаны с сырным кремом.webp'
   },
   {
     id: 'caesar-shrimp',
@@ -532,7 +532,7 @@ export const menuItems: MenuItem[] = [
     description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренные тигровые креветки, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
     price: 590,
     category: 'salads',
-    image: '/data/menu/salads/Цезарь с креветками.png'
+    image: '/data/menu/salads/Цезарь с креветками.webp'
   },
   {
     id: 'caesar-chicken',
@@ -540,7 +540,7 @@ export const menuItems: MenuItem[] = [
     description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренное филе цыплёнка, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
     price: 450,
     category: 'salads',
-    image: '/data/menu/salads/Цезарь с цыпленком.png'
+    image: '/data/menu/salads/Цезарь с цыпленком.webp'
   },
   {
     id: 'greek-salad',
@@ -548,7 +548,7 @@ export const menuItems: MenuItem[] = [
     description: 'Огурцы, розовые томаты, маслины, болгарский перец, красный лук, мусс из фермерской брынзы, заправляется оливковым маслом',
     price: 420,
     category: 'salads',
-    image: '/data/menu/salads/Греческий с муссом из брынзы.png'
+    image: '/data/menu/salads/Греческий с муссом из брынзы.webp'
   },
   {
     id: 'bowl-chicken',
@@ -556,7 +556,7 @@ export const menuItems: MenuItem[] = [
     description: 'Филе цыплёнка, киноа, яйцо пашот, кукуруза, авокадо, розовые томаты, соус кунжутный',
     price: 520,
     category: 'salads',
-    image: '/data/menu/salads/Боул с курицей.png'
+    image: '/data/menu/salads/Боул с курицей.webp'
   },
 
   // ============ SOUPS ============
@@ -566,7 +566,7 @@ export const menuItems: MenuItem[] = [
     description: 'Суп том-ям с добавлением креветок, кальмаров и сёмги. Подаётся с рисом басматти',
     price: 690,
     category: 'soups',
-    image: '/data/menu/soups/Том-ям с морепродуктами.png'
+    image: '/data/menu/soups/Том-ям с морепродуктами.webp'
   },
   {
     id: 'lentil-soup-turkey',
@@ -574,7 +574,7 @@ export const menuItems: MenuItem[] = [
     description: 'Суп из красной чечевицы на сливочной основе с добавлением индейки брискет. Подаётся с сухарями',
     price: 390,
     category: 'soups',
-    image: '/data/menu/soups/Чечевичный суп с брискетом из индейки.png'
+    image: '/data/menu/soups/Чечевичный суп с брискетом из индейки.webp'
   },
   {
     id: 'chicken-ryaba-soup',
@@ -582,7 +582,7 @@ export const menuItems: MenuItem[] = [
     description: 'Куриный суп с яичной лапшой',
     price: 260,
     category: 'soups',
-    image: '/data/menu/soups/Курочка Ряба с яичной лапшой.png'
+    image: '/data/menu/soups/Курочка Ряба с яичной лапшой.webp'
   },
 
   // ============ MAIN DISHES (Рыба, Птица, Мясо) ============
@@ -592,7 +592,7 @@ export const menuItems: MenuItem[] = [
     description: 'Восточный рис с курицей',
     price: 390,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Восточный рис с курицей.jpg'
+    image: '/data/menu/main-dishes/Восточный рис с курицей.webp'
   },
   {
     id: 'eastern-rice-beef',
@@ -600,7 +600,7 @@ export const menuItems: MenuItem[] = [
     description: 'Восточный рис с рваной говядиной',
     price: 520,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Восточный рис с рван.говядиной.jpg'
+    image: '/data/menu/main-dishes/Восточный рис с рван.говядиной.webp'
   },
   {
     id: 'salmon-orzo-kataifi',
@@ -608,7 +608,7 @@ export const menuItems: MenuItem[] = [
     description: 'Семга с пастой орзо и рулетом из катаифи',
     price: 970,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Семга с пастой орзо и рулетом из катаифи.jpg'
+    image: '/data/menu/main-dishes/Семга с пастой орзо и рулетом из катаифи.webp'
   },
   {
     id: 'shawarma-chicken',
@@ -616,7 +616,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шаурма ливанская с курицей',
     price: 390,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Шаурма ливанская с курицей.jpg'
+    image: '/data/menu/main-dishes/Шаурма ливанская с курицей.webp'
   },
   {
     id: 'shawarma-beef',
@@ -624,7 +624,7 @@ export const menuItems: MenuItem[] = [
     description: 'Шаурма ливанская с рваной говядиной',
     price: 470,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Шаурма ливанская с рван.говядиной.jpg'
+    image: '/data/menu/main-dishes/Шаурма ливанская с рван.говядиной.webp'
   },
   {
     id: 'fetuccini-shrimp-tom-yam',
@@ -632,7 +632,7 @@ export const menuItems: MenuItem[] = [
     description: 'Паста фетучини с тигровыми креветками в пикантном соусе том-ям',
     price: 660,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Фетучини с креветками в соусе Том-ям.png'
+    image: '/data/menu/main-dishes/Фетучини с креветками в соусе Том-ям.webp'
   },
   {
     id: 'chicken-cutlets-potato',
@@ -640,7 +640,7 @@ export const menuItems: MenuItem[] = [
     description: 'Домашние куриные котлетки с нежным картофельным кремом',
     price: 520,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Куриные котлетки с картофельным кремом.png'
+    image: '/data/menu/main-dishes/Куриные котлетки с картофельным кремом.webp'
   },
   {
     id: 'fetuccini-chicken-mushrooms',
@@ -648,7 +648,7 @@ export const menuItems: MenuItem[] = [
     description: 'Паста фетучини с нежным куриным филе и грибами в сливочном соусе',
     price: 490,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Фетучини с куриным филе и грибами.png'
+    image: '/data/menu/main-dishes/Фетучини с куриным филе и грибами.webp'
   },
   {
     id: 'chicken-cauliflower-nut',
@@ -656,7 +656,7 @@ export const menuItems: MenuItem[] = [
     description: 'Филе цыплёнка с добавлением кунжутно-орехового соуса и цветной капустой',
     price: 550,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Филе цыпленка с цветной капустой в ореховом соусе.jpg'
+    image: '/data/menu/main-dishes/Филе цыпленка с цветной капустой в ореховом соусе.webp'
   },
   {
     id: 'zharkoe-chicken',
@@ -664,7 +664,7 @@ export const menuItems: MenuItem[] = [
     description: 'Обжаренное куриное филе с болгарским перцем, грибами и картофелем в сливочном соусе',
     price: 490,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Жаркое с куриным филе.png'
+    image: '/data/menu/main-dishes/Жаркое с куриным филе.webp'
   },
   {
     id: 'zharkoe-hunter',
@@ -672,7 +672,7 @@ export const menuItems: MenuItem[] = [
     description: 'Обжаренное копчёное мясо с болгарским перцем и картофелем в сливочном соусе',
     price: 620,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Жаркое по-охотничьи.png'
+    image: '/data/menu/main-dishes/Жаркое по-охотничьи.webp'
   },
   {
     id: 'smoked-lyagur-polenta',
@@ -680,7 +680,7 @@ export const menuItems: MenuItem[] = [
     description: 'Копчёное мясо с кукурузной полентой и сливочно-сырным соусом',
     price: 750,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Копченый лягур с полентой и сырным муссом.png'
+    image: '/data/menu/main-dishes/Копченый лягур с полентой и сырным муссом.webp'
   },
 
   // ============ SIDES (ГАРНИРЫ) ============
@@ -690,7 +690,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ароматный дикий рис с маслом белого трюфеля и свежей зеленью',
     price: 280,
     category: 'sides',
-    image: '/data/menu/sides/Дикий рис с маслом белого трюфеля и зеленью.png'
+    image: '/data/menu/sides/Дикий рис с маслом белого трюфеля и зеленью.webp'
   },
   {
     id: 'french-fries',
@@ -698,7 +698,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящий золотистый картофель фри',
     price: 180,
     category: 'sides',
-    image: '/data/menu/sides/Картофель фри.png'
+    image: '/data/menu/sides/Картофель фри.webp'
   },
   {
     id: 'dippers-parmesan',
@@ -706,7 +706,7 @@ export const menuItems: MenuItem[] = [
     description: 'Картофельные дипперы, посыпанные снегом пармезана',
     price: 250,
     category: 'sides',
-    image: '/data/menu/sides/Дипперы со снегом пармезан.png'
+    image: '/data/menu/sides/Дипперы со снегом пармезан.webp'
   },
   {
     id: 'mashed-potato',
@@ -714,7 +714,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежное домашнее картофельное пюре по бабушкиному рецепту',
     price: 180,
     category: 'sides',
-    image: '/data/menu/sides/Картофельное пюре из детства.png'
+    image: '/data/menu/sides/Картофельное пюре из детства.webp'
   },
   {
     id: 'cheese-sticks',
@@ -722,7 +722,7 @@ export const menuItems: MenuItem[] = [
     description: 'Хрустящие сырные палочки с соусом',
     price: 370,
     category: 'sides',
-    image: '/data/menu/sides/Сырные палочки.png'
+    image: '/data/menu/sides/Сырные палочки.webp'
   },
 
   // ============ CLASSIC COFFEE ============
@@ -732,7 +732,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический флэт уайт с плотной бархатистой микропенкой',
     price: 240,
     category: 'coffee',
-    image: '/data/menu/drinks/FLAT WHITE 220мл.png'
+    image: '/data/menu/drinks/FLAT WHITE 220мл.webp'
   },
   {
     id: 'americano',
@@ -740,7 +740,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический американо из отборных зёрен',
     price: 190,
     category: 'coffee',
-    image: '/data/menu/drinks/Американо 170мл.png'
+    image: '/data/menu/drinks/Американо 170мл.webp'
   },
   {
     id: 'hot-chocolate',
@@ -749,7 +749,7 @@ export const menuItems: MenuItem[] = [
     price: 250,
     priceLarge: 350,
     category: 'coffee',
-    image: '/data/menu/drinks/Горячий шоколад 250мл.JPG'
+    image: '/data/menu/drinks/Горячий шоколад 250мл.webp'
   },
   {
     id: 'kakao',
@@ -758,7 +758,7 @@ export const menuItems: MenuItem[] = [
     price: 250,
     priceLarge: 350,
     category: 'coffee',
-    image: '/data/menu/drinks/Какао.png'
+    image: '/data/menu/drinks/Какао.webp'
   },
   {
     id: 'cappuccino',
@@ -767,7 +767,7 @@ export const menuItems: MenuItem[] = [
     price: 220,
     priceLarge: 240,
     category: 'coffee',
-    image: '/data/menu/drinks/Капучино 350мл.png'
+    image: '/data/menu/drinks/Капучино 350мл.webp'
   },
   {
     id: 'latte-350',
@@ -784,7 +784,7 @@ export const menuItems: MenuItem[] = [
     price: 250,
     priceLarge: 300,
     category: 'coffee',
-    image: '/data/menu/drinks/Раф.png'
+    image: '/data/menu/drinks/Раф.webp'
   },
   {
     id: 'filter-coffee',
@@ -792,7 +792,7 @@ export const menuItems: MenuItem[] = [
     description: 'Кофе, заваренный методом фильтрации',
     price: 230,
     category: 'coffee',
-    image: '/data/menu/drinks/Фильтр-кофе.png'
+    image: '/data/menu/drinks/Фильтр-кофе.webp'
   },
   {
     id: 'espresso',
@@ -800,7 +800,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический эспрессо из отборных зёрен',
     price: 190,
     category: 'coffee',
-    image: '/data/menu/drinks/Эспрессо.png'
+    image: '/data/menu/drinks/Эспрессо.webp'
   },
 
   // ============ COLD COFFEE ============
@@ -818,7 +818,7 @@ export const menuItems: MenuItem[] = [
     description: 'Кофейно-апельсиновый коктейль со льдом',
     price: 270,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/Бамбл апельсиновый.png'
+    image: '/data/menu/drinks/Бамбл апельсиновый.webp'
   },
   {
     id: 'bumble-pomegranate',
@@ -834,7 +834,7 @@ export const menuItems: MenuItem[] = [
     description: 'Бамбл на свежевыжатом апельсиновом соке',
     price: 390,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/Бамбл на фреше.png'
+    image: '/data/menu/drinks/Бамбл на фреше.webp'
   },
   {
     id: 'cold-brew-pomegranate',
@@ -842,7 +842,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с гранатовым соком',
     price: 270,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Колд Брю Гранат.png'
+    image: '/data/menu/drinks/Колд Брю Гранат.webp'
   },
   {
     id: 'cold-brew-blueberry',
@@ -850,7 +850,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с черничным соком',
     price: 270,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Колд Брю Черника.png'
+    image: '/data/menu/drinks/Колд Брю Черника.webp'
   },
   {
     id: 'cold-brew-citrus',
@@ -866,7 +866,7 @@ export const menuItems: MenuItem[] = [
     description: 'Освежающий эспрессо с тоником и льдом',
     price: 260,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/Эспрессо Тоник.png'
+    image: '/data/menu/drinks/Эспрессо Тоник.webp'
   },
   {
     id: 'frappe',
@@ -874,7 +874,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ледяной кофейный напиток с молоком',
     price: 290,
     category: 'cold-coffee',
-    image: '/data/menu/drinks/Фраппе.png'
+    image: '/data/menu/drinks/Фраппе.webp'
   },
 
   // ============ AUTHOR COFFEE ============
@@ -884,7 +884,7 @@ export const menuItems: MenuItem[] = [
     description: 'Раф с нежным ягодным вкусом малины',
     price: 360,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Малиновый раф.png'
+    image: '/data/menu/drinks/Малиновый раф.webp'
   },
   {
     id: 'raf-mango',
@@ -892,7 +892,7 @@ export const menuItems: MenuItem[] = [
     description: 'Раф с тропическим вкусом манго',
     price: 340,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Раф Манго.JPG'
+    image: '/data/menu/drinks/Раф Манго.webp'
   },
   {
     id: 'raf-urbech',
@@ -900,7 +900,7 @@ export const menuItems: MenuItem[] = [
     description: 'Раф с натуральным урбечем',
     price: 320,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Раф Урбеч.JPG'
+    image: '/data/menu/drinks/Раф Урбеч.webp'
   },
 
   // ============ LEMONADES & MOJITO ============
@@ -910,7 +910,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ягодный лимонад с клюквой и вишней',
     price: 260,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Клюква-вишня.JPG'
+    image: '/data/menu/drinks/Клюква-вишня.webp'
   },
   {
     id: 'lemonade-mango-passion',
@@ -918,7 +918,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский лимонад с манго и маракуйей',
     price: 250,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Лимонад Манго-Маракуйя.png'
+    image: '/data/menu/drinks/Лимонад Манго-Маракуйя.webp'
   },
   {
     id: 'mojito-lime',
@@ -926,7 +926,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический безалкогольный мохито с мятой и лаймом',
     price: 270,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Мохито Лайм.png'
+    image: '/data/menu/drinks/Мохито Лайм.webp'
   },
   {
     id: 'mojito-passion-fruit',
@@ -934,7 +934,7 @@ export const menuItems: MenuItem[] = [
     description: 'Освежающий мохито с экзотической маракуйей',
     price: 295,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Мохито Маракуйя.JPG'
+    image: '/data/menu/drinks/Мохито Маракуйя.webp'
   },
 
   // ============ AUTHOR DRINKS ============
@@ -952,7 +952,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток с грейпфрутом и карамелью',
     price: 220,
     category: 'author-drinks',
-    image: '/data/menu/drinks/Палома Грейпфрут-карамель.png'
+    image: '/data/menu/drinks/Палома Грейпфрут-карамель.webp'
   },
   {
     id: 'sorrel',
@@ -960,7 +960,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток на основе щавеля',
     price: 280,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Щавелевый.png'
+    image: '/data/menu/drinks/Щавелевый.webp'
   },
 
   // ============ SMOOTHIES ============
@@ -970,7 +970,7 @@ export const menuItems: MenuItem[] = [
     description: 'Питательный смузи с бананом, орехами и овсянкой',
     price: 280,
     category: 'smoothies',
-    image: '/data/menu/drinks/Орехово-банановый смузи с овсянкой.JPG'
+    image: '/data/menu/drinks/Орехово-банановый смузи с овсянкой.webp'
   },
   {
     id: 'smoothie-green-brick',
@@ -978,7 +978,7 @@ export const menuItems: MenuItem[] = [
     description: 'Зелёный детокс-смузи для бодрого дня',
     price: 300,
     category: 'smoothies',
-    image: '/data/menu/drinks/Смузи-завтрак Грин Брик.JPG'
+    image: '/data/menu/drinks/Смузи-завтрак Грин Брик.webp'
   },
 
   // ============ FRESH JUICES ============
@@ -988,7 +988,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежевыжатый апельсиновый сок',
     price: 300,
     category: 'fresh-juices',
-    image: '/data/menu/drinks/Фреш Апельсиновый.png'
+    image: '/data/menu/drinks/Фреш Апельсиновый.webp'
   },
   {
     id: 'grapefruit-fresh',
@@ -996,7 +996,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежевыжатый грейпфрутовый сок',
     price: 370,
     category: 'fresh-juices',
-    image: '/data/menu/drinks/Фреш Грейпфрутовый.JPG'
+    image: '/data/menu/drinks/Фреш Грейпфрутовый.webp'
   },
 
   // ============ MILKSHAKES ============
@@ -1006,7 +1006,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкий молочный коктейль с ванилью и бананом',
     price: 250,
     category: 'milkshakes',
-    image: '/data/menu/drinks/Ванильно-банановый милкшейк.png'
+    image: '/data/menu/drinks/Ванильно-банановый милкшейк.webp'
   },
   {
     id: 'milkshake-oreo',
@@ -1014,7 +1014,7 @@ export const menuItems: MenuItem[] = [
     description: 'Молочный коктейль с печеньем Oreo',
     price: 250,
     category: 'milkshakes',
-    image: '/data/menu/drinks/Милкшейк Oreo.png'
+    image: '/data/menu/drinks/Милкшейк Oreo.webp'
   },
   {
     id: 'milkshake-cheesecake',
@@ -1022,7 +1022,7 @@ export const menuItems: MenuItem[] = [
     description: 'Молочный коктейль со вкусом чизкейка',
     price: 350,
     category: 'milkshakes',
-    image: '/data/menu/drinks/Чизкейк Милкшейк.JPG'
+    image: '/data/menu/drinks/Чизкейк Милкшейк.webp'
   },
 
   // ============ HOUSE TEAS ============
@@ -1032,7 +1032,7 @@ export const menuItems: MenuItem[] = [
     description: 'Согревающий чай с цитрусами и имбирём',
     price: 350,
     category: 'house-teas',
-    image: '/data/menu/drinks/Имбирный чай.png'
+    image: '/data/menu/drinks/Имбирный чай.webp'
   },
   {
     id: 'tea-sea-buckthorn',
@@ -1040,7 +1040,7 @@ export const menuItems: MenuItem[] = [
     description: 'Витаминный чай с облепихой',
     price: 300,
     category: 'house-teas',
-    image: '/data/menu/drinks/Облепиховый чай.png'
+    image: '/data/menu/drinks/Облепиховый чай.webp'
   },
   {
     id: 'tea-mango-cherry',
@@ -1048,7 +1048,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фруктовый чай с манго и вишней',
     price: 350,
     category: 'house-teas',
-    image: '/data/menu/drinks/Чай Манго-вишня.png'
+    image: '/data/menu/drinks/Чай Манго-вишня.webp'
   },
   {
     id: 'tea-berry',
@@ -1056,7 +1056,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ароматный чай с лесными ягодами',
     price: 320,
     category: 'house-teas',
-    image: '/data/menu/drinks/Ягодный чай.png'
+    image: '/data/menu/drinks/Ягодный чай.webp'
   },
 
   // ============ LEAF TEAS ============
@@ -1066,7 +1066,7 @@ export const menuItems: MenuItem[] = [
     description: 'Зелёный чай с цветками жасмина',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Зеленый чай с жасмином.png'
+    image: '/data/menu/drinks/Зеленый чай с жасмином.webp'
   },
   {
     id: 'tea-milk-oolong',
@@ -1074,7 +1074,7 @@ export const menuItems: MenuItem[] = [
     description: 'Китайский молочный улун с нежным сливочным вкусом',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Молочный улун.JPG'
+    image: '/data/menu/drinks/Молочный улун.webp'
   },
   {
     id: 'tea-sencha',
@@ -1082,7 +1082,7 @@ export const menuItems: MenuItem[] = [
     description: 'Японский зелёный чай сенча',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Сенча.png'
+    image: '/data/menu/drinks/Сенча.webp'
   },
   {
     id: 'tea-assam',
@@ -1090,7 +1090,7 @@ export const menuItems: MenuItem[] = [
     description: 'Крепкий индийский чёрный чай',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Чай Ассам.png'
+    image: '/data/menu/drinks/Чай Ассам.webp'
   },
   {
     id: 'tea-black-thyme',
@@ -1098,7 +1098,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический чёрный чай с чабрецом',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Черный чай с чабрецом.JPG'
+    image: '/data/menu/drinks/Черный чай с чабрецом.webp'
   },
   {
     id: 'tea-earl-grey',
@@ -1106,7 +1106,7 @@ export const menuItems: MenuItem[] = [
     description: 'Чёрный чай с бергамотом',
     price: 270,
     category: 'leaf-teas',
-    image: '/data/menu/drinks/Эрл Грей.png'
+    image: '/data/menu/drinks/Эрл Грей.webp'
   },
 
   // ============ SOFT DRINKS ============
@@ -1116,7 +1116,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классическая Coca-Cola',
     price: 200,
     category: 'soft-drinks',
-    image: '/data/menu/drinks/Coca-Cola.png'
+    image: '/data/menu/drinks/Coca-Cola.webp'
   },
   {
     id: 'coca-cola-zero',
@@ -1156,6 +1156,6 @@ export const menuItems: MenuItem[] = [
     description: 'Сок Rich яблочный',
     price: 170,
     category: 'soft-drinks',
-    image: '/data/menu/drinks/Сок Rich Яблоко.png'
+    image: '/data/menu/drinks/Сок Rich Яблоко.webp'
   }
 ];

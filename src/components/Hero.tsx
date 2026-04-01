@@ -55,7 +55,7 @@ export default function Hero() {
         {/* Logo */}
         <div className="hero__logo-container">
           <img
-            src="/data/logo_dark.png"
+            src="/data/logo_dark.webp"
             alt="Melty"
             className="hero__logo"
           />

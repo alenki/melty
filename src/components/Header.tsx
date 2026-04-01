@@ -56,7 +56,7 @@ export default function Header() {
           onClick={handleLogoClick}
           aria-label={t.nav.toHome}
         >
-          <img src="/data/logo_dark.png" alt="Melty" />
+          <img src="/data/logo_dark.webp" alt="Melty" />
         </a>
 
         <nav

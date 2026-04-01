@@ -34,10 +34,10 @@ export default function About() {
             <div className="about__image-bg" aria-hidden="true" />
             <div className="about__photo-stack">
               <div className="about__photo about__photo--1">
-                <img src="/data/photos/inside/IMG_4586.JPG" alt={t.about.imgAlt1} />
+                <img src="/data/photos/inside/IMG_4586.webp" alt={t.about.imgAlt1} />
               </div>
               <div className="about__photo about__photo--2">
-                <img src="/data/photos/food/IMG_0593.JPG" alt={t.about.imgAlt2} />
+                <img src="/data/photos/food/IMG_0593.webp" alt={t.about.imgAlt2} />
               </div>
               <span className="about__accent about__accent--1" aria-hidden="true" />
               <span className="about__accent about__accent--2" aria-hidden="true" />

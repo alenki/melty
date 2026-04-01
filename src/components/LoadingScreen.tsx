@@ -38,7 +38,7 @@ function LoadingScreen({ isLoading }: LoadingScreenProps) {
       <div className="loading-screen__content">
         <img
           className="loading-screen__logo"
-          src="/data/logo.png"
+          src="/data/logo.webp"
           alt="Melty"
         />
         <span className="loading-screen__line" />
