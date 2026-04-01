@@ -74,8 +74,8 @@ export default function AboutPage() {
           if (isMobile) {
             const visibleImg = photoStripRef.current.querySelector('img:nth-child(2)') as HTMLElement;
             if (visibleImg) {
-              const offset = (clamped - 0.5) * 40;
-              visibleImg.style.transform = `scale(1.15) translateY(${offset}px)`;
+              const offset = (clamped - 0.5) * 80;
+              visibleImg.style.transform = `scale(1.25) translateY(${offset}px)`;
             }
           } else {
             const offset = (clamped - 0.5) * -80;
