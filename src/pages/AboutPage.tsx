@@ -5,6 +5,15 @@ import { BackToTop, SEO } from '../components';
 import './AboutPage.css';
 
 export default function AboutPage() {
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'О нас', item: 'https://melty-cafe.ru/about' },
+    ],
+  };
+
   const [revealedChapters, setRevealedChapters] = useState<Set<string>>(new Set());
   const chapterRefs = useRef<Map<string, HTMLElement>>(new Map());
   const craftCardLeftRef = useRef<HTMLDivElement>(null);
@@ -119,6 +128,7 @@ export default function AboutPage() {
         title="О нас"
         description="История шоколадного кафе Melty в Нальчике — наша философия, мастерство и атмосфера уюта."
         path="/about"
+        jsonLd={breadcrumb}
       />
 
       {/* ===== CHAPTER 1: Our Story ===== */}

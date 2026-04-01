@@ -92,6 +92,15 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
 }
 
 export default function MenuPage() {
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Меню', item: 'https://melty-cafe.ru/menu' },
+    ],
+  };
+
   const [activeCategory, setActiveCategory] = useState<MenuCategory>(categoryOrder[0]);
   const [revealedSections, setRevealedSections] = useState<Set<string>>(new Set());
   const [featuredModalItem, setFeaturedModalItem] = useState<MenuItemType | null>(null);
@@ -299,6 +308,7 @@ export default function MenuPage() {
         title="Меню"
         description="Меню кафе Melty: завтраки, десерты, вафли, панкейки, напитки и авторские сладости."
         path="/menu"
+        jsonLd={breadcrumb}
       />
       {/* ===== HERO ===== */}
       <section className="menu-page__hero">

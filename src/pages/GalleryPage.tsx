@@ -87,6 +87,15 @@ const masonryItems = buildMasonryItems();
 /* ------------------------------------------------------------------ */
 
 export default function GalleryPage() {
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Галерея', item: 'https://melty-cafe.ru/gallery' },
+    ],
+  };
+
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<Map<number, HTMLElement>>(new Map());
@@ -227,6 +236,7 @@ export default function GalleryPage() {
         title="Галерея"
         description="Фотографии кафе Melty — атмосфера, интерьер и наши десерты."
         path="/gallery"
+        jsonLd={breadcrumb}
       />
       {/* ===== HERO ===== */}
       <section className="gallery-page__hero">

@@ -8,6 +8,15 @@ import './FeedbackPage.css';
 const CONFETTI_EMOJIS = ['✦', '🤎', '☕', '★', '✦', '☕'];
 
 export default function FeedbackPage() {
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Отзывы', item: 'https://melty-cafe.ru/feedback' },
+    ],
+  };
+
   const [rating, setRating] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(0);
   const [message, setMessage] = useState('');
@@ -146,6 +155,7 @@ export default function FeedbackPage() {
         title="Отзывы"
         description="Оставьте отзыв о кафе Melty — ваше мнение важно для нас."
         path="/feedback"
+        jsonLd={breadcrumb}
       />
       <section className="feedback-page__section">
         {/* Floating accent dots */}
