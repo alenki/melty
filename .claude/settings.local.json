@@ -53,7 +53,10 @@
       "Bash(node rename-images.cjs)",
       "Bash(node reorganize-images.cjs)",
       "Bash(ls:*)",
-      "Bash(grep -E \"\\\\.\\(tsx|ts|jsx|js|css|module\\\\.css\\)$\")"
+      "Bash(grep -E \"\\\\.\\(tsx|ts|jsx|js|css|module\\\\.css\\)$\")",
+      "Bash(node update-prices.js)",
+      "Bash(mv \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.js\" \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.cjs\")",
+      "Bash(node update-prices.cjs)"
     ]
   }
 }
