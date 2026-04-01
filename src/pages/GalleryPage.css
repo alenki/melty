@@ -347,6 +347,10 @@
 
 /* Aspect ratio hints for visual variety */
 .gallery-page__photo--tall .gallery-page__photo-img {
+  aspect-ratio: 3 / 4.5;
+}
+
+.gallery-page__photo--medium .gallery-page__photo-img {
   aspect-ratio: 3 / 4;
 }
 

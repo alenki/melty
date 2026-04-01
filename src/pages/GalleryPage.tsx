@@ -12,7 +12,7 @@ interface GalleryItem {
   src: string;
   altKey: string;
   /** Approximate aspect ratio bucket so CSS can hint heights */
-  ratio: 'tall' | 'square' | 'wide';
+  ratio: 'tall' | 'medium' | 'square' | 'wide';
 }
 
 interface QuoteItem {
@@ -25,56 +25,53 @@ type MasonryItem =
 
 const photos: GalleryItem[] = [
   // Mixed categories & ratios for varied masonry flow
-  { src: '/data/photos/food/IMG_0142.webp', altKey: 'IMG_0142', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2164.webp', altKey: 'IMG_2164', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0587.webp', altKey: 'IMG_0587', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0142.webp', altKey: 'IMG_0142', ratio: 'square' },
+  { src: '/data/photos/inside/IMG_2164.webp', altKey: 'IMG_2164', ratio: 'medium' },
+  { src: '/data/photos/food/IMG_0587.webp', altKey: 'IMG_0587', ratio: 'square' },
   { src: '/data/photos/food/IMG_0590.webp', altKey: 'IMG_0590', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2170.webp', altKey: 'IMG_2170', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2170.webp', altKey: 'IMG_2170', ratio: 'medium' },
   { src: '/data/photos/food/IMG_0594.webp', altKey: 'IMG_0594', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8435.webp', altKey: 'IMG_8435', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0600.webp', altKey: 'IMG_0600', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8435.webp', altKey: 'IMG_8435', ratio: 'medium' },
+  { src: '/data/photos/food/IMG_0600.webp', altKey: 'IMG_0600', ratio: 'square' },
   { src: '/data/photos/food/IMG_0604.webp', altKey: 'IMG_0604', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_4561.webp', altKey: 'IMG_4561', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_4561.webp', altKey: 'IMG_4561', ratio: 'medium' },
   { src: '/data/photos/food/IMG_4563.webp', altKey: 'IMG_4563', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8438.webp', altKey: 'IMG_8438', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8438.webp', altKey: 'IMG_8438', ratio: 'square' },
   { src: '/data/photos/food/IMG_4570.webp', altKey: 'IMG_4570', ratio: 'wide' },
   { src: '/data/photos/inside/IMG_4566.webp', altKey: 'IMG_4566', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4575.webp', altKey: 'IMG_4575', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8441.webp', altKey: 'IMG_8441', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4575.webp', altKey: 'IMG_4575', ratio: 'medium' },
+  { src: '/data/photos/items/IMG_8441.webp', altKey: 'IMG_8441', ratio: 'square' },
+  { src: '/data/photos/inside/IMG_2176.webp', altKey: 'IMG_2176', ratio: 'medium' },
   { src: '/data/photos/food/IMG_4579.webp', altKey: 'IMG_4579', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2176.webp', altKey: 'IMG_2176', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4585.webp', altKey: 'IMG_4585', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4585.webp', altKey: 'IMG_4585', ratio: 'square' },
   { src: '/data/photos/inside/IMG_4584.webp', altKey: 'IMG_4584', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0598.webp', altKey: 'IMG_0598', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0598.webp', altKey: 'IMG_0598', ratio: 'medium' },
   { src: '/data/photos/items/IMG_8444.webp', altKey: 'IMG_8444', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_0139.webp', altKey: 'IMG_0139', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_0139.webp', altKey: 'IMG_0139', ratio: 'square' },
   { src: '/data/photos/inside/IMG_4591.webp', altKey: 'IMG_4591', ratio: 'tall' },
-  { src: '/data/photos/food/IMG_4577.webp', altKey: 'IMG_4577', ratio: 'tall' },
+  { src: '/data/photos/food/IMG_4577.webp', altKey: 'IMG_4577', ratio: 'medium' },
   { src: '/data/photos/items/IMG_8447.webp', altKey: 'IMG_8447', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_2180.webp', altKey: 'IMG_2180', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8450.webp', altKey: 'IMG_8450', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_2180.webp', altKey: 'IMG_2180', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8450.webp', altKey: 'IMG_8450', ratio: 'medium' },
   { src: '/data/photos/items/IMG_4580.webp', altKey: 'IMG_4580', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8443.webp', altKey: 'IMG_8443', ratio: 'tall' },
-  { src: '/data/photos/items/IMG_8436.webp', altKey: 'IMG_8436', ratio: 'tall' },
+  { src: '/data/photos/items/IMG_8443.webp', altKey: 'IMG_8443', ratio: 'square' },
+  { src: '/data/photos/items/IMG_8436.webp', altKey: 'IMG_8436', ratio: 'medium' },
   { src: '/data/photos/food/IMG_0140.webp', altKey: 'IMG_0140', ratio: 'tall' },
-  { src: '/data/photos/inside/IMG_4588.webp', altKey: 'IMG_4588', ratio: 'tall' },
+  { src: '/data/photos/inside/IMG_4588.webp', altKey: 'IMG_4588', ratio: 'medium' },
 ];
 
 /** Build the flat masonry item list, inserting quotes at even intervals */
 function buildMasonryItems(): MasonryItem[] {
   const items: MasonryItem[] = [];
-  const interval = Math.floor(photos.length / (3 + 1));
-
-  let photoIdx = 0;
+  // Place quotes after photo indices 5, 17, 29 for wide visual spacing
+  const quoteAfterPhoto = [5, 17, 29];
   let quoteIdx = 0;
 
-  for (let i = 0; photoIdx < photos.length; i++) {
-    if (quoteIdx < 3 && (i + 1) % (interval + 1) === 0) {
+  for (let photoIdx = 0; photoIdx < photos.length; photoIdx++) {
+    items.push({ type: 'photo', data: photos[photoIdx], index: photoIdx });
+    if (quoteIdx < 3 && photoIdx === quoteAfterPhoto[quoteIdx]) {
       items.push({ type: 'quote', data: { index: quoteIdx } });
       quoteIdx++;
-    } else {
-      items.push({ type: 'photo', data: photos[photoIdx], index: photoIdx });
-      photoIdx++;
     }
   }
   return items;
@@ -100,6 +97,7 @@ export default function GalleryPage() {
   const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<Map<number, HTMLElement>>(new Map());
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const navCooldown = useRef(false);
   const t = useTranslation();
 
   // Scroll-reveal observer
@@ -186,12 +184,18 @@ export default function GalleryPage() {
 
   // Lightbox keyboard nav
   const goNext = useCallback(() => {
+    if (navCooldown.current) return;
+    navCooldown.current = true;
+    setTimeout(() => { navCooldown.current = false; }, 300);
     setLightboxIndex((prev) =>
       prev !== null ? (prev + 1) % photos.length : null
     );
   }, []);
 
   const goPrev = useCallback(() => {
+    if (navCooldown.current) return;
+    navCooldown.current = true;
+    setTimeout(() => { navCooldown.current = false; }, 300);
     setLightboxIndex((prev) =>
       prev !== null ? (prev - 1 + photos.length) % photos.length : null
     );
