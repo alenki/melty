@@ -5,6 +5,7 @@ import './Header.css';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState<'ru' | 'en'>('ru');
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -101,6 +102,22 @@ export default function Header() {
             Обратная связь
           </Link>
         </nav>
+
+        <div className="header__lang">
+          <button
+            className={`header__lang-btn ${lang === 'ru' ? 'header__lang-btn--active' : ''}`}
+            onClick={() => setLang('ru')}
+          >
+            RU
+          </button>
+          <span className="header__lang-divider">|</span>
+          <button
+            className={`header__lang-btn ${lang === 'en' ? 'header__lang-btn--active' : ''}`}
+            onClick={() => setLang('en')}
+          >
+            EN
+          </button>
+        </div>
 
         <button
           className={`header__burger ${isMobileMenuOpen ? 'header__burger--active' : ''}`}
