@@ -56,6 +56,7 @@ export default function MenuItem({ item, index }: MenuItemProps) {
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
               loading="lazy"
+              decoding="async"
             />
           </>
         ) : (

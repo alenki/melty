@@ -57,7 +57,11 @@
       "Bash(node update-prices.js)",
       "Bash(mv \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.js\" \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.cjs\")",
       "Bash(node update-prices.cjs)",
-      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *menu* -o -name *Menu* \\\\\\))"
+      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *menu* -o -name *Menu* \\\\\\))",
+      "Bash(wc -l /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src/**/*.css)",
+      "Bash(grep -h \"^@media\" /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src/**/*.css)",
+      "Bash(xargs file:*)",
+      "Bash(sort -k5 -n)"
     ]
   }
 }

@@ -76,6 +76,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
               src={item.image}
               alt={displayName}
               className="modal-slider__image"
+              decoding="async"
             />
           ) : (
             <MenuPlaceholder />

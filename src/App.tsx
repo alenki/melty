@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import { LanguageProvider } from './i18n';
 import { Header, Footer, LoadingScreen } from './components';
-import HomePage from './pages/HomePage';
-import MenuPage from './pages/MenuPage';
-import FeedbackPage from './pages/FeedbackPage';
-import GalleryPage from './pages/GalleryPage';
-import AboutPage from './pages/AboutPage';
 import './App.css';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const MenuPage = lazy(() => import('./pages/MenuPage'));
+const FeedbackPage = lazy(() => import('./pages/FeedbackPage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
 
 // Expose Lenis instance globally for modal scroll lock
 declare global {
@@ -75,13 +76,15 @@ function App() {
       <ScrollToTop />
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/feedback" element={<FeedbackPage />} />
-        </Routes>
+        <Suspense fallback={<LoadingScreen isLoading={true} />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/menu" element={<MenuPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/feedback" element={<FeedbackPage />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </LanguageProvider>
