@@ -56,7 +56,8 @@
       "Bash(grep -E \"\\\\.\\(tsx|ts|jsx|js|css|module\\\\.css\\)$\")",
       "Bash(node update-prices.js)",
       "Bash(mv \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.js\" \"C:\\\\Users\\\\omarh\\\\OneDrive\\\\Рабочий стол\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\update-prices.cjs\")",
-      "Bash(node update-prices.cjs)"
+      "Bash(node update-prices.cjs)",
+      "Bash(find /c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src -type f \\\\\\(-name *menu* -o -name *Menu* \\\\\\))"
     ]
   }
 }
