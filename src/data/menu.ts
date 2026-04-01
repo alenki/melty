@@ -28,6 +28,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  priceLarge?: number;
   category: MenuCategory;
   image: string;
 }
@@ -74,56 +75,64 @@ export const menuItems: MenuItem[] = [
     name: 'Melty Knafi Чизкейк',
     description: 'Фирменный чизкейк с начинкой из фисташкового урбеча и хрустящего теста «Катаифи». Подаётся с шотом молочного бельгийского шоколада и дробленной фисташкой',
     price: 590,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: '/data/menu/desserts/Melty Knafi Чизкейк.png'
   },
   {
     id: 'melty-melt',
     name: 'Melty melt',
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-melt-pistachio',
     name: 'Melty melt фисташка',
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-cookies',
     name: 'Melty cookies',
     description: 'Фирменное карамельное печенье с жидкой сердцевиной. Подаётся с шариком ванильного мороженого',
     price: 630,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-pancake',
     name: 'Melty панкейк',
     description: 'Фирменные панкейки, подаются с карамельной пастой и дробленным печеньем',
     price: 700,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-pancake-pistachio',
     name: 'Melty панкейк-фисташка',
     description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
     price: 640,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-fondue',
     name: 'Melty фондю',
     description: 'Расплавленный горячий шоколад. Подаётся с миксом брауни, венских вафель, паффрисами и сезонными ягодами',
     price: 1300,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
   {
     id: 'melty-burger',
     name: 'Melty бургер',
     description: 'Запечатанный бургер, начиненный шариком ванильного мороженого и хрустящим тестом «Катаифи». Подаётся на подушке из фисташкового урбеча, посыпанный дробленной фисташкой',
     price: 575,
-    category: 'melty-desserts'
+    category: 'melty-desserts',
+    image: ''
   },
 
   // ============ CHOCOLATE DESSERTS ============
@@ -132,14 +141,16 @@ export const menuItems: MenuItem[] = [
     name: 'Puffies',
     description: 'Мини-панкейки. Подаются с шотом молочного бельгийского шоколада',
     price: 390,
-    category: 'chocolate-desserts'
+    category: 'chocolate-desserts',
+    image: '/data/menu/desserts/Puffies.png'
   },
   {
     id: 'brownie',
     name: 'Брауни',
     description: 'Шоколадный брауни, обильно политый молочным бельгийским шоколадом. Подаётся с шариком ванильного мороженого',
     price: 490,
-    category: 'chocolate-desserts'
+    category: 'chocolate-desserts',
+    image: '/data/menu/desserts/Брауни.png'
   },
   {
     id: 'san-sebastian',
@@ -155,7 +166,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный фисташковый чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
     price: 490,
     category: 'chocolate-desserts',
-    image: ''
+    image: '/data/menu/desserts/Сан-Себастьян фисташковый.png'
   },
   {
     id: 'churros',
@@ -170,21 +181,24 @@ export const menuItems: MenuItem[] = [
     name: 'Шоколадный Фондан',
     description: 'Шоколадный кекс с жидкой сердцевиной, политый молочным бельгийским шоколадом, подаётся с шариком ванильного мороженого и сезонными ягодами',
     price: 390,
-    category: 'chocolate-desserts'
+    category: 'chocolate-desserts',
+    image: '/data/menu/desserts/Шоколадный Фондан.png'
   },
   {
     id: 'eclair',
     name: 'Эклеры',
     description: 'Пирожные из заварного теста под карамелизированной корочкой, наполненные фирменным кремом «Патисьер». Подаются с сезонными ягодами',
     price: 460,
-    category: 'chocolate-desserts'
+    category: 'chocolate-desserts',
+    image: '/data/menu/desserts/Эклеры.png'
   },
   {
     id: 'pancakes-trouble-chocolate',
     name: 'Панкейки Trouble Chocolate',
     description: 'Пышные панкейки, обильно политые тремя видами бельгийского шоколада',
     price: 520,
-    category: 'chocolate-desserts'
+    category: 'chocolate-desserts',
+    image: ''
   },
 
   // ============ CHOCOLATE CUPS ============
@@ -202,14 +216,15 @@ export const menuItems: MenuItem[] = [
     description: 'Свежая клубника в молочном бельгийском шоколаде, подаётся в стакане',
     price: 730,
     category: 'chocolate-cups',
-    image: ''
+    image: '/data/menu/desserts/Клубника в шоколаде.png'
   },
   {
     id: 'krispy-rise-chocolate',
     name: 'Krispy Rise в шоколаде',
     description: 'Хрустящий воздушный рис, обильно политый молочным бельгийским шоколадом',
     price: 350,
-    category: 'chocolate-cups'
+    category: 'chocolate-cups',
+    image: '/data/menu/desserts/Krispy Rise в шоколаде.png'
   },
 
   // ============ CREPES ============
@@ -218,7 +233,8 @@ export const menuItems: MenuItem[] = [
     name: 'Креп Три шоколада',
     description: 'Французский блинчик, политый тремя видами бельгийского шоколада, подаётся с сезонными ягодами',
     price: 390,
-    category: 'crepes'
+    category: 'crepes',
+    image: '/data/menu/desserts/Креп Три шоколада.png'
   },
   {
     id: 'golden-crep',
@@ -315,7 +331,8 @@ export const menuItems: MenuItem[] = [
     name: 'New-York ролл',
     description: 'Круассан-ролл с кремом «Патисьер», молочным бельгийским шоколадом и шариком мороженого',
     price: 490,
-    category: 'waffles-croissants'
+    category: 'waffles-croissants',
+    image: ''
   },
 
   // ============ SAVORY WAFFLES ============
@@ -439,7 +456,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
     price: 660,
     category: 'breakfasts',
-    image: ''
+    image: '/data/menu/breakfasts/Фирменный завтрак Мелти.png'
   },
   {
     id: 'shakshuka',
@@ -727,51 +744,30 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'hot-chocolate',
-    name: 'Горячий шоколад 250мл',
+    name: 'Горячий шоколад 250/350мл',
     description: 'Горячий шоколад из натурального бельгийского шоколада',
     price: 250,
+    priceLarge: 350,
     category: 'coffee',
     image: '/data/menu/drinks/Горячий шоколад 250мл.JPG'
   },
   {
-    id: 'hot-chocolate-mega',
-    name: 'Горячий шоколад Мега 350мл',
-    description: 'Большая порция горячего шоколада из бельгийского шоколада',
-    price: 350,
-    category: 'coffee',
-    image: ''
-  },
-  {
     id: 'kakao',
-    name: 'Какао 250мл',
+    name: 'Какао 250/350мл',
     description: 'Горячий какао из бельгийского шоколада',
     price: 250,
+    priceLarge: 350,
     category: 'coffee',
-    image: ''
+    image: '/data/menu/drinks/Какао.png'
   },
   {
-    id: 'kakao-mega',
-    name: 'Какао Мега 350мл',
-    description: 'Большая порция горячего какао из бельгийского шоколада',
-    price: 350,
-    category: 'coffee',
-    image: ''
-  },
-  {
-    id: 'cappuccino-350',
-    name: 'Капучино 350мл',
-    description: 'Классический капучино с нежной молочной пенкой',
-    price: 240,
-    category: 'coffee',
-    image: '/data/menu/drinks/Капучино 350мл.png'
-  },
-  {
-    id: 'cappuccino-250',
-    name: 'Капучино 250мл',
+    id: 'cappuccino',
+    name: 'Капучино 250/350мл',
     description: 'Классический капучино с нежной молочной пенкой',
     price: 220,
+    priceLarge: 240,
     category: 'coffee',
-    image: ''
+    image: '/data/menu/drinks/Капучино 350мл.png'
   },
   {
     id: 'latte-350',
@@ -782,20 +778,13 @@ export const menuItems: MenuItem[] = [
     image: ''
   },
   {
-    id: 'raf-250',
-    name: 'Раф 250мл',
+    id: 'raf',
+    name: 'Раф 250/350мл',
     description: 'Нежный сливочный раф-кофе',
     price: 250,
+    priceLarge: 300,
     category: 'coffee',
-    image: ''
-  },
-  {
-    id: 'raf-350',
-    name: 'Раф 350мл',
-    description: 'Нежный сливочный раф-кофе, большая порция',
-    price: 300,
-    category: 'coffee',
-    image: ''
+    image: '/data/menu/drinks/Раф.png'
   },
   {
     id: 'filter-coffee',
@@ -803,7 +792,7 @@ export const menuItems: MenuItem[] = [
     description: 'Кофе, заваренный методом фильтрации',
     price: 230,
     category: 'coffee',
-    image: ''
+    image: '/data/menu/drinks/Фильтр-кофе.png'
   },
   {
     id: 'espresso',
@@ -811,7 +800,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический эспрессо из отборных зёрен',
     price: 190,
     category: 'coffee',
-    image: ''
+    image: '/data/menu/drinks/Эспрессо.png'
   },
 
   // ============ COLD COFFEE ============
@@ -853,7 +842,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с гранатовым соком',
     price: 270,
     category: 'author-coffee',
-    image: ''
+    image: '/data/menu/drinks/Колд Брю Гранат.png'
   },
   {
     id: 'cold-brew-blueberry',
@@ -861,7 +850,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с черничным соком',
     price: 270,
     category: 'author-coffee',
-    image: ''
+    image: '/data/menu/drinks/Колд Брю Черника.png'
   },
   {
     id: 'cold-brew-citrus',
@@ -929,7 +918,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский лимонад с манго и маракуйей',
     price: 250,
     category: 'lemonades-mojito',
-    image: ''
+    image: '/data/menu/drinks/Лимонад Манго-Маракуйя.png'
   },
   {
     id: 'mojito-lime',
@@ -963,7 +952,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток с грейпфрутом и карамелью',
     price: 220,
     category: 'author-drinks',
-    image: ''
+    image: '/data/menu/drinks/Палома Грейпфрут-карамель.png'
   },
   {
     id: 'sorrel',
@@ -971,7 +960,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский напиток на основе щавеля',
     price: 280,
     category: 'lemonades-mojito',
-    image: ''
+    image: '/data/menu/drinks/Щавелевый.png'
   },
 
   // ============ SMOOTHIES ============
@@ -1017,7 +1006,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сладкий молочный коктейль с ванилью и бананом',
     price: 250,
     category: 'milkshakes',
-    image: ''
+    image: '/data/menu/drinks/Ванильно-банановый милкшейк.png'
   },
   {
     id: 'milkshake-oreo',
@@ -1067,7 +1056,7 @@ export const menuItems: MenuItem[] = [
     description: 'Ароматный чай с лесными ягодами',
     price: 320,
     category: 'house-teas',
-    image: ''
+    image: '/data/menu/drinks/Ягодный чай.png'
   },
 
   // ============ LEAF TEAS ============
@@ -1077,7 +1066,7 @@ export const menuItems: MenuItem[] = [
     description: 'Зелёный чай с цветками жасмина',
     price: 270,
     category: 'leaf-teas',
-    image: ''
+    image: '/data/menu/drinks/Зеленый чай с жасмином.png'
   },
   {
     id: 'tea-milk-oolong',
@@ -1093,7 +1082,7 @@ export const menuItems: MenuItem[] = [
     description: 'Японский зелёный чай сенча',
     price: 270,
     category: 'leaf-teas',
-    image: ''
+    image: '/data/menu/drinks/Сенча.png'
   },
   {
     id: 'tea-assam',
@@ -1101,7 +1090,7 @@ export const menuItems: MenuItem[] = [
     description: 'Крепкий индийский чёрный чай',
     price: 270,
     category: 'leaf-teas',
-    image: ''
+    image: '/data/menu/drinks/Чай Ассам.png'
   },
   {
     id: 'tea-black-thyme',
@@ -1117,7 +1106,7 @@ export const menuItems: MenuItem[] = [
     description: 'Чёрный чай с бергамотом',
     price: 270,
     category: 'leaf-teas',
-    image: ''
+    image: '/data/menu/drinks/Эрл Грей.png'
   },
 
   // ============ SOFT DRINKS ============

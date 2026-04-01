@@ -76,9 +76,9 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
   const [imgError, setImgError] = useState(false);
   const hasImage = item.image && !imgError;
 
-  const formatPrice = (price: number): string => {
-    return `${price.toLocaleString('ru-RU')}₽`;
-  };
+  const priceLabel = item.priceLarge
+    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
+    : `${item.price.toLocaleString('ru-RU')}₽`;
 
   return (
     <article
@@ -114,7 +114,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
         </div>
         <p className="menu-page__featured-desc">{item.description}</p>
         <div className="menu-page__featured-bottom">
-          <span className="menu-page__featured-price">{formatPrice(item.price)}</span>
+          <span className="menu-page__featured-price">{priceLabel}</span>
         </div>
       </div>
     </article>
@@ -319,8 +319,6 @@ export default function MenuPage() {
       isManualScroll.current = false;
     }, 1000);
   }, []);
-
-  const formatPrice = (price: number) => `${price.toLocaleString('ru-RU')}₽`;
 
   const totalItems = menuItems.length;
 

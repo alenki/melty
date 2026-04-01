@@ -11,9 +11,9 @@ interface MenuItemModalProps {
 }
 
 export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalProps) {
-  const formatPrice = (price: number): string => {
-    return `${price.toLocaleString('ru-RU')}₽`;
-  };
+  const priceLabel = item.priceLarge
+    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
+    : `${item.price.toLocaleString('ru-RU')}₽`;
 
   const hasImage = !!item.image;
 
@@ -75,7 +75,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
         <div className="modal-content">
           <div className="modal-content__header">
             <h2 className="modal-content__name">{item.name}</h2>
-            <span className="modal-content__price">{formatPrice(item.price)}</span>
+            <span className="modal-content__price">{priceLabel}</span>
           </div>
 
           <div className="modal-content__divider">

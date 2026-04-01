@@ -14,9 +14,9 @@ export default function MenuItem({ item, index }: MenuItemProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const formatPrice = (price: number): string => {
-    return `${price.toLocaleString('ru-RU')}₽`;
-  };
+  const priceLabel = item.priceLarge
+    ? `${item.price.toLocaleString('ru-RU')}/${item.priceLarge.toLocaleString('ru-RU')}₽`
+    : `${item.price.toLocaleString('ru-RU')}₽`;
 
   const hasImage = item.image && !imageError;
 
@@ -56,7 +56,7 @@ export default function MenuItem({ item, index }: MenuItemProps) {
       <div className="menu-item__content">
         <h3 className="menu-item__name">{item.name}</h3>
         <p className="menu-item__description">{item.description}</p>
-        <span className="menu-item__price">{formatPrice(item.price)}</span>
+        <span className="menu-item__price">{priceLabel}</span>
       </div>
     </article>
 
