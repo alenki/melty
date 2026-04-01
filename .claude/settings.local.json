@@ -52,7 +52,8 @@
       "Bash(mv rename-images.js rename-images.cjs)",
       "Bash(node rename-images.cjs)",
       "Bash(node reorganize-images.cjs)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts|jsx|js|css|module\\\\.css\\)$\")"
     ]
   }
 }

@@ -49,7 +49,7 @@ export default function AboutPage() {
         const clamped = Math.max(0, Math.min(1, progress));
         const speed = i === 0 ? 0.3 : 0.5;
         const strength = isMobile ? 5 : 25;
-        const baseOffset = isMobile ? 0 : (i === 0 ? -30 : 30);
+        const baseOffset = i === 0 ? (isMobile ? -15 : -30) : (isMobile ? 15 : 30);
         const offset = baseOffset + (clamped - 0.5) * strength * speed;
         el.style.transform = `translateY(${offset}px)`;
       });
