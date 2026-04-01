@@ -68,7 +68,10 @@
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty' -type f -name *gallery* -o -name *lightbox*)",
       "Bash(find '/c/Users/omarh/OneDrive/Рабочий стол/PC/WORK/Web Development/melty/src' -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.json -o -name *.css \\\\\\))",
       "Bash(node -e \":*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(python -c \"from PIL import Image; print\\(''Pillow available''\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)"
     ]
   }
 }
