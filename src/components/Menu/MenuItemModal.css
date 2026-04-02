@@ -22,8 +22,7 @@ body.modal-open > #root {
   padding: 1rem;
   background: transparent;
   animation: modalOverlayIn 0.25s ease-out;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
   touch-action: none;
 }
 
@@ -81,8 +80,7 @@ body.modal-open > #root {
   border-radius: 24px;
   overflow-y: auto;
   overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
   touch-action: pan-y;
   scrollbar-width: none;
   -ms-overflow-style: none;
