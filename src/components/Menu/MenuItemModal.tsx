@@ -43,60 +43,6 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     };
   }, [isOpen]);
 
-  // Prevent iOS elastic overscroll at top/bottom boundaries
-  // Uses a 1px scroll buffer (via CSS padding-top) so momentum can be
-  // intercepted by the scroll handler before the browser rubber-bands.
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const el = containerRef.current;
-    if (!el) return;
-
-    // Start scrolled past the 1px buffer so the buffer is hidden
-    el.scrollTop = 1;
-
-    let lastY = 0;
-
-    const onTouchStart = (e: TouchEvent) => {
-      lastY = e.touches[0].clientY;
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      const currentY = e.touches[0].clientY;
-      const deltaY = currentY - lastY;
-      lastY = currentY;
-
-      // At top and finger dragging down (trying to overscroll past top)
-      if (el.scrollTop <= 1 && deltaY > 0) {
-        e.preventDefault();
-        return;
-      }
-
-      // At bottom and finger dragging up (trying to overscroll past bottom)
-      if (el.scrollTop + el.clientHeight >= el.scrollHeight - 1 && deltaY < 0) {
-        e.preventDefault();
-        return;
-      }
-    };
-
-    // Clamp scroll position to catch momentum overscroll after finger lifts
-    const onScroll = () => {
-      if (el.scrollTop < 1) {
-        el.scrollTop = 1;
-      }
-    };
-
-    el.addEventListener('touchstart', onTouchStart, { passive: true });
-    el.addEventListener('touchmove', onTouchMove, { passive: false });
-    el.addEventListener('scroll', onScroll);
-
-    return () => {
-      el.removeEventListener('touchstart', onTouchStart);
-      el.removeEventListener('touchmove', onTouchMove);
-      el.removeEventListener('scroll', onScroll);
-    };
-  }, [isOpen]);
-
   // Check if content is scrollable and update fade indicator
   useEffect(() => {
     if (!isOpen) return;

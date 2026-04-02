@@ -70,7 +70,6 @@ body.modal-open > #root {
   width: 100%;
   max-height: 90vh;
   max-height: 90dvh;
-  padding-top: 1px;
   background: linear-gradient(
     180deg,
     var(--cream) 0%,
