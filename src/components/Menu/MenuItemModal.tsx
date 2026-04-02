@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
 import { useMenuTranslation, useLanguage, useTranslation } from '../../i18n';
@@ -28,7 +28,6 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
 
   const hasImage = !!item.image;
   const containerRef = useRef<HTMLDivElement>(null);
-  const [showFade, setShowFade] = useState(false);
 
   // Scroll lock effect - lock body scroll while modal is open
   useEffect(() => {
@@ -43,27 +42,6 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     };
   }, [isOpen]);
 
-  // Check if content is scrollable and update fade indicator
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const el = containerRef.current;
-    if (!el) return;
-
-    const checkScroll = () => {
-      setShowFade(el.scrollHeight - el.scrollTop - el.clientHeight > 2);
-    };
-
-    checkScroll();
-    el.addEventListener('scroll', checkScroll, { passive: true });
-    const ro = new ResizeObserver(checkScroll);
-    ro.observe(el);
-
-    return () => {
-      el.removeEventListener('scroll', checkScroll);
-      ro.disconnect();
-    };
-  }, [isOpen]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -89,7 +67,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
       data-lenis-prevent
     >
       <div
-        className={`modal-wrapper${showFade ? ' modal-wrapper--faded' : ''}`}
+        className="modal-wrapper"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button - outside scrollable container so mobile touch/scroll doesn't eat taps */}

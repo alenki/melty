@@ -48,7 +48,7 @@ body.modal-open > #root {
   will-change: transform, opacity;
 }
 
-.modal-wrapper--faded::after {
+.modal-wrapper::after {
   content: '';
   position: absolute;
   bottom: 0;
