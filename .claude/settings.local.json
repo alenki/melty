@@ -71,7 +71,17 @@
       "Bash(node -e:*)",
       "Bash(python -c \"from PIL import Image; print\\(''Pillow available''\\)\")",
       "Bash(pip install:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(npm list:*)",
+      "Bash(magick --version)",
+      "Bash(ffmpeg -version)",
+      "Bash(find public/data/menu -type f \\\\\\( -name \"*.jpg\" -o -name \"*.JPG\" -o -name \"*.PNG\" -o -name \"*.png\" \\\\\\) -exec ls -lh {} \\\\;)",
+      "Bash(node convert-images.mjs)",
+      "Bash(rm:*)",
+      "Bash(rm \"Мелти мелт.webp\")",
+      "Bash(mv melt-rotated.webp \"Мелти мелт.webp\")",
+      "Bash(rm \"Мелти мелт фисташка.webp\")",
+      "Bash(mv melt-pist-rotated.webp \"Мелти мелт фисташка.webp\")"
     ]
   }
 }
