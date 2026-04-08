@@ -81,7 +81,10 @@
       "Bash(rm \"Мелти мелт.webp\")",
       "Bash(mv melt-rotated.webp \"Мелти мелт.webp\")",
       "Bash(rm \"Мелти мелт фисташка.webp\")",
-      "Bash(mv melt-pist-rotated.webp \"Мелти мелт фисташка.webp\")"
+      "Bash(mv melt-pist-rotated.webp \"Мелти мелт фисташка.webp\")",
+      "Bash(npx sharp-cli:*)",
+      "Bash(npm ls:*)",
+      "Bash(grep -E \"[0-9]\\\\.webp$\")"
     ]
   }
 }

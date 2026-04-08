@@ -31,6 +31,7 @@ export interface MenuItem {
   priceLarge?: number;
   category: MenuCategory;
   image: string;
+  images?: string[];
 }
 
 export const categoryLabels: Record<MenuCategory, string> = {
@@ -84,7 +85,12 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти мелт.webp'
+    image: '/data/menu/desserts/Мелти мелт.webp',
+    images: [
+      '/data/menu/desserts/Мелти мелт 1.webp',
+      '/data/menu/desserts/Мелти мелт 2.webp',
+      '/data/menu/desserts/Мелти мелт 3.webp'
+    ]
   },
   {
     id: 'melty-melt-pistachio',
@@ -92,7 +98,11 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный десерт с шоу-подачей',
     price: 1230,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти мелт фисташка.webp'
+    image: '/data/menu/desserts/Мелти мелт фисташка.webp',
+    images: [
+      '/data/menu/desserts/Мелти мелт фисташка 1.webp',
+      '/data/menu/desserts/Мелти мелт фисташка 2.webp'
+    ]
   },
   {
     id: 'melty-cookies',
@@ -100,7 +110,12 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменное карамельное печенье с жидкой сердцевиной. Подаётся с шариком ванильного мороженого',
     price: 630,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти кукис.webp'
+    image: '/data/menu/desserts/Мелти кукис.webp',
+    images: [
+      '/data/menu/desserts/Мелти кукис 1.webp',
+      '/data/menu/desserts/Мелти кукис 2.webp',
+      '/data/menu/desserts/Мелти кукис 3.webp'
+    ]
   },
   {
     id: 'melty-pancake',
@@ -108,7 +123,12 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменные панкейки, подаются с карамельной пастой и дробленным печеньем',
     price: 700,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти панкейки.webp'
+    image: '/data/menu/desserts/Мелти панкейки.webp',
+    images: [
+      '/data/menu/desserts/Мелти панкейки 1.webp',
+      '/data/menu/desserts/Мелти панкейки 2.webp',
+      '/data/menu/desserts/Мелти панкейки 3.webp'
+    ]
   },
   {
     id: 'melty-pancake-pistachio',
@@ -116,7 +136,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
     price: 640,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти панкейки.webp'
+    image: ''
   },
   {
     id: 'melty-fondue',
@@ -124,7 +144,12 @@ export const menuItems: MenuItem[] = [
     description: 'Расплавленный горячий шоколад. Подаётся с миксом брауни, венских вафель, паффрисами и сезонными ягодами',
     price: 1300,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти фондю.webp'
+    image: '/data/menu/desserts/Мелти фондю.webp',
+    images: [
+      '/data/menu/desserts/Мелти фондю 1.webp',
+      '/data/menu/desserts/Мелти фондю 2.webp',
+      '/data/menu/desserts/Мелти фондю 3.webp'
+    ]
   },
   {
     id: 'melty-burger',
@@ -132,7 +157,12 @@ export const menuItems: MenuItem[] = [
     description: 'Запечатанный бургер, начиненный шариком ванильного мороженого и хрустящим тестом «Катаифи». Подаётся на подушке из фисташкового урбеча, посыпанный дробленной фисташкой',
     price: 575,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти бургер.webp'
+    image: '/data/menu/desserts/Мелти бургер.webp',
+    images: [
+      '/data/menu/desserts/Мелти бургер 1.webp',
+      '/data/menu/desserts/Мелти бургер 2.webp',
+      '/data/menu/desserts/Мелти бургер 3.webp'
+    ]
   },
 
   // ============ CHOCOLATE DESSERTS ============
@@ -456,7 +486,12 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
     price: 660,
     category: 'breakfasts',
-    image: '/data/menu/breakfasts/Фирменный завтрак Melty.webp'
+    image: '/data/menu/breakfasts/Фирменный завтрак Melty.webp',
+    images: [
+      '/data/menu/breakfasts/Фирменный завтрак Melty 1.webp',
+      '/data/menu/breakfasts/Фирменный завтрак Melty 2.webp',
+      '/data/menu/breakfasts/Фирменный завтрак Melty 3.webp'
+    ]
   },
   {
     id: 'shakshuka',
