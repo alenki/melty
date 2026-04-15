@@ -152,9 +152,10 @@ export default function FeedbackPage() {
   return (
     <div className="feedback-page">
       <SEO
-        title="Отзывы"
-        description="Оставьте отзыв о кафе Melty — ваше мнение важно для нас."
+        title="Обратная связь | Melty"
+        description="Оставьте отзыв о кафе Melty в Нальчике. Ваше мнение помогает нам становиться лучше — напишите, что понравилось и что можно улучшить."
         path="/feedback"
+        keywords="отзывы кафе Melty, отзывы кафе Нальчик, Melty отзывы, оставить отзыв кафе Нальчик"
         jsonLd={breadcrumb}
       />
       <section className="feedback-page__section">

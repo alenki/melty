@@ -2,17 +2,90 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#5C3D2E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@800;900&family=Nunito:wght@300;400;500;600;700&display=swap">
-    <title>Melty</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#4A2C1A" />
+
+    <!-- Primary SEO — replaced per-route by react-helmet-async. These are the
+         fallback values used by crawlers that don't execute JS and hit the
+         raw index.html before the per-route prerender has loaded. -->
+    <title>Melty — кафе-кофейня в Нальчике</title>
+    <meta name="description" content="Melty — уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе. Ежедневно 08:00–23:00." />
+    <meta name="keywords" content="кафе Нальчик, кофейня Нальчик, Melty, Мелти, десерты Нальчик, завтраки Нальчик, крепы, панкейки, вафли, шоколадные десерты, кафе на Тамазова, где поесть в Нальчике, лучшие кафе Нальчика" />
+    <meta name="author" content="Melty" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="yandex" content="index, follow" />
+
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="RU-KB" />
+    <meta name="geo.placename" content="Нальчик" />
+    <meta name="geo.position" content="43.472607;43.579251" />
+    <meta name="ICBM" content="43.472607, 43.579251" />
+
+    <link rel="canonical" href="https://melty-cafe.ru/" />
+    <link rel="alternate" hreflang="ru" href="https://melty-cafe.ru/" />
+    <link rel="alternate" hreflang="en" href="https://melty-cafe.ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://melty-cafe.ru/" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Melty" />
+    <meta property="og:title" content="Melty — кафе-кофейня в Нальчике" />
+    <meta property="og:description" content="Уютное кафе-кофейня в Нальчике. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе. Ежедневно 08:00–23:00." />
+    <meta property="og:url" content="https://melty-cafe.ru/" />
+    <meta property="og:image" content="https://melty-cafe.ru/data/melty.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Melty — кафе-кофейня в Нальчике" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Melty — кафе-кофейня в Нальчике" />
+    <meta name="twitter:description" content="Шоколадные десерты, авторские крепы, завтраки и кофе. Ежедневно 08:00–23:00." />
+    <meta name="twitter:image" content="https://melty-cafe.ru/data/melty.webp" />
+
+    <!-- Favicons — full set generated from the 4096×4096 master.
+         The previous single 20 MB favicon.png was too large for browsers to
+         load, which is why the tab icon never appeared. -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@800;900&family=Nunito:wght@300;400;500;600;700&display=swap" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- No-JS fallback so crawlers without JS execution still see real content. -->
+    <noscript>
+      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#4A2C1A;line-height:1.6">
+        <h1>Melty — кафе-кофейня в Нальчике</h1>
+        <p><strong>Мир вкуса и уюта.</strong> Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе в уютной атмосфере в центре Нальчика.</p>
+        <p><strong>Адрес:</strong> г. Нальчик, ул. Героя России Т.М. Тамазова, 15</p>
+        <p><strong>Часы работы:</strong> ежедневно 08:00–23:00 (кухня до 22:15)</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79889399000">+7 (988) 939-90-00</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/melty.ru">@melty.ru</a></p>
+        <nav>
+          <a href="/menu">Меню</a> ·
+          <a href="/gallery">Галерея</a> ·
+          <a href="/about">О нас</a> ·
+          <a href="/feedback">Отзывы</a>
+        </nav>
+      </div>
+    </noscript>
   </body>
 </html>

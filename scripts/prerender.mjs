@@ -49,35 +49,54 @@ function createStaticServer() {
 }
 
 // Remove duplicate tags that exist in the original HTML template.
-// react-helmet-async injects its own tags but doesn't remove the originals
-// from the static template, causing duplicates in the serialized DOM.
+// react-helmet-async's DOM-manipulation behavior differs per tag type:
+//   - <title>  — PREPENDED at top of <head> (browsers use the first <title>)
+//   - <meta>   — APPENDED to end of <head> (we need the LAST occurrence of
+//                each name/property since helmet's is appended after the
+//                template's fallback)
+//   - <link rel="canonical"> — APPENDED
+//   - <link rel="alternate" hreflang> — APPENDED
+// The template ships with fallback SEO for JS-disabled crawlers, so we have
+// to dedupe both ends.
 function cleanHtml(html) {
-  // The template has <title>Melty</title> — helmet adds its own <title>.
-  // Keep only the FIRST <title> (helmet injects at the top of <head>).
+  // Keep FIRST <title> (helmet prepends its per-route title).
   let titleCount = 0;
   html = html.replace(/<title>[^<]*<\/title>/g, (match) => {
     titleCount++;
     return titleCount === 1 ? match : '';
   });
 
-  // Remove duplicate meta tags — keep the first occurrence of each name/property.
-  const seenMeta = new Set();
-  html = html.replace(/<meta\s+[^>]*>/g, (match) => {
-    const nameMatch = match.match(/(?:name|property)="([^"]+)"/);
-    if (nameMatch) {
-      const key = nameMatch[1];
-      if (seenMeta.has(key)) return '';
-      seenMeta.add(key);
-    }
-    return match;
+  // For each name/property key, keep only the LAST <meta> occurrence —
+  // helmet appends its per-route meta after the template's fallbacks, so the
+  // last one is always the page-specific (correct) one.
+  const metaByKey = new Map();
+  const metaMatches = [...html.matchAll(/<meta\s+[^>]*>/g)];
+  metaMatches.forEach((m) => {
+    const key = m[0].match(/(?:name|property)="([^"]+)"/);
+    if (key) metaByKey.set(key[1], m.index);
+  });
+  html = html.replace(/<meta\s+[^>]*>/g, (match, offset) => {
+    const key = match.match(/(?:name|property)="([^"]+)"/);
+    if (!key) return match; // charset / viewport etc. — keep as-is
+    return metaByKey.get(key[1]) === offset ? match : '';
   });
 
-  // Remove duplicate canonical links — keep only the first.
-  let canonicalCount = 0;
-  html = html.replace(/<link\s+rel="canonical"[^>]*>/g, (match) => {
-    canonicalCount++;
-    return canonicalCount === 1 ? match : '';
-  });
+  // Keep the LAST <link rel="canonical"> only.
+  const canonMatches = [...html.matchAll(/<link\s+rel="canonical"[^>]*>/g)];
+  if (canonMatches.length > 1) {
+    const lastOffset = canonMatches[canonMatches.length - 1].index;
+    html = html.replace(/<link\s+rel="canonical"[^>]*>/g, (match, offset) =>
+      offset === lastOffset ? match : ''
+    );
+  }
+
+  // Keep the LAST of each hreflang alternate (helmet appends per-route ones).
+  const altMap = new Map();
+  const altMatches = [...html.matchAll(/<link\s+rel="alternate"[^>]*hreflang="([^"]+)"[^>]*>/g)];
+  altMatches.forEach((m) => altMap.set(m[1], m.index));
+  html = html.replace(/<link\s+rel="alternate"[^>]*hreflang="([^"]+)"[^>]*>/g, (match, lang, offset) =>
+    altMap.get(lang) === offset ? match : ''
+  );
 
   return html;
 }

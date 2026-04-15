@@ -247,10 +247,22 @@ export default function GalleryPage() {
   return (
     <div className="gallery-page">
       <SEO
-        title="Галерея"
-        description="Фотографии кафе Melty — атмосфера, интерьер и наши десерты."
+        title="Галерея | Melty"
+        description="Галерея кафе Melty в Нальчике: фотографии интерьера, десертов, крепов, вафель и уютной атмосферы. Загляните — и вам захочется прийти."
         path="/gallery"
-        jsonLd={breadcrumb}
+        keywords="фото кафе Нальчик, интерьер кафе Melty, фото десертов Нальчик, атмосфера кафе Нальчик, Melty фотографии"
+        jsonLd={[
+          breadcrumb,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ImageGallery',
+            name: 'Галерея кафе Melty',
+            url: 'https://melty-cafe.ru/gallery',
+            description:
+              'Фотогалерея кафе Melty в Нальчике — интерьер, десерты и атмосфера.',
+            about: { '@id': 'https://melty-cafe.ru/#restaurant' },
+          },
+        ]}
       />
       {/* ===== HERO ===== */}
       <section className="gallery-page__hero">

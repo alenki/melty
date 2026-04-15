@@ -1,5 +1,24 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /*.json$
 
-Sitemap: https://melty-cafe.ru/sitemap.xml
+User-agent: Yandex
+Allow: /
+Disallow: /assets/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.css$
+Allow: /*.js$
+Allow: /data/
+
+User-agent: Googlebot-Image
+Allow: /data/
+
+User-agent: YandexImages
+Allow: /data/
+
 Host: melty-cafe.ru
+Sitemap: https://melty-cafe.ru/sitemap.xml

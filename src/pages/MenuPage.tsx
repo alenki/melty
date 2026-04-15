@@ -101,6 +101,33 @@ export default function MenuPage() {
     ],
   };
 
+  // Full Menu schema — Google uses this for menu rich results and the
+  // "see menu" knowledge-panel action. Sections are derived from real data.
+  const menuSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Menu',
+    '@id': 'https://melty-cafe.ru/menu#menu',
+    name: 'Меню кафе Melty',
+    description:
+      'Полное меню кафе Melty в Нальчике: завтраки, салаты, супы, горячие блюда, крепы, вафли, шоколадные десерты, авторский кофе и лимонады.',
+    inLanguage: 'ru-RU',
+    url: 'https://melty-cafe.ru/menu',
+    provider: { '@id': 'https://melty-cafe.ru/#restaurant' },
+    hasMenuSection: [
+      { '@type': 'MenuSection', name: 'Завтраки', description: 'Каши, эгг-роллы, омлеты и круассаны с 08:00' },
+      { '@type': 'MenuSection', name: 'Салаты', description: 'Сезонные и классические салаты' },
+      { '@type': 'MenuSection', name: 'Супы', description: 'Горячие супы дня' },
+      { '@type': 'MenuSection', name: 'Горячие блюда', description: 'Блюда из мяса, птицы и рыбы' },
+      { '@type': 'MenuSection', name: 'Крепы', description: 'Французские блинчики, сладкие и солёные' },
+      { '@type': 'MenuSection', name: 'Вафли и круассаны', description: 'Бельгийские вафли и свежие круассаны' },
+      { '@type': 'MenuSection', name: 'Шоколадные десерты', description: 'Авторские десерты из бельгийского шоколада' },
+      { '@type': 'MenuSection', name: 'Кофе', description: 'Классический, холодный и авторский кофе' },
+      { '@type': 'MenuSection', name: 'Лимонады и мохито', description: 'Домашние лимонады и безалкогольные мохито' },
+      { '@type': 'MenuSection', name: 'Смузи и фреши', description: 'Свежевыжатые соки и фруктовые смузи' },
+      { '@type': 'MenuSection', name: 'Чай', description: 'Авторские и листовые чаи' },
+    ],
+  };
+
   const [activeCategory, setActiveCategory] = useState<MenuCategory>(categoryOrder[0]);
   const [revealedSections, setRevealedSections] = useState<Set<string>>(new Set());
   const [featuredModalItem, setFeaturedModalItem] = useState<MenuItemType | null>(null);
@@ -317,10 +344,11 @@ export default function MenuPage() {
   return (
     <div className="menu-page">
       <SEO
-        title="Меню"
-        description="Меню кафе Melty: завтраки, десерты, вафли, панкейки, напитки и авторские сладости."
+        title="Меню | Melty"
+        description="Полное меню кафе Melty в Нальчике: завтраки, шоколадные десерты, авторские крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00–23:00."
         path="/menu"
-        jsonLd={breadcrumb}
+        keywords="меню кафе Нальчик, меню Melty, завтраки Нальчик, десерты Нальчик, крепы Нальчик, кофе Нальчик, панкейки, вафли, шоколадные десерты, цены кафе Нальчик"
+        jsonLd={[breadcrumb, menuSchema]}
       />
       {/* ===== HERO ===== */}
       <section className="menu-page__hero">

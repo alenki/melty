@@ -125,10 +125,22 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       <SEO
-        title="О нас"
-        description="История шоколадного кафе Melty в Нальчике — наша философия, мастерство и атмосфера уюта."
+        title="О нас | Melty"
+        description="О кафе Melty в Нальчике: как мы создаём мир вкуса и уюта, почему выбираем лучший бельгийский шоколад и как наша атмосфера делает каждый визит особенным."
         path="/about"
-        jsonLd={breadcrumb}
+        keywords="Melty Нальчик, о кафе Melty, история кафе, шоколадное кафе Нальчик, атмосферное кафе Нальчик"
+        jsonLd={[
+          breadcrumb,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'О кафе Melty',
+            url: 'https://melty-cafe.ru/about',
+            description:
+              'Страница о кафе Melty в Нальчике — наша философия, мастерство и атмосфера.',
+            mainEntity: { '@id': 'https://melty-cafe.ru/#restaurant' },
+          },
+        ]}
       />
 
       {/* ===== CHAPTER 1: Our Story ===== */}

@@ -86,7 +86,14 @@
       "Bash(npm ls:*)",
       "Bash(grep -E \"[0-9]\\\\.webp$\")",
       "Bash(npm i:*)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(mv /tmp/debug-prerender.mjs \"/Users/macbookair/Desktop/Main/Web Development/melty/scripts/debug-prerender.mjs\")",
+      "Bash(node scripts/debug-prerender.mjs)",
+      "Bash(cp favicon.png favicon-original-4096.png.bak)",
+      "Bash(sips -Z 512 -s format png favicon.png --out favicon-512.png)",
+      "Bash(sips -Z 192 -s format png favicon.png --out favicon-192.png)",
+      "Bash(sips -Z 180 -s format png favicon.png --out apple-touch-icon.png)",
+      "Bash(sips -Z 48 -s format png favicon.png --out favicon-48.png)"
     ]
   }
 }
