@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melty - Все изображения меню (100 шт.)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #fff; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 8px; font-size: 28px; }
+  .subtitle { text-align: center; color: #888; margin-bottom: 24px; font-size: 14px; }
+  .controls { text-align: center; margin-bottom: 24px; }
+  .controls button { background: #e85d04; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 4px; }
+  .controls button:hover { background: #f77f00; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: #1a1a1a; border-radius: 12px; overflow: hidden; transition: transform 0.2s; }
+  .card:hover { transform: translateY(-4px); }
+  .card img { width: 100%; aspect-ratio: 1; object-fit: cover; cursor: pointer; }
+  .card-info { padding: 12px; }
+  .card-info h3 { font-size: 14px; margin-bottom: 8px; }
+  .card-info .num { color: #e85d04; font-size: 12px; margin-bottom: 4px; }
+  .card-info a { color: #4ea8de; font-size: 12px; text-decoration: none; word-break: break-all; }
+  .card-info a:hover { text-decoration: underline; }
+  .btn-open { display: inline-block; background: #e85d04; color: #fff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 13px; margin-top: 6px; }
+  .btn-open:hover { background: #f77f00; color: #fff; text-decoration: none; }
+  .missing { text-align: center; color: #666; margin-top: 32px; padding: 20px; background: #1a1a1a; border-radius: 12px; }
+</style>
+</head>
+<body>
+<h1>🍽 Melty — Изображения меню</h1>
+<p class="subtitle">100 уникальных изображений • Нажмите на фото чтобы открыть в полном размере • ПКМ → «Сохранить как» для загрузки</p>
+
+<div class="controls">
+  <button onclick="openAll()">Открыть все в новых вкладках</button>
+  <button onclick="copyAllLinks()">Скопировать все ссылки</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="missing">
+  <h3>⚠️ 7 позиций без изображений:</h3>
+  <p style="margin-top:8px;color:#999">Клубника в шоколаде • Латте • Вода (с газом/без газа) • Раф «Урбеч» • Ice latte • Эспрессо • Горячий шоколад</p>
+</div>
+
+<script>
+const items = [
+  ["Смузи Green Break", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f4381d40d6626c4f28f697875/XXL"],
+  ["Смузи Орехово-банановый с овсянкой", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f4381e145cddf3e976f3781e0/XXL"],
+  ["Манго-вишня чай", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438dd97bbfde52db908c96c6/XXL"],
+  ["Лимонад DONA ROSSA", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438291b62ef962b26988e9e5/XXL"],
+  ["Грейпфрутовый фреш", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438d8ce5e59e19b2e9e83567/XXL"],
+  ["Лимонад ежевика-кокос 300 мл.", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f4382c24588e554688b43b32f/XXL"],
+  ["Капучино 350 мл.", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438dba8518eaa66392c88b78/XXL"],
+  ["Krispy Rise в шоколаде", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f4382da81de262b863548cbbc/XXL"],
+  ["Раф Манго", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f43830892770a591b431562be/XXL"],
+  ["Melty knafe чизкейк", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a000001971c163ec51804c3540b8424757c/XXL"],
+  ["Melty melt", "https://avatars.mds.yandex.net/get-sprav-products/1530321/2a000001971c160500bd6e14cf3f162960c5/XXL"],
+  ["Melty melt-фисташки", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a000001971c15d5eb465edfadd2c5732b9d/XXL"],
+  ["Melty cookies", "https://avatars.mds.yandex.net/get-sprav-products/1644120/2a000001971c15b88d2fa872b00e8dcfbe55/XXL"],
+  ["Melty панкейк", "https://avatars.mds.yandex.net/get-sprav-products/2701203/2a000001971c159c2ceed29f6eb30563cdf2/XXL"],
+  ["Melty панкейк-фисташки", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a000001971c1564bfe41739889def23349e/XXL"],
+  ["Melty фондю", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a000001971c1533b842d9cdacf2e3935820/XXL"],
+  ["Puffies", "https://avatars.mds.yandex.net/get-sprav-products/2781182/2a000001971c26b4b6b5b5be13d1c835020f/XXL"],
+  ["Брауни", "https://avatars.mds.yandex.net/get-sprav-products/1424222/2a000001971c26925106904bbf548ed5c157/XXL"],
+  ["Сан-себастьян", "https://avatars.mds.yandex.net/get-sprav-products/1530321/2a000001971c2676b60c4896b3de6bc2d145/XXL"],
+  ["Чуррос", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a000001971c2660504b4d53c8a54587cf6a/XXL"],
+  ["Шоколадный фондан", "https://avatars.mds.yandex.net/get-sprav-products/2790747/2a000001971c264540856be040a56e7683a2/XXL"],
+  ["Эклер", "https://avatars.mds.yandex.net/get-sprav-products/944742/2a000001971c261115b7b3513804bd344712/XXL"],
+  ["Панкейки с бельгийским шоколадом", "https://avatars.mds.yandex.net/get-sprav-products/5567679/2a000001971c25f32e81265744948f10182a/XXL"],
+  ["Шакшука с яйцом пашот и зеленью", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a2f41d01c4bb7dbaa7753178c64/XXL"],
+  ["Кокосовая гранола с мацони и медом", "https://avatars.mds.yandex.net/get-sprav-products/13488316/2a0000019a2f41dc6d650c0cbfdc2cf14dc7/XXL"],
+  ["Хрустящие баклажаны с сырным кремом", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a0000019a2f41def9c044b1229ba178d707/XXL"],
+  ["Цезарь с креветками", "https://avatars.mds.yandex.net/get-sprav-products/2893106/2a0000019a2f41dfe92d54263a5bcd684661/XXL"],
+  ["Цезарь с цыпленком", "https://avatars.mds.yandex.net/get-sprav-products/2510998/2a0000019a2f41e282ca2222cbfb82f30d8d/XXL"],
+  ["Греческий с муссом из брынзы", "https://avatars.mds.yandex.net/get-sprav-products/2994796/2a0000019a2f41e16b3e4d22fa7704732d6b/XXL"],
+  ["Зеленый ПП с индейкой брискет", "https://avatars.mds.yandex.net/get-sprav-products/4078836/2a00000199394b370145262ee8756ea5fffa/XXL"],
+  ["Буррата со спелыми томатами и соусом песто", "https://avatars.mds.yandex.net/get-sprav-products/2790747/2a00000199394a83ee7df55af8b0822fa51d/XXL"],
+  ["Боул с курицей", "https://avatars.mds.yandex.net/get-sprav-products/2773996/2a000001971c21ad8b7eb427bb6a6b9f3a35/XXL"],
+  ["Чечевичный суп с индейкой брискет", "https://avatars.mds.yandex.net/get-sprav-products/2808945/2a0000019a2f41e3379194cfc1ec6a5be7d6/XXL"],
+  ["Американо", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f43830d0d16072ea325bb1c05/XXL"],
+  ["Раф Классический", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f43833a1f09d15eb724f46832/XXL"],
+  ["Флэт Уайт", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438dfd217ca65975954f280a/XXL"],
+  ["Милкшейк Oreo", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f439657bce91a13f5159c08b5/XXL"],
+  ["Облепиховый чай", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e5a564cfdeddf070a01ca/XXL"],
+  ["Ягодный чай", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f43835a2b0e41ee2193620abb/XXL"],
+  ["Мохито Маракуйя", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438de567a776195bd1c3c784/XXL"],
+  ["Черный чай", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f4386a868b63fb3786d340f3e/XXL"],
+  ["Сенча", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438a0209ad63ef80401b1544/XXL"],
+  ["Мохито Лайм", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438ef814f8ff12d92dc62508/XXL"],
+  ["Ванильно-Банановый", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438d964ac6b0bfe02e218dab/XXL"],
+  ["Coca-cola", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438cec7cf84532bcc7ecfc8d/XXL"],
+  ["Креп три шоколада", "https://avatars.mds.yandex.net/get-sprav-products/8331772/2a000001971c210ced2530a6fbb0a5f87cf5/XXL"],
+  ["Фетучини креп", "https://avatars.mds.yandex.net/get-sprav-products/1424222/2a000001971c20ed8fe9ff69136a38647524/XXL"],
+  ["Брауни ролл", "https://avatars.mds.yandex.net/get-sprav-products/13488316/2a000001971c1668fc911ded4d6c5c4723a0/XXL"],
+  ["Вафли три шоколада", "https://avatars.mds.yandex.net/get-sprav-products/2773996/2a000001971c1ee0047f75fdafd6321c8b94/XXL"],
+  ["Вафли стейк gold", "https://avatars.mds.yandex.net/get-sprav-products/2893106/2a000001971c1e48131281c6c9de953a28e6/XXL"],
+  ["Вафля gold", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a000001971c1ea4dbc226a96a08d5c20bfb/XXL"],
+  ["Вафля стейк", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a000001971c1e28f3319f9fd27ceb93a0c2/XXL"],
+  ["Фисташковая вафля", "https://avatars.mds.yandex.net/get-sprav-products/2899371/2a000001971c1e06b32f5cbf48f557215721/XXL"],
+  ["Раф Малина", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438ef8d41ea39d2bcbc4c76e/XXL"],
+  ["Эспрессо тоник", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438d2c94d4489f0306424b49/XXL"],
+  ["Фраппе", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438d81d0e246c41dfb5288b8/XXL"],
+  ["Креп Дубай", "https://avatars.mds.yandex.net/get-sprav-products/2413620/2a000001971c20ca50e6223361f0d23d6fe7/XXL"],
+  ["Сладкий круассан с ягодами", "https://avatars.mds.yandex.net/get-sprav-products/8331772/2a000001971c1de67bdc128e5f0e2ae252c8/XXL"],
+  ["New-York РОЛЛ", "https://avatars.mds.yandex.net/get-sprav-products/2757887/2a000001971c1cba29c1bda7d0402d2523cf/XXL"],
+  ["Дубайская клубника", "https://avatars.mds.yandex.net/get-sprav-products/4322053/2a000001971c2b065e7632155dbcef18a4ac/XXL"],
+  ["MELTY БУРГЕР", "https://avatars.mds.yandex.net/get-sprav-products/1521147/2a000001971c1514a5c11b9500171cc1a0be/XXL"],
+  ["Какао", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438ddd3467605455b86e8a53/XXL"],
+  ["Колд Брю ЧЕРНИКА", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438ec45c286d138131d7aec3/XXL"],
+  ["Колд Брю ГРАНАТ", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438de5afb15bb20c222f4a0c/XXL"],
+  ["Щавелевый", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e3db9b6da85a25790f3dc/XXL"],
+  ["Манго-Маракуйя", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438ec859e0b692720ede63d3/XXL"],
+  ["Апероль Спритц", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438dc9d8e623040232a98709/XXL"],
+  ["Апельсиновый Фреш", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e549ccfbf8b712964c632/XXL"],
+  ["Милкшейк чизкейк", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e4747ae37afed32359942/XXL"],
+  ["Сок Rich", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e23b024f27b997a51ed10/XXL"],
+  ["Бамбл", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438e6de2803658906059a3c2/XXL"],
+  ["Имбирный чай", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f438e83cf433fbc84335ec188/XXL"],
+  ["Зеленый чай с жасмином", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f438eae97ace9912ced8c9228/XXL"],
+  ["Палома Грейпфрут-карамель", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a0000019a3f43922738bffc5ba6beca6973/XXL"],
+  ["Melty сырники с йогуртом и конфитюром из смородины", "https://avatars.mds.yandex.net/get-sprav-products/2805495/2a00000199380ab563340a9e89066ebc93c9/XXL"],
+  ["Рисовая каша с грецкими орехами", "https://avatars.mds.yandex.net/get-sprav-products/2899371/2a00000199380ae121993c404530d098636b/XXL"],
+  ["Овсяная каша с ягодами и орехом пекан", "https://avatars.mds.yandex.net/get-sprav-products/2893106/2a00000199380b64a0520ddd620a2c254b70/XXL"],
+  ["Фирменный завтрак Melty", "https://avatars.mds.yandex.net/get-sprav-products/17712810/2a0000019a3f439a41d550e19ffb4f6a5c89/XXL"],
+  ["ПП драник из кабачков с яйцом пашот и семгой", "https://avatars.mds.yandex.net/get-sprav-products/1540730/2a00000199380ba085916e8cbb218ea24a3d/XXL"],
+  ["Мега оладуш с яйцом скрембл и креветками", "https://avatars.mds.yandex.net/get-sprav-products/4079840/2a00000199380bdd0c3bc68c005c3d0456a2/XXL"],
+  ["Английский завтрак", "https://avatars.mds.yandex.net/get-sprav-products/13672565/2a00000199394c81621eb6ff1fab52e5b33f/XXL"],
+  ["Завтрак джигита", "https://avatars.mds.yandex.net/get-sprav-products/2791887/2a00000199394c63b115ed1e9e9e5f380658/XXL"],
+  ["Крем-хумус с хрустящим нутом", "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a00000199394bdf24e303eee81230d1fd51/XXL"],
+  ["Сырные палочки с конфитюром из смородины", "https://avatars.mds.yandex.net/get-sprav-products/218134/2a00000199394bb9a15ba601f1a0ddce2d4b/XXL"],
+  ["Сендвич с индейкой", "https://avatars.mds.yandex.net/get-sprav-products/2757887/2a00000199394b913d3e219e3ca0efb65687/XXL"],
+  ["Сэндвич Цезарь с цыпленком", "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a00000199394b707572a32d086b5cad7ed8/XXL"],
+  ["Том-ям с морепродуктами", "https://avatars.mds.yandex.net/get-sprav-products/13852611/2a00000199394a0bb02114daffa891f903f0/XXL"],
+  ["Курочка Ряба с яичной лапшой", "https://avatars.mds.yandex.net/get-sprav-products/2791887/2a000001993949f2f58ebee9fe21302e67ea/XXL"],
+  ["Фетучини с куриным филе и грибами", "https://avatars.mds.yandex.net/get-sprav-products/2757887/2a000001993949c21b43a23c0e9745383d1a/XXL"],
+  ["Фетучини с креветками в соусе Том-ям", "https://avatars.mds.yandex.net/get-sprav-products/2808945/2a000001993949a234a9d38a482a9b9f4b5f/XXL"],
+  ["Куриные котлетки с картофельным кремом", "https://avatars.mds.yandex.net/get-sprav-products/13852611/2a0000019939497ccb4edaf73205e4b04974/XXL"],
+  ["Филе цыпленка с цветной капустой в ореховом соусе", "https://avatars.mds.yandex.net/get-sprav-products/1530321/2a00000199394950ea0baf368454c20232bf/XXL"],
+  ["Жаркое с куриным филе", "https://avatars.mds.yandex.net/get-sprav-products/2781182/2a000001993948e6e2f53ceda7013f582c79/XXL"],
+  ["Жаркое по-охотничьи", "https://avatars.mds.yandex.net/get-sprav-products/13944716/2a00000199394888eb3c6686155587952a6d/XXL"],
+  ["Копченый лягур с полентой и сырным муссом", "https://avatars.mds.yandex.net/get-sprav-products/13672565/2a000001993942cd7d35bf1b0af3ec2c4b1a/XXL"],
+  ["Дикий рис с маслом белого трюфеля и зеленью", "https://avatars.mds.yandex.net/get-sprav-products/2773996/2a00000199394117864a5790256b43d17b10/XXL"],
+  ["Картофель фри", "https://avatars.mds.yandex.net/get-sprav-products/2733259/2a000001993940eaa8829f899dd45c6ce2fa/XXL"],
+  ["Дипперы со снегом пармезан", "https://avatars.mds.yandex.net/get-sprav-products/2791887/2a000001993940ceb2bd2e76505705caf3e1/XXL"],
+  ["Картофельное пюре из детства", "https://avatars.mds.yandex.net/get-sprav-products/13488316/2a00000199394058e111e6db3dc805f8924b/XXL"],
+  ["Сырные палочки", "https://avatars.mds.yandex.net/get-sprav-products/2760763/2a00000199393fa629f8ba74a37f3dd617e8/XXL"],
+];
+
+const grid = document.getElementById('grid');
+items.forEach(([name, url], i) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <a href="${url}" target="_blank"><img src="${url}" alt="${name}" loading="lazy"></a>
+    <div class="card-info">
+      <div class="num">#${i+1}</div>
+      <h3>${name}</h3>
+      <a href="${url}" target="_blank" class="btn-open">Открыть ↗</a>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+function openAll() {
+  if (confirm('Открыть все 100 изображений в новых вкладках?')) {
+    items.forEach(([_, url]) => window.open(url, '_blank'));
+  }
+}
+
+function copyAllLinks() {
+  const text = items.map(([name, url]) => `${name}\n${url}`).join('\n\n');
+  navigator.clipboard.writeText(text).then(() => alert('Все ссылки скопированы!'));
+}
+</script>
+</body>
+</html>
