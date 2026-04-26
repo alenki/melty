@@ -93,7 +93,11 @@
       "Bash(sips -Z 512 -s format png favicon.png --out favicon-512.png)",
       "Bash(sips -Z 192 -s format png favicon.png --out favicon-192.png)",
       "Bash(sips -Z 180 -s format png favicon.png --out apple-touch-icon.png)",
-      "Bash(sips -Z 48 -s format png favicon.png --out favicon-48.png)"
+      "Bash(sips -Z 48 -s format png favicon.png --out favicon-48.png)",
+      "WebFetch(domain:kakdelacoffee.ru)",
+      "WebFetch(domain:gorkiynalchik.ru)",
+      "WebFetch(domain:fabrika8.com)",
+      "WebFetch(domain:melty-cafe.ru)"
     ]
   }
 }

@@ -94,6 +94,7 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   // hurt entity consolidation — only list profiles you actually own.
   sameAs: [
     'https://instagram.com/melty.ru',
+    'https://yandex.ru/maps/org/melty/135012269974/',
   ],
   keywords:
     'кафе Нальчик, кофейня Нальчик, Melty, десерты, крепы, панкейки, вафли, завтраки, шоколад, кофе',
