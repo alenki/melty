@@ -97,7 +97,11 @@
       "WebFetch(domain:kakdelacoffee.ru)",
       "WebFetch(domain:gorkiynalchik.ru)",
       "WebFetch(domain:fabrika8.com)",
-      "WebFetch(domain:melty-cafe.ru)"
+      "WebFetch(domain:melty-cafe.ru)",
+      "WebFetch(domain:yandex.ru)",
+      "WebFetch(domain:2gis.ru)",
+      "WebFetch(domain:yandex.eu)",
+      "WebFetch(domain:www.google.com)"
     ]
   }
 }
