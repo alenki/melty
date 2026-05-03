@@ -29,18 +29,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Melty Fondue',
     description: 'Melted hot chocolate. Served with a mix of brownie, Viennese waffles, puffed rice and seasonal berries',
   },
-  'melty-burger': {
-    name: 'Melty Burger',
-    description: 'Sealed burger filled with vanilla ice cream and crispy kataifi pastry. Served on a bed of pistachio urbech, topped with crushed pistachios',
-  },
-  'melty-crep-pistachio': {
-    name: 'Melty Pistachio Crepe',
-    description: 'French crepe with pistachio urbech and milk Belgian chocolate, topped with crushed pistachios',
-  },
-  'melty-crep-chocolate': {
-    name: 'Melty Chocolate Crepe',
-    description: 'French crepe with milk Belgian chocolate, served with strawberries and a scoop of chocolate ice cream',
-  },
 
   // ============ CHOCOLATE DESSERTS ============
   'puffies': {
@@ -84,10 +72,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'strawberry-in-chocolate': {
     name: 'Strawberries in Chocolate',
     description: 'Fresh strawberries dipped in milk Belgian chocolate, served in a cup',
-  },
-  'krispy-rise-chocolate': {
-    name: 'Krispy Rise in Chocolate',
-    description: 'Crispy puffed rice generously drizzled with milk Belgian chocolate',
   },
 
   // ============ CREPES ============
@@ -143,17 +127,9 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Waffle with Avocado & Crab',
     description: 'Savory waffle with avocado and crab',
   },
-  'savory-waffle-beef-coleslaw': {
-    name: 'Waffle with Pulled Beef & Coleslaw',
-    description: 'Savory waffle with pulled beef and coleslaw salad',
-  },
   'savory-waffle-salmon-poached-egg': {
     name: 'Waffle with Salmon & Poached Egg',
     description: 'Savory waffle with salmon and poached egg',
-  },
-  'savory-waffle-mousse-scramble': {
-    name: 'Waffle with Cream Mousse & Scramble',
-    description: 'Savory waffle with cream mousse and scrambled eggs',
   },
 
   // ============ BREAKFASTS ============
@@ -173,10 +149,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Spanish Omelette',
     description: 'Classic Spanish omelette with filling',
   },
-  'coconut-granola': {
-    name: 'Coconut Granola with Matsoni & Honey',
-    description: 'House-made granola with nuts, matsoni yogurt, honey and seasonal berries',
-  },
   'crepe-raspberry': {
     name: 'Crepe with Raspberry Sauce & Sour Cream',
     description: 'Delicate crepe with raspberry sauce and sour cream',
@@ -188,10 +160,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'oatmeal-berries': {
     name: 'Oatmeal with Berries',
     description: 'Oatmeal with seasonal berries and pecans',
-  },
-  'pp-dranik-salmon': {
-    name: 'Zucchini Fritter with Poached Egg & Salmon',
-    description: 'Zucchini fritters, house-cured salmon tartare, two poached eggs and hollandaise sauce',
   },
   'rice-porridge': {
     name: 'Rice Porridge with Walnuts',
@@ -277,10 +245,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Eastern Rice with Pulled Beef',
     description: 'Eastern-style rice with pulled beef',
   },
-  'salmon-orzo-kataifi': {
-    name: 'Salmon with Orzo Pasta & Kataifi Roll',
-    description: 'Salmon with orzo pasta and a kataifi pastry roll',
-  },
   'shawarma-chicken': {
     name: 'Lebanese Shawarma with Chicken',
     description: 'Lebanese-style shawarma with chicken',
@@ -300,10 +264,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'fetuccini-chicken-mushrooms': {
     name: 'Fettuccine with Chicken & Mushrooms',
     description: 'Fettuccine pasta with tender chicken fillet and mushrooms in a creamy sauce',
-  },
-  'chicken-cauliflower-nut': {
-    name: 'Chicken Fillet with Cauliflower in Nut Sauce',
-    description: 'Chicken fillet with sesame-nut sauce and cauliflower',
   },
   'zharkoe-chicken': {
     name: 'Chicken Stew',
@@ -334,10 +294,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'mashed-potato': {
     name: 'Grandma\'s Mashed Potatoes',
     description: 'Smooth homestyle mashed potatoes made the old-fashioned way',
-  },
-  'cheese-sticks': {
-    name: 'Cheese Sticks',
-    description: 'Crispy cheese sticks with sauce',
   },
 
   // ============ CLASSIC COFFEE ============
@@ -409,14 +365,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Cold Brew Pomegranate',
     description: 'Cold brew coffee with pomegranate juice',
   },
-  'cold-brew-blueberry': {
-    name: 'Cold Brew Blueberry',
-    description: 'Cold brew coffee with blueberry juice',
-  },
-  'cold-brew-citrus': {
-    name: 'Cold Brew Citrus',
-    description: 'Cold brew coffee with citrus juice',
-  },
   'raf-raspberry': {
     name: 'Raspberry Raf',
     description: 'Raf coffee with a delicate raspberry berry flavor',
@@ -453,23 +401,9 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   },
 
   // ============ AUTHOR DRINKS ============
-  'aperol-spritz': {
-    name: 'Aperol "Spritz"',
-    description: 'Non-alcoholic drink inspired by Aperol Spritz',
-  },
   'paloma-grapefruit': {
     name: 'Paloma Grapefruit-Caramel',
     description: 'Signature drink with grapefruit and caramel',
-  },
-
-  // ============ SMOOTHIES ============
-  'smoothie-banana-oat': {
-    name: 'Banana-Nut Smoothie with Oats',
-    description: 'Nutritious smoothie with banana, nuts and oats',
-  },
-  'smoothie-green-brick': {
-    name: 'Green Brick Breakfast Smoothie',
-    description: 'Green detox smoothie for an energizing day',
   },
 
   // ============ FRESH JUICES ============

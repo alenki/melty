@@ -65,8 +65,6 @@ export const bestSellerIds: string[] = [
   'egg-roll',
   'eastern-rice-chicken',
   'shawarma-beef',
-  'melty-crep-chocolate',
-  'chicken-cauliflower-nut',
 ];
 
 export const menuItems: MenuItem[] = [
@@ -149,19 +147,6 @@ export const menuItems: MenuItem[] = [
       '/data/menu/desserts/Мелти фондю 1.webp',
       '/data/menu/desserts/Мелти фондю 2.webp',
       '/data/menu/desserts/Мелти фондю 3.webp'
-    ]
-  },
-  {
-    id: 'melty-burger',
-    name: 'Melty бургер',
-    description: 'Запечатанный бургер, начиненный шариком ванильного мороженого и хрустящим тестом «Катаифи». Подаётся на подушке из фисташкового урбеча, посыпанный дробленной фисташкой',
-    price: 575,
-    category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти бургер.webp',
-    images: [
-      '/data/menu/desserts/Мелти бургер 1.webp',
-      '/data/menu/desserts/Мелти бургер 2.webp',
-      '/data/menu/desserts/Мелти бургер 3.webp'
     ]
   },
 
@@ -248,14 +233,6 @@ export const menuItems: MenuItem[] = [
     category: 'chocolate-cups',
     image: '/data/menu/desserts/Клубника в шоколаде.webp'
   },
-  {
-    id: 'krispy-rise-chocolate',
-    name: 'Krispy Rise в шоколаде',
-    description: 'Хрустящий воздушный рис, обильно политый молочным бельгийским шоколадом',
-    price: 350,
-    category: 'chocolate-cups',
-    image: '/data/menu/desserts/Krispy Rise в шоколаде.webp'
-  },
 
   // ============ CREPES ============
   {
@@ -289,22 +266,6 @@ export const menuItems: MenuItem[] = [
     price: 490,
     category: 'crepes',
     image: '/data/menu/desserts/Фетучини-креп.webp'
-  },
-  {
-    id: 'melty-crep-pistachio',
-    name: 'Melty креп фисташковый',
-    description: 'Французский блинчик с фисташковым урбечом и молочным бельгийским шоколадом, посыпанный дробленной фисташкой',
-    price: 590,
-    category: 'melty-desserts',
-    image: '/data/menu/desserts/Melty креп фисташковый.webp'
-  },
-  {
-    id: 'melty-crep-chocolate',
-    name: 'Melty креп шоколадный',
-    description: 'Французский блинчик с молочным бельгийским шоколадом, подаётся с клубникой и шариком шоколадного мороженого',
-    price: 650,
-    category: 'melty-desserts',
-    image: '/data/menu/desserts/Melty креп шоколадный.webp'
   },
   {
     id: 'brownie-roll',
@@ -375,28 +336,12 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/savory-waffles/Вафля с авокадо и крабом.webp'
   },
   {
-    id: 'savory-waffle-beef-coleslaw',
-    name: 'Вафля с рван. говядиной и салатом Коу-слоу',
-    description: 'Соленая вафля с рваной говядиной и салатом Коу-слоу',
-    price: 490,
-    category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля с рван. говядиной и салатом Коу-слоу.webp'
-  },
-  {
     id: 'savory-waffle-salmon-poached-egg',
     name: 'Вафля с семгой и яйцом пашот',
     description: 'Соленая вафля с семгой и яйцом пашот',
     price: 590,
     category: 'savory-waffles',
     image: '/data/menu/savory-waffles/Вафля с семгой и яйцом пашот.webp'
-  },
-  {
-    id: 'savory-waffle-mousse-scramble',
-    name: 'Вафля со сливоч. муссом и скремблом',
-    description: 'Соленая вафля со сливочным муссом и скремблом',
-    price: 320,
-    category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля со сливоч. муссом и скремблом.webp'
   },
 
   // ============ BREAKFASTS ============
@@ -433,14 +378,6 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/breakfasts/Испанский омлет.webp'
   },
   {
-    id: 'coconut-granola',
-    name: 'Кокосовая гранола с мацони и медом',
-    description: 'Гранола собственного приготовления с добавлением орехов, мацони, мёда и сезонных ягод',
-    price: 410,
-    category: 'breakfasts',
-    image: '/data/menu/breakfasts/Кокосовая гранола с мацони и медом.webp'
-  },
-  {
     id: 'crepe-raspberry',
     name: 'Креп с малиновым соусом и сметаной',
     description: 'Нежный креп с малиновым соусом и сметаной',
@@ -463,14 +400,6 @@ export const menuItems: MenuItem[] = [
     price: 270,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Овсяная каша с ягодами.webp'
-  },
-  {
-    id: 'pp-dranik-salmon',
-    name: 'ПП драник из кабачков с яйцом пашот и семгой собственного посола',
-    description: 'Драники из кабачков, тар-тар из сёмги собственного посола, два яйца пашот и соус галандез',
-    price: 650,
-    category: 'breakfasts',
-    image: '/data/menu/breakfasts/ПП драник из кабачков с яйцом пашот и семгой собственного посола.webp'
   },
   {
     id: 'rice-porridge',
@@ -638,14 +567,6 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/main-dishes/Восточный рис с рван.говядиной.webp'
   },
   {
-    id: 'salmon-orzo-kataifi',
-    name: 'Семга с пастой орзо и рулетом из катаифи',
-    description: 'Семга с пастой орзо и рулетом из катаифи',
-    price: 970,
-    category: 'main-dishes',
-    image: '/data/menu/main-dishes/Семга с пастой орзо и рулетом из катаифи.webp'
-  },
-  {
     id: 'shawarma-chicken',
     name: 'Шаурма ливанская с курицей',
     description: 'Шаурма ливанская с курицей',
@@ -684,14 +605,6 @@ export const menuItems: MenuItem[] = [
     price: 490,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Фетучини с куриным филе и грибами.webp'
-  },
-  {
-    id: 'chicken-cauliflower-nut',
-    name: 'Филе цыпленка с цветной капустой в ореховом соусе',
-    description: 'Филе цыплёнка с добавлением кунжутно-орехового соуса и цветной капустой',
-    price: 550,
-    category: 'main-dishes',
-    image: '/data/menu/main-dishes/Филе цыпленка с цветной капустой в ореховом соусе.webp'
   },
   {
     id: 'zharkoe-chicken',
@@ -750,14 +663,6 @@ export const menuItems: MenuItem[] = [
     price: 180,
     category: 'sides',
     image: '/data/menu/sides/Картофельное пюре из детства.webp'
-  },
-  {
-    id: 'cheese-sticks',
-    name: 'Сырные палочки',
-    description: 'Хрустящие сырные палочки с соусом',
-    price: 370,
-    category: 'sides',
-    image: '/data/menu/sides/Сырные палочки.webp'
   },
 
   // ============ CLASSIC COFFEE ============
@@ -880,22 +785,6 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/drinks/Колд Брю Гранат.webp'
   },
   {
-    id: 'cold-brew-blueberry',
-    name: 'Колд Брю Черника',
-    description: 'Холодный кофе с черничным соком',
-    price: 270,
-    category: 'author-coffee',
-    image: '/data/menu/drinks/Колд Брю Черника.webp'
-  },
-  {
-    id: 'cold-brew-citrus',
-    name: 'Колд Брю Цитрус',
-    description: 'Холодный кофе с цитрусовым соком',
-    price: 270,
-    category: 'author-coffee',
-    image: ''
-  },
-  {
     id: 'espresso-tonic',
     name: 'Эспрессо Тоник',
     description: 'Освежающий эспрессо с тоником и льдом',
@@ -974,14 +863,6 @@ export const menuItems: MenuItem[] = [
 
   // ============ AUTHOR DRINKS ============
   {
-    id: 'aperol-spritz',
-    name: 'Апероль "Спритц"',
-    description: 'Безалкогольный напиток в стиле Апероль Шприц',
-    price: 250,
-    category: 'author-drinks',
-    image: ''
-  },
-  {
     id: 'paloma-grapefruit',
     name: 'Палома Грейпфрут-карамель',
     description: 'Авторский напиток с грейпфрутом и карамелью',
@@ -996,24 +877,6 @@ export const menuItems: MenuItem[] = [
     price: 280,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Щавелевый.webp'
-  },
-
-  // ============ SMOOTHIES ============
-  {
-    id: 'smoothie-banana-oat',
-    name: 'Орехово-банановый смузи с овсянкой',
-    description: 'Питательный смузи с бананом, орехами и овсянкой',
-    price: 280,
-    category: 'smoothies',
-    image: '/data/menu/drinks/Орехово-банановый смузи с овсянкой.webp'
-  },
-  {
-    id: 'smoothie-green-brick',
-    name: 'Смузи-завтрак "Грин Брик"',
-    description: 'Зелёный детокс-смузи для бодрого дня',
-    price: 300,
-    category: 'smoothies',
-    image: '/data/menu/drinks/Смузи-завтрак Грин Брик.webp'
   },
 
   // ============ FRESH JUICES ============
