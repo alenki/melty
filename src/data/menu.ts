@@ -132,7 +132,7 @@ export const menuItems: MenuItem[] = [
     id: 'melty-pancake-pistachio',
     name: 'Melty панкейк-фисташка',
     description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
-    price: 640,
+    price: 660,
     category: 'melty-desserts',
     image: ''
   },
@@ -381,7 +381,7 @@ export const menuItems: MenuItem[] = [
     id: 'crepe-raspberry',
     name: 'Креп с малиновым соусом и сметаной',
     description: 'Нежный креп с малиновым соусом и сметаной',
-    price: 270,
+    price: 290,
     category: 'breakfasts',
     image: ''
   },
@@ -559,14 +559,6 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/main-dishes/Восточный рис с курицей.webp'
   },
   {
-    id: 'eastern-rice-beef',
-    name: 'Восточный рис с рван.говядиной',
-    description: 'Восточный рис с рваной говядиной',
-    price: 520,
-    category: 'main-dishes',
-    image: '/data/menu/main-dishes/Восточный рис с рван.говядиной.webp'
-  },
-  {
     id: 'shawarma-chicken',
     name: 'Шаурма ливанская с курицей',
     description: 'Шаурма ливанская с курицей',
@@ -621,14 +613,6 @@ export const menuItems: MenuItem[] = [
     price: 640,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Жаркое по-охотничьи.webp'
-  },
-  {
-    id: 'smoked-lyagur-polenta',
-    name: 'Копченый лягур с полентой и сырным муссом',
-    description: 'Копчёное мясо с кукурузной полентой и сливочно-сырным соусом',
-    price: 750,
-    category: 'main-dishes',
-    image: '/data/menu/main-dishes/Копченый лягур с полентой и сырным муссом.webp'
   },
 
   // ============ SIDES (ГАРНИРЫ) ============
@@ -811,14 +795,6 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/drinks/Малиновый раф.webp'
   },
   {
-    id: 'raf-mango',
-    name: 'Раф «Манго»',
-    description: 'Раф с тропическим вкусом манго',
-    price: 340,
-    category: 'author-coffee',
-    image: '/data/menu/drinks/Раф Манго.webp'
-  },
-  {
     id: 'raf-urbech',
     name: 'Раф «Урбеч»',
     description: 'Раф с натуральным урбечем',
@@ -828,14 +804,6 @@ export const menuItems: MenuItem[] = [
   },
 
   // ============ LEMONADES & MOJITO ============
-  {
-    id: 'lemonade-cranberry-cherry',
-    name: 'Клюква-вишня',
-    description: 'Ягодный лимонад с клюквой и вишней',
-    price: 260,
-    category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Клюква-вишня.webp'
-  },
   {
     id: 'lemonade-mango-passion',
     name: 'Лимонад Манго-Маракуйя',
@@ -913,14 +881,6 @@ export const menuItems: MenuItem[] = [
     price: 270,
     category: 'milkshakes',
     image: '/data/menu/drinks/Милкшейк Oreo.webp'
-  },
-  {
-    id: 'milkshake-cheesecake',
-    name: 'Чизкейк Милкшейк',
-    description: 'Молочный коктейль со вкусом чизкейка',
-    price: 350,
-    category: 'milkshakes',
-    image: '/data/menu/drinks/Чизкейк Милкшейк.webp'
   },
 
   // ============ HOUSE TEAS ============

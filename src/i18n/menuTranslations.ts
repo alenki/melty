@@ -241,10 +241,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Eastern Rice with Chicken',
     description: 'Eastern-style rice with chicken',
   },
-  'eastern-rice-beef': {
-    name: 'Eastern Rice with Pulled Beef',
-    description: 'Eastern-style rice with pulled beef',
-  },
   'shawarma-chicken': {
     name: 'Lebanese Shawarma with Chicken',
     description: 'Lebanese-style shawarma with chicken',
@@ -272,10 +268,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'zharkoe-hunter': {
     name: 'Hunter\'s Stew',
     description: 'Pan-fried smoked meat with bell pepper and potatoes in a creamy sauce',
-  },
-  'smoked-lyagur-polenta': {
-    name: 'Smoked Lyagur with Polenta & Cheese Mousse',
-    description: 'Smoked meat with corn polenta and cream cheese sauce',
   },
 
   // ============ SIDES ============
@@ -369,20 +361,12 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Raspberry Raf',
     description: 'Raf coffee with a delicate raspberry berry flavor',
   },
-  'raf-mango': {
-    name: 'Mango Raf',
-    description: 'Raf coffee with tropical mango flavor',
-  },
   'raf-urbech': {
     name: 'Urbech Raf',
     description: 'Raf coffee with natural urbech paste',
   },
 
   // ============ LEMONADES & MOJITO ============
-  'lemonade-cranberry-cherry': {
-    name: 'Cranberry-Cherry',
-    description: 'Berry lemonade with cranberry and cherry',
-  },
   'lemonade-mango-passion': {
     name: 'Mango-Passion Fruit Lemonade',
     description: 'Signature lemonade with mango and passion fruit',
@@ -424,10 +408,6 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'milkshake-oreo': {
     name: 'Oreo Milkshake',
     description: 'Milkshake with Oreo cookies',
-  },
-  'milkshake-cheesecake': {
-    name: 'Cheesecake Milkshake',
-    description: 'Milkshake with cheesecake flavor',
   },
 
   // ============ HOUSE TEAS ============
