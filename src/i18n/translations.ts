@@ -131,7 +131,7 @@ const ru: Translations = {
   },
   hero: {
     tagline: 'Мир вкуса и уюта',
-    location: 'Нальчик',
+    location: 'melty.ru',
     cta: 'Смотреть меню',
   },
   about: {
@@ -345,7 +345,7 @@ const en: Translations = {
   },
   hero: {
     tagline: 'A world of taste and comfort',
-    location: 'Nalchik',
+    location: 'melty.ru',
     cta: 'View menu',
   },
   about: {

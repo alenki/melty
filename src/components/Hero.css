@@ -237,21 +237,26 @@
   opacity: 0;
   transform: translateY(20px);
   animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.hero__location:hover {
+  background: rgba(74, 44, 26, 0.1);
 }
 
 .hero__location-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   color: var(--orange);
 }
 
 .hero__location span {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--chocolate);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* ==========================================================================

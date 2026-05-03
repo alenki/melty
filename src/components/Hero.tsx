@@ -74,14 +74,21 @@ export default function Hero() {
           <span className="hero__line" aria-hidden="true" />
         </div>
 
-        {/* Location badge */}
-        <div className="hero__location">
+        {/* Instagram badge */}
+        <a
+          className="hero__location"
+          href="https://www.instagram.com/melty.ru/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram @melty.ru"
+        >
           <svg className="hero__location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
           </svg>
           <span>{t.hero.location}</span>
-        </div>
+        </a>
 
         {/* CTA Button */}
         <button className="hero__cta" onClick={goToMenu}>
