@@ -101,7 +101,20 @@
       "WebFetch(domain:yandex.ru)",
       "WebFetch(domain:2gis.ru)",
       "WebFetch(domain:yandex.eu)",
-      "WebFetch(domain:www.google.com)"
+      "WebFetch(domain:www.google.com)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(C:\\\\msys64\\\\ucrt64\\\\bin\\\\python.exe -c \"import pypdf; print\\(pypdf.__version__\\)\" 2>&1; C:\\\\msys64\\\\ucrt64\\\\bin\\\\python.exe -c \"import pdfplumber; print\\(pdfplumber.__version__\\)\" 2>&1; C:\\\\msys64\\\\ucrt64\\\\bin\\\\python.exe -c \"import fitz; print\\(fitz.__doc__[:60]\\)\" 2>&1)",
+      "PowerShell(C:\\\\msys64\\\\ucrt64\\\\bin\\\\python.exe -m pip install --quiet pypdf 2>&1 | Select-Object -Last 5; C:\\\\msys64\\\\ucrt64\\\\bin\\\\python.exe -c \"import pypdf; print\\('OK', pypdf.__version__\\)\")",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py --version 2>&1; & $py -m pip --version 2>&1)",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py -m pip install --quiet --user pypdf 2>&1 | Select-Object -Last 3; & $py -c \"import pypdf; r = pypdf.PdfReader\\(r'E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\menu.pdf'\\); print\\('PAGES:', len\\(r.pages\\)\\)\")",
+      "PowerShell(Out-File *)",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; $env:PYTHONIOENCODING=\"utf-8\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\extract_pdf.py\" > \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\pdf_text.txt\"; \\(Get-Item \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\pdf_text.txt\"\\).Length)",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py -m pip install --quiet --user pymupdf 2>&1 | Select-Object -Last 2)",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\render_pdf.py\")",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop_pdf.py\")",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop2.py\")",
+      "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop3.py\")",
+      "Bash(C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe *)"
     ]
   }
 }
