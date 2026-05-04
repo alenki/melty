@@ -96,11 +96,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменный десерт с шоу-подачей',
     price: 1290,
     category: 'melty-desserts',
-    image: '/data/menu/desserts/Мелти мелт фисташка.webp',
-    images: [
-      '/data/menu/desserts/Мелти мелт фисташка 1.webp',
-      '/data/menu/desserts/Мелти мелт фисташка 2.webp'
-    ]
+    image: ''
   },
   {
     id: 'melty-cookies',
@@ -134,7 +130,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
     price: 660,
     category: 'melty-desserts',
-    image: ''
+    image: '/data/menu/desserts/Мелти панкейк-фисташка.webp'
   },
   {
     id: 'melty-fondue',
@@ -343,6 +339,14 @@ export const menuItems: MenuItem[] = [
     category: 'savory-waffles',
     image: '/data/menu/savory-waffles/Вафля с семгой и яйцом пашот.webp'
   },
+  {
+    id: 'waffle-fitness',
+    name: 'Вафля Фитнес',
+    description: 'Копчёная куриная грудка с миксом салата в медово-горчичном соусе',
+    price: 490,
+    category: 'savory-waffles',
+    image: '/data/menu/savory-waffles/Вафля фитнесс.jpg'
+  },
 
   // ============ BREAKFASTS ============
   {
@@ -392,6 +396,14 @@ export const menuItems: MenuItem[] = [
     price: 570,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Мега оладушек с яйцом скрембл и креветками.webp'
+  },
+  {
+    id: 'potato-pancakes-salmon',
+    name: 'Картофельные драники с сёмгой',
+    description: 'Драники со слабосолёной сёмгой и миксом салата',
+    price: 410,
+    category: 'breakfasts',
+    image: ''
   },
   {
     id: 'oatmeal-berries',
@@ -475,12 +487,20 @@ export const menuItems: MenuItem[] = [
 
   // ============ SALADS ============
   {
-    id: 'green-pp-turkey',
-    name: 'Зеленый ПП с индейкой брискет',
-    description: 'Индейка брискет собственного копчения, свежая руккола, спелый авокадо, соус ПП на основе трюфельного масла, киноа и слайса огурца',
+    id: 'green-pp-chicken',
+    name: 'Зеленый ПП с куриной грудкой',
+    description: 'Копчённая куриная грудка с рукколой, авокадо, киноа и слайсами огурца, в горчично-медовом соусе',
     price: 590,
     category: 'salads',
-    image: '/data/menu/salads/Зеленый ПП с индейкой брискет.webp'
+    image: '/data/menu/salads/Зелёный пп салат с куриной грудкой.jpg'
+  },
+  {
+    id: 'fitness-salad',
+    name: 'Фитнес салат',
+    description: 'Микс салатов, стебель сельдерея, черри, семечки тыквы в горчично-медовом соусе',
+    price: 340,
+    category: 'salads',
+    image: ''
   },
   {
     id: 'crispy-eggplant',
@@ -557,6 +577,30 @@ export const menuItems: MenuItem[] = [
     price: 410,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Восточный рис с курицей.webp'
+  },
+  {
+    id: 'chicken-breast-sous-vide',
+    name: 'ПП Куриная грудка sou-vide',
+    description: 'Куриная грудка sou-vide с кускусом и соусом «Арабьята»',
+    price: 460,
+    category: 'main-dishes',
+    image: '/data/menu/main-dishes/Пп куриная грудка с кус кусом.jpg'
+  },
+  {
+    id: 'chicken-fillet-broccoli-nut',
+    name: 'Филе цыплёнка с брокколи в ореховом соусе',
+    description: 'Филе цыплёнка с брокколи в ореховом соусе',
+    price: 570,
+    category: 'main-dishes',
+    image: ''
+  },
+  {
+    id: 'shawarma-smoked-beef-coleslaw',
+    name: 'Шаурма с копчёной говядиной и салатом коу-слоу',
+    description: 'Шаурма с копчёной говядиной и салатом коу-слоу',
+    price: 490,
+    category: 'main-dishes',
+    image: ''
   },
   {
     id: 'shawarma-chicken',
@@ -769,6 +813,30 @@ export const menuItems: MenuItem[] = [
     image: '/data/menu/drinks/Колд Брю Гранат.webp'
   },
   {
+    id: 'cold-brew-cola',
+    name: 'Колд Брю Кола',
+    description: 'Холодный кофе с колой',
+    price: 290,
+    category: 'author-coffee',
+    image: '/data/menu/drinks/Колд брю кола.jpg'
+  },
+  {
+    id: 'cold-brew-blueberry',
+    name: 'Колд Брю Черника',
+    description: 'Холодный кофе с черникой',
+    price: 290,
+    category: 'author-coffee',
+    image: ''
+  },
+  {
+    id: 'filter-coffee-blackberry',
+    name: 'Фильтр-кофе Ежевика',
+    description: 'Фильтр-кофе с ежевикой',
+    price: 290,
+    category: 'author-coffee',
+    image: ''
+  },
+  {
     id: 'espresso-tonic',
     name: 'Эспрессо Тоник',
     description: 'Освежающий эспрессо с тоником и льдом',
@@ -828,6 +896,22 @@ export const menuItems: MenuItem[] = [
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Мохито Маракуйя.webp'
   },
+  {
+    id: 'lemonade-grapefruit-pomegranate',
+    name: 'Лимонад Грейпфрут-Гранат',
+    description: 'Авторский лимонад с грейпфрутом и гранатом',
+    price: 360,
+    category: 'lemonades-mojito',
+    image: '/data/menu/drinks/Грейпфрут-гранат.jpg'
+  },
+  {
+    id: 'lemonade-citrus-mix',
+    name: 'Цитрусовый микс лимонад',
+    description: 'Авторский лимонад с миксом цитрусовых',
+    price: 360,
+    category: 'lemonades-mojito',
+    image: '/data/menu/drinks/Цитрусовый микс.jpg'
+  },
 
   // ============ AUTHOR DRINKS ============
   {
@@ -864,6 +948,22 @@ export const menuItems: MenuItem[] = [
     category: 'fresh-juices',
     image: '/data/menu/drinks/Фреш Грейпфрутовый.webp'
   },
+  {
+    id: 'apple-fresh',
+    name: 'Фреш Яблочный',
+    description: 'Свежевыжатый яблочный сок',
+    price: 310,
+    category: 'fresh-juices',
+    image: ''
+  },
+  {
+    id: 'carrot-fresh',
+    name: 'Фреш Морковный',
+    description: 'Свежевыжатый морковный сок',
+    price: 270,
+    category: 'fresh-juices',
+    image: ''
+  },
 
   // ============ MILKSHAKES ============
   {
@@ -881,6 +981,30 @@ export const menuItems: MenuItem[] = [
     price: 270,
     category: 'milkshakes',
     image: '/data/menu/drinks/Милкшейк Oreo.webp'
+  },
+  {
+    id: 'milkshake-bounty',
+    name: 'Баунти Милкшейк',
+    description: 'Молочный коктейль со вкусом Баунти',
+    price: 290,
+    category: 'milkshakes',
+    image: '/data/menu/drinks/Баунти Милкшейк.jpg'
+  },
+  {
+    id: 'smoothie-rainbow-unicorn',
+    name: 'Радужный единорог',
+    description: 'Авторский смузи Радужный единорог',
+    price: 380,
+    category: 'smoothies',
+    image: '/data/menu/drinks/Радужный единорог.jpg'
+  },
+  {
+    id: 'smoothie-vitamin-charge',
+    name: 'Витаминный заряд',
+    description: 'Витаминный смузи',
+    price: 340,
+    category: 'smoothies',
+    image: '/data/menu/drinks/Витаминный микс.jpg'
   },
 
   // ============ HOUSE TEAS ============

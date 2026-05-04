@@ -114,7 +114,12 @@
       "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop_pdf.py\")",
       "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop2.py\")",
       "PowerShell($py = \"C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\"; & $py \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\crop3.py\")",
-      "Bash(C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe *)"
+      "Bash(C:\\\\Users\\\\omarh\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe *)",
+      "Bash(mv \"new/Баунти Милкшейк.jpg\" \"drinks/\")",
+      "Bash(mv \"new/Витаминный микс.jpg\" \"drinks/\")",
+      "Bash(mv \"new/Грейпфрут-гранат.jpg\" \"drinks/\")",
+      "Bash(mv \"new/Колд брю кола.jpg\" \"drinks/\")",
+      "Bash(mv \"new/Радужный единорог.jpg\" \"drinks/\")"
     ]
   }
 }

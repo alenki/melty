@@ -131,6 +131,10 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Waffle with Salmon & Poached Egg',
     description: 'Savory waffle with salmon and poached egg',
   },
+  'waffle-fitness': {
+    name: 'Fitness Waffle',
+    description: 'Smoked chicken breast with salad mix in honey-mustard dressing',
+  },
 
   // ============ BREAKFASTS ============
   'melty-syrniki': {
@@ -156,6 +160,10 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'mega-oladush-shrimp': {
     name: 'Mega Pancake with Scrambled Egg & Shrimp',
     description: 'Delicate pancake with scrambled egg and tiger shrimp',
+  },
+  'potato-pancakes-salmon': {
+    name: 'Potato Pancakes with Salmon',
+    description: 'Potato pancakes with lightly salted salmon and salad mix',
   },
   'oatmeal-berries': {
     name: 'Oatmeal with Berries',
@@ -197,9 +205,13 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   },
 
   // ============ SALADS ============
-  'green-pp-turkey': {
-    name: 'Green Salad with Turkey Brisket',
-    description: 'House-smoked turkey brisket, fresh arugula, ripe avocado, truffle oil dressing, quinoa and cucumber slices',
+  'green-pp-chicken': {
+    name: 'Green Salad with Chicken Breast',
+    description: 'Smoked chicken breast with arugula, avocado, quinoa and cucumber slices in honey-mustard dressing',
+  },
+  'fitness-salad': {
+    name: 'Fitness Salad',
+    description: 'Salad mix, celery stalk, cherry tomatoes, pumpkin seeds in honey-mustard dressing',
   },
   'crispy-eggplant': {
     name: 'Crispy Eggplant with Cheese Cream',
@@ -240,6 +252,18 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'eastern-rice-chicken': {
     name: 'Eastern Rice with Chicken',
     description: 'Eastern-style rice with chicken',
+  },
+  'chicken-breast-sous-vide': {
+    name: 'Sous-Vide Chicken Breast',
+    description: 'Sous-vide chicken breast with couscous and Arrabbiata sauce',
+  },
+  'chicken-fillet-broccoli-nut': {
+    name: 'Chicken Fillet with Broccoli in Nut Sauce',
+    description: 'Chicken fillet with broccoli in nut sauce',
+  },
+  'shawarma-smoked-beef-coleslaw': {
+    name: 'Shawarma with Smoked Beef & Coleslaw',
+    description: 'Shawarma with smoked beef and coleslaw salad',
   },
   'shawarma-chicken': {
     name: 'Lebanese Shawarma with Chicken',
@@ -357,6 +381,18 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Cold Brew Pomegranate',
     description: 'Cold brew coffee with pomegranate juice',
   },
+  'cold-brew-cola': {
+    name: 'Cold Brew Cola',
+    description: 'Cold brew coffee with cola',
+  },
+  'cold-brew-blueberry': {
+    name: 'Cold Brew Blueberry',
+    description: 'Cold brew coffee with blueberry',
+  },
+  'filter-coffee-blackberry': {
+    name: 'Filter Coffee with Blackberry',
+    description: 'Filter coffee with blackberry',
+  },
   'raf-raspberry': {
     name: 'Raspberry Raf',
     description: 'Raf coffee with a delicate raspberry berry flavor',
@@ -379,6 +415,14 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Passion Fruit Mojito',
     description: 'Refreshing mojito with exotic passion fruit',
   },
+  'lemonade-grapefruit-pomegranate': {
+    name: 'Grapefruit-Pomegranate Lemonade',
+    description: 'Signature lemonade with grapefruit and pomegranate',
+  },
+  'lemonade-citrus-mix': {
+    name: 'Citrus Mix Lemonade',
+    description: 'Signature lemonade with a mix of citrus fruits',
+  },
   'sorrel': {
     name: 'Sorrel Drink',
     description: 'Signature drink made with sorrel',
@@ -399,6 +443,14 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
     name: 'Fresh Grapefruit Juice',
     description: 'Freshly squeezed grapefruit juice',
   },
+  'apple-fresh': {
+    name: 'Fresh Apple Juice',
+    description: 'Freshly squeezed apple juice',
+  },
+  'carrot-fresh': {
+    name: 'Fresh Carrot Juice',
+    description: 'Freshly squeezed carrot juice',
+  },
 
   // ============ MILKSHAKES ============
   'milkshake-vanilla-banana': {
@@ -408,6 +460,18 @@ export const menuItemsEn: Record<string, { name: string; description: string }> 
   'milkshake-oreo': {
     name: 'Oreo Milkshake',
     description: 'Milkshake with Oreo cookies',
+  },
+  'milkshake-bounty': {
+    name: 'Bounty Milkshake',
+    description: 'Milkshake with Bounty flavor',
+  },
+  'smoothie-rainbow-unicorn': {
+    name: 'Rainbow Unicorn Smoothie',
+    description: 'Signature Rainbow Unicorn smoothie',
+  },
+  'smoothie-vitamin-charge': {
+    name: 'Vitamin Charge Smoothie',
+    description: 'Vitamin-packed smoothie',
   },
 
   // ============ HOUSE TEAS ============
