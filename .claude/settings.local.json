@@ -119,7 +119,11 @@
       "Bash(mv \"new/Витаминный микс.jpg\" \"drinks/\")",
       "Bash(mv \"new/Грейпфрут-гранат.jpg\" \"drinks/\")",
       "Bash(mv \"new/Колд брю кола.jpg\" \"drinks/\")",
-      "Bash(mv \"new/Радужный единорог.jpg\" \"drinks/\")"
+      "Bash(mv \"new/Радужный единорог.jpg\" \"drinks/\")",
+      "Bash(cwebp -version)",
+      "Bash(magick -version)",
+      "PowerShell(npm install *)",
+      "Bash(node *)"
     ]
   }
 }

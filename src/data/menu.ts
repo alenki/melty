@@ -403,7 +403,7 @@ export const menuItems: MenuItem[] = [
     description: 'Драники со слабосолёной сёмгой и миксом салата',
     price: 410,
     category: 'breakfasts',
-    image: ''
+    image: '/data/menu/breakfasts/Картофельные драники.webp'
   },
   {
     id: 'oatmeal-berries',
@@ -500,7 +500,7 @@ export const menuItems: MenuItem[] = [
     description: 'Микс салатов, стебель сельдерея, черри, семечки тыквы в горчично-медовом соусе',
     price: 340,
     category: 'salads',
-    image: ''
+    image: '/data/menu/salads/Фитнес салат.webp'
   },
   {
     id: 'crispy-eggplant',
@@ -592,7 +592,7 @@ export const menuItems: MenuItem[] = [
     description: 'Филе цыплёнка с брокколи в ореховом соусе',
     price: 570,
     category: 'main-dishes',
-    image: ''
+    image: '/data/menu/main-dishes/Филе цыплёнка с брокколи в ореховом соусе.webp'
   },
   {
     id: 'shawarma-smoked-beef-coleslaw',
@@ -834,7 +834,7 @@ export const menuItems: MenuItem[] = [
     description: 'Фильтр-кофе с ежевикой',
     price: 290,
     category: 'author-coffee',
-    image: ''
+    image: '/data/menu/drinks/Фильтр кофе ежевика.webp'
   },
   {
     id: 'espresso-tonic',
