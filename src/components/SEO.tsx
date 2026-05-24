@@ -142,11 +142,7 @@ export default function SEO({
       <meta name="geo.position" content="43.472607;43.579251" />
       <meta name="ICBM" content="43.472607, 43.579251" />
       <link rel="canonical" href={canonicalUrl} />
-
-      {/* Language alternates — default is RU, site also serves EN */}
-      <link rel="alternate" hrefLang="ru" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      <meta httpEquiv="content-language" content="ru" />
 
       {/* Open Graph */}
       <meta property="og:site_name" content="Melty" />
@@ -159,7 +155,6 @@ export default function SEO({
       <meta property="og:image:alt" content="Melty — кафе-кофейня в Нальчике" />
       <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="ru_RU" />
-      <meta property="og:locale:alternate" content="en_US" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
