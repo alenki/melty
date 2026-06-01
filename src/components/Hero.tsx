@@ -54,15 +54,15 @@ export default function Hero() {
 
         {/* Logo */}
         <div className="hero__logo-container">
-          {/* Visually-hidden heading — gives crawlers a real H1 without
+          {/* Visually-hidden heading - gives crawlers a real H1 without
               disturbing the visual logo-first hero design. */}
           <h1 className="visually-hidden">
-            Melty — кафе-кофейня в Нальчике. Мир вкуса и уюта: шоколадные десерты,
+            Melty - кафе-кофейня в Нальчике. Мир вкуса и уюта: шоколадные десерты,
             авторские крепы, панкейки, вафли, завтраки и кофе.
           </h1>
           <img
             src="/data/logo_dark.webp"
-            alt="Melty — кафе-кофейня в Нальчике"
+            alt="Melty - кафе-кофейня в Нальчике"
             className="hero__logo"
           />
         </div>

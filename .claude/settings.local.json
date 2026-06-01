@@ -124,7 +124,8 @@
       "Bash(magick -version)",
       "PowerShell(npm install *)",
       "Bash(node *)",
-      "PowerShell(npm run *)"
+      "PowerShell(npm run *)",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }

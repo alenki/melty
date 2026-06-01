@@ -141,7 +141,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
                     <div key={index} className="modal-slider__slide">
                       <img
                         src={src}
-                        alt={`${displayName} — ${index + 1}`}
+                        alt={`${displayName} - ${index + 1}`}
                         className="modal-slider__image"
                         decoding="async"
                       />

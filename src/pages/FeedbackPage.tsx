@@ -153,7 +153,7 @@ export default function FeedbackPage() {
     <div className="feedback-page">
       <SEO
         title="Обратная связь | Melty"
-        description="Оставьте отзыв о кафе Melty в Нальчике. Ваше мнение помогает нам становиться лучше — напишите, что понравилось и что можно улучшить."
+        description="Оставьте отзыв о кафе Melty в Нальчике. Ваше мнение помогает нам становиться лучше - напишите, что понравилось и что можно улучшить."
         path="/feedback"
         keywords="отзывы кафе Melty, отзывы кафе Нальчик, Melty отзывы, оставить отзыв кафе Нальчик"
         jsonLd={breadcrumb}
@@ -205,7 +205,7 @@ export default function FeedbackPage() {
                   type="button"
                   role="radio"
                   aria-checked={rating === value}
-                  aria-label={`${value} — ${t.feedbackPage.starLabels[value - 1]}`}
+                  aria-label={`${value} - ${t.feedbackPage.starLabels[value - 1]}`}
                   tabIndex={rating === value || (rating === 0 && value === 1) ? 0 : -1}
                   className={[
                     'feedback-page__star',

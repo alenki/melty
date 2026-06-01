@@ -5,7 +5,7 @@ import { BackToTop, SEO } from '../components';
 import './GalleryPage.css';
 
 /* ------------------------------------------------------------------ */
-/*  Photo data — curated selection from all three folders              */
+/*  Photo data - curated selection from all three folders              */
 /* ------------------------------------------------------------------ */
 
 interface GalleryItem {
@@ -143,7 +143,7 @@ export default function GalleryPage() {
       });
     };
 
-    // Only run rAF while scrolling — stop after idle to save CPU
+    // Only run rAF while scrolling - stop after idle to save CPU
     let rafId: number | null = null;
     let stopTimer: ReturnType<typeof setTimeout>;
 
@@ -248,7 +248,7 @@ export default function GalleryPage() {
     <div className="gallery-page">
       <SEO
         title="Галерея | Melty"
-        description="Галерея кафе Melty в Нальчике: фотографии интерьера, десертов, крепов, вафель и уютной атмосферы. Загляните — и вам захочется прийти."
+        description="Галерея кафе Melty в Нальчике: фотографии интерьера, десертов, крепов, вафель и уютной атмосферы. Загляните - и вам захочется прийти."
         path="/gallery"
         keywords="фото кафе Нальчик, интерьер кафе Melty, фото десертов Нальчик, атмосфера кафе Нальчик, Melty фотографии"
         jsonLd={[
@@ -259,7 +259,7 @@ export default function GalleryPage() {
             name: 'Галерея кафе Melty',
             url: 'https://melty-cafe.ru/gallery',
             description:
-              'Фотогалерея кафе Melty в Нальчике — интерьер, десерты и атмосфера.',
+              'Фотогалерея кафе Melty в Нальчике - интерьер, десерты и атмосфера.',
             about: { '@id': 'https://melty-cafe.ru/#restaurant' },
           },
         ]}

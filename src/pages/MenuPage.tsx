@@ -101,7 +101,7 @@ export default function MenuPage() {
     ],
   };
 
-  // Full Menu schema — Google uses this for menu rich results and the
+  // Full Menu schema - Google uses this for menu rich results and the
   // "see menu" knowledge-panel action. Sections are derived from real data.
   const menuSchema = {
     '@context': 'https://schema.org',
@@ -155,7 +155,7 @@ export default function MenuPage() {
     [itemsByCategory]
   );
 
-  // Scroll spy — track which category is in view
+  // Scroll spy - track which category is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -174,7 +174,7 @@ export default function MenuPage() {
     return () => observer.disconnect();
   }, []);
 
-  // Section reveal — animate categories as they scroll into view
+  // Section reveal - animate categories as they scroll into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -345,7 +345,7 @@ export default function MenuPage() {
     <div className="menu-page">
       <SEO
         title="Меню | Melty"
-        description="Полное меню кафе Melty в Нальчике: завтраки, шоколадные десерты, авторские крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00–23:00."
+        description="Полное меню кафе Melty в Нальчике: завтраки, шоколадные десерты, авторские крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00-23:00."
         path="/menu"
         keywords="меню кафе Нальчик, меню Melty, завтраки Нальчик, десерты Нальчик, крепы Нальчик, кофе Нальчик, панкейки, вафли, шоколадные десерты, цены кафе Нальчик"
         jsonLd={[breadcrumb, menuSchema]}
@@ -359,7 +359,7 @@ export default function MenuPage() {
           <div className="menu-page__hero-bg-glow" />
         </div>
 
-        {/* Decorative SVG curves — left */}
+        {/* Decorative SVG curves - left */}
         <svg className="menu-page__swirl menu-page__swirl--left" viewBox="0 0 200 600" fill="none" aria-hidden="true">
           <path
             d="M180 0C180 0 200 100 160 180C120 260 40 280 60 380C80 480 180 520 160 600"
@@ -371,7 +371,7 @@ export default function MenuPage() {
           <circle cx="160" cy="600" r="8" fill="var(--chocolate)" opacity="0.2" />
         </svg>
 
-        {/* Decorative SVG curves — right */}
+        {/* Decorative SVG curves - right */}
         <svg className="menu-page__swirl menu-page__swirl--right" viewBox="0 0 200 600" fill="none" aria-hidden="true">
           <path
             d="M20 0C20 0 0 120 50 200C100 280 180 320 150 420C120 520 20 560 40 600"

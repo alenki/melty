@@ -30,7 +30,7 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   name: 'Melty',
   alternateName: ['Мелти', 'Melty Cafe', 'Кафе Melty', 'Кафе Мелти'],
   description:
-    'Melty — уютное кафе-кофейня в Нальчике. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и напитки. Ежедневно 08:00–23:00.',
+    'Melty - уютное кафе-кофейня в Нальчике. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и напитки. Ежедневно 08:00-23:00.',
   url: BASE_URL,
   telephone: '+7-988-939-90-00',
   email: 'hello@melty-cafe.ru',
@@ -91,7 +91,7 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   ],
   // sameAs: add the real URLs to your Yandex.Maps, 2GIS, VK and Google
   // Business Profile listings once they're claimed. Broken URLs here will
-  // hurt entity consolidation — only list profiles you actually own.
+  // hurt entity consolidation - only list profiles you actually own.
   sameAs: [
     'https://instagram.com/melty.ru',
     'https://yandex.ru/maps/org/melty/135012269974/',
@@ -152,7 +152,7 @@ export default function SEO({
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Melty — кафе-кофейня в Нальчике" />
+      <meta property="og:image:alt" content="Melty - кафе-кофейня в Нальчике" />
       <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="ru_RU" />
 
@@ -161,7 +161,7 @@ export default function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:image:alt" content="Melty — кафе-кофейня в Нальчике" />
+      <meta name="twitter:image:alt" content="Melty - кафе-кофейня в Нальчике" />
 
       {/* Structured data */}
       {allSchemas.map((schema, i) => (

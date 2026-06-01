@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ABOUT SECTION — Split Layout
+   ABOUT SECTION - Split Layout
    Two-column grid: overlapping photo cards left, text right
    ========================================================================== */
 
@@ -235,7 +235,7 @@
   transition: transform var(--transition-normal);
 }
 
-/* Revealed state — text elements */
+/* Revealed state - text elements */
 .about--revealed .about__flourish,
 .about--revealed .about__title,
 .about--revealed .about__body,
@@ -328,7 +328,7 @@
 }
 
 /* ==========================================================================
-   ACCESSIBILITY — Reduced Motion
+   ACCESSIBILITY - Reduced Motion
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {

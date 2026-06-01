@@ -1,10 +1,10 @@
 /* ==========================================
-   GALLERY PAGE — Melty Cafe Photo Gallery
+   GALLERY PAGE - Melty Cafe Photo Gallery
    Masonry grid with atmospheric quote cards
    and a full-screen lightbox viewer
    ========================================== */
 
-/* ===== HERO SECTION — Full-Screen ===== */
+/* ===== HERO SECTION - Full-Screen ===== */
 .gallery-page__hero {
   position: relative;
   min-height: 100vh;
@@ -635,7 +635,7 @@ body.lightbox-open > #root {
 }
 
 
-/* ===== ACCESSIBILITY — Reduced Motion ===== */
+/* ===== ACCESSIBILITY - Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   .gallery-page__swirl,
   .gallery-page__hero-count,

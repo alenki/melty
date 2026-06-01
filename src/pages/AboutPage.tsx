@@ -137,7 +137,7 @@ export default function AboutPage() {
             name: 'О кафе Melty',
             url: 'https://melty-cafe.ru/about',
             description:
-              'Страница о кафе Melty в Нальчике — наша философия, мастерство и атмосфера.',
+              'Страница о кафе Melty в Нальчике - наша философия, мастерство и атмосфера.',
             mainEntity: { '@id': 'https://melty-cafe.ru/#restaurant' },
           },
         ]}

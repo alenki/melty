@@ -92,8 +92,8 @@ export default function Location() {
                 <div>
                   <h3>{t.location.hoursLabel}</h3>
                   <ul className="location__hours">
-                    <li><span>{t.location.daily}</span><span>08:00 — 23:00</span></li>
-                    <li><span>{t.location.kitchen}</span><span>08:00 — 22:15</span></li>
+                    <li><span>{t.location.daily}</span><span>08:00 - 23:00</span></li>
+                    <li><span>{t.location.kitchen}</span><span>08:00 - 22:15</span></li>
                   </ul>
                 </div>
               </div>

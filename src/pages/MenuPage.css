@@ -1,10 +1,10 @@
 /* ==========================================
-   MENU PAGE — Melty Cafe Full Menu
-   "The Chocolate Manuscript" — a luxurious
+   MENU PAGE - Melty Cafe Full Menu
+   "The Chocolate Manuscript" - a luxurious
    leafing experience through the cafe's offerings
    ========================================== */
 
-/* ===== HERO SECTION — Full-Screen ===== */
+/* ===== HERO SECTION - Full-Screen ===== */
 .menu-page__hero {
   position: relative;
   min-height: 100vh;
@@ -680,7 +680,7 @@ body.modal-open .menu-page__featured {
   }
 }
 
-/* Override MenuItem's auto-play animation — we trigger on scroll instead */
+/* Override MenuItem's auto-play animation - we trigger on scroll instead */
 .menu-page__items .menu-item {
   opacity: 0;
   animation: none;

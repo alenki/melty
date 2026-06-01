@@ -15,13 +15,13 @@
   --footer-gold: #D4A574;
 }
 
-/* Feedback page ends with cream-deep gradient — match it */
+/* Feedback page ends with cream-deep gradient - match it */
 main:has(.feedback-page) ~ .footer,
 main:has(.feedback-page) ~ .footer .footer__wave {
   background: var(--cream-deep, #EDE5DA);
 }
 
-/* About page ends with cream — matches default footer, no override needed */
+/* About page ends with cream - matches default footer, no override needed */
 
 /* ==========================================================================
    WAVE TRANSITION

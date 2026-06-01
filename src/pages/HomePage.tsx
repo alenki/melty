@@ -7,7 +7,7 @@ const BASE_URL = 'https://melty-cafe.ru';
 export default function HomePage() {
   const location = useLocation();
 
-  // WebSite entity — enables Google's "sitelinks searchbox" and disambiguates
+  // WebSite entity - enables Google's "sitelinks searchbox" and disambiguates
   // the site from the physical Restaurant entity.
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -28,7 +28,7 @@ export default function HomePage() {
     },
   };
 
-  // Organization — the business behind the site. Linked from the Restaurant
+  // Organization - the business behind the site. Linked from the Restaurant
   // and WebSite entities via @id references.
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -56,7 +56,7 @@ export default function HomePage() {
     },
   };
 
-  // FAQPage — eligible for FAQ rich snippet on Google & Yandex, steals
+  // FAQPage - eligible for FAQ rich snippet on Google & Yandex, steals
   // real-estate on the SERP.
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -83,7 +83,7 @@ export default function HomePage() {
         name: 'Что можно попробовать в кафе Melty?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'В меню кафе Melty — шоколадные десерты, авторские крепы, панкейки, вафли, завтраки, салаты, горячие блюда, авторский кофе и лимонады.',
+          text: 'В меню кафе Melty - шоколадные десерты, авторские крепы, панкейки, вафли, завтраки, салаты, горячие блюда, авторский кофе и лимонады.',
         },
       },
       {
@@ -99,7 +99,7 @@ export default function HomePage() {
         name: 'Есть ли в Melty завтраки?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Да, мы подаём завтраки с 08:00 — каши, эгг-роллы, круассаны, панкейки, крепы и авторский кофе.',
+          text: 'Да, мы подаём завтраки с 08:00 - каши, эгг-роллы, круассаны, панкейки, крепы и авторский кофе.',
         },
       },
     ],
@@ -126,8 +126,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Melty — кафе-кофейня в Нальчике"
-        description="Melty — уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе. Работаем ежедневно 08:00–23:00."
+        title="Melty | кафе-кофейня в Нальчике"
+        description="Melty - уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе. Работаем ежедневно 08:00-23:00."
         path="/"
         jsonLd={[websiteSchema, organizationSchema, faqSchema]}
       />
