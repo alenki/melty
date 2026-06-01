@@ -345,7 +345,7 @@ export const menuItems: MenuItem[] = [
     description: 'Копчёная куриная грудка с миксом салата в медово-горчичном соусе',
     price: 490,
     category: 'savory-waffles',
-    image: '/data/menu/savory-waffles/Вафля фитнесс.jpg'
+    image: '/data/menu/savory-waffles/Вафля фитнесс.webp'
   },
 
   // ============ BREAKFASTS ============
@@ -492,7 +492,7 @@ export const menuItems: MenuItem[] = [
     description: 'Копчённая куриная грудка с рукколой, авокадо, киноа и слайсами огурца, в горчично-медовом соусе',
     price: 590,
     category: 'salads',
-    image: '/data/menu/salads/Зелёный пп салат с куриной грудкой.jpg'
+    image: '/data/menu/salads/Зелёный пп салат с куриной грудкой.webp'
   },
   {
     id: 'fitness-salad',
@@ -584,7 +584,7 @@ export const menuItems: MenuItem[] = [
     description: 'Куриная грудка sou-vide с кускусом и соусом «Арабьята»',
     price: 460,
     category: 'main-dishes',
-    image: '/data/menu/main-dishes/Пп куриная грудка с кус кусом.jpg'
+    image: '/data/menu/main-dishes/Пп куриная грудка с кус кусом.webp'
   },
   {
     id: 'chicken-fillet-broccoli-nut',
@@ -818,7 +818,7 @@ export const menuItems: MenuItem[] = [
     description: 'Холодный кофе с колой',
     price: 290,
     category: 'author-coffee',
-    image: '/data/menu/drinks/Колд брю кола.jpg'
+    image: '/data/menu/drinks/Колд брю кола.webp'
   },
   {
     id: 'cold-brew-blueberry',
@@ -902,7 +902,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский лимонад с грейпфрутом и гранатом',
     price: 360,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Грейпфрут-гранат.jpg'
+    image: '/data/menu/drinks/Грейпфрут-гранат.webp'
   },
   {
     id: 'lemonade-citrus-mix',
@@ -910,7 +910,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский лимонад с миксом цитрусовых',
     price: 360,
     category: 'lemonades-mojito',
-    image: '/data/menu/drinks/Цитрусовый микс.jpg'
+    image: '/data/menu/drinks/Цитрусовый микс.webp'
   },
 
   // ============ AUTHOR DRINKS ============
@@ -988,7 +988,7 @@ export const menuItems: MenuItem[] = [
     description: 'Молочный коктейль со вкусом Баунти',
     price: 290,
     category: 'milkshakes',
-    image: '/data/menu/drinks/Баунти Милкшейк.jpg'
+    image: '/data/menu/drinks/Баунти Милкшейк.webp'
   },
   {
     id: 'smoothie-rainbow-unicorn',
@@ -996,7 +996,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторский смузи Радужный единорог',
     price: 380,
     category: 'smoothies',
-    image: '/data/menu/drinks/Радужный единорог.jpg'
+    image: '/data/menu/drinks/Радужный единорог.webp'
   },
   {
     id: 'smoothie-vitamin-charge',
@@ -1004,7 +1004,7 @@ export const menuItems: MenuItem[] = [
     description: 'Витаминный смузи',
     price: 340,
     category: 'smoothies',
-    image: '/data/menu/drinks/Витаминный микс.jpg'
+    image: '/data/menu/drinks/Витаминный микс.webp'
   },
 
   // ============ HOUSE TEAS ============

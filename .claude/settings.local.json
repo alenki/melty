@@ -125,7 +125,16 @@
       "PowerShell(npm install *)",
       "Bash(node *)",
       "PowerShell(npm run *)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\public\\\\data\\\\menu\" -Recurse -File | ForEach-Object { [PSCustomObject]@{ KB = [math]::Round\\($_.Length/1KB\\); Ext = $_.Extension; Path = $_.FullName.Replace\\(\"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\melty\\\\public\\\\data\\\\menu\\\\\",\"\"\\) } } | Sort-Object KB -Descending | Select-Object -First 30 | Format-Table -AutoSize)",
+      "Bash(echo \"\\(exit $?\\)\")",
+      "PowerShell(Remove-Item *)",
+      "Bash([ -f \"public/data/$f\" ])",
+      "PowerShell(npx tsc -b; if \\($?\\) { \"TSC OK\" } else { \"TSC FAILED\" })",
+      "PowerShell(npx vite build 2>&1 | Select-Object -Last 15; if \\($?\\) { \"VITE OK\" } else { \"VITE FAILED\" })",
+      "PowerShell(npx vite preview --port 4173)",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_console_messages"
     ]
   }
 }
