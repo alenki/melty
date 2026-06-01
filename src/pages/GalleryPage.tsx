@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from '../i18n';
 import { BackToTop, SEO } from '../components';
+import { imgVariant } from '../utils/images';
 import './GalleryPage.css';
 
 /* ------------------------------------------------------------------ */
@@ -362,11 +363,16 @@ export default function GalleryPage() {
                 onClick={() => setLightboxIndex(item.index)}
               >
                 <img
-                  src={item.data.src}
+                  src={imgVariant(item.data.src, 'sm')}
                   alt={t.galleryPage.photoAlts[item.data.altKey] || item.data.altKey}
                   className="gallery-page__photo-img"
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    // Thumbnail missing → fall back to the full image.
+                    const img = e.currentTarget;
+                    if (img.src.includes('-sm.webp')) img.src = item.data.src;
+                  }}
                 />
               </div>
             );

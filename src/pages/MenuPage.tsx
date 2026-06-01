@@ -6,6 +6,7 @@ import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
 import MenuPlaceholder from '../components/Menu/MenuPlaceholder';
 import { BackToTop, SEO } from '../components';
+import { imgVariant } from '../utils/images';
 import './MenuPage.css';
 
 const categoryOrder: MenuCategory[] = [
@@ -35,7 +36,12 @@ const categoryOrder: MenuCategory[] = [
 
 function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onClick: () => void; isSelected?: boolean }) {
   const [imgError, setImgError] = useState(false);
+  // Featured cards render at ~530px — the medium variant is plenty and cuts
+  // the decoded bitmap ~4x vs the full image. Fall back to full if missing.
+  const [useFull, setUseFull] = useState(false);
   const hasImage = item.image && !imgError;
+  const mdSrc = imgVariant(item.image, 'md');
+  const displaySrc = useFull || !mdSrc ? item.image : mdSrc;
   const { language } = useLanguage();
   const getTranslation = useMenuTranslation();
   const { name, description } = getTranslation(item);
@@ -65,11 +71,15 @@ function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onCli
       <div className="menu-page__featured-image-wrap">
         {hasImage ? (
           <img
-            src={item.image}
+            src={displaySrc}
             alt={displayName}
             className="menu-page__featured-image"
             loading="lazy"
-            onError={() => setImgError(true)}
+            decoding="async"
+            onError={() => {
+              if (!useFull && mdSrc && mdSrc !== item.image) setUseFull(true);
+              else setImgError(true);
+            }}
           />
         ) : (
           <MenuPlaceholder />

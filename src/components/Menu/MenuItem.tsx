@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { MenuItem as MenuItemType } from '../../data/menu';
 import { useMenuTranslation, useLanguage } from '../../i18n';
+import { imgVariant } from '../../utils/images';
 import MenuItemModal from './MenuItemModal';
 import MenuPlaceholder from './MenuPlaceholder';
 import './MenuItem.css';
@@ -16,6 +17,9 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  // Grid cards are tiny (~280px) — load the small thumbnail, not the full
+  // image. Fall back to the full file if a thumbnail is ever missing.
+  const [useFull, setUseFull] = useState(false);
   const { language } = useLanguage();
   const getTranslation = useMenuTranslation();
 
@@ -31,6 +35,8 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
   const volume = volumeMatch ? volumeMatch[1] : null;
 
   const hasImage = item.image && !imageError;
+  const thumbSrc = imgVariant(item.image, 'sm');
+  const displaySrc = useFull || !thumbSrc ? item.image : thumbSrc;
 
   return (
     <>
@@ -56,11 +62,15 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
           <>
             {!imageLoaded && <MenuPlaceholder />}
             <img
-              src={item.image}
+              src={displaySrc}
               alt={displayName}
               className={`menu-item__image ${imageLoaded ? 'menu-item__image--loaded' : ''}`}
               onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
+              onError={() => {
+                // Thumbnail missing → retry the full image; then give up.
+                if (!useFull && thumbSrc && thumbSrc !== item.image) setUseFull(true);
+                else setImageError(true);
+              }}
               loading="lazy"
               decoding="async"
             />

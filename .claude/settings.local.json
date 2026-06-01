@@ -136,7 +136,16 @@
       "mcp__playwright__browser_network_requests",
       "mcp__playwright__browser_console_messages",
       "Bash(awk '/\\\\.menu-page__nav \\\\{/{f=1} f{print NR\": \"$0} f&&/\\\\}/{c++; if\\(c>=1 && /\\\\}/\\){f=0}}' src/pages/MenuPage.css)",
-      "PowerShell($c = Get-NetTCPConnection -LocalPort 5175 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { $c.OwningProcess | Select-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"Stopped dev server \\(5175\\)\" } else { \"No dev server on 5175\" })"
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 5175 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { $c.OwningProcess | Select-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"Stopped dev server \\(5175\\)\" } else { \"No dev server on 5175\" })",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(curl -s http://localhost:4173/menu)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type} size=%{size_download}\\\\n\" \"http://localhost:4173/data/menu/desserts/%D0%91%D1%80%D0%B0%D1%83%D0%BD%D0%B8-sm.webp\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type} size=%{size_download}\\\\n\" \"http://localhost:4173/data/menu/desserts/%D0%91%D1%80%D0%B0%D1%83%D0%BD%D0%B8.webp\")",
+      "Bash(pkill -f \"vite\")",
+      "Bash(pkill -f \"node scripts\")",
+      "Bash(rm -rf .playwright-mcp)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts|json|mjs\\)$\")",
+      "Bash(git checkout *)"
     ]
   }
 }
