@@ -137,6 +137,7 @@ export default function MenuPage() {
 
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
   const navRef = useRef<HTMLElement>(null);
+  const navSentinelRef = useRef<HTMLDivElement>(null);
   const navTrackRef = useRef<HTMLDivElement>(null);
   const isManualScroll = useRef(false);
 
@@ -289,18 +290,38 @@ export default function MenuPage() {
     };
   }, []);
 
-  // Nav shadow (only when truly sticky)
+  // Nav shadow (only when truly sticky) — detected with an IntersectionObserver
+  // rather than a scroll listener. The old handler called getComputedStyle().top
+  // and getBoundingClientRect() on every scroll frame, forcing a synchronous
+  // reflow each tick that fought Lenis's rAF loop. A zero-impact sentinel sits
+  // just above the nav; once it scrolls past the nav's sticky offset the nav is
+  // stuck. No per-frame layout work.
   useEffect(() => {
-    const handleScroll = () => {
-      const nav = navRef.current;
-      if (nav) {
-        const stickyTop = parseFloat(getComputedStyle(nav).top);
-        const navTop = nav.getBoundingClientRect().top;
-        setNavShadow(navTop <= stickyTop + 1);
-      }
+    const sentinel = navSentinelRef.current;
+    const nav = navRef.current;
+    if (!sentinel || !nav) return;
+
+    let observer: IntersectionObserver | null = null;
+    const setup = () => {
+      observer?.disconnect();
+      const stickyTop = parseFloat(getComputedStyle(nav).top) || 0;
+      observer = new IntersectionObserver(
+        // Stuck once the sentinel has scrolled above the nav's sticky line.
+        // (isIntersecting alone can't tell "above the viewport" — stuck — from
+        // "below the fold" — page top — since both are non-intersecting.)
+        ([entry]) => setNavShadow(entry.boundingClientRect.top < stickyTop),
+        { rootMargin: `-${Math.round(stickyTop)}px 0px 0px 0px`, threshold: 0 }
+      );
+      observer.observe(sentinel);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    setup();
+    // The sticky offset can change across breakpoints, so recompute on resize.
+    window.addEventListener('resize', setup);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', setup);
+    };
   }, []);
 
   // Toggle body class so header can swap styles when menu nav is stuck
@@ -436,6 +457,8 @@ export default function MenuPage() {
       </section>
 
       {/* ===== STICKY CATEGORY NAV ===== */}
+      {/* Sentinel for sticky-state detection (see nav shadow effect) */}
+      <div ref={navSentinelRef} className="menu-page__nav-sentinel" aria-hidden="true" />
       <nav
         ref={navRef}
         className={`menu-page__nav ${navShadow ? 'menu-page__nav--shadowed' : ''}`}

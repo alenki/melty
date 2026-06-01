@@ -318,6 +318,13 @@
 
 
 /* ===== STICKY CATEGORY NAVIGATION ===== */
+/* Zero-impact marker just above the sticky nav, observed to toggle the shadow. */
+.menu-page__nav-sentinel {
+  height: 1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
 .menu-page__nav {
   position: sticky;
   top: calc(0.75rem * 2 + 40px);

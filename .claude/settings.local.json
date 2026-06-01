@@ -134,7 +134,9 @@
       "PowerShell(npx vite build 2>&1 | Select-Object -Last 15; if \\($?\\) { \"VITE OK\" } else { \"VITE FAILED\" })",
       "PowerShell(npx vite preview --port 4173)",
       "mcp__playwright__browser_network_requests",
-      "mcp__playwright__browser_console_messages"
+      "mcp__playwright__browser_console_messages",
+      "Bash(awk '/\\\\.menu-page__nav \\\\{/{f=1} f{print NR\": \"$0} f&&/\\\\}/{c++; if\\(c>=1 && /\\\\}/\\){f=0}}' src/pages/MenuPage.css)",
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 5175 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { $c.OwningProcess | Select-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"Stopped dev server \\(5175\\)\" } else { \"No dev server on 5175\" })"
     ]
   }
 }
