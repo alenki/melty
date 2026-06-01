@@ -8,9 +8,11 @@ import './MenuItem.css';
 interface MenuItemProps {
   item: MenuItemType;
   index: number;
+  isSelected?: boolean;
+  onSelect?: () => void;
 }
 
-export default function MenuItem({ item, index }: MenuItemProps) {
+export default function MenuItem({ item, index, isSelected, onSelect }: MenuItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -33,14 +35,18 @@ export default function MenuItem({ item, index }: MenuItemProps) {
   return (
     <>
     <article
-      className="menu-item"
+      className={`menu-item ${isSelected ? 'menu-item--selected' : ''}`}
       style={{ '--animation-delay': `${index * 50}ms` } as React.CSSProperties}
-      onClick={() => setIsModalOpen(true)}
+      onClick={() => {
+        onSelect?.();
+        setIsModalOpen(true);
+      }}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          onSelect?.();
           setIsModalOpen(true);
         }
       }}

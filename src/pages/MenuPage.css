@@ -550,6 +550,14 @@
     0 1px 4px rgba(74, 44, 26, 0.06);
 }
 
+/* Highlight the featured card whose modal was opened — persists after close */
+.menu-page__featured--selected,
+.menu-page__featured--selected:hover {
+  box-shadow:
+    0 0 0 2px var(--orange),
+    0 12px 36px rgba(232, 90, 36, 0.16);
+}
+
 body.modal-open .menu-page__featured {
   pointer-events: none;
 }

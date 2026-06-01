@@ -28,6 +28,14 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* Highlight the last item whose modal was opened — persists after close */
+.menu-item--selected,
+.menu-item--selected:hover {
+  box-shadow:
+    0 0 0 2px var(--orange),
+    0 10px 30px rgba(232, 90, 36, 0.18);
+}
+
 body.modal-open .menu-item {
   pointer-events: none;
 }
@@ -37,6 +45,7 @@ body.modal-open .menu-item {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: var(--cream-warm);
+  transition: box-shadow var(--transition-normal);
 }
 
 .menu-item__image-placeholder,
@@ -150,6 +159,18 @@ body.modal-open .menu-item {
   .menu-item:hover {
     transform: none;
     box-shadow: none;
+  }
+
+  /* Card is transparent on mobile — put the highlight ring on the image */
+  .menu-item--selected,
+  .menu-item--selected:hover {
+    box-shadow: none;
+  }
+
+  .menu-item--selected .menu-item__image-wrapper {
+    box-shadow:
+      0 0 0 2.5px var(--orange),
+      0 6px 18px rgba(232, 90, 36, 0.22);
   }
 
   .menu-item__image-wrapper {

@@ -33,7 +33,7 @@ const categoryOrder: MenuCategory[] = [
   'soft-drinks',
 ];
 
-function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => void }) {
+function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onClick: () => void; isSelected?: boolean }) {
   const [imgError, setImgError] = useState(false);
   const hasImage = item.image && !imgError;
   const { language } = useLanguage();
@@ -51,7 +51,7 @@ function FeaturedCard({ item, onClick }: { item: MenuItemType; onClick: () => vo
 
   return (
     <article
-      className="menu-page__featured"
+      className={`menu-page__featured ${isSelected ? 'menu-page__featured--selected' : ''}`}
       onClick={onClick}
       role="button"
       tabIndex={0}
@@ -131,6 +131,7 @@ export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>(categoryOrder[0]);
   const [revealedSections, setRevealedSections] = useState<Set<string>>(new Set());
   const [featuredModalItem, setFeaturedModalItem] = useState<MenuItemType | null>(null);
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [navShadow, setNavShadow] = useState(false);
   const t = useTranslation();
 
@@ -499,14 +500,24 @@ export default function MenuPage() {
               {featuredItem && (
                 <FeaturedCard
                   item={featuredItem}
-                  onClick={() => setFeaturedModalItem(featuredItem)}
+                  isSelected={selectedItemId === featuredItem.id}
+                  onClick={() => {
+                    setSelectedItemId(featuredItem.id);
+                    setFeaturedModalItem(featuredItem);
+                  }}
                 />
               )}
 
               {/* Items Grid */}
               <div className="menu-page__items">
                 {gridItems.map((item, index) => (
-                  <MenuItem key={item.id} item={item} index={index} />
+                  <MenuItem
+                    key={item.id}
+                    item={item}
+                    index={index}
+                    isSelected={selectedItemId === item.id}
+                    onSelect={() => setSelectedItemId(item.id)}
+                  />
                 ))}
               </div>
 
