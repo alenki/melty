@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     if (isFirstLoad.current) {
       isFirstLoad.current = false;
-      const timer = setTimeout(() => setLoading(false), 800);
+      const timer = setTimeout(() => setLoading(false), 350);
       return () => clearTimeout(timer);
     }
     setLoading(true);

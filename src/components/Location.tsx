@@ -1,36 +1,19 @@
-import { useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import type { LatLngExpression } from 'leaflet';
-import { Icon } from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../i18n';
 import './Location.css';
 
-// Melty cafe coordinates
-const CAFE_COORDINATES: LatLngExpression = [43.472607, 43.579251];
+// Melty cafe coordinates (latitude, longitude).
+const CAFE_LAT = 43.472607;
+const CAFE_LON = 43.579251;
 
-// Fix for default Leaflet marker icon issue in bundlers
-// Create a simple SVG marker
-const createMarkerIcon = () => {
-  const svgIcon = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="32" height="48">
-      <path fill="#4A2C1A" d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z"/>
-      <circle fill="#F8F3ED" cx="12" cy="12" r="6"/>
-      <circle fill="#E85A24" cx="12" cy="12" r="3"/>
-    </svg>
-  `;
-
-  return new Icon({
-    iconUrl: `data:image/svg+xml;base64,${btoa(svgIcon)}`,
-    iconSize: [32, 48],
-    iconAnchor: [16, 48],
-    popupAnchor: [0, -48]
-  });
-};
+// Yandex.Maps embed (no API key required). Native to Russia and reliable for
+// Russian users, unlike the previous OpenStreetMap tiles which are frequently
+// throttled/slow inside Russia (hurting CWV + Yandex behavioral signals).
+// Yandex expects lon,lat order in the `ll` and `pt` parameters.
+const YANDEX_MAP_SRC =
+  `https://yandex.ru/map-widget/v1/?ll=${CAFE_LON}%2C${CAFE_LAT}` +
+  `&z=17&pt=${CAFE_LON}%2C${CAFE_LAT}%2Cpm2rdm`;
 
 export default function Location() {
-  // Create icon once using useMemo to avoid recreating on every render
-  const markerIcon = useMemo(() => createMarkerIcon(), []);
   const t = useTranslation();
 
   return (
@@ -49,26 +32,13 @@ export default function Location() {
 
         <div className="location__content">
           <div className="location__map-wrapper">
-            <MapContainer
-              center={CAFE_COORDINATES}
-              zoom={18}
-              scrollWheelZoom={false}
+            <iframe
+              src={YANDEX_MAP_SRC}
               className="location__map"
-              attributionControl={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={CAFE_COORDINATES} icon={markerIcon}>
-                <Popup>
-                  <div className="location__popup">
-                    <strong>Melty</strong>
-                    <span>{t.location.popupTagline}</span>
-                  </div>
-                </Popup>
-              </Marker>
-            </MapContainer>
+              title="Melty на Яндекс.Картах — ул. Героя России Т.М. Тамазова, 15, Нальчик"
+              loading="lazy"
+              allowFullScreen
+            />
           </div>
 
           <div className="location__info">

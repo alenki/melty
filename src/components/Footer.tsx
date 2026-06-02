@@ -26,7 +26,7 @@ export default function Footer() {
               <a href="#hero" className="footer__logo-link" aria-label={t.footer.toHome}>
                 <img
                   src="/data/logo.webp"
-                  alt="Melty"
+                  alt="Melty - кафе-кофейня в Нальчике"
                   className="footer__logo-img"
                 />
               </a>

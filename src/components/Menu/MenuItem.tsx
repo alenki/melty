@@ -64,6 +64,8 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
             <img
               src={displaySrc}
               alt={displayName}
+              width="600"
+              height="600"
               className={`menu-item__image ${imageLoaded ? 'menu-item__image--loaded' : ''}`}
               onLoad={() => setImageLoaded(true)}
               onError={() => {

@@ -18,6 +18,7 @@ export default function HomePage() {
     alternateName: 'Мелти',
     inLanguage: ['ru-RU', 'en-US'],
     publisher: { '@id': `${BASE_URL}/#organization` },
+    about: { '@id': `${BASE_URL}/#restaurant` },
     potentialAction: {
       '@type': 'SearchAction',
       target: {
@@ -127,7 +128,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Melty | кафе-кофейня в Нальчике"
-        description="Melty - уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и кофе. Работаем ежедневно 08:00-23:00."
+        description="Melty - уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, крепы, панкейки, вафли, завтраки и кофе. Ежедневно 08:00-23:00."
         path="/"
         jsonLd={[websiteSchema, organizationSchema, faqSchema]}
       />

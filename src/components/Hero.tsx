@@ -64,6 +64,9 @@ export default function Hero() {
             src="/data/logo_dark.webp"
             alt="Melty - кафе-кофейня в Нальчике"
             className="hero__logo"
+            width="1000"
+            height="458"
+            fetchPriority="high"
           />
         </div>
 

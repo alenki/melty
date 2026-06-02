@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback, Fragment } from 'react';
-import { menuItems } from '../data/menu';
+import { menuItems, categoryLabels } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
 import { useTranslation, useMenuTranslation, useLanguage } from '../i18n';
 import MenuItem from '../components/Menu/MenuItem';
@@ -33,6 +33,53 @@ const categoryOrder: MenuCategory[] = [
   'leaf-teas',
   'soft-drinks',
 ];
+
+const SITE_URL = 'https://melty-cafe.ru';
+
+// Full Menu schema with priced MenuItems, generated from the real menu data.
+// Google & Yandex render this for menu rich results and the "see menu"
+// knowledge-panel action. Built once at module scope (depends only on static
+// data). Emitted only on /menu so the extra weight stays off other pages.
+const MENU_SCHEMA: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Menu',
+  '@id': `${SITE_URL}/menu#menu`,
+  name: 'Меню кафе Melty',
+  description:
+    'Полное меню кафе Melty в Нальчике: завтраки, салаты, супы, горячие блюда, крепы, вафли, шоколадные десерты, авторский кофе и лимонады.',
+  inLanguage: 'ru-RU',
+  url: `${SITE_URL}/menu`,
+  provider: { '@id': `${SITE_URL}/#restaurant` },
+  hasMenuSection: categoryOrder
+    .map((cat) => {
+      const items = menuItems.filter((item) => item.category === cat);
+      if (items.length === 0) return null;
+      return {
+        '@type': 'MenuSection',
+        name: categoryLabels[cat],
+        hasMenuItem: items.map((item) => {
+          const makeOffer = (price: number) => ({
+            '@type': 'Offer',
+            price,
+            priceCurrency: 'RUB',
+            availability: 'https://schema.org/InStock',
+          });
+          const offers = item.priceLarge
+            ? [makeOffer(item.price), makeOffer(item.priceLarge)]
+            : makeOffer(item.price);
+          const menuItem: Record<string, unknown> = {
+            '@type': 'MenuItem',
+            name: item.name,
+            offers,
+          };
+          if (item.description) menuItem.description = item.description;
+          if (item.image) menuItem.image = `${SITE_URL}${encodeURI(item.image)}`;
+          return menuItem;
+        }),
+      };
+    })
+    .filter(Boolean),
+};
 
 function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onClick: () => void; isSelected?: boolean }) {
   const [imgError, setImgError] = useState(false);
@@ -108,33 +155,6 @@ export default function MenuPage() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
       { '@type': 'ListItem', position: 2, name: 'Меню', item: 'https://melty-cafe.ru/menu' },
-    ],
-  };
-
-  // Full Menu schema - Google uses this for menu rich results and the
-  // "see menu" knowledge-panel action. Sections are derived from real data.
-  const menuSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Menu',
-    '@id': 'https://melty-cafe.ru/menu#menu',
-    name: 'Меню кафе Melty',
-    description:
-      'Полное меню кафе Melty в Нальчике: завтраки, салаты, супы, горячие блюда, крепы, вафли, шоколадные десерты, авторский кофе и лимонады.',
-    inLanguage: 'ru-RU',
-    url: 'https://melty-cafe.ru/menu',
-    provider: { '@id': 'https://melty-cafe.ru/#restaurant' },
-    hasMenuSection: [
-      { '@type': 'MenuSection', name: 'Завтраки', description: 'Каши, эгг-роллы, омлеты и круассаны с 08:00' },
-      { '@type': 'MenuSection', name: 'Салаты', description: 'Сезонные и классические салаты' },
-      { '@type': 'MenuSection', name: 'Супы', description: 'Горячие супы дня' },
-      { '@type': 'MenuSection', name: 'Горячие блюда', description: 'Блюда из мяса, птицы и рыбы' },
-      { '@type': 'MenuSection', name: 'Крепы', description: 'Французские блинчики, сладкие и солёные' },
-      { '@type': 'MenuSection', name: 'Вафли и круассаны', description: 'Бельгийские вафли и свежие круассаны' },
-      { '@type': 'MenuSection', name: 'Шоколадные десерты', description: 'Авторские десерты из бельгийского шоколада' },
-      { '@type': 'MenuSection', name: 'Кофе', description: 'Классический, холодный и авторский кофе' },
-      { '@type': 'MenuSection', name: 'Лимонады и мохито', description: 'Домашние лимонады и безалкогольные мохито' },
-      { '@type': 'MenuSection', name: 'Смузи и фреши', description: 'Свежевыжатые соки и фруктовые смузи' },
-      { '@type': 'MenuSection', name: 'Чай', description: 'Авторские и листовые чаи' },
     ],
   };
 
@@ -376,11 +396,11 @@ export default function MenuPage() {
   return (
     <div className="menu-page">
       <SEO
-        title="Меню | Melty"
-        description="Полное меню кафе Melty в Нальчике: завтраки, шоколадные десерты, авторские крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00-23:00."
+        title="Меню кафе Melty в Нальчике | Цены и описания"
+        description="Меню кафе Melty в Нальчике: завтраки, шоколадные десерты, крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00-23:00."
         path="/menu"
         keywords="меню кафе Нальчик, меню Melty, завтраки Нальчик, десерты Нальчик, крепы Нальчик, кофе Нальчик, панкейки, вафли, шоколадные десерты, цены кафе Нальчик"
-        jsonLd={[breadcrumb, menuSchema]}
+        jsonLd={[breadcrumb, MENU_SCHEMA]}
       />
       {/* ===== HERO ===== */}
       <section className="menu-page__hero">

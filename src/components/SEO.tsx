@@ -16,7 +16,7 @@ interface SEOProps {
 const BASE_URL = 'https://melty-cafe.ru';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/data/melty.webp`;
 const DEFAULT_KEYWORDS =
-  'кафе Нальчик, кофейня Нальчик, Melty, Мелти, десерты Нальчик, завтраки Нальчик, крепы, панкейки, вафли, шоколадные десерты, кафе на Тамазова, где поесть в Нальчике, лучшие кафе Нальчика';
+  'кафе Нальчик, кофейня Нальчик, Melty, десерты, крепы, панкейки, вафли, авторский кофе';
 
 /**
  * Restaurant / LocalBusiness schema that is emitted on every page so search
@@ -32,6 +32,9 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   description:
     'Melty - уютное кафе-кофейня в Нальчике. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и напитки. Ежедневно 08:00-23:00.',
   url: BASE_URL,
+  // Tie the Restaurant entity into the @id graph so Yandex/Google consolidate
+  // it with the Organization (#organization) and WebSite (#website) entities.
+  parentOrganization: { '@id': `${BASE_URL}/#organization` },
   telephone: '+7-988-939-90-00',
   email: 'hello@melty-cafe.ru',
   image: [
@@ -151,7 +154,7 @@ export default function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:height" content="1200" />
       <meta property="og:image:alt" content="Melty - кафе-кофейня в Нальчике" />
       <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="ru_RU" />

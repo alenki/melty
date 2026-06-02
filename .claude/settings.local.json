@@ -145,7 +145,13 @@
       "Bash(pkill -f \"node scripts\")",
       "Bash(rm -rf .playwright-mcp)",
       "Bash(grep -E \"\\\\.\\(tsx|ts|json|mjs\\)$\")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(grep -E \"^\\(cyrillic|latin\\)-[0-9]+\\\\.css$\")",
+      "Bash(grep -E \"^\\(cyrillic|latin\\)-[0-9]+\\(-italic\\)?\\\\.css$\")",
+      "Bash(grep -E \"\\\\.\\(tsx?|css|html|toml|mjs|json|gitignore\\)$|fonts.css|generate-sitemap|\\\\.htaccess|^.M|^.D|^\\\\?\\\\?\")",
+      "Bash(grep -E \"^[0-9]+\\(-italic\\)?\\\\.css$\")",
+      "Bash(rm -f menu-prices.png ruble-fixed.png)"
     ]
   }
 }

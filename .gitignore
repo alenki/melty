@@ -1,3 +1,6 @@
+# Leftover image-optimization temp files
+*.tmp*.webp
+
 # Logs
 logs
 *.log

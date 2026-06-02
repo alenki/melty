@@ -248,7 +248,7 @@ export default function GalleryPage() {
   return (
     <div className="gallery-page">
       <SEO
-        title="Галерея | Melty"
+        title="Галерея Melty в Нальчике | Фото десертов и зала"
         description="Галерея кафе Melty в Нальчике: фотографии интерьера, десертов, крепов, вафель и уютной атмосферы. Загляните - и вам захочется прийти."
         path="/gallery"
         keywords="фото кафе Нальчик, интерьер кафе Melty, фото десертов Нальчик, атмосфера кафе Нальчик, Melty фотографии"

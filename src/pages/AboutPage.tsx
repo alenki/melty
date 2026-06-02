@@ -125,7 +125,7 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       <SEO
-        title="О нас | Melty"
+        title="О кафе Melty в Нальчике | Наша история и философия"
         description="О кафе Melty в Нальчике: как мы создаём мир вкуса и уюта, почему выбираем лучший бельгийский шоколад и как наша атмосфера делает каждый визит особенным."
         path="/about"
         keywords="Melty Нальчик, о кафе Melty, история кафе, шоколадное кафе Нальчик, атмосферное кафе Нальчик"
@@ -297,7 +297,7 @@ export default function AboutPage() {
         <div className="about-page__yours-inner">
           <img
             src="/data/logo_dark.webp"
-            alt="Melty"
+            alt="Melty - кафе-кофейня в Нальчике"
             className="about-page__yours-logo"
           />
 

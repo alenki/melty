@@ -1,0 +1,31 @@
+/* Self-hosted fonts via @fontsource. Replaces the render-blocking Google Fonts
+   CDN request (fonts.googleapis.com), which is slow/intermittently blocked
+   inside Russia and hurts LCP for the Yandex audience. Montserrat was dropped
+   (it was unused in the codebase).
+
+   These are the FULL per-weight stylesheets: each one declares every subset
+   (latin, latin-ext, cyrillic, cyrillic-ext, vietnamese) with its own
+   `unicode-range`, so the browser downloads ONLY the subsets it actually needs
+   — for this site: latin + cyrillic, plus latin-ext (which contains the ₽
+   ruble sign, U+20BD). Do NOT swap these for the per-subset files
+   (e.g. cyrillic-400.css): those omit `unicode-range`, so importing several
+   collides in the cascade and drops glyphs like ₽ and Cyrillic.
+   All faces use font-display: swap. */
+
+/* ---- Nunito (body, --font-sans) ---- */
+@import '@fontsource/nunito/300.css';
+@import '@fontsource/nunito/400.css';
+@import '@fontsource/nunito/500.css';
+@import '@fontsource/nunito/600.css';
+@import '@fontsource/nunito/700.css';
+
+/* ---- Cormorant Garamond (headings + prices, --font-serif) — normal ---- */
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+
+/* ---- Cormorant Garamond — italic (pull-quotes, prices) ---- */
+@import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/cormorant-garamond/500-italic.css';
+@import '@fontsource/cormorant-garamond/600-italic.css';

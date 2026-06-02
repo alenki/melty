@@ -120,8 +120,8 @@ async function prerender() {
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle0' });
 
-    // Wait for loading screen to finish (800ms first load + transition)
-    await new Promise((r) => setTimeout(r, 2000));
+    // Wait for the loading screen to finish (350ms first load + transition)
+    await new Promise((r) => setTimeout(r, 1000));
 
     let html = await page.content();
     await page.close();
