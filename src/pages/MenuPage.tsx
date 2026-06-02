@@ -18,6 +18,7 @@ const categoryOrder: MenuCategory[] = [
   'sides',
   'crepes',
   'waffles-croissants',
+  'savory-waffles',
   'chocolate-desserts',
   'chocolate-cups',
   'melty-desserts',
@@ -407,7 +408,7 @@ export default function MenuPage() {
   return (
     <div className="menu-page">
       <SEO
-        title="Меню кафе Melty в Нальчике | Цены и описания"
+        title="Меню | Melty"
         description="Меню кафе Melty в Нальчике: завтраки, шоколадные десерты, крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00-23:00."
         path="/menu"
         keywords="меню кафе Нальчик, меню Melty, завтраки Нальчик, десерты Нальчик, крепы Нальчик, кофе Нальчик, панкейки, вафли, шоколадные десерты, цены кафе Нальчик"
