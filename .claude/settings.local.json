@@ -151,7 +151,9 @@
       "Bash(grep -E \"^\\(cyrillic|latin\\)-[0-9]+\\(-italic\\)?\\\\.css$\")",
       "Bash(grep -E \"\\\\.\\(tsx?|css|html|toml|mjs|json|gitignore\\)$|fonts.css|generate-sitemap|\\\\.htaccess|^.M|^.D|^\\\\?\\\\?\")",
       "Bash(grep -E \"^[0-9]+\\(-italic\\)?\\\\.css$\")",
-      "Bash(rm -f menu-prices.png ruble-fixed.png)"
+      "Bash(rm -f menu-prices.png ruble-fixed.png)",
+      "Bash(sed 's/.*\\\\.//')",
+      "Bash(awk '{printf \"%.0f KB  %s\\\\n\", $1/1024, $2}')"
     ]
   }
 }

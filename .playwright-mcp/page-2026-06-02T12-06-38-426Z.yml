@@ -1,0 +1,114 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "На главную" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Melty - кафе-кофейня в Нальчике" [ref=e6]
+      - navigation [ref=e7]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: /
+          - text: Главная
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /menu
+          - text: Меню
+        - link [ref=e10] [cursor=pointer]:
+          - /url: /gallery
+          - text: Галерея
+        - link [ref=e11] [cursor=pointer]:
+          - /url: /about
+          - text: О нас
+        - link [ref=e12] [cursor=pointer]:
+          - /url: /feedback
+          - text: Обратная связь
+      - generic [ref=e13]:
+        - button "RU" [ref=e14] [cursor=pointer]
+        - generic [ref=e15]: "|"
+        - button "EN" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - img
+        - img
+        - generic [ref=e23]:
+          - generic [ref=e24]: 33 фотографий
+          - heading "Галерея" [level=1] [ref=e25]
+          - paragraph [ref=e30]: Загляните в атмосферу нашего кафе
+          - generic [ref=e31]:
+            - generic [ref=e32]: листайте вниз
+            - img [ref=e33]
+      - generic [ref=e36]:
+        - img "Десерт Melty" [ref=e38] [cursor=pointer]
+        - img "Интерьер кафе" [ref=e40] [cursor=pointer]
+        - img "Шоколадный десерт" [ref=e42] [cursor=pointer]
+        - img "Авторский десерт" [ref=e44] [cursor=pointer]
+        - img "Уютная зона" [ref=e46] [cursor=pointer]
+        - img "Сладкая подача" [ref=e48] [cursor=pointer]
+        - generic [ref=e49]:
+          - generic [ref=e50]: "\""
+          - paragraph [ref=e51]: Шоколад - это не просто вкус. Это тёплое объятие, застывшее в каждом кусочке.
+        - img "Наши изделия" [ref=e53] [cursor=pointer]
+        - img "Десерт с шоколадом" [ref=e55] [cursor=pointer]
+        - img "Фирменное блюдо" [ref=e57] [cursor=pointer]
+        - img "Атмосфера кафе" [ref=e59] [cursor=pointer]
+        - img "Шоколадное ассорти" [ref=e61] [cursor=pointer]
+        - img "Ручная работа" [ref=e63] [cursor=pointer]
+        - img "Десерт на тарелке" [ref=e65] [cursor=pointer]
+        - img "Тёплое освещение" [ref=e67] [cursor=pointer]
+        - img "Креп с начинкой" [ref=e69] [cursor=pointer]
+        - img "Шоколадные конфеты" [ref=e71] [cursor=pointer]
+        - img "Детали интерьера" [ref=e73] [cursor=pointer]
+        - img "Авторская подача" [ref=e75] [cursor=pointer]
+        - generic [ref=e76]:
+          - generic [ref=e77]: "\""
+          - paragraph [ref=e78]: Уют - это когда за окном дождь, а у тебя в руках горячая чашка и шоколадный десерт.
+        - img "Горячий шоколад" [ref=e80] [cursor=pointer]
+        - img "Зона отдыха" [ref=e82] [cursor=pointer]
+        - img "Завтрак в Melty" [ref=e84] [cursor=pointer]
+        - img "Подарочный набор" [ref=e86] [cursor=pointer]
+        - img "Десерт крупным планом" [ref=e88] [cursor=pointer]
+        - img "Вид на зал" [ref=e90] [cursor=pointer]
+        - img "Шоколадный торт" [ref=e92] [cursor=pointer]
+        - img "Авторские изделия" [ref=e94] [cursor=pointer]
+        - img "Уголок кафе" [ref=e96] [cursor=pointer]
+        - img "Коллекция сладостей" [ref=e98] [cursor=pointer]
+        - img "Шоколадная плитка" [ref=e100] [cursor=pointer]
+        - img "Трюфели" [ref=e102] [cursor=pointer]
+        - generic [ref=e103]:
+          - generic [ref=e104]: "\""
+          - paragraph [ref=e105]: Лучшие моменты начинаются с аромата свежего кофе и кусочка счастья на тарелке.
+        - img "Десертная витрина" [ref=e107] [cursor=pointer]
+        - img "Изысканный десерт" [ref=e109] [cursor=pointer]
+        - img "Вечерняя атмосфера" [ref=e111] [cursor=pointer]
+  - contentinfo [ref=e112]:
+    - img [ref=e114]
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - link "На главную" [ref=e120] [cursor=pointer]:
+            - /url: "#hero"
+            - img "Melty - кафе-кофейня в Нальчике" [ref=e121]
+          - paragraph [ref=e122]: Мир вкуса и уюта
+        - generic [ref=e124]:
+          - paragraph [ref=e125]: Адрес
+          - paragraph [ref=e126]: ул. Героя России Т.М. Тамазова, 15
+          - generic [ref=e127]:
+            - img [ref=e128]
+            - text: Нальчик
+        - generic [ref=e135]:
+          - paragraph [ref=e136]: Мы в соцсетях
+          - link "@melty.ru" [ref=e137] [cursor=pointer]:
+            - /url: https://instagram.com/melty.ru
+            - img [ref=e138]
+            - generic [ref=e141]: "@melty.ru"
+          - link "+7 (988) 939-90-00" [ref=e142] [cursor=pointer]:
+            - /url: tel:+79889399000
+            - img [ref=e143]
+            - generic [ref=e145]: +7 (988) 939-90-00
+          - link "Оставить отзыв" [ref=e146] [cursor=pointer]:
+            - /url: /feedback
+      - generic [ref=e147]:
+        - paragraph [ref=e148]: © 2026 Melty
+        - link "made by KARAF" [ref=e149] [cursor=pointer]:
+          - /url: https://karafco.ru
+          - generic [ref=e150]: made by
+          - generic [ref=e151]: KARAF

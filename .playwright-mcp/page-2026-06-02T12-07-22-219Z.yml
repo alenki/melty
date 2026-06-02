@@ -1,0 +1,62 @@
+- generic [ref=e2]:
+  - img "Melty" [ref=e6]
+  - banner [ref=e7]:
+    - generic [ref=e8]:
+      - link "На главную" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img "Melty - кафе-кофейня в Нальчике" [ref=e10]
+      - navigation [ref=e11]:
+        - link [ref=e12] [cursor=pointer]:
+          - /url: /
+          - text: Главная
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /menu
+          - text: Меню
+        - link [ref=e14] [cursor=pointer]:
+          - /url: /gallery
+          - text: Галерея
+        - link [ref=e15] [cursor=pointer]:
+          - /url: /about
+          - text: О нас
+        - link [ref=e16] [cursor=pointer]:
+          - /url: /feedback
+          - text: Обратная связь
+      - generic [ref=e17]:
+        - button "RU" [ref=e18] [cursor=pointer]
+        - generic [ref=e19]: "|"
+        - button "EN" [ref=e20] [cursor=pointer]
+  - main [ref=e21]:
+    - img "Melty" [ref=e25]
+  - contentinfo [ref=e26]:
+    - img [ref=e28]
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - link "На главную" [ref=e34] [cursor=pointer]:
+            - /url: "#hero"
+            - img "Melty - кафе-кофейня в Нальчике" [ref=e35]
+          - paragraph [ref=e36]: Мир вкуса и уюта
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Адрес
+          - paragraph [ref=e40]: ул. Героя России Т.М. Тамазова, 15
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - text: Нальчик
+        - generic [ref=e49]:
+          - paragraph [ref=e50]: Мы в соцсетях
+          - link "@melty.ru" [ref=e51] [cursor=pointer]:
+            - /url: https://instagram.com/melty.ru
+            - img [ref=e52]
+            - generic [ref=e55]: "@melty.ru"
+          - link "+7 (988) 939-90-00" [ref=e56] [cursor=pointer]:
+            - /url: tel:+79889399000
+            - img [ref=e57]
+            - generic [ref=e59]: +7 (988) 939-90-00
+          - link "Оставить отзыв" [ref=e60] [cursor=pointer]:
+            - /url: /feedback
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: © 2026 Melty
+        - link "made by KARAF" [ref=e63] [cursor=pointer]:
+          - /url: https://karafco.ru
+          - generic [ref=e64]: made by
+          - generic [ref=e65]: KARAF

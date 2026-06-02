@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import type { MenuItem as MenuItemType } from '../../data/menu';
 import { useMenuTranslation, useLanguage } from '../../i18n';
 import { imgVariant } from '../../utils/images';
@@ -10,10 +10,11 @@ interface MenuItemProps {
   item: MenuItemType;
   index: number;
   isSelected?: boolean;
-  onSelect?: () => void;
+  /** Stable callback (passed item id) so this component can be memoized. */
+  onSelect?: (id: string) => void;
 }
 
-export default function MenuItem({ item, index, isSelected, onSelect }: MenuItemProps) {
+function MenuItem({ item, index, isSelected, onSelect }: MenuItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -44,7 +45,7 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
       className={`menu-item ${isSelected ? 'menu-item--selected' : ''}`}
       style={{ '--animation-delay': `${index * 50}ms` } as React.CSSProperties}
       onClick={() => {
-        onSelect?.();
+        onSelect?.(item.id);
         setIsModalOpen(true);
       }}
       role="button"
@@ -52,7 +53,7 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          onSelect?.();
+          onSelect?.(item.id);
           setIsModalOpen(true);
         }
       }}
@@ -100,3 +101,8 @@ export default function MenuItem({ item, index, isSelected, onSelect }: MenuItem
     </>
   );
 }
+
+// Memoized so the menu's reveal / scroll-spy state changes (which re-render the
+// MenuPage root) don't reconcile all 126 cards every time. Props are stable per
+// item except `isSelected`, which only flips for the one selected card.
+export default memo(MenuItem);

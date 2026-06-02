@@ -342,7 +342,9 @@
   height: auto;
   object-fit: cover;
   transform: scale(1.25);
-  will-change: transform;
+  /* will-change is toggled in JS only while a photo is in the viewport during
+     scroll (see GalleryPage.tsx parallax effect) — keeping it on permanently
+     would pin all ~33 images as live GPU layers at rest. */
 }
 
 /* Aspect ratio hints for visual variety */

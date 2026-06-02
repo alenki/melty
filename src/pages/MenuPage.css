@@ -472,7 +472,6 @@
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
 .menu-page__category--revealed .menu-page__category-header {
@@ -543,7 +542,6 @@
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
               box-shadow var(--transition-normal);
-  will-change: opacity, transform;
 }
 
 .menu-page__category--revealed .menu-page__featured {
@@ -703,7 +701,6 @@ body.modal-open .menu-page__featured {
   transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow var(--transition-normal);
-  will-change: opacity, transform;
 }
 
 /* Staggered reveal when category enters viewport */

@@ -121,27 +121,72 @@ export default function GalleryPage() {
     return () => observer.disconnect();
   }, []);
 
-  // Parallax scroll effect for photo images
+  // Parallax scroll effect for photo images.
+  //
+  // Perf: the rAF loop NEVER calls getBoundingClientRect()/querySelector. Doing
+  // that per frame forced a synchronous layout on every card each tick and
+  // fought Lenis's own rAF, which is what made fast scrolling through the
+  // image-heavy masonry stutter. Instead we measure each photo's document-
+  // relative top ONCE (and on resize), then derive the parallax offset from a
+  // single window.scrollY read per frame — pure arithmetic, zero layout reads.
+  // will-change is applied only to photos currently in the viewport and released
+  // when they leave or when scrolling stops, so we never keep 33 GPU layers
+  // promoted at rest.
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    const updateParallax = () => {
-      const vh = window.innerHeight;
+    type ParallaxEntry = {
+      img: HTMLElement;
+      docTop: number;
+      height: number;
+      active: boolean;
+      lastOffset: number;
+    };
+    let entries: ParallaxEntry[] = [];
+
+    // One batched layout read: cache each photo card's geometry in document
+    // coordinates (transform-independent enough — card boxes are aspect-ratio
+    // sized, so they don't shift when the lazy image decodes).
+    const measure = () => {
+      const scrollY = window.scrollY;
+      const next: ParallaxEntry[] = [];
       cardRefs.current.forEach((el) => {
         const img = el.querySelector('.gallery-page__photo-img') as HTMLElement | null;
-        if (!img) return;
-
+        if (!img) return; // quote cards have no image — no parallax
         const rect = el.getBoundingClientRect();
-        if (rect.bottom < -200 || rect.top > vh + 200) return;
-
-        // 0 = entering from bottom, 1 = leaving at top
-        const progress = (vh - rect.top) / (vh + rect.height);
-        const clamped = Math.max(0, Math.min(1, progress));
-        const strength = vh < 768 ? 10 : 50;
-        const offset = (clamped - 0.5) * strength;
-        img.style.transform = `scale(1.25) translateY(${offset}px)`;
+        next.push({ img, docTop: rect.top + scrollY, height: rect.height, active: false, lastOffset: NaN });
       });
+      entries = next;
+    };
+
+    const updateParallax = () => {
+      const vh = window.innerHeight;
+      const scrollY = window.scrollY;
+      const strength = vh < 768 ? 10 : 50;
+      for (let i = 0; i < entries.length; i++) {
+        const e = entries[i];
+        const top = e.docTop - scrollY; // viewport-relative, no layout read
+        if (top + e.height < -200 || top > vh + 200) {
+          if (e.active) {
+            e.img.style.willChange = 'auto';
+            e.active = false;
+          }
+          continue;
+        }
+        if (!e.active) {
+          e.img.style.willChange = 'transform';
+          e.active = true;
+        }
+        // 0 = entering from bottom, 1 = leaving at top
+        const progress = (vh - top) / (vh + e.height);
+        const clamped = progress < 0 ? 0 : progress > 1 ? 1 : progress;
+        const offset = Math.round((clamped - 0.5) * strength);
+        if (offset !== e.lastOffset) {
+          e.img.style.transform = `scale(1.25) translateY(${offset}px)`;
+          e.lastOffset = offset;
+        }
+      }
     };
 
     // Only run rAF while scrolling - stop after idle to save CPU
@@ -162,6 +207,13 @@ export default function GalleryPage() {
         cancelAnimationFrame(rafId);
         rafId = null;
       }
+      // Release GPU layers when idle — no need to keep them promoted at rest.
+      for (let i = 0; i < entries.length; i++) {
+        if (entries[i].active) {
+          entries[i].img.style.willChange = 'auto';
+          entries[i].active = false;
+        }
+      }
     };
 
     const onScroll = () => {
@@ -170,16 +222,33 @@ export default function GalleryPage() {
       stopTimer = setTimeout(stopLoop, 200);
     };
 
+    // Column-count / widths change across breakpoints, so re-measure on resize
+    // (coalesced to one rAF) rather than reading layout every frame.
+    let resizeRaf: number | null = null;
+    const onResize = () => {
+      if (resizeRaf !== null) return;
+      resizeRaf = requestAnimationFrame(() => {
+        resizeRaf = null;
+        measure();
+        updateParallax();
+      });
+    };
+
+    measure();
+    updateParallax(); // initial position
+
     window.addEventListener('scroll', onScroll, { passive: true });
     // Also listen to Lenis if available
     window.lenis?.on('scroll', onScroll);
-    updateParallax(); // initial position
+    window.addEventListener('resize', onResize);
 
     return () => {
       stopLoop();
       clearTimeout(stopTimer);
+      if (resizeRaf !== null) cancelAnimationFrame(resizeRaf);
       window.removeEventListener('scroll', onScroll);
       window.lenis?.off('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
     };
   }, []);
 

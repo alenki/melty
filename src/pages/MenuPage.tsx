@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback, Fragment } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback, memo, Fragment } from 'react';
 import { menuItems, categoryLabels } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
 import { useTranslation, useMenuTranslation, useLanguage } from '../i18n';
@@ -81,7 +81,7 @@ const MENU_SCHEMA: Record<string, unknown> = {
     .filter(Boolean),
 };
 
-function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onClick: () => void; isSelected?: boolean }) {
+const FeaturedCard = memo(function FeaturedCard({ item, onSelect, isSelected }: { item: MenuItemType; onSelect: (item: MenuItemType) => void; isSelected?: boolean }) {
   const [imgError, setImgError] = useState(false);
   // Featured cards render at ~530px — the medium variant is plenty and cuts
   // the decoded bitmap ~4x vs the full image. Fall back to full if missing.
@@ -105,13 +105,13 @@ function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onCli
   return (
     <article
       className={`menu-page__featured ${isSelected ? 'menu-page__featured--selected' : ''}`}
-      onClick={onClick}
+      onClick={() => onSelect(item)}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          onClick();
+          onSelect(item);
         }
       }}
     >
@@ -146,7 +146,7 @@ function FeaturedCard({ item, onClick, isSelected }: { item: MenuItemType; onCli
       </div>
     </article>
   );
-}
+});
 
 export default function MenuPage() {
   const breadcrumb = {
@@ -170,6 +170,14 @@ export default function MenuPage() {
   const navSentinelRef = useRef<HTMLDivElement>(null);
   const navTrackRef = useRef<HTMLDivElement>(null);
   const isManualScroll = useRef(false);
+
+  // Stable callbacks so memoized MenuItem / FeaturedCard children don't
+  // re-render when scroll-spy / reveal state changes the MenuPage root.
+  const handleSelect = useCallback((id: string) => setSelectedItemId(id), []);
+  const handleFeaturedSelect = useCallback((item: MenuItemType) => {
+    setSelectedItemId(item.id);
+    setFeaturedModalItem(item);
+  }, []);
 
   // Group items by category
   const itemsByCategory = useMemo(() => {
@@ -214,7 +222,10 @@ export default function MenuPage() {
           if (entry.isIntersecting) {
             const cat = entry.target.getAttribute('data-category');
             if (cat) {
-              setRevealedSections((prev) => new Set(prev).add(cat));
+              // Skip the state update (and the resulting re-render) once a
+              // section is already revealed — otherwise every threshold cross
+              // while scrolling re-renders the whole page.
+              setRevealedSections((prev) => (prev.has(cat) ? prev : new Set(prev).add(cat)));
             }
           }
         });
@@ -554,10 +565,7 @@ export default function MenuPage() {
                 <FeaturedCard
                   item={featuredItem}
                   isSelected={selectedItemId === featuredItem.id}
-                  onClick={() => {
-                    setSelectedItemId(featuredItem.id);
-                    setFeaturedModalItem(featuredItem);
-                  }}
+                  onSelect={handleFeaturedSelect}
                 />
               )}
 
@@ -569,7 +577,7 @@ export default function MenuPage() {
                     item={item}
                     index={index}
                     isSelected={selectedItemId === item.id}
-                    onSelect={() => setSelectedItemId(item.id)}
+                    onSelect={handleSelect}
                   />
                 ))}
               </div>
