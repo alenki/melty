@@ -55,16 +55,33 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
     if (isOpen) setCurrentSlide(0);
   }, [isOpen, item.id]);
 
-  // Scroll lock effect
+  // Scroll lock effect.
+  // Hiding the page's overflow removes its scrollbar, which would otherwise
+  // reflow the layout (and let the browser's scroll-anchoring nudge the page
+  // down/up) on open and reverse it on close — the "scrolls a bit, then goes
+  // back" jump. Reserving the scrollbar's width as padding keeps content fixed.
+  // (Note: we deliberately do NOT call lenis.stop() — Lenis's stop adds its own
+  // uncompensated overflow lock that itself shifts the scroll a few px. With
+  // overflow hidden + the data-lenis-prevent overlay, Lenis stays put anyway.)
   useEffect(() => {
     if (!isOpen) return;
 
+    const scrollbarWidth = Math.max(
+      window.innerWidth - document.documentElement.clientWidth,
+      window.innerWidth - document.body.clientWidth,
+      0
+    );
+    const prevPaddingRight = document.body.style.paddingRight;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
 
     return () => {
       document.body.classList.remove('modal-open');
       document.body.style.overflow = '';
+      document.body.style.paddingRight = prevPaddingRight;
     };
   }, [isOpen]);
 

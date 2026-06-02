@@ -5,13 +5,12 @@ html.modal-open {
   position: relative !important;
 }
 
-/* Blur the entire page behind the modal (covers area behind browser chrome too) */
-body.modal-open > #root {
-  filter: blur(12px);
-  -webkit-filter: blur(12px);
-}
-
-/* Modal Overlay - Deep chocolate backdrop */
+/* Modal Overlay - Deep chocolate backdrop.
+   The frosted look comes from blurring the page *behind* this fixed overlay
+   via backdrop-filter — which only rasterizes the viewport-sized area. The
+   previous approach put `filter: blur()` on #root, forcing the browser to
+   rasterize and blur the entire (~30,000px tall) page every open, which
+   stalled the main thread for several frames (the "lag"). */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -20,7 +19,9 @@ body.modal-open > #root {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: transparent;
+  background: rgba(37, 21, 16, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   animation: modalOverlayIn 0.25s ease-out;
   overscroll-behavior: none;
   touch-action: none;
