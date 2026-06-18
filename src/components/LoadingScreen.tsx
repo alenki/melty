@@ -6,20 +6,26 @@ interface LoadingScreenProps {
 }
 
 function LoadingScreen({ isLoading }: LoadingScreenProps) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(isLoading);
+  const [wasLoading, setWasLoading] = useState(isLoading);
 
+  // Re-show during render the moment isLoading flips back to true (React's
+  // "adjust state on prop change" pattern), so the loader is mounted in the same
+  // commit — no flash before an effect could run.
+  if (isLoading !== wasLoading) {
+    setWasLoading(isLoading);
+    if (isLoading) setVisible(true);
+  }
+
+  // The loader normally unmounts via the opacity transitionend handler below.
+  // But under prefers-reduced-motion the transition is ~0ms, and a backgrounded
+  // tab (or engines that skip sub-frame transitions) may never fire the event —
+  // leaving the overlay mounted forever. This fallback guarantees it is removed.
   useEffect(() => {
-    if (isLoading) {
-      setVisible(true);
-      window.lenis?.stop();
-    } else {
-      window.lenis?.start();
-    }
-
-    return () => {
-      window.lenis?.start();
-    };
-  }, [isLoading]);
+    if (isLoading || !visible) return;
+    const t = setTimeout(() => setVisible(false), 700);
+    return () => clearTimeout(t);
+  }, [isLoading, visible]);
 
   if (!visible) return null;
 

@@ -29,8 +29,11 @@ const DRY = process.argv.includes('--dry');
 const SRC_RE = /\.webp$/i;
 const VARIANT_RE = /-(sm|md)\.webp$/i; // already-generated variants — never a source
 
-const SM = { suffix: 'sm', maxEdge: 600, quality: 78 };
-const MD = { suffix: 'md', maxEdge: 1100, quality: 80 };
+// Quality bumped (sm 80→88, md 82→88) so the thumbnails on the menu grid and
+// gallery tiles look crisp at hi-DPI 1:1. Pixel dimensions are unchanged, so the
+// decoded-bitmap size — and the anti-scroll-jank behaviour — is unaffected.
+const SM = { suffix: 'sm', maxEdge: 600, quality: 88 };
+const MD = { suffix: 'md', maxEdge: 1100, quality: 88 };
 
 function walk(dir, acc = []) {
   if (!existsSync(dir)) return acc;
@@ -64,7 +67,8 @@ for (const f of menuFiles) {
   tally(await make(f, MD)); // featured cards need the larger menu variant
 }
 for (const f of photoFiles) {
-  tally(await make(f, SM)); // gallery lightbox keeps the full file
+  tally(await make(f, SM)); // masonry tile on mobile / 1x
+  tally(await make(f, MD)); // masonry tile renders large (CSS scale(1.25)) — sm alone is soft on hi-DPI/desktop; lightbox still uses the full file
 }
 
 console.log(

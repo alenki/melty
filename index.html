@@ -9,6 +9,9 @@
     <!-- Preload the hero logo (homepage LCP element) so the browser fetches it
          in parallel with the bundle instead of after JSX parse. -->
     <link rel="preload" as="image" href="/data/logo_dark.webp" fetchpriority="high" />
+    <!-- Preload the loading-screen logo so the very first paint of the loader
+         already has its mark, instead of fetching it after the JS boots. -->
+    <link rel="preload" as="image" href="/data/logo.webp" fetchpriority="high" />
 
     <!-- Primary SEO - replaced per-route by react-helmet-async. These are the
          fallback values used by crawlers that don't execute JS and hit the

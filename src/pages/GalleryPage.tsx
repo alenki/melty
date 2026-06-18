@@ -433,14 +433,22 @@ export default function GalleryPage() {
               >
                 <img
                   src={imgVariant(item.data.src, 'sm')}
+                  // Tiles render large (CSS scale(1.25)) so the 600px sm is too
+                  // soft on hi-DPI/desktop. Let the browser pick: mobile keeps
+                  // the light 600px (no scroll jank), desktop/retina gets 1100px.
+                  srcSet={`${imgVariant(item.data.src, 'sm')} 600w, ${imgVariant(item.data.src, 'md')} 1100w`}
+                  sizes="(max-width: 1024px) 60vw, 38vw"
                   alt={t.galleryPage.photoAlts[item.data.altKey] || item.data.altKey}
                   className="gallery-page__photo-img"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {
-                    // Thumbnail missing → fall back to the full image.
+                    // A variant is missing → drop srcSet and fall back to the full image.
                     const img = e.currentTarget;
-                    if (img.src.includes('-sm.webp')) img.src = item.data.src;
+                    if (img.srcset) {
+                      img.srcset = '';
+                      img.src = item.data.src;
+                    }
                   }}
                 />
               </div>

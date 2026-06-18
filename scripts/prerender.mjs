@@ -120,8 +120,16 @@ async function prerender() {
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle0' });
 
-    // Wait for the loading screen to finish (350ms first load + transition)
-    await new Promise((r) => setTimeout(r, 1000));
+    // Wait for the loading screen to actually leave the DOM before snapshotting
+    // so the dark full-screen overlay is never baked into the prerendered HTML.
+    // The loader unmounts after its readiness gate (MIN_DISPLAY_FIRST 600ms +
+    // the ~500ms opacity fade); waiting on the element rather than a fixed sleep
+    // stays correct if those timings change. Fall back to a fixed wait if the
+    // check ever fails.
+    await page
+      .waitForFunction(() => !document.querySelector('.loading-screen'), { timeout: 10000 })
+      .catch(() => {});
+    await new Promise((r) => setTimeout(r, 150));
 
     let html = await page.content();
     await page.close();
