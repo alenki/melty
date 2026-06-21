@@ -111,7 +111,13 @@ async function prerender() {
   await new Promise((resolve) => server.listen(PORT, resolve));
   console.log(`Static server on http://localhost:${PORT}`);
 
-  const browser = await puppeteer.launch({ headless: true });
+  // --no-sandbox / --disable-setuid-sandbox: required to launch Chromium in
+  // Netlify's CI (the build user can't create a sandbox). --disable-dev-shm-usage
+  // avoids crashes from the small /dev/shm in CI containers. Harmless locally.
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
 
   for (const route of ROUTES) {
     const url = `http://localhost:${PORT}${route}`;

@@ -1,0 +1,63 @@
+# Netlify configuration for Melty
+# ---------------------------------------------------------------------------
+# Continuous deploy from the `english` branch (set the production branch to
+# `english` in Site configuration → Build & deploy → Branches, or when you first
+# connect the repo). Every push to that branch rebuilds and republishes.
+
+[build]
+  # `npx puppeteer browsers install chrome` guarantees the prerender step's
+  # headless Chromium is present even on cache-restored builds where npm skips
+  # puppeteer's postinstall. It installs into PUPPETEER_CACHE_DIR (below) and is
+  # a no-op when the browser is already there. Then `npm run build` runs the
+  # full chain: thumbnails → tsc → vite build → prerender → sitemap.
+  command = "npx puppeteer browsers install chrome && npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Match the local toolchain (Node 22). Netlify's default is older.
+  NODE_VERSION = "22"
+  # Install Chromium into a repo-relative, build-cache-friendly path so the
+  # prerender (scripts/prerender.mjs) finds the same browser the install step
+  # downloaded. Keep this in sync if you change the install command above.
+  PUPPETEER_CACHE_DIR = "/opt/build/repo/.cache/puppeteer"
+
+# --- SPA fallback ----------------------------------------------------------
+# Each route is prerendered to its own dist/<route>/index.html, which Netlify
+# serves directly — a non-forced rewrite never overrides an existing file. So
+# this catch-all only fires for unknown paths, handing them to the client-side
+# router instead of returning a hard 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# --- Long-cache hashed assets ----------------------------------------------
+# Vite emits content-hashed filenames under /assets, so a new build always
+# produces new URLs — these can be cached forever without going stale.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- Baseline security headers ---------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+
+# === TEMPORARY: keep the *.netlify.app preview URL out of search engines =====
+# While the site lives on the auto-generated Netlify subdomain, this tells
+# crawlers not to index it (it overrides the per-page `index,follow` meta —
+# noindex always wins a conflict). All the real melty-cafe.ru SEO (canonical,
+# sitemap, Open Graph, JSON-LD) is left untouched and ready.
+#
+# >>> DELETE this entire block the moment you connect melty-cafe.ru as the
+#     primary domain, then redeploy, so the real site becomes indexable. <<<
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+# ============================================================================
