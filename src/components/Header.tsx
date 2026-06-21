@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useLanguage, useTranslation } from '../i18n';
+import { useTranslation } from '../i18n';
 import './Header.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage } = useLanguage();
   const t = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -56,7 +55,7 @@ export default function Header() {
           onClick={handleLogoClick}
           aria-label={t.nav.toHome}
         >
-          <img src="/data/logo_dark.webp" alt="Melty - кафе-кофейня в Нальчике" />
+          <img src="/data/logo_dark.webp" alt="Melty - cafe and coffee shop in Nalchik" />
         </a>
 
         <nav
@@ -104,22 +103,6 @@ export default function Header() {
             {t.nav.feedback}
           </Link>
         </nav>
-
-        <div className="header__lang">
-          <button
-            className={`header__lang-btn ${language === 'ru' ? 'header__lang-btn--active' : ''}`}
-            onClick={() => setLanguage('ru')}
-          >
-            RU
-          </button>
-          <span className="header__lang-divider">|</span>
-          <button
-            className={`header__lang-btn ${language === 'en' ? 'header__lang-btn--active' : ''}`}
-            onClick={() => setLanguage('en')}
-          >
-            EN
-          </button>
-        </div>
 
         <button
           className={`header__burger ${isMobileMenuOpen ? 'header__burger--active' : ''}`}

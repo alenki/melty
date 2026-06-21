@@ -35,7 +35,7 @@ export default function Location() {
             <iframe
               src={YANDEX_MAP_SRC}
               className="location__map"
-              title="Melty на Яндекс.Картах — ул. Героя России Т.М. Тамазова, 15, Нальчик"
+              title="Melty on Yandex.Maps — 15 Hero of Russia T.M. Tamazov St., Nalchik"
               loading="lazy"
               allowFullScreen
             />

@@ -23,7 +23,7 @@ export default function BackToTop() {
     <button
       className={`back-to-top ${visible ? 'back-to-top--visible' : ''}`}
       onClick={scrollToTop}
-      aria-label="Наверх"
+      aria-label="Back to top"
     >
       <svg
         viewBox="0 0 24 24"

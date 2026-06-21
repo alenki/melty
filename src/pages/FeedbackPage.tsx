@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TELEGRAM_API_URL, TELEGRAM_CHAT_ID } from '../config/telegram';
-import { useTranslation, useLanguage } from '../i18n';
+import { useTranslation } from '../i18n';
 import { BackToTop, SEO } from '../components';
 import './FeedbackPage.css';
 
@@ -12,8 +12,8 @@ export default function FeedbackPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'Отзывы', item: 'https://melty-cafe.ru/feedback' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Feedback', item: 'https://melty-cafe.ru/feedback' },
     ],
   };
 
@@ -27,7 +27,6 @@ export default function FeedbackPage() {
   const [ratingHint, setRatingHint] = useState(false);
   const [messageHint, setMessageHint] = useState(false);
   const t = useTranslation();
-  const { language } = useLanguage();
 
   const starsRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement[]>([]);
@@ -123,7 +122,7 @@ export default function FeedbackPage() {
     setErrorMessage(null);
 
     const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-    const locale = language === 'en' ? 'en-US' : 'ru-RU';
+    const locale = 'en-US';
     const text = [
       `⭐ ${t.feedbackPage.telegramRating}: ${stars} (${rating}/5)`,
       contact.trim() ? `📧 ${t.feedbackPage.telegramContact}: ${contact.trim()}` : `📧 ${t.feedbackPage.telegramContact}: ${t.feedbackPage.telegramNoContact}`,
@@ -147,15 +146,15 @@ export default function FeedbackPage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [rating, message, contact, spawnConfetti, t, language]);
+  }, [rating, message, contact, spawnConfetti, t]);
 
   return (
     <div className="feedback-page">
       <SEO
-        title="Обратная связь | Melty"
-        description="Оставьте отзыв о кафе Melty в Нальчике. Ваше мнение помогает нам становиться лучше - напишите, что понравилось и что можно улучшить."
+        title="Feedback | Melty"
+        description="Leave a review of Melty cafe in Nalchik. Your opinion helps us get better - tell us what you liked and what we could improve."
         path="/feedback"
-        keywords="отзывы кафе Melty, отзывы кафе Нальчик, Melty отзывы, оставить отзыв кафе Нальчик"
+        keywords="Melty cafe reviews, cafe reviews Nalchik, Melty reviews, leave a cafe review Nalchik"
         jsonLd={breadcrumb}
       />
       <section className="feedback-page__section">

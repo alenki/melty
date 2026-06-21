@@ -9,8 +9,8 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'О нас', item: 'https://melty-cafe.ru/about' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://melty-cafe.ru/about' },
     ],
   };
 
@@ -125,19 +125,19 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       <SEO
-        title="О нас | Melty"
-        description="О кафе Melty в Нальчике: как мы создаём мир вкуса и уюта, почему выбираем лучший бельгийский шоколад и как наша атмосфера делает каждый визит особенным."
+        title="About | Melty"
+        description="About Melty cafe in Nalchik: how we create a world of taste and comfort, why we choose the finest Belgian chocolate and how our atmosphere makes every visit special."
         path="/about"
-        keywords="Melty Нальчик, о кафе Melty, история кафе, шоколадное кафе Нальчик, атмосферное кафе Нальчик"
+        keywords="cafe Nalchik, coffee shop Nalchik, Melty, desserts, crepes, pancakes, waffles, specialty coffee"
         jsonLd={[
           breadcrumb,
           {
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
-            name: 'О кафе Melty',
+            name: 'About Melty cafe',
             url: 'https://melty-cafe.ru/about',
             description:
-              'Страница о кафе Melty в Нальчике - наша философия, мастерство и атмосфера.',
+              'About Melty cafe in Nalchik - our philosophy, craft and atmosphere.',
             mainEntity: { '@id': 'https://melty-cafe.ru/#restaurant' },
           },
         ]}
@@ -297,7 +297,7 @@ export default function AboutPage() {
         <div className="about-page__yours-inner">
           <img
             src="/data/logo_dark.webp"
-            alt="Melty - кафе-кофейня в Нальчике"
+            alt="Melty - cafe & coffee shop in Nalchik"
             className="about-page__yours-logo"
           />
 

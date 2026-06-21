@@ -15,7 +15,7 @@ export default function HomePage() {
     '@id': `${BASE_URL}/#website`,
     url: BASE_URL,
     name: 'Melty',
-    alternateName: 'Мелти',
+    alternateName: 'Melty',
     inLanguage: ['ru-RU', 'en-US'],
     publisher: { '@id': `${BASE_URL}/#organization` },
     about: { '@id': `${BASE_URL}/#restaurant` },
@@ -36,7 +36,7 @@ export default function HomePage() {
     '@type': 'Organization',
     '@id': `${BASE_URL}/#organization`,
     name: 'Melty',
-    alternateName: ['Мелти', 'Кафе Melty'],
+    alternateName: ['Melty Cafe', 'Melty Coffee Shop'],
     url: BASE_URL,
     logo: {
       '@type': 'ImageObject',
@@ -65,42 +65,42 @@ export default function HomePage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Где находится кафе Melty в Нальчике?',
+        name: 'Where is the Melty cafe in Nalchik located?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Кафе Melty находится в центре Нальчика по адресу ул. Героя России Т.М. Тамазова, 15.',
+          text: 'The Melty cafe is located in the center of Nalchik at 15 Hero of Russia T.M. Tamazov St.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Какие часы работы у кафе Melty?',
+        name: 'What are the opening hours of the Melty cafe?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Melty работает ежедневно с 08:00 до 23:00. Кухня открыта до 22:15.',
+          text: 'Melty is open daily from 08:00 to 23:00. The kitchen is open until 22:15.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Что можно попробовать в кафе Melty?',
+        name: 'What can you try at the Melty cafe?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'В меню кафе Melty - шоколадные десерты, авторские крепы, панкейки, вафли, завтраки, салаты, горячие блюда, авторский кофе и лимонады.',
+          text: 'The Melty cafe menu features chocolate desserts, signature crepes, pancakes, waffles, breakfasts, salads, hot dishes, signature coffee and lemonades.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Принимает ли Melty бронирование столов?',
+        name: 'Does Melty accept table reservations?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Для уточнения наличия свободных мест свяжитесь с нами по телефону +7 (988) 939-90-00.',
+          text: 'To check table availability, contact us by phone at +7 (988) 939-90-00.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Есть ли в Melty завтраки?',
+        name: 'Does Melty serve breakfast?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Да, мы подаём завтраки с 08:00 - каши, эгг-роллы, круассаны, панкейки, крепы и авторский кофе.',
+          text: 'Yes, we serve breakfast from 08:00 - porridge, egg rolls, croissants, pancakes, crepes and signature coffee.',
         },
       },
     ],
@@ -127,8 +127,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Melty | кафе-кофейня в Нальчике"
-        description="Melty - уютное кафе-кофейня в Нальчике на ул. Тамазова 15. Шоколадные десерты, крепы, панкейки, вафли, завтраки и кофе. Ежедневно 08:00-23:00."
+        title="Melty | cafe & coffee shop in Nalchik"
+        description="Melty is a cozy cafe and coffee shop in Nalchik at 15 Tamazov St. Chocolate desserts, crepes, pancakes, waffles, breakfasts and coffee. Open daily 08:00-23:00."
         path="/"
         jsonLd={[websiteSchema, organizationSchema, faqSchema]}
       />

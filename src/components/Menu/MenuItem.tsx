@@ -1,6 +1,6 @@
 import { useState, memo } from 'react';
 import type { MenuItem as MenuItemType } from '../../data/menu';
-import { useMenuTranslation, useLanguage } from '../../i18n';
+import { useMenuTranslation } from '../../i18n';
 import { imgVariant } from '../../utils/images';
 import MenuItemModal from './MenuItemModal';
 import MenuPlaceholder from './MenuPlaceholder';
@@ -21,17 +21,16 @@ function MenuItem({ item, index, isSelected, onSelect }: MenuItemProps) {
   // Grid cards are tiny (~280px) — load the small thumbnail, not the full
   // image. Fall back to the full file if a thumbnail is ever missing.
   const [useFull, setUseFull] = useState(false);
-  const { language } = useLanguage();
   const getTranslation = useMenuTranslation();
 
   const { name, description } = getTranslation(item);
-  const locale = language === 'en' ? 'en-US' : 'ru-RU';
+  const locale = 'en-US';
 
   const priceLabel = item.priceLarge
     ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
     : `${item.price.toLocaleString(locale)}₽`;
 
-  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
   const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 

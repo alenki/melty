@@ -35,7 +35,7 @@ export default function CategoryFilter({ activeCategory, onCategoryChange }: Cat
   ];
 
   const getLabel = (category: MenuCategory | 'all'): string => {
-    if (category === 'all') return 'Все';
+    if (category === 'all') return 'All';
     return categoryLabels[category];
   };
 

@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export type Language = 'ru' | 'en';
+export type Language = 'en';
 
 export interface LanguageContextType {
   language: Language;
@@ -8,6 +8,6 @@ export interface LanguageContextType {
 }
 
 export const LanguageContext = createContext<LanguageContextType>({
-  language: 'ru',
+  language: 'en',
   setLanguage: () => {},
 });

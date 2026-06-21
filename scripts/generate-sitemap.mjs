@@ -41,7 +41,7 @@ function xmlEscape(s) {
 }
 
 // Build an absolute, percent-encoded, XML-safe image URL from a public-relative
-// path like "data/menu/desserts/Чуррос.webp".
+// path like "data/menu/desserts/<filename>.webp" (filenames may be non-ASCII).
 function imageUrl(relPath) {
   return xmlEscape(`${BASE_URL}/${encodeURI(relPath)}`);
 }
@@ -59,8 +59,8 @@ const urls = [
     changefreq: 'weekly',
     priority: '1.0',
     images: [
-      { loc: `${BASE_URL}/data/melty.webp`, title: 'Melty - кафе-кофейня в Нальчике', caption: 'Мир вкуса и уюта в Нальчике' },
-      { loc: `${BASE_URL}/data/logo.webp`, title: 'Логотип Melty' },
+      { loc: `${BASE_URL}/data/melty.webp`, title: 'Melty - cafe & coffee shop in Nalchik', caption: 'A world of taste and comfort in Nalchik' },
+      { loc: `${BASE_URL}/data/logo.webp`, title: 'Melty logo' },
     ],
   },
   { loc: `${BASE_URL}/menu`, changefreq: 'weekly', priority: '0.9', imagePaths: menuImages },

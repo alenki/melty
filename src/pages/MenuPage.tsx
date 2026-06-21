@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback, memo, Fragment } from 'react';
 import { menuItems, categoryLabels } from '../data/menu';
 import type { MenuCategory, MenuItem as MenuItemType } from '../data/menu';
-import { useTranslation, useMenuTranslation, useLanguage } from '../i18n';
+import { useTranslation, useMenuTranslation } from '../i18n';
 import MenuItem from '../components/Menu/MenuItem';
 import MenuItemModal from '../components/Menu/MenuItemModal';
 import MenuPlaceholder from '../components/Menu/MenuPlaceholder';
@@ -45,10 +45,10 @@ const MENU_SCHEMA: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'Menu',
   '@id': `${SITE_URL}/menu#menu`,
-  name: 'Меню кафе Melty',
+  name: 'Melty Cafe Menu',
   description:
-    'Полное меню кафе Melty в Нальчике: завтраки, салаты, супы, горячие блюда, крепы, вафли, шоколадные десерты, авторский кофе и лимонады.',
-  inLanguage: 'ru-RU',
+    'The full menu of Melty cafe in Nalchik: breakfasts, salads, soups, hot dishes, crepes, waffles, chocolate desserts, signature coffee and lemonades.',
+  inLanguage: 'en-US',
   url: `${SITE_URL}/menu`,
   provider: { '@id': `${SITE_URL}/#restaurant` },
   hasMenuSection: categoryOrder
@@ -90,16 +90,15 @@ const FeaturedCard = memo(function FeaturedCard({ item, onSelect, isSelected }: 
   const hasImage = item.image && !imgError;
   const mdSrc = imgVariant(item.image, 'md');
   const displaySrc = useFull || !mdSrc ? item.image : mdSrc;
-  const { language } = useLanguage();
   const getTranslation = useMenuTranslation();
   const { name, description } = getTranslation(item);
-  const locale = language === 'en' ? 'en-US' : 'ru-RU';
+  const locale = 'en-US';
 
   const priceLabel = item.priceLarge
     ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
     : `${item.price.toLocaleString(locale)}₽`;
 
-  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
   const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 
@@ -154,8 +153,8 @@ export default function MenuPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'Меню', item: 'https://melty-cafe.ru/menu' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Menu', item: 'https://melty-cafe.ru/menu' },
     ],
   };
 
@@ -408,10 +407,10 @@ export default function MenuPage() {
   return (
     <div className="menu-page">
       <SEO
-        title="Меню | Melty"
-        description="Меню кафе Melty в Нальчике: завтраки, шоколадные десерты, крепы, панкейки, вафли, горячие блюда, салаты, кофе и лимонады. Ежедневно 08:00-23:00."
+        title="Menu | Melty"
+        description="Menu of Melty cafe in Nalchik: breakfasts, chocolate desserts, crepes, pancakes, waffles, hot dishes, salads, coffee and lemonades. Daily 08:00-23:00."
         path="/menu"
-        keywords="меню кафе Нальчик, меню Melty, завтраки Нальчик, десерты Нальчик, крепы Нальчик, кофе Нальчик, панкейки, вафли, шоколадные десерты, цены кафе Нальчик"
+        keywords="cafe Nalchik, coffee shop Nalchik, Melty, desserts, crepes, pancakes, waffles, specialty coffee"
         jsonLd={[breadcrumb, MENU_SCHEMA]}
       />
       {/* ===== HERO ===== */}

@@ -35,29 +35,29 @@ export interface MenuItem {
 }
 
 export const categoryLabels: Record<MenuCategory, string> = {
-  'breakfasts': 'Завтраки',
-  'other': 'Закуски',
-  'salads': 'Салаты',
-  'soups': 'Супы',
-  'main-dishes': 'Рыба, Птица, Мясо',
-  'sides': 'Гарниры',
-  'crepes': 'Крепы',
-  'waffles-croissants': 'Вафли и Круассаны',
-  'chocolate-desserts': 'Шоколадные десерты',
-  'chocolate-cups': 'Шоколадные стаканы',
-  'melty-desserts': 'Melty Десерты',
-  'coffee': 'Классический кофе',
-  'cold-coffee': 'Холодный кофе',
-  'author-coffee': 'Авторский кофе',
-  'lemonades-mojito': 'Авторские лимонады / Мохито',
-  'author-drinks': 'Авторские напитки',
-  'smoothies': 'Смузи-Завтраки',
-  'fresh-juices': 'Фреши',
-  'milkshakes': 'Милкшейки',
-  'house-teas': 'Домашние чаи',
-  'leaf-teas': 'Листовые чаи',
-  'soft-drinks': 'Прохладные напитки',
-  'savory-waffles': 'Соленые вафли',
+  'breakfasts': 'Breakfasts',
+  'other': 'Appetizers',
+  'salads': 'Salads',
+  'soups': 'Soups',
+  'main-dishes': 'Fish, Poultry, Meat',
+  'sides': 'Sides',
+  'crepes': 'Crepes',
+  'waffles-croissants': 'Waffles & Croissants',
+  'chocolate-desserts': 'Chocolate Desserts',
+  'chocolate-cups': 'Chocolate Cups',
+  'melty-desserts': 'Melty Desserts',
+  'coffee': 'Classic Coffee',
+  'cold-coffee': 'Cold Coffee',
+  'author-coffee': 'Signature Coffee',
+  'lemonades-mojito': 'Signature Lemonades / Mojito',
+  'author-drinks': 'Signature Drinks',
+  'smoothies': 'Breakfast Smoothies',
+  'fresh-juices': 'Fresh Juices',
+  'milkshakes': 'Milkshakes',
+  'house-teas': 'House Teas',
+  'leaf-teas': 'Leaf Teas',
+  'soft-drinks': 'Soft Drinks',
+  'savory-waffles': 'Savory Waffles',
 };
 
 export const bestSellerIds: string[] = [
@@ -71,16 +71,16 @@ export const menuItems: MenuItem[] = [
   // ============ MELTY DESSERTS ============
   {
     id: 'melty-knafe-cheesecake',
-    name: 'Melty Knafi Чизкейк',
-    description: 'Фирменный чизкейк с начинкой из фисташкового урбеча и хрустящего теста «Катаифи». Подаётся с шотом молочного бельгийского шоколада и дробленной фисташкой',
+    name: 'Melty Knafi Cheesecake',
+    description: 'Signature cheesecake filled with pistachio urbech and crispy kataifi pastry. Served with a shot of milk Belgian chocolate and crushed pistachios',
     price: 610,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Melty Knafi Чизкейк.webp'
   },
   {
     id: 'melty-melt',
-    name: 'Melty melt',
-    description: 'Фирменный десерт с шоу-подачей',
+    name: 'Melty Melt',
+    description: 'Signature dessert with a show-style presentation',
     price: 1290,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Мелти мелт.webp',
@@ -92,16 +92,16 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'melty-melt-pistachio',
-    name: 'Melty melt фисташка',
-    description: 'Фирменный десерт с шоу-подачей',
+    name: 'Melty Melt Pistachio',
+    description: 'Signature dessert with a show-style presentation',
     price: 1290,
     category: 'melty-desserts',
     image: ''
   },
   {
     id: 'melty-cookies',
-    name: 'Melty cookies',
-    description: 'Фирменное карамельное печенье с жидкой сердцевиной. Подаётся с шариком ванильного мороженого',
+    name: 'Melty Cookies',
+    description: 'Signature caramel cookies with a liquid center. Served with a scoop of vanilla ice cream',
     price: 650,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Мелти кукис.webp',
@@ -113,8 +113,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'melty-pancake',
-    name: 'Melty панкейк',
-    description: 'Фирменные панкейки, подаются с карамельной пастой и дробленным печеньем',
+    name: 'Melty Pancake',
+    description: 'Signature pancakes served with caramel paste and crushed cookies',
     price: 720,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Мелти панкейки.webp',
@@ -126,16 +126,16 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'melty-pancake-pistachio',
-    name: 'Melty панкейк-фисташка',
-    description: 'Фирменные панкейки, подаются с фисташковой пастой и дробленными фисташками',
+    name: 'Melty Pancake Pistachio',
+    description: 'Signature pancakes served with pistachio paste and crushed pistachios',
     price: 660,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Мелти панкейк-фисташка.webp'
   },
   {
     id: 'melty-fondue',
-    name: 'Melty фондю',
-    description: 'Расплавленный горячий шоколад. Подаётся с миксом брауни, венских вафель, паффрисами и сезонными ягодами',
+    name: 'Melty Fondue',
+    description: 'Melted hot chocolate. Served with a mix of brownie, Viennese waffles, puffed rice and seasonal berries',
     price: 1400,
     category: 'melty-desserts',
     image: '/data/menu/desserts/Мелти фондю.webp',
@@ -150,63 +150,63 @@ export const menuItems: MenuItem[] = [
   {
     id: 'puffies',
     name: 'Puffies',
-    description: 'Мини-панкейки. Подаются с шотом молочного бельгийского шоколада',
+    description: 'Mini pancakes served with a shot of milk Belgian chocolate',
     price: 410,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Puffies.webp'
   },
   {
     id: 'brownie',
-    name: 'Брауни',
-    description: 'Шоколадный брауни, обильно политый молочным бельгийским шоколадом. Подаётся с шариком ванильного мороженого',
+    name: 'Brownie',
+    description: 'Chocolate brownie generously drizzled with milk Belgian chocolate. Served with a scoop of vanilla ice cream',
     price: 510,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Брауни.webp'
   },
   {
     id: 'san-sebastian',
-    name: 'Сан-Себастьян',
-    description: 'Нежный творожный чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
+    name: 'San Sebastian',
+    description: 'Delicate curd cheesecake with a caramelized crust. Served with a shot of milk Belgian chocolate',
     price: 470,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Сан-Себастьян.webp'
   },
   {
     id: 'san-sebastian-pistachio',
-    name: 'Сан-Себастьян фисташковый',
-    description: 'Нежный фисташковый чизкейк под карамелизированной корочкой. Подаётся с шотом молочного бельгийского шоколада',
+    name: 'Pistachio San Sebastian',
+    description: 'Delicate pistachio cheesecake with a caramelized crust. Served with a shot of milk Belgian chocolate',
     price: 490,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Сан-Себастьян фисташковый.webp'
   },
   {
     id: 'churros',
-    name: 'Чуррос',
-    description: 'Сладкие обжаренные вафельные палочки, политые тремя видами бельгийского шоколада',
+    name: 'Churros',
+    description: 'Sweet fried waffle sticks drizzled with three types of Belgian chocolate',
     price: 410,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Чуррос.webp'
   },
   {
     id: 'chocolate-fondant',
-    name: 'Шоколадный Фондан',
-    description: 'Шоколадный кекс с жидкой сердцевиной, политый молочным бельгийским шоколадом, подаётся с шариком ванильного мороженого и сезонными ягодами',
+    name: 'Chocolate Fondant',
+    description: 'Chocolate cake with a liquid center, drizzled with milk Belgian chocolate, served with vanilla ice cream and seasonal berries',
     price: 410,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Шоколадный Фондан.webp'
   },
   {
     id: 'eclair',
-    name: 'Эклеры',
-    description: 'Пирожные из заварного теста под карамелизированной корочкой, наполненные фирменным кремом «Патисьер». Подаются с сезонными ягодами',
+    name: 'Eclairs',
+    description: 'Choux pastry with a caramelized crust, filled with signature patissiere cream. Served with seasonal berries',
     price: 480,
     category: 'chocolate-desserts',
     image: '/data/menu/desserts/Эклеры.webp'
   },
   {
     id: 'pancakes-trouble-chocolate',
-    name: 'Панкейки Trouble Chocolate',
-    description: 'Пышные панкейки, обильно политые тремя видами бельгийского шоколада',
+    name: 'Pancakes Trouble Chocolate',
+    description: 'Fluffy pancakes generously drizzled with three types of Belgian chocolate',
     price: 540,
     category: 'chocolate-desserts',
     image: ''
@@ -215,16 +215,16 @@ export const menuItems: MenuItem[] = [
   // ============ CHOCOLATE CUPS ============
   {
     id: 'dubai-strawberry',
-    name: 'Дубайская клубника',
-    description: 'Свежая клубника, хрустящее тесто «Катаифи», фисташковая паста, молочный бельгийский шоколад, выложенные послойно в стакане. Посыпается дробленной фисташкой',
+    name: 'Dubai Strawberry',
+    description: 'Fresh strawberries, crispy kataifi pastry, pistachio paste, milk Belgian chocolate layered in a cup. Topped with crushed pistachios',
     price: 870,
     category: 'chocolate-cups',
     image: '/data/menu/desserts/Дубайская клубника.webp'
   },
   {
     id: 'strawberry-in-chocolate',
-    name: 'Клубника в шоколаде',
-    description: 'Свежая клубника в молочном бельгийском шоколаде, подаётся в стакане',
+    name: 'Strawberries in Chocolate',
+    description: 'Fresh strawberries dipped in milk Belgian chocolate, served in a cup',
     price: 750,
     category: 'chocolate-cups',
     image: '/data/menu/desserts/Клубника в шоколаде.webp'
@@ -233,40 +233,40 @@ export const menuItems: MenuItem[] = [
   // ============ CREPES ============
   {
     id: 'crep-three-chocolates',
-    name: 'Креп Три шоколада',
-    description: 'Французский блинчик, политый тремя видами бельгийского шоколада, подаётся с сезонными ягодами',
+    name: 'Three Chocolates Crepe',
+    description: 'French crepe drizzled with three types of Belgian chocolate, served with seasonal berries',
     price: 410,
     category: 'crepes',
     image: '/data/menu/desserts/Креп Три шоколада.webp'
   },
   {
     id: 'golden-crep',
-    name: 'Golden Креп',
-    description: 'Французский блинчик, политый молочно-карамельным бельгийским шоколадом',
+    name: 'Golden Crepe',
+    description: 'French crepe drizzled with milk-caramel Belgian chocolate',
     price: 570,
     category: 'crepes',
     image: '/data/menu/desserts/Golden Креп.webp'
   },
   {
     id: 'crep-dubai',
-    name: 'Креп Дубай',
-    description: 'Французский блинчик с начинкой из теста «Катаифи», политый фисташковым урбечом и молочным шоколадом',
+    name: 'Dubai Crepe',
+    description: 'French crepe filled with kataifi pastry, drizzled with pistachio urbech and milk chocolate',
     price: 610,
     category: 'crepes',
     image: '/data/menu/desserts/Креп Дубай.webp'
   },
   {
     id: 'fetuccini-crep',
-    name: 'Фетучини-креп',
-    description: 'Французский блинчик, разрезанный на тонкие полоски, напоминающие итальянскую пасту. Поливается молочным бельгийским шоколадом и подаётся с шариком ванильного мороженого и сезонными ягодами',
+    name: 'Fettuccine Crepe',
+    description: 'French crepe cut into thin strips resembling Italian pasta. Drizzled with milk Belgian chocolate, served with vanilla ice cream and seasonal berries',
     price: 510,
     category: 'crepes',
     image: '/data/menu/desserts/Фетучини-креп.webp'
   },
   {
     id: 'brownie-roll',
-    name: 'Брауни ролл',
-    description: 'Шоколадный брауни, завёрнутый в тонкие блинчики. Поливаются тремя видами бельгийского шоколада',
+    name: 'Brownie Roll',
+    description: 'Chocolate brownie wrapped in thin crepes. Drizzled with three types of Belgian chocolate',
     price: 510,
     category: 'crepes',
     image: '/data/menu/desserts/Брауни ролл.webp'
@@ -275,48 +275,48 @@ export const menuItems: MenuItem[] = [
   // ============ WAFFLES & CROISSANTS ============
   {
     id: 'waffles-three-chocolates',
-    name: 'Вафля три шоколада',
-    description: 'Сладкая вафля, политая тремя видами бельгийского шоколада',
+    name: 'Three Chocolates Waffle',
+    description: 'Sweet waffle drizzled with three types of Belgian chocolate',
     price: 450,
     category: 'waffles-croissants',
     image: '/data/menu/desserts/Вафля три шоколада.webp'
   },
   {
     id: 'waffles-steak-gold',
-    name: 'Вафля стейк Gold',
-    description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
+    name: 'Waffle Steak Gold',
+    description: 'Sweet waffle drizzled with milk-caramel Belgian chocolate',
     price: 490,
     category: 'waffles-croissants',
     image: '/data/menu/desserts/Вафля стейк Gold.webp'
   },
   {
     id: 'waffle-gold',
-    name: 'Вафля Gold',
-    description: 'Сладкая вафля, политая молочно-карамельным бельгийским шоколадом',
+    name: 'Waffle Gold',
+    description: 'Sweet waffle drizzled with milk-caramel Belgian chocolate',
     price: 510,
     category: 'waffles-croissants',
     image: '/data/menu/desserts/Вафля Gold.webp'
   },
   {
     id: 'waffle-steak',
-    name: 'Вафля Стейк',
-    description: 'Сладкая вафля, политая молочным бельгийским шоколадом',
+    name: 'Waffle Steak',
+    description: 'Sweet waffle drizzled with milk Belgian chocolate',
     price: 450,
     category: 'waffles-croissants',
     image: '/data/menu/desserts/Вафля Стейк.webp'
   },
   {
     id: 'pistachio-waffle',
-    name: 'Фисташковая вафля',
-    description: 'Сладкие вафли, политые фисташковым урбечом',
+    name: 'Pistachio Waffle',
+    description: 'Sweet waffles drizzled with pistachio urbech',
     price: 560,
     category: 'waffles-croissants',
     image: '/data/menu/desserts/Фисташковая вафля.webp'
   },
   {
     id: 'new-york-roll',
-    name: 'New-York ролл',
-    description: 'Круассан-ролл с кремом «Патисьер», молочным бельгийским шоколадом и шариком мороженого',
+    name: 'New York Roll',
+    description: 'Croissant roll with patissiere cream, milk Belgian chocolate and a scoop of ice cream',
     price: 510,
     category: 'waffles-croissants',
     image: ''
@@ -325,24 +325,24 @@ export const menuItems: MenuItem[] = [
   // ============ SAVORY WAFFLES ============
   {
     id: 'savory-waffle-avocado-crab',
-    name: 'Вафля с авокадо и крабом',
-    description: 'Соленая вафля с авокадо и крабом',
+    name: 'Waffle with Avocado & Crab',
+    description: 'Savory waffle with avocado and crab',
     price: 540,
     category: 'savory-waffles',
     image: '/data/menu/savory-waffles/Вафля с авокадо и крабом.webp'
   },
   {
     id: 'savory-waffle-salmon-poached-egg',
-    name: 'Вафля с семгой и яйцом пашот',
-    description: 'Соленая вафля с семгой и яйцом пашот',
+    name: 'Waffle with Salmon & Poached Egg',
+    description: 'Savory waffle with salmon and poached egg',
     price: 610,
     category: 'savory-waffles',
     image: '/data/menu/savory-waffles/Вафля с семгой и яйцом пашот.webp'
   },
   {
     id: 'waffle-fitness',
-    name: 'Вафля Фитнес',
-    description: 'Копчёная куриная грудка с миксом салата в медово-горчичном соусе',
+    name: 'Fitness Waffle',
+    description: 'Smoked chicken breast with salad mix in honey-mustard dressing',
     price: 490,
     category: 'savory-waffles',
     image: '/data/menu/savory-waffles/Вафля фитнесс.webp'
@@ -351,80 +351,80 @@ export const menuItems: MenuItem[] = [
   // ============ BREAKFASTS ============
   {
     id: 'melty-syrniki',
-    name: 'Melty сырники с йогуртом и конфитюром из смородины',
-    description: 'Нежные сырники с греческим йогуртом и конфитюром из смородины',
+    name: 'Melty Syrniki with Yogurt & Currant Jam',
+    description: 'Delicate cottage cheese pancakes with Greek yogurt and currant jam',
     price: 370,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Melty сырники с йогуртом и конфитюром из смородины.webp'
   },
   {
     id: 'english-breakfast',
-    name: 'Английский завтрак',
-    description: 'Глазунья из двух яиц, фермерские колбаски, копчёная индейка, фасоль в томатном соусе, обжаренный тостерный хлеб, свежие томаты, соус «Песто», шампиньоны',
+    name: 'English Breakfast',
+    description: 'Fried eggs, farm sausages, smoked turkey, beans in tomato sauce, toasted bread, fresh tomatoes, pesto sauce, mushrooms',
     price: 670,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Английский завтрак.webp'
   },
   {
     id: 'dzhigit-breakfast',
-    name: 'Завтрак джигита',
-    description: 'Домашние яйца, приготовленные в домашней сметане, подаётся с двумя видами сыра, натуральным калмыцким чаем и хрустящей чиабаттой',
+    name: 'Dzhigit Breakfast',
+    description: 'Farm eggs cooked in homemade sour cream, served with two types of cheese, Kalmyk tea and crispy ciabatta',
     price: 440,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Завтрак джигита.webp'
   },
   {
     id: 'spanish-omelette',
-    name: 'Испанский омлет',
-    description: 'Классический испанский омлет с начинкой',
+    name: 'Spanish Omelette',
+    description: 'Classic Spanish omelette with filling',
     price: 320,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Испанский омлет.webp'
   },
   {
     id: 'crepe-raspberry',
-    name: 'Креп с малиновым соусом и сметаной',
-    description: 'Нежный креп с малиновым соусом и сметаной',
+    name: 'Crepe with Raspberry Sauce & Sour Cream',
+    description: 'Delicate crepe with raspberry sauce and sour cream',
     price: 290,
     category: 'breakfasts',
     image: ''
   },
   {
     id: 'mega-oladush-shrimp',
-    name: 'Мега оладушек с яйцом скрембл и креветками',
-    description: 'Нежный оладушек с яйцом скрембл и тигровыми креветками',
+    name: 'Mega Pancake with Scrambled Egg & Shrimp',
+    description: 'Delicate pancake with scrambled egg and tiger shrimp',
     price: 570,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Мега оладушек с яйцом скрембл и креветками.webp'
   },
   {
     id: 'potato-pancakes-salmon',
-    name: 'Картофельные драники с сёмгой',
-    description: 'Драники со слабосолёной сёмгой и миксом салата',
+    name: 'Potato Pancakes with Salmon',
+    description: 'Potato pancakes with lightly salted salmon and salad mix',
     price: 410,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Картофельные драники.webp'
   },
   {
     id: 'oatmeal-berries',
-    name: 'Овсяная каша с ягодами',
-    description: 'Овсяная каша с сезонными ягодами и орехом пекан',
+    name: 'Oatmeal with Berries',
+    description: 'Oatmeal with seasonal berries and pecans',
     price: 290,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Овсяная каша с ягодами.webp'
   },
   {
     id: 'rice-porridge',
-    name: 'Рисовая каша с грецкими орехами',
-    description: 'Кремовая рисовая каша с грецкими орехами и мёдом',
+    name: 'Rice Porridge with Walnuts',
+    description: 'Creamy rice porridge with walnuts and honey',
     price: 310,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Рисовая каша с грецкими орехами.webp'
   },
   {
     id: 'melty-breakfast',
-    name: 'Фирменный завтрак Мелти',
-    description: 'Нежный сырный мусс, завёрнутый в яичный ролл, вяленые томаты, сметана, огурцы, хумус, фасоль, оливки гиганты, подаётся с хрустящей чиабаттой',
+    name: 'Melty Signature Breakfast',
+    description: 'Delicate cheese mousse in an egg roll, sun-dried tomatoes, sour cream, cucumbers, hummus, beans, giant olives, served with crispy ciabatta',
     price: 670,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Фирменный завтрак Melty.webp',
@@ -436,50 +436,50 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'shakshuka',
-    name: 'Шакшука с яйцом пашот и зеленью',
-    description: 'Турецкая яичница с яйцом пашот в фирменном томатном соусе. Подаётся с хрустящей чиабаттой',
+    name: 'Shakshuka with Poached Egg & Herbs',
+    description: 'Turkish eggs with a poached egg in signature tomato sauce. Served with crispy ciabatta',
     price: 400,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Шакшука с яйцом пашот и зеленью.webp'
   },
   {
     id: 'egg-roll',
-    name: 'Эгг-ролл',
-    description: 'Хрустящий яичный ролл с начинкой',
+    name: 'Egg Roll',
+    description: 'Crispy egg roll with filling',
     price: 320,
     category: 'breakfasts',
     image: '/data/menu/breakfasts/Эгг-ролл.webp'
   },
 
-  // ============ APPETIZERS (ЗАКУСКИ) ============
+  // ============ APPETIZERS ============
   {
     id: 'cream-hummus',
-    name: 'Крем-хумус с хрустящим нутом',
-    description: 'Нежное пюре из нута с кунжутной пастой тахини, оливковым маслом и специями',
+    name: 'Cream Hummus with Crispy Chickpeas',
+    description: 'Smooth chickpea puree with tahini paste, olive oil and spices',
     price: 310,
     category: 'other',
     image: '/data/menu/other/Крем-хумус с хрустящим нутом.webp'
   },
   {
     id: 'cheese-sticks-jam',
-    name: 'Сырные палочки с конфитюром из смородины',
-    description: 'Хрустящие сырные палочки с ягодным конфитюром из смородины',
+    name: 'Cheese Sticks with Currant Jam',
+    description: 'Crispy cheese sticks with berry currant jam',
     price: 390,
     category: 'other',
     image: '/data/menu/other/Сырные палочки с конфитюром из смородины.webp'
   },
   {
     id: 'sandwich-turkey',
-    name: 'Сэндвич с индейкой',
-    description: 'Обжаренный тостерный хлеб, горчичный соус, копчёная индейка, лист салата, розовые помидоры, сыр «Чеддер», соус «Песто»',
+    name: 'Turkey Sandwich',
+    description: 'Toasted bread, mustard sauce, smoked turkey, lettuce, pink tomatoes, cheddar cheese, pesto sauce',
     price: 430,
     category: 'other',
     image: '/data/menu/other/Сэндвич с индейкой.webp'
   },
   {
     id: 'sandwich-caesar-chicken',
-    name: 'Сэндвич Цезарь с цыпленком',
-    description: 'Обжаренный тостерный хлеб, соус «Цезарь», лист салата, филе цыплёнка, розовые томаты, сыр «Чеддер»',
+    name: 'Caesar Chicken Sandwich',
+    description: 'Toasted bread, Caesar dressing, lettuce, chicken fillet, pink tomatoes, cheddar cheese',
     price: 410,
     category: 'other',
     image: '/data/menu/other/Сэндвич Цезарь с цыпленком.webp'
@@ -488,56 +488,56 @@ export const menuItems: MenuItem[] = [
   // ============ SALADS ============
   {
     id: 'green-pp-chicken',
-    name: 'Зеленый ПП с куриной грудкой',
-    description: 'Копчённая куриная грудка с рукколой, авокадо, киноа и слайсами огурца, в горчично-медовом соусе',
+    name: 'Green Salad with Chicken Breast',
+    description: 'Smoked chicken breast with arugula, avocado, quinoa and cucumber slices in honey-mustard dressing',
     price: 590,
     category: 'salads',
     image: '/data/menu/salads/Зелёный пп салат с куриной грудкой.webp'
   },
   {
     id: 'fitness-salad',
-    name: 'Фитнес салат',
-    description: 'Микс салатов, стебель сельдерея, черри, семечки тыквы в горчично-медовом соусе',
+    name: 'Fitness Salad',
+    description: 'Salad mix, celery stalk, cherry tomatoes, pumpkin seeds in honey-mustard dressing',
     price: 340,
     category: 'salads',
     image: '/data/menu/salads/Фитнес салат.webp'
   },
   {
     id: 'crispy-eggplant',
-    name: 'Хрустящие баклажаны с сырным кремом',
-    description: 'Микс салата, хрустящие баклажаны в паназиатском соусе, свежие томаты, сырный мусс, кунжут, кинза',
+    name: 'Crispy Eggplant with Cheese Cream',
+    description: 'Mixed greens, crispy eggplant in pan-Asian sauce, fresh tomatoes, cheese mousse, sesame, cilantro',
     price: 410,
     category: 'salads',
     image: '/data/menu/salads/Хрустящие баклажаны с сырным кремом.webp'
   },
   {
     id: 'caesar-shrimp',
-    name: 'Цезарь с креветками',
-    description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренные тигровые креветки, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
+    name: 'Caesar with Shrimp',
+    description: 'Iceberg lettuce with signature Caesar dressing, seared tiger shrimp, house-made croutons, cherry tomatoes, quail egg. Topped with Parmesan snow',
     price: 610,
     category: 'salads',
     image: '/data/menu/salads/Цезарь с креветками.webp'
   },
   {
     id: 'caesar-chicken',
-    name: 'Цезарь с цыпленком',
-    description: 'Листья айсберга, заправленные фирменным соусом «Цезарь», обжаренное филе цыплёнка, сухари собственного приготовления, помидоры Черри, перепелиное яйцо. Посыпается снегом пармезан',
+    name: 'Caesar with Chicken',
+    description: 'Iceberg lettuce with signature Caesar dressing, pan-seared chicken fillet, house-made croutons, cherry tomatoes, quail egg. Topped with Parmesan snow',
     price: 470,
     category: 'salads',
     image: '/data/menu/salads/Цезарь с цыпленком.webp'
   },
   {
     id: 'greek-salad',
-    name: 'Греческий с муссом из брынзы',
-    description: 'Огурцы, розовые томаты, маслины, болгарский перец, красный лук, мусс из фермерской брынзы, заправляется оливковым маслом',
+    name: 'Greek Salad with Feta Mousse',
+    description: 'Cucumbers, pink tomatoes, olives, bell pepper, red onion, farm feta mousse, dressed with olive oil',
     price: 440,
     category: 'salads',
     image: '/data/menu/salads/Греческий с муссом из брынзы.webp'
   },
   {
     id: 'bowl-chicken',
-    name: 'Боул с курицей',
-    description: 'Филе цыплёнка, киноа, яйцо пашот, кукуруза, авокадо, розовые томаты, соус кунжутный',
+    name: 'Chicken Bowl',
+    description: 'Chicken fillet, quinoa, poached egg, corn, avocado, pink tomatoes, sesame dressing',
     price: 540,
     category: 'salads',
     image: '/data/menu/salads/Боул с курицей.webp'
@@ -546,148 +546,148 @@ export const menuItems: MenuItem[] = [
   // ============ SOUPS ============
   {
     id: 'tom-yam-seafood',
-    name: 'Том-ям с морепродуктами',
-    description: 'Суп том-ям с добавлением креветок, кальмаров и сёмги. Подаётся с рисом басматти',
+    name: 'Tom Yum with Seafood',
+    description: 'Tom yum soup with shrimp, squid and salmon. Served with basmati rice',
     price: 710,
     category: 'soups',
     image: '/data/menu/soups/Том-ям с морепродуктами.webp'
   },
   {
     id: 'lentil-soup-turkey',
-    name: 'Чечевичный суп с брискетом из индейки',
-    description: 'Суп из красной чечевицы на сливочной основе с добавлением индейки брискет. Подаётся с сухарями',
+    name: 'Lentil Soup with Turkey Brisket',
+    description: 'Red lentil soup on a creamy base with turkey brisket. Served with croutons',
     price: 410,
     category: 'soups',
     image: '/data/menu/soups/Чечевичный суп с брискетом из индейки.webp'
   },
   {
     id: 'chicken-ryaba-soup',
-    name: 'Курочка Ряба с яичной лапшой',
-    description: 'Куриный суп с яичной лапшой',
+    name: 'Chicken Noodle Soup',
+    description: 'Chicken soup with egg noodles',
     price: 290,
     category: 'soups',
     image: '/data/menu/soups/Курочка Ряба с яичной лапшой.webp'
   },
 
-  // ============ MAIN DISHES (Рыба, Птица, Мясо) ============
+  // ============ MAIN DISHES (Fish, Poultry, Meat) ============
   {
     id: 'eastern-rice-chicken',
-    name: 'Восточный рис с курицей',
-    description: 'Восточный рис с курицей',
+    name: 'Eastern Rice with Chicken',
+    description: 'Eastern-style rice with chicken',
     price: 410,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Восточный рис с курицей.webp'
   },
   {
     id: 'chicken-breast-sous-vide',
-    name: 'ПП Куриная грудка sou-vide',
-    description: 'Куриная грудка sou-vide с кускусом и соусом «Арабьята»',
+    name: 'Sous-Vide Chicken Breast',
+    description: 'Sous-vide chicken breast with couscous and Arrabbiata sauce',
     price: 460,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Пп куриная грудка с кус кусом.webp'
   },
   {
     id: 'chicken-fillet-broccoli-nut',
-    name: 'Филе цыплёнка с брокколи в ореховом соусе',
-    description: 'Филе цыплёнка с брокколи в ореховом соусе',
+    name: 'Chicken Fillet with Broccoli in Nut Sauce',
+    description: 'Chicken fillet with broccoli in nut sauce',
     price: 570,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Филе цыплёнка с брокколи в ореховом соусе.webp'
   },
   {
     id: 'shawarma-smoked-beef-coleslaw',
-    name: 'Шаурма с копчёной говядиной и салатом коу-слоу',
-    description: 'Шаурма с копчёной говядиной и салатом коу-слоу',
+    name: 'Shawarma with Smoked Beef & Coleslaw',
+    description: 'Shawarma with smoked beef and coleslaw salad',
     price: 490,
     category: 'main-dishes',
     image: ''
   },
   {
     id: 'shawarma-chicken',
-    name: 'Шаурма ливанская с курицей',
-    description: 'Шаурма ливанская с курицей',
+    name: 'Lebanese Shawarma with Chicken',
+    description: 'Lebanese-style shawarma with chicken',
     price: 420,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Шаурма ливанская с курицей.webp'
   },
   {
     id: 'shawarma-beef',
-    name: 'Шаурма ливанская с рван.говядиной',
-    description: 'Шаурма ливанская с рваной говядиной',
+    name: 'Lebanese Shawarma with Pulled Beef',
+    description: 'Lebanese-style shawarma with pulled beef',
     price: 490,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Шаурма ливанская с рван.говядиной.webp'
   },
   {
     id: 'fetuccini-shrimp-tom-yam',
-    name: 'Фетучини с креветками в соусе Том-ям',
-    description: 'Паста фетучини с тигровыми креветками в пикантном соусе том-ям',
+    name: 'Fettuccine with Shrimp in Tom Yum Sauce',
+    description: 'Fettuccine pasta with tiger shrimp in a spicy tom yum sauce',
     price: 680,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Фетучини с креветками в соусе Том-ям.webp'
   },
   {
     id: 'chicken-cutlets-potato',
-    name: 'Куриные котлетки с картофельным кремом',
-    description: 'Домашние куриные котлетки с нежным картофельным кремом',
+    name: 'Chicken Cutlets with Potato Cream',
+    description: 'Homemade chicken cutlets with smooth potato cream',
     price: 540,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Куриные котлетки с картофельным кремом.webp'
   },
   {
     id: 'fetuccini-chicken-mushrooms',
-    name: 'Фетучини с куриным филе и грибами',
-    description: 'Паста фетучини с нежным куриным филе и грибами в сливочном соусе',
+    name: 'Fettuccine with Chicken & Mushrooms',
+    description: 'Fettuccine pasta with tender chicken fillet and mushrooms in a creamy sauce',
     price: 510,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Фетучини с куриным филе и грибами.webp'
   },
   {
     id: 'zharkoe-chicken',
-    name: 'Жаркое с куриным филе',
-    description: 'Обжаренное куриное филе с болгарским перцем, грибами и картофелем в сливочном соусе',
+    name: 'Chicken Stew',
+    description: 'Pan-fried chicken fillet with bell pepper, mushrooms and potatoes in a creamy sauce',
     price: 510,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Жаркое с куриным филе.webp'
   },
   {
     id: 'zharkoe-hunter',
-    name: 'Жаркое по-охотничьи',
-    description: 'Обжаренное копчёное мясо с болгарским перцем и картофелем в сливочном соусе',
+    name: 'Hunter\'s Stew',
+    description: 'Pan-fried smoked meat with bell pepper and potatoes in a creamy sauce',
     price: 640,
     category: 'main-dishes',
     image: '/data/menu/main-dishes/Жаркое по-охотничьи.webp'
   },
 
-  // ============ SIDES (ГАРНИРЫ) ============
+  // ============ SIDES ============
   {
     id: 'wild-rice-truffle',
-    name: 'Дикий рис с маслом белого трюфеля и зеленью',
-    description: 'Ароматный дикий рис с маслом белого трюфеля и свежей зеленью',
+    name: 'Wild Rice with White Truffle Oil & Herbs',
+    description: 'Aromatic wild rice with white truffle oil and fresh herbs',
     price: 300,
     category: 'sides',
     image: '/data/menu/sides/Дикий рис с маслом белого трюфеля и зеленью.webp'
   },
   {
     id: 'french-fries',
-    name: 'Картофель фри',
-    description: 'Хрустящий золотистый картофель фри',
+    name: 'French Fries',
+    description: 'Crispy golden French fries',
     price: 200,
     category: 'sides',
     image: '/data/menu/sides/Картофель фри.webp'
   },
   {
     id: 'dippers-parmesan',
-    name: 'Дипперы со снегом пармезан',
-    description: 'Картофельные дипперы, посыпанные снегом пармезана',
+    name: 'Dippers with Parmesan Snow',
+    description: 'Potato dippers topped with Parmesan snow',
     price: 360,
     category: 'sides',
     image: '/data/menu/sides/Дипперы со снегом пармезан.webp'
   },
   {
     id: 'mashed-potato',
-    name: 'Картофельное пюре из детства',
-    description: 'Нежное домашнее картофельное пюре по бабушкиному рецепту',
+    name: 'Grandma\'s Mashed Potatoes',
+    description: 'Smooth homestyle mashed potatoes made the old-fashioned way',
     price: 200,
     category: 'sides',
     image: '/data/menu/sides/Картофельное пюре из детства.webp'
@@ -696,24 +696,24 @@ export const menuItems: MenuItem[] = [
   // ============ CLASSIC COFFEE ============
   {
     id: 'flat-white',
-    name: 'FLAT WHITE 220мл',
-    description: 'Классический флэт уайт с плотной бархатистой микропенкой',
+    name: 'Flat White 220ml',
+    description: 'Classic flat white with rich velvety microfoam',
     price: 260,
     category: 'coffee',
     image: '/data/menu/drinks/FLAT WHITE 220мл.webp'
   },
   {
     id: 'americano',
-    name: 'Американо 170мл',
-    description: 'Классический американо из отборных зёрен',
+    name: 'Americano 170ml',
+    description: 'Classic americano from select beans',
     price: 210,
     category: 'coffee',
     image: '/data/menu/drinks/Американо 170мл.webp'
   },
   {
     id: 'hot-chocolate',
-    name: 'Горячий шоколад 250/350мл',
-    description: 'Горячий шоколад из натурального бельгийского шоколада',
+    name: 'Hot Chocolate 250/350ml',
+    description: 'Hot chocolate made from real Belgian chocolate',
     price: 270,
     priceLarge: 370,
     category: 'coffee',
@@ -721,8 +721,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'kakao',
-    name: 'Какао 250/350мл',
-    description: 'Горячий какао из бельгийского шоколада',
+    name: 'Cocoa 250/350ml',
+    description: 'Hot cocoa made from Belgian chocolate',
     price: 270,
     priceLarge: 370,
     category: 'coffee',
@@ -730,8 +730,8 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'cappuccino',
-    name: 'Капучино 250/350мл',
-    description: 'Классический капучино с нежной молочной пенкой',
+    name: 'Cappuccino 250/350ml',
+    description: 'Classic cappuccino with silky milk foam',
     price: 240,
     priceLarge: 260,
     category: 'coffee',
@@ -739,16 +739,16 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'latte-350',
-    name: 'Латте 350мл',
-    description: 'Нежный латте с бархатистой молочной пенкой',
+    name: 'Latte 350ml',
+    description: 'Smooth latte with velvety milk foam',
     price: 260,
     category: 'coffee',
     image: ''
   },
   {
     id: 'raf',
-    name: 'Раф 250/350мл',
-    description: 'Нежный сливочный раф-кофе',
+    name: 'Raf Coffee 250/350ml',
+    description: 'Smooth creamy raf coffee',
     price: 270,
     priceLarge: 320,
     category: 'coffee',
@@ -756,16 +756,16 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'filter-coffee',
-    name: 'Фильтр-кофе 250мл',
-    description: 'Кофе, заваренный методом фильтрации',
+    name: 'Filter Coffee 250ml',
+    description: 'Filter-brewed coffee',
     price: 250,
     category: 'coffee',
     image: '/data/menu/drinks/Фильтр-кофе.webp'
   },
   {
     id: 'espresso',
-    name: 'Эспрессо 40мл',
-    description: 'Классический эспрессо из отборных зёрен',
+    name: 'Espresso 40ml',
+    description: 'Classic espresso from select beans',
     price: 210,
     category: 'coffee',
     image: '/data/menu/drinks/Эспрессо.webp'
@@ -774,80 +774,80 @@ export const menuItems: MenuItem[] = [
   // ============ COLD COFFEE ============
   {
     id: 'ice-latte',
-    name: 'Ice latte',
-    description: 'Холодный латте со льдом',
+    name: 'Ice Latte',
+    description: 'Cold latte over ice',
     price: 270,
     category: 'cold-coffee',
     image: ''
   },
   {
     id: 'bumble-orange',
-    name: 'Бамбл апельсиновый',
-    description: 'Кофейно-апельсиновый коктейль со льдом',
+    name: 'Orange Bumble',
+    description: 'Coffee-orange cocktail over ice',
     price: 290,
     category: 'cold-coffee',
     image: '/data/menu/drinks/Бамбл апельсиновый.webp'
   },
   {
     id: 'bumble-pomegranate',
-    name: 'Бамбл гранатовый',
-    description: 'Кофейно-гранатовый коктейль со льдом',
+    name: 'Pomegranate Bumble',
+    description: 'Coffee-pomegranate cocktail over ice',
     price: 290,
     category: 'cold-coffee',
     image: ''
   },
   {
     id: 'bumble-fresh',
-    name: 'Бамбл на фреше',
-    description: 'Бамбл на свежевыжатом апельсиновом соке',
+    name: 'Fresh Juice Bumble',
+    description: 'Bumble made with freshly squeezed orange juice',
     price: 410,
     category: 'cold-coffee',
     image: '/data/menu/drinks/Бамбл на фреше.webp'
   },
   {
     id: 'cold-brew-pomegranate',
-    name: 'Колд Брю Гранат',
-    description: 'Холодный кофе с гранатовым соком',
+    name: 'Cold Brew Pomegranate',
+    description: 'Cold brew coffee with pomegranate juice',
     price: 290,
     category: 'author-coffee',
     image: '/data/menu/drinks/Колд Брю Гранат.webp'
   },
   {
     id: 'cold-brew-cola',
-    name: 'Колд Брю Кола',
-    description: 'Холодный кофе с колой',
+    name: 'Cold Brew Cola',
+    description: 'Cold brew coffee with cola',
     price: 290,
     category: 'author-coffee',
     image: '/data/menu/drinks/Колд брю кола.webp'
   },
   {
     id: 'cold-brew-blueberry',
-    name: 'Колд Брю Черника',
-    description: 'Холодный кофе с черникой',
+    name: 'Cold Brew Blueberry',
+    description: 'Cold brew coffee with blueberry',
     price: 290,
     category: 'author-coffee',
     image: ''
   },
   {
     id: 'filter-coffee-blackberry',
-    name: 'Фильтр-кофе Ежевика',
-    description: 'Фильтр-кофе с ежевикой',
+    name: 'Filter Coffee with Blackberry',
+    description: 'Filter coffee with blackberry',
     price: 290,
     category: 'author-coffee',
     image: '/data/menu/drinks/Фильтр кофе ежевика.webp'
   },
   {
     id: 'espresso-tonic',
-    name: 'Эспрессо Тоник',
-    description: 'Освежающий эспрессо с тоником и льдом',
+    name: 'Espresso Tonic',
+    description: 'Refreshing espresso with tonic and ice',
     price: 280,
     category: 'cold-coffee',
     image: '/data/menu/drinks/Эспрессо Тоник.webp'
   },
   {
     id: 'frappe',
-    name: 'Фраппе',
-    description: 'Ледяной кофейный напиток с молоком',
+    name: 'Frappe',
+    description: 'Iced coffee drink with milk',
     price: 310,
     category: 'cold-coffee',
     image: '/data/menu/drinks/Фраппе.webp'
@@ -856,16 +856,16 @@ export const menuItems: MenuItem[] = [
   // ============ AUTHOR COFFEE ============
   {
     id: 'raf-raspberry',
-    name: 'Малиновый раф',
-    description: 'Раф с нежным ягодным вкусом малины',
+    name: 'Raspberry Raf',
+    description: 'Raf coffee with a delicate raspberry berry flavor',
     price: 380,
     category: 'author-coffee',
     image: '/data/menu/drinks/Малиновый раф.webp'
   },
   {
     id: 'raf-urbech',
-    name: 'Раф «Урбеч»',
-    description: 'Раф с натуральным урбечем',
+    name: 'Urbech Raf',
+    description: 'Raf coffee with natural urbech paste',
     price: 340,
     category: 'author-coffee',
     image: '/data/menu/drinks/Раф Урбеч.webp'
@@ -874,40 +874,40 @@ export const menuItems: MenuItem[] = [
   // ============ LEMONADES & MOJITO ============
   {
     id: 'lemonade-mango-passion',
-    name: 'Лимонад Манго-Маракуйя',
-    description: 'Авторский лимонад с манго и маракуйей',
+    name: 'Mango-Passion Fruit Lemonade',
+    description: 'Signature lemonade with mango and passion fruit',
     price: 270,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Лимонад Манго-Маракуйя.webp'
   },
   {
     id: 'mojito-lime',
-    name: 'Мохито Лайм',
-    description: 'Классический безалкогольный мохито с мятой и лаймом',
+    name: 'Lime Mojito',
+    description: 'Classic non-alcoholic mojito with mint and lime',
     price: 290,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Мохито Лайм.webp'
   },
   {
     id: 'mojito-passion-fruit',
-    name: 'Мохито Маракуйя',
-    description: 'Освежающий мохито с экзотической маракуйей',
+    name: 'Passion Fruit Mojito',
+    description: 'Refreshing mojito with exotic passion fruit',
     price: 315,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Мохито Маракуйя.webp'
   },
   {
     id: 'lemonade-grapefruit-pomegranate',
-    name: 'Лимонад Грейпфрут-Гранат',
-    description: 'Авторский лимонад с грейпфрутом и гранатом',
+    name: 'Grapefruit-Pomegranate Lemonade',
+    description: 'Signature lemonade with grapefruit and pomegranate',
     price: 360,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Грейпфрут-гранат.webp'
   },
   {
     id: 'lemonade-citrus-mix',
-    name: 'Цитрусовый микс лимонад',
-    description: 'Авторский лимонад с миксом цитрусовых',
+    name: 'Citrus Mix Lemonade',
+    description: 'Signature lemonade with a mix of citrus fruits',
     price: 360,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Цитрусовый микс.webp'
@@ -916,16 +916,16 @@ export const menuItems: MenuItem[] = [
   // ============ AUTHOR DRINKS ============
   {
     id: 'paloma-grapefruit',
-    name: 'Палома Грейпфрут-карамель',
-    description: 'Авторский напиток с грейпфрутом и карамелью',
+    name: 'Paloma Grapefruit-Caramel',
+    description: 'Signature drink with grapefruit and caramel',
     price: 240,
     category: 'author-drinks',
     image: '/data/menu/drinks/Палома Грейпфрут-карамель.webp'
   },
   {
     id: 'sorrel',
-    name: 'Щавелевый',
-    description: 'Авторский напиток на основе щавеля',
+    name: 'Sorrel Drink',
+    description: 'Signature drink made with sorrel',
     price: 300,
     category: 'lemonades-mojito',
     image: '/data/menu/drinks/Щавелевый.webp'
@@ -934,32 +934,32 @@ export const menuItems: MenuItem[] = [
   // ============ FRESH JUICES ============
   {
     id: 'orange-fresh',
-    name: 'Фреш Апельсиновый',
-    description: 'Свежевыжатый апельсиновый сок',
+    name: 'Fresh Orange Juice',
+    description: 'Freshly squeezed orange juice',
     price: 320,
     category: 'fresh-juices',
     image: '/data/menu/drinks/Фреш Апельсиновый.webp'
   },
   {
     id: 'grapefruit-fresh',
-    name: 'Фреш Грейпфрутовый',
-    description: 'Свежевыжатый грейпфрутовый сок',
+    name: 'Fresh Grapefruit Juice',
+    description: 'Freshly squeezed grapefruit juice',
     price: 390,
     category: 'fresh-juices',
     image: '/data/menu/drinks/Фреш Грейпфрутовый.webp'
   },
   {
     id: 'apple-fresh',
-    name: 'Фреш Яблочный',
-    description: 'Свежевыжатый яблочный сок',
+    name: 'Fresh Apple Juice',
+    description: 'Freshly squeezed apple juice',
     price: 310,
     category: 'fresh-juices',
     image: ''
   },
   {
     id: 'carrot-fresh',
-    name: 'Фреш Морковный',
-    description: 'Свежевыжатый морковный сок',
+    name: 'Fresh Carrot Juice',
+    description: 'Freshly squeezed carrot juice',
     price: 270,
     category: 'fresh-juices',
     image: ''
@@ -968,40 +968,40 @@ export const menuItems: MenuItem[] = [
   // ============ MILKSHAKES ============
   {
     id: 'milkshake-vanilla-banana',
-    name: 'Ванильно-банановый милкшейк',
-    description: 'Сладкий молочный коктейль с ванилью и бананом',
+    name: 'Vanilla-Banana Milkshake',
+    description: 'Sweet milkshake with vanilla and banana',
     price: 270,
     category: 'milkshakes',
     image: '/data/menu/drinks/Ванильно-банановый милкшейк.webp'
   },
   {
     id: 'milkshake-oreo',
-    name: 'Милкшейк Oreo',
-    description: 'Молочный коктейль с печеньем Oreo',
+    name: 'Oreo Milkshake',
+    description: 'Milkshake with Oreo cookies',
     price: 270,
     category: 'milkshakes',
     image: '/data/menu/drinks/Милкшейк Oreo.webp'
   },
   {
     id: 'milkshake-bounty',
-    name: 'Баунти Милкшейк',
-    description: 'Молочный коктейль со вкусом Баунти',
+    name: 'Bounty Milkshake',
+    description: 'Milkshake with Bounty flavor',
     price: 290,
     category: 'milkshakes',
     image: '/data/menu/drinks/Баунти Милкшейк.webp'
   },
   {
     id: 'smoothie-rainbow-unicorn',
-    name: 'Радужный единорог',
-    description: 'Авторский смузи Радужный единорог',
+    name: 'Rainbow Unicorn Smoothie',
+    description: 'Signature Rainbow Unicorn smoothie',
     price: 380,
     category: 'smoothies',
     image: '/data/menu/drinks/Радужный единорог.webp'
   },
   {
     id: 'smoothie-vitamin-charge',
-    name: 'Витаминный заряд',
-    description: 'Витаминный смузи',
+    name: 'Vitamin Charge Smoothie',
+    description: 'Vitamin-packed smoothie',
     price: 340,
     category: 'smoothies',
     image: '/data/menu/drinks/Витаминный микс.webp'
@@ -1010,32 +1010,32 @@ export const menuItems: MenuItem[] = [
   // ============ HOUSE TEAS ============
   {
     id: 'tea-ginger',
-    name: 'Имбирный чай',
-    description: 'Согревающий чай с цитрусами и имбирём',
+    name: 'Ginger Tea',
+    description: 'Warming tea with citrus and ginger',
     price: 370,
     category: 'house-teas',
     image: '/data/menu/drinks/Имбирный чай.webp'
   },
   {
     id: 'tea-sea-buckthorn',
-    name: 'Облепиховый чай',
-    description: 'Витаминный чай с облепихой',
+    name: 'Sea Buckthorn Tea',
+    description: 'Vitamin-rich tea with sea buckthorn',
     price: 320,
     category: 'house-teas',
     image: '/data/menu/drinks/Облепиховый чай.webp'
   },
   {
     id: 'tea-mango-cherry',
-    name: 'Чай Манго-вишня',
-    description: 'Фруктовый чай с манго и вишней',
+    name: 'Mango-Cherry Tea',
+    description: 'Fruit tea with mango and cherry',
     price: 370,
     category: 'house-teas',
     image: '/data/menu/drinks/Чай Манго-вишня.webp'
   },
   {
     id: 'tea-berry',
-    name: 'Ягодный чай',
-    description: 'Ароматный чай с лесными ягодами',
+    name: 'Berry Tea',
+    description: 'Aromatic tea with forest berries',
     price: 340,
     category: 'house-teas',
     image: '/data/menu/drinks/Ягодный чай.webp'
@@ -1044,48 +1044,48 @@ export const menuItems: MenuItem[] = [
   // ============ LEAF TEAS ============
   {
     id: 'tea-green-jasmine',
-    name: 'Зеленый чай с жасмином',
-    description: 'Зелёный чай с цветками жасмина',
+    name: 'Green Tea with Jasmine',
+    description: 'Green tea with jasmine flowers',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Зеленый чай с жасмином.webp'
   },
   {
     id: 'tea-milk-oolong',
-    name: 'Молочный улун',
-    description: 'Китайский молочный улун с нежным сливочным вкусом',
+    name: 'Milk Oolong',
+    description: 'Chinese milk oolong with a delicate creamy flavor',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Молочный улун.webp'
   },
   {
     id: 'tea-sencha',
-    name: 'Сенча',
-    description: 'Японский зелёный чай сенча',
+    name: 'Sencha',
+    description: 'Japanese green sencha tea',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Сенча.webp'
   },
   {
     id: 'tea-assam',
-    name: 'Чай "Ассам"',
-    description: 'Крепкий индийский чёрный чай',
+    name: 'Assam Tea',
+    description: 'Strong Indian black tea',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Чай Ассам.webp'
   },
   {
     id: 'tea-black-thyme',
-    name: 'Черный чай с чабрецом',
-    description: 'Классический чёрный чай с чабрецом',
+    name: 'Black Tea with Thyme',
+    description: 'Classic black tea with thyme',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Черный чай с чабрецом.webp'
   },
   {
     id: 'tea-earl-grey',
-    name: 'Эрл Грей',
-    description: 'Чёрный чай с бергамотом',
+    name: 'Earl Grey',
+    description: 'Black tea with bergamot',
     price: 290,
     category: 'leaf-teas',
     image: '/data/menu/drinks/Эрл Грей.webp'
@@ -1095,7 +1095,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'coca-cola',
     name: 'Coca-Cola',
-    description: 'Классическая Coca-Cola',
+    description: 'Classic Coca-Cola',
     price: 220,
     category: 'soft-drinks',
     image: '/data/menu/drinks/Coca-Cola.webp'
@@ -1103,39 +1103,39 @@ export const menuItems: MenuItem[] = [
   {
     id: 'coca-cola-zero',
     name: 'Coca-Cola Zero',
-    description: 'Coca-Cola без сахара',
+    description: 'Sugar-free Coca-Cola',
     price: 220,
     category: 'soft-drinks',
     image: ''
   },
   {
     id: 'water-still',
-    name: 'Вода Минеральная без газа',
-    description: 'Минеральная вода без газа',
+    name: 'Still Mineral Water',
+    description: 'Still mineral water',
     price: 160,
     category: 'soft-drinks',
     image: ''
   },
   {
     id: 'water-sparkling',
-    name: 'Вода Минеральная с газом',
-    description: 'Минеральная вода с газом',
+    name: 'Sparkling Mineral Water',
+    description: 'Sparkling mineral water',
     price: 160,
     category: 'soft-drinks',
     image: ''
   },
   {
     id: 'juice-rich-orange',
-    name: 'Сок Rich Апельсин',
-    description: 'Сок Rich апельсиновый',
+    name: 'Rich Orange Juice',
+    description: 'Rich brand orange juice',
     price: 190,
     category: 'soft-drinks',
     image: ''
   },
   {
     id: 'juice-rich-apple',
-    name: 'Сок Rich Яблоко',
-    description: 'Сок Rich яблочный',
+    name: 'Rich Apple Juice',
+    description: 'Rich brand apple juice',
     price: 190,
     category: 'soft-drinks',
     image: '/data/menu/drinks/Сок Rich Яблоко.webp'

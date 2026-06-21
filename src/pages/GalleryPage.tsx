@@ -89,8 +89,8 @@ export default function GalleryPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://melty-cafe.ru/' },
-      { '@type': 'ListItem', position: 2, name: 'Галерея', item: 'https://melty-cafe.ru/gallery' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://melty-cafe.ru/' },
+      { '@type': 'ListItem', position: 2, name: 'Gallery', item: 'https://melty-cafe.ru/gallery' },
     ],
   };
 
@@ -317,19 +317,19 @@ export default function GalleryPage() {
   return (
     <div className="gallery-page">
       <SEO
-        title="Галерея | Melty"
-        description="Галерея кафе Melty в Нальчике: фотографии интерьера, десертов, крепов, вафель и уютной атмосферы. Загляните - и вам захочется прийти."
+        title="Gallery | Melty"
+        description="Gallery of Melty cafe in Nalchik: photos of the interior, desserts, crepes, waffles and cozy atmosphere. Take a look - and you'll want to visit."
         path="/gallery"
-        keywords="фото кафе Нальчик, интерьер кафе Melty, фото десертов Нальчик, атмосфера кафе Нальчик, Melty фотографии"
+        keywords="cafe Nalchik, coffee shop Nalchik, Melty, desserts, crepes, pancakes, waffles, specialty coffee"
         jsonLd={[
           breadcrumb,
           {
             '@context': 'https://schema.org',
             '@type': 'ImageGallery',
-            name: 'Галерея кафе Melty',
+            name: 'Melty cafe gallery',
             url: 'https://melty-cafe.ru/gallery',
             description:
-              'Фотогалерея кафе Melty в Нальчике - интерьер, десерты и атмосфера.',
+              'Photo gallery of Melty cafe in Nalchik - interior, desserts and atmosphere.',
             about: { '@id': 'https://melty-cafe.ru/#restaurant' },
           },
         ]}

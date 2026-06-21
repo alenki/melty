@@ -16,7 +16,7 @@ interface SEOProps {
 const BASE_URL = 'https://melty-cafe.ru';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/data/melty.webp`;
 const DEFAULT_KEYWORDS =
-  'кафе Нальчик, кофейня Нальчик, Melty, десерты, крепы, панкейки, вафли, авторский кофе';
+  'cafe Nalchik, coffee shop Nalchik, Melty, desserts, crepes, pancakes, waffles, specialty coffee';
 
 /**
  * Restaurant / LocalBusiness schema that is emitted on every page so search
@@ -28,9 +28,9 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   '@type': ['Restaurant', 'CafeOrCoffeeShop'],
   '@id': `${BASE_URL}/#restaurant`,
   name: 'Melty',
-  alternateName: ['Мелти', 'Melty Cafe', 'Кафе Melty', 'Кафе Мелти'],
+  alternateName: ['Melty Cafe', 'Melty Coffee Shop'],
   description:
-    'Melty - уютное кафе-кофейня в Нальчике. Шоколадные десерты, авторские крепы, панкейки, вафли, завтраки и напитки. Ежедневно 08:00-23:00.',
+    'Melty is a cozy cafe and coffee shop in Nalchik. Chocolate desserts, signature crepes, pancakes, waffles, breakfasts and coffee. Open daily 08:00-23:00.',
   url: BASE_URL,
   // Tie the Restaurant entity into the @id graph so Yandex/Google consolidate
   // it with the Organization (#organization) and WebSite (#website) entities.
@@ -47,20 +47,20 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
   currenciesAccepted: 'RUB',
   paymentAccepted: 'Cash, Credit Card, Debit Card, MIR',
   servesCuisine: [
-    'Десерты',
-    'Шоколад',
-    'Европейская',
-    'Завтраки',
-    'Кофе',
-    'Крепы',
-    'Вафли',
-    'Панкейки',
+    'Desserts',
+    'Chocolate',
+    'European',
+    'Breakfasts',
+    'Coffee',
+    'Crepes',
+    'Waffles',
+    'Pancakes',
   ],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'ул. Героя России Т.М. Тамазова, 15',
-    addressLocality: 'Нальчик',
-    addressRegion: 'Кабардино-Балкарская Республика',
+    streetAddress: '15 Hero of Russia T.M. Tamazov St.',
+    addressLocality: 'Nalchik',
+    addressRegion: 'Kabardino-Balkaria',
     postalCode: '360000',
     addressCountry: 'RU',
   },
@@ -69,10 +69,10 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
     latitude: 43.472607,
     longitude: 43.579251,
   },
-  hasMap: 'https://yandex.ru/maps/?text=Нальчик+Тамазова+15+Melty',
+  hasMap: 'https://yandex.ru/maps/?text=Nalchik+Tamazova+15+Melty',
   areaServed: {
     '@type': 'City',
-    name: 'Нальчик',
+    name: 'Nalchik',
   },
   hasMenu: `${BASE_URL}/menu`,
   acceptsReservations: 'False',
@@ -100,7 +100,7 @@ const LOCAL_BUSINESS_SCHEMA: Record<string, unknown> = {
     'https://yandex.ru/maps/org/melty/135012269974/',
   ],
   keywords:
-    'кафе Нальчик, кофейня Нальчик, Melty, десерты, крепы, панкейки, вафли, завтраки, шоколад, кофе',
+    'cafe Nalchik, coffee shop Nalchik, Melty, desserts, crepes, pancakes, waffles, specialty coffee',
   brand: {
     '@type': 'Brand',
     name: 'Melty',
@@ -141,11 +141,11 @@ export default function SEO({
       <meta name="googlebot" content="index, follow" />
       <meta name="yandex" content="index, follow" />
       <meta name="geo.region" content="RU-KB" />
-      <meta name="geo.placename" content="Нальчик" />
+      <meta name="geo.placename" content="Nalchik" />
       <meta name="geo.position" content="43.472607;43.579251" />
       <meta name="ICBM" content="43.472607, 43.579251" />
       <link rel="canonical" href={canonicalUrl} />
-      <meta httpEquiv="content-language" content="ru" />
+      <meta httpEquiv="content-language" content="en" />
 
       {/* Open Graph */}
       <meta property="og:site_name" content="Melty" />
@@ -155,16 +155,16 @@ export default function SEO({
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="1200" />
-      <meta property="og:image:alt" content="Melty - кафе-кофейня в Нальчике" />
+      <meta property="og:image:alt" content="Melty - cafe & coffee shop in Nalchik" />
       <meta property="og:type" content={ogType} />
-      <meta property="og:locale" content="ru_RU" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:image:alt" content="Melty - кафе-кофейня в Нальчике" />
+      <meta name="twitter:image:alt" content="Melty - cafe & coffee shop in Nalchik" />
 
       {/* Structured data */}
       {allSchemas.map((schema, i) => (

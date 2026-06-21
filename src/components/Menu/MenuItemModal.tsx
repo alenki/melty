@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { MenuItem } from '../../data/menu';
-import { useMenuTranslation, useLanguage, useTranslation } from '../../i18n';
+import { useMenuTranslation, useTranslation } from '../../i18n';
 import MenuPlaceholder from './MenuPlaceholder';
 import './MenuItemModal.css';
 
@@ -12,17 +12,16 @@ interface MenuItemModalProps {
 }
 
 export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalProps) {
-  const { language } = useLanguage();
   const getTranslation = useMenuTranslation();
   const t = useTranslation();
   const { name, description } = getTranslation(item);
-  const locale = language === 'en' ? 'en-US' : 'ru-RU';
+  const locale = 'en-US';
 
   const priceLabel = item.priceLarge
     ? `${item.price.toLocaleString(locale)}/${item.priceLarge.toLocaleString(locale)}₽`
     : `${item.price.toLocaleString(locale)}₽`;
 
-  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?мл)$/) || name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
+  const volumeMatch = name.match(/\s*(\d+(?:\/\d+)?ml)$/i);
   const displayName = volumeMatch ? name.replace(volumeMatch[0], '') : name;
   const volume = volumeMatch ? volumeMatch[1] : null;
 
@@ -183,7 +182,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
                 <button
                   className="modal-slider__arrow modal-slider__arrow--prev"
                   onClick={prevSlide}
-                  aria-label={language === 'en' ? 'Previous photo' : 'Предыдущее фото'}
+                  aria-label="Previous photo"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M15 18l-6-6 6-6" />
@@ -192,7 +191,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
                 <button
                   className="modal-slider__arrow modal-slider__arrow--next"
                   onClick={nextSlide}
-                  aria-label={language === 'en' ? 'Next photo' : 'Следующее фото'}
+                  aria-label="Next photo"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M9 18l6-6-6-6" />
@@ -209,7 +208,7 @@ export default function MenuItemModal({ item, isOpen, onClose }: MenuItemModalPr
                     key={index}
                     className={`modal-slider__dot ${index === currentSlide ? 'modal-slider__dot--active' : ''}`}
                     onClick={() => goToSlide(index)}
-                    aria-label={language === 'en' ? `Go to photo ${index + 1}` : `Перейти к фото ${index + 1}`}
+                    aria-label={`Go to photo ${index + 1}`}
                   />
                 ))}
               </div>

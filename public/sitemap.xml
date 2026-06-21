@@ -9,12 +9,12 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://melty-cafe.ru/data/melty.webp</image:loc>
-      <image:title>Melty — кафе-кофейня в Нальчике</image:title>
-      <image:caption>Мир вкуса и уюта в Нальчике</image:caption>
+      <image:title>Melty - cafe &amp; coffee shop in Nalchik</image:title>
+      <image:caption>A world of taste and comfort in Nalchik</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://melty-cafe.ru/data/logo.webp</image:loc>
-      <image:title>Логотип Melty</image:title>
+      <image:title>Melty logo</image:title>
     </image:image>
   </url>
   <url>
