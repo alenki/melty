@@ -43,6 +43,7 @@ export interface Translations {
     socialLabel: string;
     feedbackLink: string;
     toHome: string;
+    madeBy: string;
   };
   menuPage: {
     title: string;
@@ -160,6 +161,7 @@ const ru: Translations = {
     socialLabel: 'Мы в соцсетях',
     feedbackLink: 'Оставить отзыв',
     toHome: 'На главную',
+    madeBy: 'разработка',
   },
   menuPage: {
     title: 'Меню',
@@ -374,6 +376,7 @@ const en: Translations = {
     socialLabel: 'Follow us',
     feedbackLink: 'Leave a review',
     toHome: 'Go to homepage',
+    madeBy: 'made by',
   },
   menuPage: {
     title: 'Menu',

@@ -89,13 +89,16 @@ export default function Footer() {
               &copy; {currentYear} Melty
             </p>
             <a
-              href="https://karafco.ru"
+              href="https://lumako.ru"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__made-by"
+              aria-label={`${t.footer.madeBy} Lumako`}
             >
-              <span className="footer__made-by-text">made by</span>
-              <span className="footer__made-by-name">KARAF</span>
+              {/* Lumako wordmark: mixed case, Inter Semibold, Lume dot */}
+              <span className="footer__made-by-mark">
+                Lumako<span className="footer__made-by-dot">.</span>
+              </span>
             </a>
           </div>
         </div>
